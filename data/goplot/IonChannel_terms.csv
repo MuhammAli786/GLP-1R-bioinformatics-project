@@ -1,0 +1,158 @@
+Category,ID,Term,Genes,adj_pval
+BP,GO:0098659,Inorganic Cation Import Across Plasma Membrane,"KCNJ4, CACNA2D1, HCN2, SCN1A",3.205143966304649e-05
+BP,GO:0086001,Cardiac Muscle Cell Action Potential,"CACNA2D1, HCN2, SCN1A",3.205143966304649e-05
+BP,GO:1904646,Cellular Response To Amyloid-Beta,"GRIN2A, GRM5, CACNA2D1",3.205143966304649e-05
+BP,GO:0007215,Glutamate Receptor Signaling Pathway,"GRIN2A, GRM5, GRM1",3.205143966304649e-05
+BP,GO:1904645,Response To Amyloid-Beta,"GRIN2A, GRM5, CACNA2D1",4.821787022079884e-05
+BP,GO:0051966,"Regulation Of Synaptic Transmission, Glutamatergic","GRIN2A, GRM5, GRM1",7.702282831070596e-05
+BP,GO:1901653,Cellular Response To Peptide,"GRIN2A, GRM5, CACNA2D1",7.702282831070596e-05
+BP,GO:0006821,Chloride Transport,"GABRB3, GABRA1, CLCN5",0.0001682299296047475
+BP,GO:0070588,Calcium Ion Transmembrane Transport,"GRIN2A, TRPC6, CACNA2D1",0.0001682299296047475
+BP,GO:0097553,Calcium Ion Transmembrane Import Into Cytosol,"GRIN2A, CACNA2D1, SCN1A",0.0001682299296047475
+BP,GO:0007268,Chemical Synaptic Transmission,"GABRB3, GABRA1, GRIN2A, CACNB4",0.0001682299296047475
+BP,GO:0007216,G Protein-Coupled Glutamate Receptor Signaling Pathway,"GRM5, GRM1",0.0002170739140750197
+BP,GO:1904862,Inhibitory Synapse Assembly,"GABRB3, GABRA1",0.00023672936418165283
+BP,GO:0051932,"Synaptic Transmission, GABAergic","GABRB3, GABRA1",0.00025637171295120315
+BP,GO:0086012,Membrane Depolarization During Cardiac Muscle Cell Action Potential,"CACNA2D1, HCN2",0.00031532493152546426
+BP,GO:0086003,Cardiac Muscle Cell Contraction,"CACNA2D1, SCN1A",0.000376661454773256
+BP,GO:0007214,Gamma-Aminobutyric Acid Signaling Pathway,"GABRB3, GABRA1",0.0004399422707290212
+BP,GO:0030001,Metal Ion Transport,"KCNJ4, CACNA2D1, SCN1A",0.0008386161465292892
+BP,GO:0034765,Regulation Of Monoatomic Ion Transmembrane Transport,"KCNJ4, GRIN2A",0.0008386161465292892
+BP,GO:0086002,Cardiac Muscle Cell Action Potential Involved In Contraction,"CACNA2D1, SCN1A",0.0008533073994757357
+BP,GO:0060078,Regulation Of Postsynaptic Membrane Potential,"GABRA1, GRIN2A",0.0010897808859321
+BP,GO:0098916,Anterograde Trans-Synaptic Signaling,"GABRB3, GRIN2A, CACNB4",0.0010897808859321
+BP,GO:0098703,Calcium Ion Import Across Plasma Membrane,"CACNA2D1, SCN1A",0.0011333933257139
+BP,GO:1904062,Regulation Of Monoatomic Cation Transmembrane Transport,"GRIN2A, HCN2",0.0012076804167395
+BP,GO:0086091,Regulation Of Heart Rate By Cardiac Conduction,"CACNA2D1, HCN2",0.0012460934345004
+BP,GO:1990573,Potassium Ion Import Across Plasma Membrane,"KCNJ4, HCN2",0.0012460934345004
+BP,GO:0006812,Monoatomic Cation Transport,"GRIN2A, TRPC6",0.0012460934345004
+BP,GO:0061337,Cardiac Conduction,"CACNA2D1, HCN2",0.0014424973744053
+BP,GO:1902476,Chloride Transmembrane Transport,"GABRB3, GABRA1",0.0015168915780667
+BP,GO:0098656,Monoatomic Anion Transmembrane Transport,"GABRB3, GABRA1",0.0018564956158791
+BP,GO:2001257,Regulation Of Cation Channel Activity,"CACNB4, HCN2",0.0019321696729652
+BP,GO:0051924,Regulation Of Calcium Ion Transport,"TRPC6, CACNA2D1",0.001939208395424
+BP,GO:0098655,Monoatomic Cation Transmembrane Transport,"GRIN2A, TRPC6, HCN2",0.0019983133289873
+BP,GO:0098661,Inorganic Anion Transmembrane Transport,"GABRB3, GABRA1",0.0022289324372044
+BP,GO:0032412,Regulation Of Monoatomic Ion Transmembrane Transporter Activity,"TRPC6, HCN2",0.0025957657577753
+BP,GO:0007416,Synapse Assembly,"GABRB3, GABRA1",0.0026714070789435
+BP,GO:0007200,Phospholipase C-activating G Protein-Coupled Receptor Signaling Pathway,"GRM5, GRM1",0.0035451957129146
+BP,GO:0006814,Sodium Ion Transport,"HCN2, SCN1A",0.0039643405857911
+BP,GO:0071417,Cellular Response To Organonitrogen Compound,"GABRB3, HCN2",0.0053570401606654
+BP,GO:0006816,Calcium Ion Transport,"TRPC6, CACNA2D1",0.0059324634302811
+BP,GO:0006813,Potassium Ion Transport,"KCNJ4, HCN2",0.0067948233522874
+BP,GO:0050804,Modulation Of Chemical Synaptic Transmission,"GRM5, GRM1",0.0067948233522874
+BP,GO:0050808,Synapse Organization,"GRM5, CACNB4",0.0075119251078778
+BP,GO:0071805,Potassium Ion Transmembrane Transport,"KCNJ4, HCN2",0.007991074746383
+BP,GO:0034767,Positive Regulation Of Monoatomic Ion Transmembrane Transport,TRPC6,0.007991074746383
+BP,GO:0098976,Excitatory Chemical Synaptic Transmission,GRIN2A,0.0084765123654556
+BP,GO:0098907,Regulation Of SA Node Cell Action Potential,HCN2,0.0084765123654556
+BP,GO:0062149,Detection Of Stimulus Involved In Sensory Perception Of Pain,SCN1A,0.0084765123654556
+BP,GO:0010359,Regulation Of Anion Channel Activity,GRM5,0.0084765123654556
+BP,GO:0071420,Cellular Response To Histamine,GABRB3,0.0084765123654556
+BP,GO:0071407,Cellular Response To Organic Cyclic Compound,"GABRB3, HCN2",0.0084765123654556
+BP,GO:0060402,Calcium Ion Transport Into Cytosol,CACNA2D1,0.0121993868431286
+BP,GO:0034776,Response To Histamine,GABRB3,0.0121993868431286
+BP,GO:1902514,Regulation Of Calcium Ion Transmembrane Transport Via High Voltage-Gated Calcium Channel,CACNA2D1,0.0133002078055283
+BP,GO:0035235,Ionotropic Glutamate Receptor Signaling Pathway,GRIN2A,0.0153817943890325
+BP,GO:1901387,Positive Regulation Of Voltage-Gated Calcium Channel Activity,CACNA2D1,0.0153817943890325
+BP,GO:0086010,Membrane Depolarization During Action Potential,HCN2,0.0163667730686483
+BP,GO:0050974,Detection Of Mechanical Stimulus Involved In Sensory Perception,SCN1A,0.0170235982798824
+BP,GO:0032411,Positive Regulation Of Transporter Activity,TRPC6,0.0170235982798824
+BP,GO:0097202,Activation Of Cysteine-Type Endopeptidase Activity,GRIN2A,0.0191207800256236
+BP,GO:0060079,Excitatory Postsynaptic Potential,GRIN2A,0.0204753038223012
+BP,GO:0045471,Response To Ethanol,GRIN2A,0.0204753038223012
+BP,GO:0060307,Regulation Of Ventricular Cardiac Muscle Cell Membrane Repolarization,CACNA2D1,0.0204753038223012
+BP,GO:0035584,Calcium-Mediated Signaling Using Intracellular Calcium Source,GRM5,0.021304515575958
+BP,GO:0003254,Regulation Of Membrane Depolarization,HCN2,0.021304515575958
+BP,GO:1903169,Regulation Of Calcium Ion Transmembrane Transport,CACNA2D1,0.021304515575958
+BP,GO:0060291,Long-Term Synaptic Potentiation,GRIN2A,0.021304515575958
+BP,GO:0098662,Inorganic Cation Transmembrane Transport,"TRPC6, HCN2",0.021304515575958
+BP,GO:0051968,"Positive Regulation Of Synaptic Transmission, Glutamatergic",GRIN2A,0.0221812383698465
+BP,GO:0099623,Regulation Of Cardiac Muscle Cell Membrane Repolarization,CACNA2D1,0.0221812383698465
+BP,GO:2000463,Positive Regulation Of Excitatory Postsynaptic Potential,GRIN2A,0.0221812383698465
+BP,GO:0007528,Neuromuscular Junction Development,CACNB4,0.023848537094685
+BP,GO:0099565,"Chemical Synaptic Transmission, Postsynaptic",GRIN2A,0.0244951962249015
+BP,GO:0035249,"Synaptic Transmission, Glutamatergic",GRIN2A,0.0257352171676188
+BP,GO:0051482,Positive Regulation Of Cytosolic Calcium Ion Concentration Involved In Phospholipase C-activating G Protein-Coupled Signaling Pathway,GRM1,0.0257352171676188
+BP,GO:0043269,Regulation Of Monoatomic Ion Transport,KCNJ4,0.025899711505658
+BP,GO:0098901,Regulation Of Cardiac Muscle Cell Action Potential,HCN2,0.025899711505658
+BP,GO:1901385,Regulation Of Voltage-Gated Calcium Channel Activity,CACNB4,0.025899711505658
+BP,GO:0097305,Response To Alcohol,GRIN2A,0.025899711505658
+BP,GO:0051928,Positive Regulation Of Calcium Ion Transport,TRPC6,0.025899711505658
+BP,GO:0071320,Cellular Response To cAMP,HCN2,0.0269958094695913
+BP,GO:0098815,Modulation Of Excitatory Postsynaptic Potential,GRIN2A,0.0269958094695913
+BP,GO:1901019,Regulation Of Calcium Ion Transmembrane Transporter Activity,CACNB4,0.0271956855532897
+BP,GO:0034762,Regulation Of Transmembrane Transport,KCNJ4,0.0271956855532897
+BP,GO:0032414,Positive Regulation Of Ion Transmembrane Transporter Activity,TRPC6,0.0277079977621885
+BP,GO:0010959,Regulation Of Metal Ion Transport,CACNA2D1,0.0278837134058056
+BP,GO:0048168,Regulation Of Neuronal Synaptic Plasticity,GRIN2A,0.0278837134058056
+BP,GO:0051591,Response To cAMP,HCN2,0.0304304135543048
+BP,GO:0061098,Positive Regulation Of Protein Tyrosine Kinase Activity,GRM5,0.0304304135543048
+BP,GO:0061097,Regulation Of Protein Tyrosine Kinase Activity,GRM5,0.0308757279616218
+BP,GO:0051480,Regulation Of Cytosolic Calcium Ion Concentration,TRPC6,0.03097049320482
+BP,GO:0043270,Positive Regulation Of Monoatomic Ion Transport,TRPC6,0.03097049320482
+BP,GO:0034248,Regulation Of Amide Metabolic Process,GRM5,0.0313948000222095
+BP,GO:0031638,Zymogen Activation,GRIN2A,0.0336952902666743
+BP,GO:0031399,Regulation Of Protein Modification Process,GRM5,0.0336952902666743
+BP,GO:0050890,Cognition,GRM5,0.0348071684546748
+BP,GO:0010646,Regulation Of Cell Communication,HCN2,0.035894525575858
+BP,GO:0010556,Regulation Of Macromolecule Biosynthetic Process,GRM5,0.0383863964642807
+BP,GO:0010608,Post-Transcriptional Regulation Of Gene Expression,GRM5,0.0404134742745662
+BP,GO:0006820,Monoatomic Anion Transport,CLCN5,0.0404134742745662
+BP,GO:0015698,Inorganic Anion Transport,CLCN5,0.0407041709167372
+BP,GO:0034330,Cell Junction Organization,GRM5,0.0430375680991715
+BP,GO:2001056,Positive Regulation Of Cysteine-Type Endopeptidase Activity,GRIN2A,0.043970454011164
+BP,GO:0031326,Regulation Of Cellular Biosynthetic Process,GRM5,0.0475520284434436
+MF,GO:0022824,Transmitter-Gated Monoatomic Ion Channel Activity,"GABRB3, GABRA1, GRIN2A",6.326873696809358e-05
+MF,GO:0005245,Voltage-Gated Calcium Channel Activity,"CACNB4, CACNA2D1, SCN1A",6.326873696809358e-05
+MF,GO:0005254,Chloride Channel Activity,"GABRB3, GABRA1, CLCN5",0.00010775858079233852
+MF,GO:0001640,Adenylate Cyclase Inhibiting G Protein-Coupled Glutamate Receptor Activity,"GRM5, GRM1",0.00010865218484888216
+MF,GO:0022843,Voltage-Gated Monoatomic Cation Channel Activity,"CACNB4, CACNA2D1, HCN2",0.00010865218484888216
+MF,GO:0005262,Calcium Channel Activity,"TRPC6, CACNB4, CACNA2D1",0.00015567706714334653
+MF,GO:0008066,Glutamate Receptor Activity,"GRM5, GRM1",0.0002693341900716524
+MF,GO:0099095,Ligand-Gated Monoatomic Anion Channel Activity,"GABRB3, GABRA1",0.0002693341900716524
+MF,GO:0098960,Postsynaptic Neurotransmitter Receptor Activity,"GRM5, GRM1",0.0002693341900716524
+MF,GO:0005248,Voltage-Gated Sodium Channel Activity,"HCN2, SCN1A",0.0002693341900716524
+MF,GO:0016917,GABA Receptor Activity,"GABRB3, GABRA1",0.00030049220822928106
+MF,GO:0008331,High Voltage-Gated Calcium Channel Activity,"CACNB4, SCN1A",0.0003316324506745186
+MF,GO:0005244,Voltage-Gated Monoatomic Ion Channel Activity,"GRIN2A, SCN1A",0.0004241344845338825
+MF,GO:0005272,Sodium Channel Activity,"HCN2, SCN1A",0.0007448013283263369
+MF,GO:0005249,Voltage-Gated Potassium Channel Activity,"KCNJ4, HCN2",0.0032513959459025
+MF,GO:0004972,NMDA Glutamate Receptor Activity,GRIN2A,0.0125790453148815
+MF,GO:0005222,Intracellular cAMP-activated Cation Channel Activity,HCN2,0.0135266910872837
+MF,GO:0015279,Store-Operated Calcium Channel Activity,TRPC6,0.0136119474249646
+MF,GO:0005247,Voltage-Gated Chloride Channel Activity,CLCN5,0.0136119474249646
+MF,GO:0070679,"Inositol 1,4,5 Trisphosphate Binding",TRPC6,0.0136802137428291
+MF,GO:0005221,Intracellular Cyclic Nucleotide Activated Monoatomic Cation Channel Activity,HCN2,0.0136802137428291
+MF,GO:0022851,GABA-gated Chloride Ion Channel Activity,GABRB3,0.015661463377924
+MF,GO:0008308,Voltage-Gated Monoatomic Anion Channel Activity,CLCN5,0.0183559488245986
+MF,GO:0004930,G Protein-Coupled Receptor Activity,"GRM5, GRM1",0.0183559488245986
+MF,GO:0004970,Ionotropic Glutamate Receptor Activity,GRIN2A,0.0183559488245986
+MF,GO:0099604,Ligand-Gated Calcium Channel Activity,GRIN2A,0.0191102835674811
+MF,GO:0004890,GABA-A Receptor Activity,GABRB3,0.0191102835674811
+MF,GO:0099529,Neurotransmitter Receptor Activity Involved In Regulation Of Postsynaptic Membrane Potential,GRIN2A,0.0214813684757683
+MF,GO:0005242,Inward Rectifier Potassium Channel Activity,KCNJ4,0.0256436531972165
+MF,GO:0030296,Protein Tyrosine Kinase Activator Activity,GRM5,0.0276263589393686
+MF,GO:1904315,Transmitter-Gated Monoatomic Ion Channel Activity Involved In Regulation Of Postsynaptic Membrane Potential,GRIN2A,0.0310324614774627
+MF,GO:0022890,Inorganic Cation Transmembrane Transporter Activity,GRIN2A,0.0310324614774627
+MF,GO:0008324,Monoatomic Cation Transmembrane Transporter Activity,TRPC6,0.0310324614774627
+MF,GO:0005216,Monoatomic Ion Channel Activity,TRPC6,0.0310324614774627
+MF,GO:0015297,Antiporter Activity,CLCN5,0.0429927640399944
+MF,GO:0015291,Secondary Active Transmembrane Transporter Activity,CLCN5,0.0472283721928179
+MF,GO:0030165,PDZ Domain Binding,KCNJ4,0.047457642660708
+CC,GO:0098839,Postsynaptic Density Membrane,"GRIN2A, GRM5, GRM1",1.9947226056978784e-05
+CC,GO:0099634,Postsynaptic Specialization Membrane,"GRIN2A, GRM5, GRM1",1.9947226056978784e-05
+CC,GO:0005891,Voltage-Gated Calcium Channel Complex,"CACNB4, CACNA2D1, SCN1A",2.893535637004625e-05
+CC,GO:0034704,Calcium Channel Complex,"CACNB4, CACNA2D1, SCN1A",3.816323353050104e-05
+CC,GO:0014069,Postsynaptic Density,"GRIN2A, GRM5, GRM1",0.0005120758146497754
+CC,GO:0008076,Voltage-Gated Potassium Channel Complex,"KCNJ4, HCN2",0.0040937157493183
+CC,GO:0034705,Potassium Channel Complex,"KCNJ4, HCN2",0.0043145259222272
+CC,GO:0038037,G Protein-Coupled Receptor Dimeric Complex,GRM1,0.0121597438043854
+CC,GO:0043005,Neuron Projection,"GABRB3, GABRA1, HCN2",0.0121597438043854
+CC,GO:0017146,NMDA Selective Glutamate Receptor Complex,GRIN2A,0.0121597438043854
+CC,GO:1902711,GABA-A Receptor Complex,GABRB3,0.0264881444290011
+CC,GO:0030425,Dendrite,"GABRA1, HCN2",0.0264881444290011
+CC,GO:0032590,Dendrite Membrane,GABRA1,0.0371995387409572
+CC,GO:0097060,Synaptic Membrane,GRIN2A,0.0379445636021082
+CC,GO:0008328,Ionotropic Glutamate Receptor Complex,GRIN2A,0.0379445636021082
+CC,GO:0034702,Monoatomic Ion Channel Complex,TRPC6,0.0387750051472154

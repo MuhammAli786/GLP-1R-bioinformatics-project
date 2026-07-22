@@ -1,0 +1,39 @@
+MASTER GROUP LEGEND (all built groups)
+Per-heatmap A/B/C... letters are assigned within each plot; see each plot's local group_legend.txt.
+
+Idx	Group	Accession	Region	Treatment	GSE	Source	nSig_LFC0.2
+A	Acc10_hippocampus_Ex4_Po_t_TBI	10	hippocampus	Ex4_Po_t_TBI	GSE71850	array	231
+B	Acc10_hippocampus_Ex4_Pre_TBI	10	hippocampus	Ex4_Pre_TBI	GSE71850	array	289
+C	Acc10_hippocampus_Exendin4	10	hippocampus	Exendin4	GSE71850	array	35
+D	Acc11_hippocampus_Ex4	11	hippocampus	Ex4	GSE41345	array	282
+E	Acc11_hippocampus_Ex4_mTBI	11	hippocampus	Ex4_mTBI	GSE41345	array	544
+F	Acc12_hypothalamus_GLP	12	hypothalamus	GLP	GSE39586	array	3
+G	Acc3_accumbens_GLP_1	3	accumbens	GLP_1	GSE244607	gene_name	43
+H	Acc3_accumbens_GLP_1_MK_801	3	accumbens	GLP_1_MK_801	GSE244607	gene_name	5
+I	Acc3_brainstem_GLP_1	3	brainstem	GLP_1	GSE244607	gene_name	1446
+J	Acc3_brainstem_GLP_1_MK_801	3	brainstem	GLP_1_MK_801	GSE244607	gene_name	1193
+K	Acc3_hypothalamus_GLP_1	3	hypothalamus	GLP_1	GSE244607	gene_name	1
+L	Acc3_hypothalamus_GLP_1_MK_801	3	hypothalamus	GLP_1_MK_801	GSE244607	gene_name	2256
+M	Acc3_hypothalamus_conjugate_2	3	hypothalamus	conjugate_2	GSE244607	gene_name	164
+N	Acc4_hypothalamus_Lira	4	hypothalamus	Lira	GSE190218	gene_name	1
+O	Acc4_hypothalamus_PYY_Lira	4	hypothalamus	PYY_Lira	GSE190218	gene_name	3
+P	Acc5_arc_IP118_PY115	5	arc	IP118_PY115	GSE160802	ensembl	58
+Q	Acc5_nts_IP118_PY115	5	nts	IP118_PY115	GSE160802	ensembl	63
+R	Acc5_pvn_IP118_PY115	5	pvn	IP118_PY115	GSE160802	ensembl	209
+S	Acc6_dvc_AC3174	6	dvc	AC3174	GSE135862	ensembl	17
+T	Acc6_dvc_AC710222	6	dvc	AC710222	GSE135862	ensembl	15
+U	Acc6_dvc_COMBO	6	dvc	COMBO	GSE135862	ensembl	32
+V	Acc6_mbh_AC3174	6	mbh	AC3174	GSE135862	ensembl	241
+W	Acc6_mbh_AC710222	6	mbh	AC710222	GSE135862	ensembl	96
+X	Acc6_mbh_COMBO	6	mbh	COMBO	GSE135862	ensembl	225
+Y	Acc7_lumbar_spinal_cord_LIRA_EAE	7	lumbar_spinal_cord	LIRA_EAE	GSE186318	gene_name	0
+Z	Acc8_frontalcortex_LT_A_Ex	8	frontalcortex	LT_A_Ex	GSE280382	gene_name	37
+AA	Acc8_frontalcortex_ST_A_Ex	8	frontalcortex	ST_A_Ex	GSE280382	gene_name	192
+AB	Acc8_frontalcortex_ST_A_Ex_KD	8	frontalcortex	ST_A_Ex_KD	GSE280382	gene_name	158
+AC	Acc8_frontalcortex_YA_Ex	8	frontalcortex	YA_Ex	GSE280382	gene_name	50
+AD	Acc8_hippocampus_LT_A_Ex	8	hippocampus	LT_A_Ex	GSE280382	gene_name	0
+AE	Acc8_hippocampus_ST_A_Ex	8	hippocampus	ST_A_Ex	GSE280382	gene_name	4892
+AF	Acc8_hippocampus_ST_A_Ex_KD	8	hippocampus	ST_A_Ex_KD	GSE280382	gene_name	3189
+AG	Acc8_hippocampus_YA_Ex	8	hippocampus	YA_Ex	GSE280382	gene_name	2
+AH	Acc8_hypothalamus_LT_A_Ex	8	hypothalamus	LT_A_Ex	GSE280382	gene_name	949
+AI	Acc8_hypothalamus_YA_Ex	8	hypothalamus	YA_Ex	GSE280382	gene_name	2

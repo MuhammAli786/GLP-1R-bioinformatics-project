@@ -1,0 +1,27 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.ipynb_checkpoints/
+.venv/
+venv/
+env/
+
+# R
+.Rhistory
+.RData
+.Rproj.user/
+
+# Raw GEO inputs (excluded by design — re-download from GEO by accession)
+*.tar
+*.mtx
+*_RAW/
+raw/
+# Large compressed matrices, should they ever be added
+*.bam
+*.bam.gz

@@ -1,0 +1,7 @@
+Category,ID,Term,Genes,adj_pval
+KEGG,,Transcriptional misregulation in cancer,"CDKN1A, NR4A3, ZBTB16",0.2162117884747065
+KEGG,,Caffeine metabolism,XDH,0.2645535986352159
+KEGG,,"Parathyroid hormone synthesis, secretion and action","MEF2A, CDKN1A",0.2645535986352159
+KEGG,,FoxO signaling pathway,"CDKN1A, HOMER1",0.2645535986352159
+KEGG,,Estrogen signaling pathway,"FKBP5, HSPA1A",0.2645535986352159
+KEGG,,JAK-STAT signaling pathway,"CDKN1A, STAM",0.2734852108468236

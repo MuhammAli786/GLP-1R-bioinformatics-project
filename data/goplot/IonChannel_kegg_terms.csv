@@ -1,0 +1,24 @@
+Category,ID,Term,Genes,adj_pval
+KEGG,,Neuroactive ligand-receptor interaction,"GABRB3, GABRA1, GRIN2A, GRM5, GRM1",2.2540853724245887e-05
+KEGG,,Retrograde endocannabinoid signaling,"GABRB3, GABRA1, GRM5, GRM1",2.2540853724245887e-05
+KEGG,,Nicotine addiction,"GABRB3, GABRA1, GRIN2A",2.2540853724245887e-05
+KEGG,,Long-term potentiation,"GRIN2A, GRM5, GRM1",8.12271837041478e-05
+KEGG,,Glutamatergic synapse,"GRIN2A, GRM5, GRM1",0.0003210451898512772
+KEGG,,Oxytocin signaling pathway,"KCNJ4, CACNB4, CACNA2D1",0.0006551862897666797
+KEGG,,Calcium signaling pathway,"GRIN2A, GRM5, GRM1",0.0020792252670731
+KEGG,,Arrhythmogenic right ventricular cardiomyopathy,"CACNB4, CACNA2D1",0.0039356494828737
+KEGG,,Taste transduction,"GABRA1, GRM1",0.0039356494828737
+KEGG,,Cardiac muscle contraction,"CACNB4, CACNA2D1",0.0039356494828737
+KEGG,,Gap junction,"GRM5, GRM1",0.0039356494828737
+KEGG,,GABAergic synapse,"GABRB3, GABRA1",0.0039356494828737
+KEGG,,Hypertrophic cardiomyopathy,"CACNB4, CACNA2D1",0.0039356494828737
+KEGG,,Morphine addiction,"GABRB3, GABRA1",0.0039356494828737
+KEGG,,Dilated cardiomyopathy,"CACNB4, CACNA2D1",0.0040835764121859
+KEGG,,Pathways of neurodegeneration,"GRIN2A, GRM5, GRM1",0.0065519332848453
+KEGG,,Dopaminergic synapse,"GRIN2A, SCN1A",0.0067503256675431
+KEGG,,Spinocerebellar ataxia,"GRIN2A, GRM1",0.007371769753377
+KEGG,,Phospholipase D signaling pathway,"GRM5, GRM1",0.007371769753377
+KEGG,,Adrenergic signaling in cardiomyocytes,"CACNB4, CACNA2D1",0.007371769753377
+KEGG,,cAMP signaling pathway,"GRIN2A, HCN2",0.0142708547927426
+KEGG,,MAPK signaling pathway,"CACNB4, CACNA2D1",0.0246201316058394
+KEGG,,Alzheimer disease,"GRIN2A, GRM5",0.0362079736583343

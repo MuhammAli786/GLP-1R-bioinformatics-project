@@ -1,0 +1,48 @@
+Category,ID,Term,Genes,adj_pval
+Reactome,R-HSA-112316,Neuronal System,"GABRB3, KCNJ4, GABRA1, GRIN2A, GRM5, CACNB4, CACNA2D1, HCN2, GRM1",4.034593450290862e-12
+Reactome,R-HSA-112315,Transmission Across Chemical Synapses,"GABRB3, KCNJ4, GABRA1, GRIN2A, CACNB4, CACNA2D1",8.064439981947684e-08
+Reactome,R-HSA-112314,Neurotransmitter Receptors And Postsynaptic Signal Transmission,"GABRB3, KCNJ4, GABRA1, GRIN2A",5.893896277862648e-05
+Reactome,R-HSA-6794361,Neurexins And Neuroligins,"GRIN2A, GRM5, GRM1",6.000839479278784e-05
+Reactome,R-HSA-977443,GABA Receptor Activation,"GABRB3, KCNJ4, GABRA1",6.000839479278784e-05
+Reactome,R-HSA-6794362,Protein-protein Interactions At Synapses,"GRIN2A, GRM5, GRM1",0.0001671570888110304
+Reactome,R-HSA-112308,Presynaptic Depolarization And Calcium Channel Opening,"CACNB4, CACNA2D1",0.0001767601871753732
+Reactome,R-HSA-416476,G Alpha (Q) Signaling Events,"GRM5, TRPC6, GRM1",0.0016097044803034
+Reactome,R-HSA-420499,Class C/3 (Metabotropic Glutamate/Pheromone Receptors),"GRM5, GRM1",0.0016097044803034
+Reactome,R-HSA-1236394,Signaling By ERBB4,"GABRB3, GABRA1",0.0029475967610444
+Reactome,R-HSA-2672351,Stimuli-sensing Channels,"CLCN5, TRPC6",0.0078097088549853
+Reactome,R-HSA-1296071,Potassium Channels,"KCNJ4, HCN2",0.0078097088549853
+Reactome,R-HSA-5576891,Cardiac Conduction,"KCNJ4, SCN1A",0.0109335018736822
+Reactome,R-HSA-422475,Axon Guidance,"TRPC6, CACNB4, SCN1A",0.0130658446856272
+Reactome,R-HSA-9675108,Nervous System Development,"TRPC6, CACNB4, SCN1A",0.0140002688728291
+Reactome,R-HSA-983712,Ion Channel Transport,"CLCN5, TRPC6",0.0168966437450463
+Reactome,R-HSA-388396,GPCR Downstream Signaling,"GRM5, TRPC6, GRM1",0.0176601480996755
+Reactome,R-HSA-397014,Muscle Contraction,"KCNJ4, SCN1A",0.0179552805374633
+Reactome,R-HSA-418890,Role Of Second Messengers In Netrin-1 Signaling,TRPC6,0.0179552805374633
+Reactome,R-HSA-372790,Signaling By GPCR,"GRM5, TRPC6, GRM1",0.0202227596323108
+Reactome,R-HSA-139853,Elevation Of Cytosolic Ca2+ Levels,TRPC6,0.0243344582006708
+Reactome,R-HSA-162582,Signal Transduction,"GABRB3, GABRA1, GRM5, TRPC6, GRM1",0.0264539074747888
+Reactome,R-HSA-9022699,MECP2 Regulates Neuronal Receptors And Channels,GRIN2A,0.0264539074747888
+Reactome,R-HSA-5576886,Phase 4 - Resting Membrane Potential,KCNJ4,0.0264539074747888
+Reactome,R-HSA-8849932,Synaptic Adhesion-Like Molecules,GRIN2A,0.0264539074747888
+Reactome,R-HSA-438066,"Unblocking Of NMDA Receptors, Glutamate Binding And Activation",GRIN2A,0.0264539074747888
+Reactome,R-HSA-9617324,Negative Regulation Of NMDA Receptor-Mediated Neuronal Transmission,GRIN2A,0.0264539074747888
+Reactome,R-HSA-9620244,Long-term Potentiation,GRIN2A,0.0279232291666398
+Reactome,R-HSA-9609736,Assembly And Cell Surface Presentation Of NMDA Receptors,GRIN2A,0.028312364303282
+Reactome,R-HSA-3295583,TRP Channels,TRPC6,0.028312364303282
+Reactome,R-HSA-418360,Platelet Calcium Homeostasis,TRPC6,0.0284872034509401
+Reactome,R-HSA-114508,Effects Of PIP2 Hydrolysis,TRPC6,0.0286505347373882
+Reactome,R-HSA-1296041,Activation Of G Protein Gated Potassium Channels,KCNJ4,0.0289467363886766
+Reactome,R-HSA-445095,Interaction Between L1 And Ankyrins,SCN1A,0.0289467363886766
+Reactome,R-HSA-5576892,Phase 0 - Rapid Depolarisation,SCN1A,0.0310030815307502
+Reactome,R-HSA-1296065,Inwardly Rectifying K+ Channels,KCNJ4,0.0329405556390442
+Reactome,R-HSA-419037,NCAM1 Interactions,CACNB4,0.0338631251933123
+Reactome,R-HSA-1266738,Developmental Biology,"TRPC6, CACNB4, SCN1A",0.0353030213000292
+Reactome,R-HSA-9717207,"Sensory Perception Of Sweet, Bitter, And Umami (Glutamate) Taste",GRM1,0.0355075398119633
+Reactome,R-HSA-991365,Activation Of GABAB Receptors,KCNJ4,0.0355075398119633
+Reactome,R-HSA-9717189,Sensory Perception Of Taste,GRM1,0.0387123629642237
+Reactome,R-HSA-373752,Netrin-1 Signaling,TRPC6,0.039331458969861
+Reactome,R-HSA-500792,GPCR Ligand Binding,"GRM5, GRM1",0.039331458969861
+Reactome,R-HSA-375165,NCAM Signaling For Neurite Out-Growth,CACNB4,0.0435325823321557
+Reactome,R-HSA-9006934,Signaling By Receptor Tyrosine Kinases,"GABRB3, GABRA1",0.0435325823321557
+Reactome,R-HSA-8986944,Transcriptional Regulation By MECP2,GRIN2A,0.0436617163687965
+Reactome,R-HSA-438064,Post NMDA Receptor Activation Events,GRIN2A,0.0436617163687965

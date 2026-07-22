@@ -1,0 +1,7 @@
+Category,ID,Term,Genes,adj_pval
+Reactome,R-HSA-452723,Transcriptional Regulation Of Pluripotent Stem Cells,"SOX2, HIF3A",0.1345514626479539
+Reactome,R-HSA-3371497,HSP90 Chaperone Cycle For Steroid Hormone Receptors (SHR) In Presence Of Ligand,"FKBP5, HSPA1A",0.1345514626479539
+Reactome,R-HSA-8986944,Transcriptional Regulation By MECP2,"SOX2, FKBP5",0.1412641357432187
+Reactome,R-HSA-8866911,TFAP2 (AP-2) Family Regulates Transcription Of Cell Cycle Factors,CDKN1A,0.1412641357432187
+Reactome,R-HSA-9705677,SARS-CoV-2 Targets PDZ Proteins In Cell-Cell Junction,TJP1,0.1412641357432187
+Reactome,R-HSA-8935964,RUNX1 Regulates Expression Of Components Of Tight Junctions,TJP1,0.1412641357432187
