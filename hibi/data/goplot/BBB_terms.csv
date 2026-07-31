@@ -1,0 +1,612 @@
+Category,ID,Term,Genes,adj_pval
+BP,GO:0035633,Maintenance Of Blood-Brain Barrier,"TJP1, CDH5, CLDN5, PECAM1, LAMC1, F11R, JAM2, TJP2",1.0314990563357093e-13
+BP,GO:0030334,Regulation Of Cell Migration,"ROCK1, ROCK2, CAV1, ADAM10, VEGFA, TJP1, CDH5, CLDN5, ADAM15, KDR, PECAM1, AKT1, ADAM9, FYN, ENG",1.0314990563357093e-13
+BP,GO:1903140,Regulation Of Establishment Of Endothelial Barrier,"CDH5, CLDN5, ROCK1, ROCK2, F11R, VEGFA",5.191309053344925e-11
+BP,GO:0030335,Positive Regulation Of Cell Migration,"TJP1, CDH5, ROCK2, CAV1, KDR, FN1, PECAM1, ADAM10, ADAM9, HIF1A, VEGFA",2.0252140441792191e-10
+BP,GO:0001932,Regulation Of Protein Phosphorylation,"CDH5, TFRC, ROCK2, KDR, FN1, PECAM1, AKT1, FYN, VEGFA, ENG",4.161711298364979e-09
+BP,GO:0010605,Negative Regulation Of Macromolecule Metabolic Process,"SLC7A5, CLDN5, LRP1, ROCK2, KDR, ADAM10, HIF1A, VEGFA, ENG",4.4122165175673215e-09
+BP,GO:2000810,Regulation Of Bicellular Tight Junction Assembly,"TJP1, CLDN5, ROCK1, ROCK2, F11R",5.561120251427385e-09
+BP,GO:2000147,Positive Regulation Of Cell Motility,"TJP1, CDH5, ROCK2, CAV1, KDR, PECAM1, ADAM10, ADAM9, VEGFA",1.5467715770332924e-08
+BP,GO:0010468,Regulation Of Gene Expression,"LRP1, TFRC, ROCK1, ROCK2, FN1, ADAM10, HIF1A, VEGFA, NFKB2, CDH5, SLC7A5, CLDN5, KDR, AKT1, ENG",2.2407658637857772e-08
+BP,GO:0010604,Positive Regulation Of Macromolecule Metabolic Process,"NFKBIA, CDH5, CLDN5, TFRC, ROCK1, ROCK2, FN1, AKT1, HIF1A, VEGFA",4.654324168349138e-08
+BP,GO:0045765,Regulation Of Angiogenesis,"CDH5, CLDN5, ROCK1, ROCK2, KDR, CTNNB1, HIF1A, VEGFA",1.932610502727637e-07
+BP,GO:0048522,Positive Regulation Of Cellular Process,"TJP1, CLDN5, CAV1, KDR, FN1, AKT1, ADAM10, CTNNB1, LAMC1, NID1, VEGFA",2.8368147206103974e-07
+BP,GO:0031401,Positive Regulation Of Protein Modification Process,"CDH5, TFRC, ROCK2, KDR, PECAM1, AKT1, VEGFA, ENG",3.403534837311663e-07
+BP,GO:0010629,Negative Regulation Of Gene Expression,"SLC7A5, CLDN5, LRP1, ROCK2, KDR, ADAM10, HIF1A, VEGFA, ENG",3.54536883033222e-07
+BP,GO:0001569,Branching Involved In Blood Vessel Morphogenesis,"KDR, CTNNB1, VEGFA, ENG",3.991436547042752e-07
+BP,GO:0150105,Protein Localization To Cell-Cell Junction,"TJP1, CDH5, F11R, TJP2",7.126138284014073e-07
+BP,GO:0001934,Positive Regulation Of Protein Phosphorylation,"TFRC, ROCK2, CAV1, KDR, PECAM1, MAPK1, AKT1, VEGFA, ENG",7.932545360333605e-07
+BP,GO:0010634,Positive Regulation Of Epithelial Cell Migration,"ROCK2, KDR, AKT1, ADAM9, HIF1A, VEGFA",8.512760456283575e-07
+BP,GO:0051893,Regulation Of Focal Adhesion Assembly,"ROCK1, ROCK2, KDR, FYN, VEGFA",2.055167726154023e-06
+BP,GO:0051493,Regulation Of Cytoskeleton Organization,"TJP1, LRP1, ROCK1, ROCK2, MAPK1, F11R",2.296019669334032e-06
+BP,GO:1901552,Positive Regulation Of Endothelial Cell Development,"CDH5, CLDN5, F11R",2.399553005169321e-06
+BP,GO:1903142,Positive Regulation Of Establishment Of Endothelial Barrier,"CDH5, CLDN5, F11R",2.399553005169321e-06
+BP,GO:0043534,Blood Vessel Endothelial Cell Migration,"CDH5, KDR, AKT1, VEGFA",2.633709631548041e-06
+BP,GO:1901890,Positive Regulation Of Cell Junction Assembly,"CLDN5, ROCK1, CAV1, KDR, VEGFA",2.929492445562168e-06
+BP,GO:1901888,Regulation Of Cell Junction Assembly,"TJP1, ROCK1, ROCK2, F11R",2.929492445562168e-06
+BP,GO:1905603,Regulation Of Blood-Brain Barrier Permeability,"TJP1, TJP2, VEGFA",3.967406372927671e-06
+BP,GO:0010628,Positive Regulation Of Gene Expression,"CDH5, CLDN5, TFRC, ROCK1, ROCK2, FN1, AKT1, HIF1A, VEGFA",3.967406372927671e-06
+BP,GO:0042327,Positive Regulation Of Phosphorylation,"TFRC, ROCK2, KDR, PECAM1, AKT1, VEGFA, ENG",4.921855719135679e-06
+BP,GO:0061028,Establishment Of Endothelial Barrier,"TJP1, PECAM1, F11R, TJP2",5.803379690540878e-06
+BP,GO:0030155,Regulation Of Cell Adhesion,"ROCK1, ROCK2, ADAM10, LAMC1, NID1, VEGFA",6.161077311889052e-06
+BP,GO:0007159,Leukocyte Cell-Cell Adhesion,"ROCK1, PECAM1, F11R, JAM2",8.312034462520863e-06
+BP,GO:0001570,Vasculogenesis,"CAV1, KDR, VEGFA, ENG",1.0446021779894512e-05
+BP,GO:0010232,Vascular Transport,"SLC7A5, SLC16A1, LRP1, TFRC, SLC2A1",1.047655691275379e-05
+BP,GO:0010595,Positive Regulation Of Endothelial Cell Migration,"ROCK2, KDR, AKT1, HIF1A, VEGFA",1.11316382916868e-05
+BP,GO:0150104,Transport Across Blood-Brain Barrier,"SLC7A5, SLC16A1, LRP1, TFRC, SLC2A1",1.11316382916868e-05
+BP,GO:0042127,Regulation Of Cell Population Proliferation,"TJP1, CLDN5, TFRC, KDR, FN1, AKT1, ADAM10, CTNNB1, VEGFA, ENG",1.4750527361957434e-05
+BP,GO:0001936,Regulation Of Endothelial Cell Proliferation,"CAV1, KDR, AKT1, HIF1A, VEGFA",1.6517658526325184e-05
+BP,GO:0090557,Establishment Of Endothelial Intestinal Barrier,"TJP1, F11R, TJP2",1.6571403883178046e-05
+BP,GO:0043117,Positive Regulation Of Vascular Permeability,"TJP1, TJP2, VEGFA",2.2174888487136004e-05
+BP,GO:0048754,Branching Morphogenesis Of An Epithelial Tube,"KDR, CTNNB1, VEGFA, ENG",2.2605216331272423e-05
+BP,GO:0007249,I-kappaB kinase/NF-kappaB Signaling,"NFKBIA, ROCK1, ROCK2, NFKB2",2.9247944770222734e-05
+BP,GO:0043536,Positive Regulation Of Blood Vessel Endothelial Cell Migration,"KDR, AKT1, HIF1A, VEGFA",3.123203111283432e-05
+BP,GO:0043408,Regulation Of MAPK Cascade,"ROCK1, ROCK2, CAV1, KDR, FN1, MAPK1",3.2545279314118114e-05
+BP,GO:0001837,Epithelial To Mesenchymal Transition,"ROCK1, ROCK2, CTNNB1, HIF1A",3.2545279314118114e-05
+BP,GO:0008284,Positive Regulation Of Cell Population Proliferation,"TJP1, CLDN5, KDR, FN1, AKT1, ADAM10, LAMC1, VEGFA",3.468976348703122e-05
+BP,GO:0043393,Regulation Of Protein Binding,"CLDN5, LRP1, ROCK1, CAV1, AKT1",4.335014864464766e-05
+BP,GO:0045766,Positive Regulation Of Angiogenesis,"TJP1, CDH5, KDR, HIF1A, VEGFA",4.423328221840366e-05
+BP,GO:0002040,Sprouting Angiogenesis,"KDR, AKT1, VEGFA, ENG",4.500148563394727e-05
+BP,GO:0048514,Blood Vessel Morphogenesis,"CAV1, KDR, VEGFA, ENG",4.7622645576191896e-05
+BP,GO:0050679,Positive Regulation Of Epithelial Cell Proliferation,"KDR, AKT1, LAMC1, HIF1A, VEGFA",4.840516727377811e-05
+BP,GO:0048762,Mesenchymal Cell Differentiation,"ROCK1, ROCK2, CTNNB1, HIF1A",4.840516727377811e-05
+BP,GO:0043535,Regulation Of Blood Vessel Endothelial Cell Migration,"KDR, AKT1, HIF1A, VEGFA",4.840516727377811e-05
+BP,GO:0043434,Response To Peptide Hormone,"ROCK1, ROCK2, CAV1, SLC2A1",5.11532726447239e-05
+BP,GO:1902533,Positive Regulation Of Intracellular Signal Transduction,"TFRC, ROCK1, ROCK2, CAV1, KDR, FN1, VEGFA, ENG",5.376835402822548e-05
+BP,GO:0018107,Peptidyl-Threonine Phosphorylation,"ROCK1, ROCK2, MAPK1, AKT1",6.109274239574921e-05
+BP,GO:2000114,Regulation Of Establishment Of Cell Polarity,"CDH5, ROCK1, ROCK2",6.208060419539338e-05
+BP,GO:0002042,Cell Migration Involved In Sprouting Angiogenesis,"KDR, AKT1, VEGFA",6.208060419539338e-05
+BP,GO:0032878,Regulation Of Establishment Or Maintenance Of Cell Polarity,"CDH5, ROCK1, ROCK2",7.188523654410087e-05
+BP,GO:0051894,Positive Regulation Of Focal Adhesion Assembly,"ROCK1, KDR, VEGFA",7.188523654410087e-05
+BP,GO:0001952,Regulation Of Cell-Matrix Adhesion,"ROCK1, ADAM15, ROCK2, FYN",8.859412492566195e-05
+BP,GO:0018210,Peptidyl-Threonine Modification,"ROCK1, ROCK2, MAPK1, AKT1",9.115456440060218e-05
+BP,GO:0000302,Response To Reactive Oxygen Species,"MAPK1, AKT1, FYN, HIF1A",9.115456440060218e-05
+BP,GO:0045216,Cell-Cell Junction Organization,"TJP1, CDH5, CLDN5, TJP2",0.00010111512718781412
+BP,GO:0090109,Regulation Of Cell-Substrate Junction Assembly,"ROCK1, ROCK2, FYN",0.00010762471830691892
+BP,GO:0032970,Regulation Of Actin Filament-Based Process,"LRP1, ROCK1, ROCK2, F11R",0.0001100668519425526
+BP,GO:0032091,Negative Regulation Of Protein Binding,"ROCK1, ADAM15, CAV1, AKT1",0.0001130161053180742
+BP,GO:0007043,Cell-Cell Junction Assembly,"TJP1, CDH5, CLDN5, CTNNB1",0.0001130161053180742
+BP,GO:0010875,Positive Regulation Of Cholesterol Efflux,"NFKBIA, LRP1, CAV1",0.00011605165146403108
+BP,GO:0007179,Transforming Growth Factor Beta Receptor Signaling Pathway,"CDH5, CLDN5, ADAM9, ENG",0.00011605165146403108
+BP,GO:1903053,Regulation Of Extracellular Matrix Organization,"LRP1, LAMC1, NID1",0.00012887231733210792
+BP,GO:0150117,Positive Regulation Of Cell-Substrate Junction Organization,"ROCK1, KDR, VEGFA",0.00012887231733210792
+BP,GO:0051492,Regulation Of Stress Fiber Assembly,"TJP1, ROCK1, ROCK2, F11R",0.00013090714987682112
+BP,GO:0031032,Actomyosin Structure Organization,"TJP1, ROCK1, ROCK2, F11R",0.00013957478208649022
+BP,GO:0001938,Positive Regulation Of Endothelial Cell Proliferation,"KDR, AKT1, HIF1A, VEGFA",0.00013957478208649022
+BP,GO:2000181,Negative Regulation Of Blood Vessel Morphogenesis,"CLDN5, ROCK1, ROCK2, CTNNB1",0.00013957478208649022
+BP,GO:0030198,Extracellular Matrix Organization,"ADAM15, MMP16, ADAM10, LAMC1, NID1",0.00018533151944198924
+BP,GO:1903829,Positive Regulation Of Protein Localization,"TFRC, PECAM1, AKT1, FYN",0.0001988200360074797
+BP,GO:0007229,Integrin-Mediated Signaling Pathway,"ADAM15, FN1, ADAM10, ADAM9",0.0001988200360074797
+BP,GO:0016525,Negative Regulation Of Angiogenesis,"CLDN5, ROCK1, ROCK2, CTNNB1",0.0002030537822474542
+BP,GO:0051100,Negative Regulation Of Binding,"NFKBIA, ROCK1, CAV1, AKT1",0.0002030537822474542
+BP,GO:0048010,Vascular Endothelial Growth Factor Receptor Signaling Pathway,"KDR, FYN, VEGFA",0.0002077091992199548
+BP,GO:0010594,Regulation Of Endothelial Cell Migration,"ROCK2, KDR, AKT1, VEGFA",0.0002143833114237824
+BP,GO:0045785,Positive Regulation Of Cell Adhesion,"ADAM9, LAMC1, NID1, VEGFA",0.0002143833114237824
+BP,GO:0043066,Negative Regulation Of Apoptotic Process,"TJP1, TFRC, CAV1, KDR, AKT1, CTNNB1, VEGFA",0.00021734234726427705
+BP,GO:0033138,Positive Regulation Of Peptidyl-Serine Phosphorylation,"TFRC, CAV1, AKT1, VEGFA",0.0002189187462945753
+BP,GO:0032956,Regulation Of Actin Cytoskeleton Organization,"LRP1, ROCK1, ROCK2, F11R",0.00023626157479307496
+BP,GO:0048844,Artery Morphogenesis,"LRP1, VEGFA, ENG",0.0002390906414486609
+BP,GO:0033135,Regulation Of Peptidyl-Serine Phosphorylation,"TFRC, CAV1, AKT1, VEGFA",0.00025161148102507
+BP,GO:0032376,Positive Regulation Of Cholesterol Transport,"NFKBIA, LRP1, CAV1",0.00025682357871981154
+BP,GO:0006468,Protein Phosphorylation,"ROCK1, ROCK2, KDR, MAPK1, AKT1, ADAM10, FYN",0.00025682357871981154
+BP,GO:0034329,Cell Junction Assembly,"TJP1, CDH5, CLDN5, FN1",0.0002646444489736577
+BP,GO:0071560,Cellular Response To Transforming Growth Factor Beta Stimulus,"CDH5, CLDN5, ADAM9, ENG",0.00027259222685832097
+BP,GO:0010874,Regulation Of Cholesterol Efflux,"NFKBIA, LRP1, CAV1",0.00027259222685832097
+BP,GO:1990776,Response To Angiotensin,"ROCK1, ROCK2",0.0003261706150970605
+BP,GO:0033574,Response To Testosterone,"ROCK2, SPP1",0.0003261706150970605
+BP,GO:0036324,Vascular Endothelial Growth Factor Receptor-2 Signaling Pathway,"KDR, VEGFA",0.0003261706150970605
+BP,GO:0048845,Venous Blood Vessel Morphogenesis,"ENG, VEGFA",0.0003261706150970605
+BP,GO:0110011,Regulation Of Basement Membrane Organization,"LAMC1, NID1",0.0003261706150970605
+BP,GO:0034332,Adherens Junction Organization,"TJP1, CDH5, CTNNB1",0.00033668800420215905
+BP,GO:1904018,Positive Regulation Of Vasculature Development,"CDH5, KDR, HIF1A, VEGFA",0.0003439774652202657
+BP,GO:0044087,Regulation Of Cellular Component Biogenesis,"TJP1, ROCK1, ROCK2",0.0003908515436821232
+BP,GO:0034612,Response To Tumor Necrosis Factor,"NFKBIA, AKT1, ADAM10, ADAM9",0.0003910998073754809
+BP,GO:0045428,Regulation Of Nitric Oxide Biosynthetic Process,"ROCK2, CAV1, AKT1",0.0004434679292119965
+BP,GO:0051130,Positive Regulation Of Cellular Component Organization,"CDH5, LRP1, TFRC, VEGFA",0.0004434679292119965
+BP,GO:0035507,Regulation Of Myosin-Light-Chain-Phosphatase Activity,"ROCK1, ROCK2",0.0004434679292119965
+BP,GO:1900223,Positive Regulation Of Amyloid-Beta Clearance,"LRP1, ROCK1",0.0004434679292119965
+BP,GO:0097084,Vascular Associated Smooth Muscle Cell Development,"ENG, VEGFA",0.0004434679292119965
+BP,GO:0061042,Vascular Wound Healing,"KDR, VEGFA",0.0004434679292119965
+BP,GO:0043069,Negative Regulation Of Programmed Cell Death,"TJP1, TFRC, KDR, AKT1, CTNNB1, VEGFA",0.00046218100864907694
+BP,GO:0051240,Positive Regulation Of Multicellular Organismal Process,"LRP1, ROCK1, CAV1, SPP1, CTNNB1, VEGFA",0.0004995379133859336
+BP,GO:0001954,Positive Regulation Of Cell-Matrix Adhesion,"ROCK1, KDR, VEGFA",0.0005608113538010316
+BP,GO:2000145,Regulation Of Cell Motility,"ROCK1, ROCK2, AKT1, FYN",0.0005676171565485341
+BP,GO:1901655,Cellular Response To Ketone,"ADAM15, ROCK2, SPP1",0.0005676171565485341
+BP,GO:0045019,Negative Regulation Of Nitric Oxide Biosynthetic Process,"ROCK2, CAV1",0.0005676171565485341
+BP,GO:1904406,Negative Regulation Of Nitric Oxide Metabolic Process,"ROCK2, CAV1",0.0005676171565485341
+BP,GO:0050926,Regulation Of Positive Chemotaxis,"KDR, VEGFA",0.0005676171565485341
+BP,GO:0061418,Regulation Of Transcription From RNA Polymerase II Promoter In Response To Hypoxia,"HIF1A, VEGFA",0.0005676171565485341
+BP,GO:0038089,Positive Regulation Of Cell Migration By Vascular Endothelial Growth Factor Signaling Pathway,"KDR, VEGFA",0.0005676171565485341
+BP,GO:0051091,Positive Regulation Of DNA-binding Transcription Factor Activity,"TFRC, CAV1, AKT1, CTNNB1, VEGFA",0.0005880069303749266
+BP,GO:0070830,Bicellular Tight Junction Assembly,"CDH5, CLDN5, PECAM1",0.000678333923372367
+BP,GO:0007178,Transmembrane Receptor Protein Serine/Threonine Kinase Signaling Pathway,"CDH5, CLDN5, ADAM9, ENG",0.0006799976870163019
+BP,GO:1901550,Regulation Of Endothelial Cell Development,"ROCK1, ROCK2",0.0007312060095240384
+BP,GO:0016310,Phosphorylation,"ROCK1, ROCK2, MAPK1, AKT1, ADAM10, FYN",0.0007895174590569953
+BP,GO:0031623,Receptor Internalization,"LRP1, TFRC, CAV1",0.0008390537677367889
+BP,GO:0031953,Negative Regulation Of Protein Autophosphorylation,"CAV1, ENG",0.0009092780545110888
+BP,GO:0034105,Positive Regulation Of Tissue Remodeling,"ROCK1, ROCK2",0.0009092780545110888
+BP,GO:1990778,Protein Localization To Cell Periphery,"ROCK1, ROCK2, CAV1, F11R",0.000912166353268547
+BP,GO:0120192,Tight Junction Assembly,"CDH5, CLDN5, PECAM1",0.000912166353268547
+BP,GO:1903321,Negative Regulation Of Protein Modification By Small Protein Conjugation Or Removal,"CAV1, AKT1, CTNNB1",0.0009498258394943428
+BP,GO:0043297,Apical Junction Assembly,"CDH5, CLDN5, PECAM1",0.0009498258394943428
+BP,GO:0045597,Positive Regulation Of Cell Differentiation,"KDR, AKT1, CTNNB1, LAMC1, NID1",0.0010330485001461
+BP,GO:0007169,Transmembrane Receptor Protein Tyrosine Kinase Signaling Pathway,"KDR, MAPK1, AKT1, FYN, VEGFA",0.0010350628131224
+BP,GO:1901653,Cellular Response To Peptide,"LRP1, CAV1, FYN",0.0010350628131224
+BP,GO:0001933,Negative Regulation Of Protein Phosphorylation,"LRP1, CAV1, AKT1, ENG",0.0010412067575695
+BP,GO:0060055,Angiogenesis Involved In Wound Healing,"KDR, VEGFA",0.0010596601939937
+BP,GO:0051128,Regulation Of Cellular Component Organization,"TJP1, TFRC, ROCK1, ROCK2",0.0011361511237127
+BP,GO:0032092,Positive Regulation Of Protein Binding,"CLDN5, LRP1, CAV1",0.0011742148255331
+BP,GO:0071363,Cellular Response To Growth Factor Stimulus,"KDR, AKT1, CTNNB1, VEGFA",0.001177075354034
+BP,GO:0043116,Negative Regulation Of Vascular Permeability,"CLDN5, VEGFA",0.0012386668657866
+BP,GO:0050892,Intestinal Absorption,"F11R, TJP2",0.0012386668657866
+BP,GO:1902991,Regulation Of Amyloid Precursor Protein Catabolic Process,"ROCK1, ROCK2",0.0012386668657866
+BP,GO:0030336,Negative Regulation Of Cell Migration,"CLDN5, LRP1, ADAM15, ENG",0.0013878828913697
+BP,GO:0042981,Regulation Of Apoptotic Process,"TJP1, TFRC, KDR, AKT1, CTNNB1, FYN, VEGFA",0.0013956825732092
+BP,GO:0043410,Positive Regulation Of MAPK Cascade,"ROCK1, ROCK2, KDR, ADAM9, VEGFA",0.0013956825732092
+BP,GO:2000401,Regulation Of Lymphocyte Migration,"AKT1, JAM2",0.0013956825732092
+BP,GO:0035296,Regulation Of Tube Diameter,"ROCK1, ROCK2",0.0013956825732092
+BP,GO:0003158,Endothelium Development,"KDR, PECAM1",0.0013956825732092
+BP,GO:2001046,Positive Regulation Of Integrin-Mediated Signaling Pathway,"LAMC1, NID1",0.0013956825732092
+BP,GO:0003018,Vascular Process In Circulatory System,"ROCK1, ROCK2",0.0013956825732092
+BP,GO:0110020,Regulation Of Actomyosin Structure Organization,"ROCK1, ROCK2",0.0013956825732092
+BP,GO:0036211,Protein Modification Process,"ROCK1, ROCK2, FN1, MAPK1, AKT1, ADAM10, FYN",0.0014019390566349
+BP,GO:0060070,Canonical Wnt Signaling Pathway,"CAV1, CTNNB1, NID1",0.0014118313769883
+BP,GO:2001028,Positive Regulation Of Endothelial Cell Chemotaxis,"KDR, VEGFA",0.0018462767567202
+BP,GO:0006939,Smooth Muscle Contraction,"ROCK1, ROCK2",0.0018462767567202
+BP,GO:0038084,Vascular Endothelial Growth Factor Signaling Pathway,"KDR, VEGFA",0.0018462767567202
+BP,GO:1901522,Positive Regulation Of Transcription From RNA Polymerase II Promoter Involved In Cellular Response To Chemical Stimulus,"HIF1A, VEGFA",0.0018462767567202
+BP,GO:0034614,Cellular Response To Reactive Oxygen Species,"MAPK1, AKT1, FYN",0.0019277320422842
+BP,GO:0051149,Positive Regulation Of Muscle Cell Differentiation,"LAMC1, NID1",0.0020747813603658
+BP,GO:1903672,Positive Regulation Of Sprouting Angiogenesis,"TJP1, VEGFA",0.0020747813603658
+BP,GO:1900221,Regulation Of Amyloid-Beta Clearance,"LRP1, ROCK1",0.0020747813603658
+BP,GO:0006897,Endocytosis,"LRP1, CAV1, PECAM1, MAPK1",0.0021535674807818
+BP,GO:0072657,Protein Localization To Membrane,"ROCK1, ROCK2, CAV1, F11R",0.0022721242450055
+BP,GO:0071634,Regulation Of Transforming Growth Factor Beta Production,"FN1, HIF1A",0.0022829647244228
+BP,GO:0090050,Positive Regulation Of Cell Migration Involved In Sprouting Angiogenesis,"KDR, VEGFA",0.0022829647244228
+BP,GO:0014742,Positive Regulation Of Muscle Hypertrophy,"ROCK1, ROCK2",0.0022829647244228
+BP,GO:0050927,Positive Regulation Of Positive Chemotaxis,"KDR, VEGFA",0.0022829647244228
+BP,GO:1905477,Positive Regulation Of Protein Localization To Membrane,"LRP1, AKT1, FYN",0.0022877545976892
+BP,GO:0042325,Regulation Of Phosphorylation,"CDH5, ROCK1, FN1",0.0024799440570215
+BP,GO:0035909,Aorta Morphogenesis,"LRP1, ENG",0.0024799440570215
+BP,GO:0010613,Positive Regulation Of Cardiac Muscle Hypertrophy,"ROCK1, ROCK2",0.0024799440570215
+BP,GO:0051000,Positive Regulation Of Nitric-Oxide Synthase Activity,"AKT1, HIF1A",0.0024799440570215
+BP,GO:0036003,Positive Regulation Of Transcription From RNA Polymerase II Promoter In Response To Stress,"HIF1A, VEGFA",0.0024799440570215
+BP,GO:0050901,Leukocyte Tethering Or Rolling,"ROCK1, JAM2",0.0024799440570215
+BP,GO:0045604,Regulation Of Epidermal Cell Differentiation,"ROCK1, ROCK2",0.0027393712675128
+BP,GO:0002052,Positive Regulation Of Neuroblast Proliferation,"CTNNB1, VEGFA",0.0027393712675128
+BP,GO:2000047,Regulation Of Cell-Cell Adhesion Mediated By Cadherin,"TJP1, VEGFA",0.0027393712675128
+BP,GO:0050779,RNA Destabilization,"ROCK1, ROCK2",0.002973806767835
+BP,GO:2001044,Regulation Of Integrin-Mediated Signaling Pathway,"LAMC1, NID1",0.002973806767835
+BP,GO:0030866,Cortical Actin Cytoskeleton Organization,"ROCK1, ROCK2",0.002973806767835
+BP,GO:0071542,Dopaminergic Neuron Differentiation,"CTNNB1, VEGFA",0.002973806767835
+BP,GO:0061756,Leukocyte Adhesion To Vascular Endothelial Cell,"ROCK1, JAM2",0.002973806767835
+BP,GO:0050730,Regulation Of Peptidyl-Tyrosine Phosphorylation,"PECAM1, FYN, VEGFA",0.0030778027728412
+BP,GO:0051099,Positive Regulation Of Binding,"CLDN5, LRP1, CAV1",0.0031615514008697
+BP,GO:0032515,Negative Regulation Of Phosphoprotein Phosphatase Activity,"ROCK1, ROCK2",0.0032467891798204
+BP,GO:0044089,Positive Regulation Of Cellular Component Biogenesis,"CDH5, TFRC, VEGFA",0.0033325664290347
+BP,GO:0051043,Regulation Of Membrane Protein Ectodomain Proteolysis,"ROCK1, ADAM9",0.0035271110237404
+BP,GO:0070168,Negative Regulation Of Biomineral Tissue Development,"ROCK1, ROCK2",0.0035271110237404
+BP,GO:0051246,Regulation Of Protein Metabolic Process,"NFKBIA, ROCK2, AKT1",0.0035978644429173
+BP,GO:0001558,Regulation Of Cell Growth,"TFRC, ADAM15, AKT1, ADAM10",0.0036617263533712
+BP,GO:0071396,Cellular Response To Lipid,"ADAM15, ROCK2, SPP1, ADAM9",0.0037029129654904
+BP,GO:0031334,Positive Regulation Of Protein-Containing Complex Assembly,"CDH5, TFRC, VEGFA",0.0037550806839371
+BP,GO:0071276,Cellular Response To Cadmium Ion,"AKT1, MAPK1",0.0037550806839371
+BP,GO:0030879,Mammary Gland Development,"CAV1, VEGFA",0.0037550806839371
+BP,GO:0033043,Regulation Of Organelle Organization,"TJP1, MAPK1, F11R",0.0039129797942839
+BP,GO:0051094,Positive Regulation Of Developmental Process,"TFRC, KDR, CTNNB1, VEGFA",0.0039129797942839
+BP,GO:0060840,Artery Development,"VEGFA, ENG",0.0040044523014442
+BP,GO:1902414,Protein Localization To Cell Junction,"TJP1, TJP2",0.0040044523014442
+BP,GO:0010611,Regulation Of Cardiac Muscle Hypertrophy,"ROCK1, ROCK2",0.0040044523014442
+BP,GO:0070371,ERK1 And ERK2 Cascade,"KDR, MAPK1",0.0042353561342939
+BP,GO:0051147,Regulation Of Muscle Cell Differentiation,"LAMC1, NID1",0.0042353561342939
+BP,GO:1902692,Regulation Of Neuroblast Proliferation,"CTNNB1, VEGFA",0.0042353561342939
+BP,GO:0030513,Positive Regulation Of BMP Signaling Pathway,"CDH5, ENG",0.0042353561342939
+BP,GO:0043491,Protein Kinase B Signaling,"KDR, AKT1",0.0042353561342939
+BP,GO:1901889,Negative Regulation Of Cell Junction Assembly,"ROCK1, ROCK2",0.0042353561342939
+BP,GO:0051497,Negative Regulation Of Stress Fiber Assembly,"TJP1, F11R",0.0045539505928136
+BP,GO:0070167,Regulation Of Biomineral Tissue Development,"ROCK1, ROCK2",0.0045539505928136
+BP,GO:0051093,Negative Regulation Of Developmental Process,"TFRC, ROCK1, ROCK2",0.00470435095652
+BP,GO:0007160,Cell-Matrix Adhesion,"ADAM15, FN1, ADAM9",0.00470435095652
+BP,GO:2000352,Negative Regulation Of Endothelial Cell Apoptotic Process,"CDH5, KDR",0.0047885615821802
+BP,GO:0045616,Regulation Of Keratinocyte Differentiation,"ROCK1, ROCK2",0.0047885615821802
+BP,GO:0032770,Positive Regulation Of Monooxygenase Activity,"AKT1, HIF1A",0.0047885615821802
+BP,GO:0032231,Regulation Of Actin Filament Bundle Assembly,"ROCK1, ROCK2",0.0047885615821802
+BP,GO:0031396,Regulation Of Protein Ubiquitination,"CAV1, AKT1, CTNNB1",0.005099086570566
+BP,GO:0030865,Cortical Cytoskeleton Organization,"ROCK1, ROCK2",0.0051176932842249
+BP,GO:0050999,Regulation Of Nitric-Oxide Synthase Activity,"AKT1, HIF1A",0.0054292063591413
+BP,GO:0007044,Cell-Substrate Junction Assembly,"FN1, LAMC1",0.0054292063591413
+BP,GO:0032232,Negative Regulation Of Actin Filament Bundle Assembly,"TJP1, F11R",0.0054292063591413
+BP,GO:0034599,Cellular Response To Oxidative Stress,"MAPK1, AKT1, HIF1A",0.0054837039199637
+BP,GO:0071902,Positive Regulation Of Protein Serine/Threonine Kinase Activity,"AKT1, ADAM9, VEGFA",0.0054837039199637
+BP,GO:0045893,Positive Regulation Of DNA-templated Transcription,"NFKBIA, SPP1, AKT1, CTNNB1, HIF1A, VEGFA, NFKB2, ENG",0.0055537192182222
+BP,GO:0009967,Positive Regulation Of Signal Transduction,"LAMC1, NID1, HIF1A, VEGFA",0.0055930060463073
+BP,GO:0043254,Regulation Of Protein-Containing Complex Assembly,"CDH5, TFRC, VEGFA",0.0055930060463073
+BP,GO:1903320,Regulation Of Protein Modification By Small Protein Conjugation Or Removal,"CTNNB1, HIF1A",0.0055930060463073
+BP,GO:0035306,Positive Regulation Of Dephosphorylation,"CDH5, ROCK1",0.0055930060463073
+BP,GO:0010950,Positive Regulation Of Endopeptidase Activity,"ROCK2, FYN",0.0055930060463073
+BP,GO:2000179,Positive Regulation Of Neural Precursor Cell Proliferation,"CTNNB1, VEGFA",0.0055930060463073
+BP,GO:0090049,Regulation Of Cell Migration Involved In Sprouting Angiogenesis,"KDR, VEGFA",0.005942557144033
+BP,GO:0006898,Receptor-Mediated Endocytosis,"LRP1, TFRC, CAV1",0.005942557144033
+BP,GO:0007167,Enzyme-Linked Receptor Protein Signaling Pathway,"LRP1, KDR, FYN",0.0062000501915891
+BP,GO:0031952,Regulation Of Protein Autophosphorylation,"VEGFA, ENG",0.0062805800297015
+BP,GO:0038061,NIK/NF-kappaB Signaling,"NFKBIA, NFKB2",0.0066057772541706
+BP,GO:0032212,Positive Regulation Of Telomere Maintenance Via Telomerase,"MAPK1, CTNNB1",0.0066057772541706
+BP,GO:0055001,Muscle Cell Development,"VEGFA, ENG",0.0066057772541706
+BP,GO:1903670,Regulation Of Sprouting Angiogenesis,"TJP1, VEGFA",0.0068766783270861
+BP,GO:0051173,Positive Regulation Of Nitrogen Compound Metabolic Process,"NFKBIA, AKT1",0.0068766783270861
+BP,GO:0062013,Positive Regulation Of Small Molecule Metabolic Process,"AKT1, HIF1A",0.0068766783270861
+BP,GO:0051973,Positive Regulation Of Telomerase Activity,"MAPK1, CTNNB1",0.0068766783270861
+BP,GO:1902003,Regulation Of Amyloid-Beta Formation,"ROCK1, ROCK2",0.0068766783270861
+BP,GO:0030855,Epithelial Cell Differentiation,"KDR, AKT1, VEGFA",0.0071086120056361
+BP,GO:2000146,Negative Regulation Of Cell Motility,"CLDN5, ADAM15, ENG",0.0071482864654021
+BP,GO:1904646,Cellular Response To Amyloid-Beta,"LRP1, FYN",0.0071482864654021
+BP,GO:0035924,Cellular Response To Vascular Endothelial Growth Factor Stimulus,"KDR, VEGFA",0.0071482864654021
+BP,GO:1901216,Positive Regulation Of Neuron Death,"CTNNB1, FYN",0.0071482864654021
+BP,GO:1904358,Positive Regulation Of Telomere Maintenance Via Telomere Lengthening,"MAPK1, CTNNB1",0.0075421672586909
+BP,GO:1902531,Regulation Of Intracellular Signal Transduction,"NFKBIA, KDR, AKT1, VEGFA",0.0076389732877983
+BP,GO:0072659,Protein Localization To Plasma Membrane,"ROCK1, ROCK2, F11R",0.0076506344551285
+BP,GO:0031327,Negative Regulation Of Cellular Biosynthetic Process,"ROCK2, CAV1, FYN",0.0076506344551285
+BP,GO:0097746,Blood Vessel Diameter Maintenance,"ROCK1, ROCK2",0.0078168886298633
+BP,GO:0034446,Substrate Adhesion-Dependent Cell Spreading,"FN1, LAMC1",0.0078168886298633
+BP,GO:0003180,Aortic Valve Morphogenesis,"ROCK1, ROCK2",0.0081887379882772
+BP,GO:0060537,Muscle Tissue Development,"CAV1, ENG",0.0081887379882772
+BP,GO:0051347,Positive Regulation Of Transferase Activity,"KDR, MAPK1, CTNNB1",0.0084463436450566
+BP,GO:0071345,Cellular Response To Cytokine Stimulus,"NFKBIA, AKT1, AQP4, HIF1A",0.0084463436450566
+BP,GO:1904036,Negative Regulation Of Epithelial Cell Apoptotic Process,"CDH5, KDR",0.0084987568004389
+BP,GO:0071559,Response To Transforming Growth Factor Beta,"ROCK1, ROCK2",0.0084987568004389
+BP,GO:0031331,Positive Regulation Of Cellular Catabolic Process,"ROCK1, ADAM9, HIF1A",0.0088442822232792
+BP,GO:0010823,Negative Regulation Of Mitochondrion Organization,"TFRC, AKT1",0.0088442822232792
+BP,GO:1905039,Carboxylic Acid Transmembrane Transport,"SLC7A5, SLC16A1",0.0088442822232792
+BP,GO:0003176,Aortic Valve Development,"ROCK1, ROCK2",0.0091926783340198
+BP,GO:0043542,Endothelial Cell Migration,"CDH5, VEGFA",0.0091926783340198
+BP,GO:0022408,Negative Regulation Of Cell-Cell Adhesion,"AKT1, VEGFA",0.0091926783340198
+BP,GO:0045861,Negative Regulation Of Proteolysis,"ROCK1, AKT1",0.0096166642131823
+BP,GO:0071407,Cellular Response To Organic Cyclic Compound,"ROCK2, SPP1, CTNNB1",0.0096601021888938
+BP,GO:2000351,Regulation Of Endothelial Cell Apoptotic Process,"CDH5, KDR",0.0103689877123223
+BP,GO:1904645,Response To Amyloid-Beta,"LRP1, FYN",0.0103689877123223
+BP,GO:0007612,Learning,"CLDN5, FYN",0.0103689877123223
+BP,GO:0061157,mRNA Destabilization,"ROCK1, ROCK2",0.0103689877123223
+BP,GO:0018105,Peptidyl-Serine Phosphorylation,"ROCK1, ROCK2, MAPK1",0.0105794594452436
+BP,GO:0050921,Positive Regulation Of Chemotaxis,"KDR, VEGFA",0.0107302860864014
+BP,GO:0022617,Extracellular Matrix Disassembly,"ADAM15, LAMC1",0.0107302860864014
+BP,GO:0031399,Regulation Of Protein Modification Process,"CDH5, FN1",0.0110938063286647
+BP,GO:0051972,Regulation Of Telomerase Activity,"MAPK1, CTNNB1",0.0110938063286647
+BP,GO:0061014,Positive Regulation Of mRNA Catabolic Process,"ROCK1, ROCK2",0.0110938063286647
+BP,GO:0046777,Protein Autophosphorylation,"KDR, AKT1, FYN",0.0111059372979105
+BP,GO:0048145,Regulation Of Fibroblast Proliferation,"FN1, CTNNB1",0.0114180716077373
+BP,GO:0022411,Cellular Component Disassembly,"ADAM15, LAMC1",0.0114180716077373
+BP,GO:0042542,Response To Hydrogen Peroxide,"ADAM9, FYN",0.0114180716077373
+BP,GO:0018209,Peptidyl-Serine Modification,"ROCK1, ROCK2, MAPK1",0.0117263901143477
+BP,GO:0098742,Cell-Cell Adhesion Via Plasma-Membrane Adhesion Molecules,"CDH5, CLDN5, PECAM1",0.0129132558430969
+BP,GO:0031328,Positive Regulation Of Cellular Biosynthetic Process,"AKT1, CTNNB1, HIF1A",0.0132635264840557
+BP,GO:0008015,Blood Circulation,"ROCK1, ROCK2",0.0132635264840557
+BP,GO:0032210,Regulation Of Telomere Maintenance Via Telomerase,"MAPK1, CTNNB1",0.0136441179620896
+BP,GO:1904377,Positive Regulation Of Protein Localization To Cell Periphery,"LRP1, AKT1",0.0136441179620896
+BP,GO:1903078,Positive Regulation Of Protein Localization To Plasma Membrane,"LRP1, AKT1",0.0136441179620896
+BP,GO:0007266,Rho Protein Signal Transduction,"ROCK1, ROCK2",0.014075231259839
+BP,GO:0060284,Regulation Of Cell Development,"AKT1, CTNNB1",0.014075231259839
+BP,GO:0046942,Carboxylic Acid Transport,"SLC7A5, SLC16A1",0.0145602839101018
+BP,GO:0038127,ERBB Signaling Pathway,"MAPK1, AKT1",0.0147944579304547
+BP,GO:0031397,Negative Regulation Of Protein Ubiquitination,"CAV1, AKT1",0.0147944579304547
+BP,GO:0018212,Peptidyl-Tyrosine Modification,"KDR, FYN",0.0147944579304547
+BP,GO:0048660,Regulation Of Smooth Muscle Cell Proliferation,"AKT1, CTNNB1",0.0147944579304547
+BP,GO:0009913,Epidermal Cell Differentiation,"ADAM9, CTNNB1",0.0147944579304547
+BP,GO:0002690,Positive Regulation Of Leukocyte Chemotaxis,"MAPK1, VEGFA",0.0147944579304547
+BP,GO:0030003,Intracellular Monoatomic Cation Homeostasis,"CDH5, TFRC, CAV1",0.0161948605242822
+BP,GO:0014070,Response To Organic Cyclic Compound,"SPP1, CTNNB1",0.0168996005141178
+BP,GO:0003007,Heart Morphogenesis,"VEGFA, ENG",0.0173557713124926
+BP,GO:0000281,Mitotic Cytokinesis,"ROCK1, ROCK2",0.0173557713124926
+BP,GO:0051247,Positive Regulation Of Protein Metabolic Process,"NFKBIA, ROCK2, AKT1",0.017423046621835
+BP,GO:0010466,Negative Regulation Of Peptidase Activity,"LRP1, AKT1",0.0178146478645807
+BP,GO:0060393,Regulation Of Pathway-Restricted SMAD Protein Phosphorylation,"LRP1, ENG",0.0183370661786542
+BP,GO:0071702,Organic Substance Transport,"CAV1, AQP4, FYN",0.0185001450841061
+BP,GO:0034330,Cell Junction Organization,"TJP1, TJP2",0.0188022362022193
+BP,GO:0045944,Positive Regulation Of Transcription By RNA Polymerase II,"NFKBIA, CTNNB1, HIF1A, VEGFA, NFKB2, ENG",0.0188324385518521
+BP,GO:1901701,Cellular Response To Oxygen-Containing Compound,"ROCK2, MAPK1, AKT1, ADAM9",0.0188937344587135
+BP,GO:0010038,Response To Metal Ion,"CAV1, HIF1A",0.0197398553145945
+BP,GO:0060548,Negative Regulation Of Cell Death,"AKT1, FYN",0.0197398553145945
+BP,GO:2000573,Positive Regulation Of DNA Biosynthetic Process,"MAPK1, CTNNB1",0.0202779882980147
+BP,GO:0050777,Negative Regulation Of Immune Response,"AKT1, FYN",0.020753617996095
+BP,GO:0030100,Regulation Of Endocytosis,"LRP1, ROCK1",0.020753617996095
+BP,GO:0018108,Peptidyl-Tyrosine Phosphorylation,"KDR, FYN",0.0212998816943906
+BP,GO:0006909,Phagocytosis,"LRP1, PECAM1",0.0224064979434065
+BP,GO:0014068,Positive Regulation Of Phosphatidylinositol 3-Kinase Signaling,"KDR, FN1",0.0224064979434065
+BP,GO:0008277,Regulation Of G Protein-Coupled Receptor Signaling Pathway,"ROCK1, ROCK2",0.0229667029280339
+BP,GO:0071456,Cellular Response To Hypoxia,"HIF1A, VEGFA",0.0241772985915262
+BP,GO:0036294,Cellular Response To Decreased Oxygen Levels,"HIF1A, VEGFA",0.024752371313554
+BP,GO:0043488,Regulation Of mRNA Stability,"ROCK1, ROCK2",0.0253317378994055
+BP,GO:0050769,Positive Regulation Of Neurogenesis,"CTNNB1, VEGFA",0.0258338349479529
+BP,GO:0030510,Regulation Of BMP Signaling Pathway,"CDH5, ENG",0.0258338349479529
+BP,GO:0016055,Wnt Signaling Pathway,"CTNNB1, NID1",0.0264199972197061
+BP,GO:0032868,Response To Insulin,"SLC2A1, AKT1",0.0273266817285559
+BP,GO:1903076,Regulation Of Protein Localization To Plasma Membrane,"LRP1, AKT1",0.0273266817285559
+BP,GO:0019852,L-ascorbic Acid Metabolic Process,SLC2A1,0.0273266817285559
+BP,GO:1900449,Regulation Of Glutamate Receptor Signaling Pathway,FYN,0.0273266817285559
+BP,GO:0031645,Negative Regulation Of Nervous System Process,JAM2,0.0273266817285559
+BP,GO:1901725,Regulation Of Histone Deacetylase Activity,VEGFA,0.0273266817285559
+BP,GO:0046885,Regulation Of Hormone Biosynthetic Process,HIF1A,0.0273266817285559
+BP,GO:0010746,Regulation Of Long-Chain Fatty Acid Import Across Plasma Membrane,AKT1,0.0273266817285559
+BP,GO:0120040,Regulation Of Macrophage Proliferation,MAPK1,0.0273266817285559
+BP,GO:0060753,Regulation Of Mast Cell Chemotaxis,VEGFA,0.0273266817285559
+BP,GO:0010749,Regulation Of Nitric Oxide Mediated Signal Transduction,VEGFA,0.0273266817285559
+BP,GO:0072672,Neutrophil Extravasation,PECAM1,0.0273266817285559
+BP,GO:0090259,Regulation Of Retinal Ganglion Cell Axon Guidance,VEGFA,0.0273266817285559
+BP,GO:0070417,Cellular Response To Cold,NFKBIA,0.0273266817285559
+BP,GO:0044057,Regulation Of System Process,ROCK2,0.0273266817285559
+BP,GO:0090521,Podocyte Cell Migration,ROCK1,0.0273266817285559
+BP,GO:1903598,Positive Regulation Of Gap Junction Assembly,CAV1,0.0273266817285559
+BP,GO:0015744,Succinate Transport,SLC16A1,0.0273266817285559
+BP,GO:0120193,Tight Junction Organization,CLDN5,0.0273266817285559
+BP,GO:0072012,Glomerulus Vasculature Development,PECAM1,0.0273266817285559
+BP,GO:1904352,Positive Regulation Of Protein Catabolic Process In The Vacuole,LRP1,0.0273266817285559
+BP,GO:0032364,Intracellular Oxygen Homeostasis,HIF1A,0.0273266817285559
+BP,GO:0009992,Intracellular Water Homeostasis,AQP4,0.0273266817285559
+BP,GO:1905065,Positive Regulation Of Vascular Associated Smooth Muscle Cell Differentiation,ENG,0.0273266817285559
+BP,GO:0003159,Morphogenesis Of An Endothelium,CTNNB1,0.0273266817285559
+BP,GO:0061640,Cytoskeleton-Dependent Cytokinesis,"ROCK1, ROCK2",0.0276206011331459
+BP,GO:0043281,Regulation Of Cysteine-Type Endopeptidase Activity Involved In Apoptotic Process,"AKT1, VEGFA",0.0295349510648101
+BP,GO:0006469,Negative Regulation Of Protein Kinase Activity,"CAV1, AKT1",0.0307108548917374
+BP,GO:1900037,Regulation Of Cellular Response To Hypoxia,ROCK2,0.0307108548917374
+BP,GO:0051045,Negative Regulation Of Membrane Protein Ectodomain Proteolysis,ROCK1,0.0307108548917374
+BP,GO:0033234,Negative Regulation Of Protein Sumoylation,CTNNB1,0.0307108548917374
+BP,GO:0034334,Adherens Junction Maintenance,TJP1,0.0307108548917374
+BP,GO:1905048,Regulation Of Metallopeptidase Activity,LRP1,0.0307108548917374
+BP,GO:0038166,Angiotensin-Activated Signaling Pathway,CAV1,0.0307108548917374
+BP,GO:1903376,Regulation Of Oxidative Stress-Induced Neuron Intrinsic Apoptotic Signaling Pathway,HIF1A,0.0307108548917374
+BP,GO:0032909,Regulation Of Transforming Growth Factor Beta2 Production,HIF1A,0.0307108548917374
+BP,GO:1903071,Positive Regulation Of ER-associated Ubiquitin-Dependent Protein Catabolic Process,CAV1,0.0307108548917374
+BP,GO:1902961,Positive Regulation Of Aspartic-Type Endopeptidase Activity Involved In Amyloid Precursor Protein Catabolic Process,ROCK2,0.0307108548917374
+BP,GO:0035995,Detection Of Muscle Stretch,CTNNB1,0.0307108548917374
+BP,GO:0035907,Dorsal Aorta Development,ENG,0.0307108548917374
+BP,GO:0035912,Dorsal Aorta Morphogenesis,ENG,0.0307108548917374
+BP,GO:0090045,Positive Regulation Of Deacetylase Activity,VEGFA,0.0307108548917374
+BP,GO:0032352,Positive Regulation Of Hormone Metabolic Process,HIF1A,0.0307108548917374
+BP,GO:1904181,Positive Regulation Of Membrane Depolarization,KDR,0.0307108548917374
+BP,GO:1901165,Positive Regulation Of Trophoblast Cell Migration,VEGFA,0.0307108548917374
+BP,GO:1903361,Protein Localization To Basolateral Plasma Membrane,CAV1,0.0307108548917374
+BP,GO:1902667,Regulation Of Axon Guidance,VEGFA,0.0307108548917374
+BP,GO:0060353,Regulation Of Cell Adhesion Molecule Production,CAV1,0.0307108548917374
+BP,GO:0071375,Cellular Response To Peptide Hormone Stimulus,"CAV1, AKT1",0.0310249022073202
+BP,GO:0014066,Regulation Of Phosphatidylinositol 3-Kinase Signaling,"KDR, FN1",0.0316095254699207
+BP,GO:0050678,Regulation Of Epithelial Cell Proliferation,"LAMC1, VEGFA",0.0321105787253601
+BP,GO:0043406,Positive Regulation Of MAP Kinase Activity,"ADAM9, VEGFA",0.0321105787253601
+BP,GO:0006936,Muscle Contraction,"ROCK1, ROCK2",0.0333457085223913
+BP,GO:0090100,Positive Regulation Of Transmembrane Receptor Protein Serine/Threonine Kinase Signaling Pathway,"CDH5, ENG",0.0333457085223913
+BP,GO:0070099,Regulation Of Chemokine-Mediated Signaling Pathway,HIF1A,0.0333457085223913
+BP,GO:0046322,Negative Regulation Of Fatty Acid Oxidation,AKT1,0.0333457085223913
+BP,GO:1905005,Regulation Of Epithelial To Mesenchymal Transition Involved In Endocardial Cushion Formation,ENG,0.0333457085223913
+BP,GO:0010637,Negative Regulation Of Mitochondrial Fusion,TFRC,0.0333457085223913
+BP,GO:0015801,Aromatic Amino Acid Transport,SLC7A5,0.0333457085223913
+BP,GO:0140058,Neuron Projection Arborization,ROCK1,0.0333457085223913
+BP,GO:0032429,Regulation Of Phospholipase A2 Activity,LRP1,0.0333457085223913
+BP,GO:0003230,Cardiac Atrium Development,ENG,0.0333457085223913
+BP,GO:1905247,Positive Regulation Of Aspartic-Type Peptidase Activity,ROCK2,0.0333457085223913
+BP,GO:0060977,Coronary Vasculature Morphogenesis,VEGFA,0.0333457085223913
+BP,GO:0007253,Cytoplasmic Sequestering Of NF-kappaB,NFKBIA,0.0333457085223913
+BP,GO:0062043,Positive Regulation Of Cardiac Epithelial To Mesenchymal Transition,ENG,0.0333457085223913
+BP,GO:0000101,Sulfur Amino Acid Transport,SLC7A5,0.0333457085223913
+BP,GO:0070327,Thyroid Hormone Transport,SLC7A5,0.0333457085223913
+BP,GO:0060841,Venous Blood Vessel Development,ENG,0.0333457085223913
+BP,GO:0003222,Ventricular Trabecula Myocardium Morphogenesis,ENG,0.0333457085223913
+BP,GO:1900748,Positive Regulation Of Vascular Endothelial Growth Factor Signaling Pathway,VEGFA,0.0333457085223913
+BP,GO:0070486,Leukocyte Aggregation,JAM2,0.0333457085223913
+BP,GO:0051451,Myoblast Migration,ROCK1,0.0333457085223913
+BP,GO:0060392,Negative Regulation Of SMAD Protein Signal Transduction,LRP1,0.0333457085223913
+BP,GO:0098909,Regulation Of Cardiac Muscle Cell Action Potential Involved In Regulation Of Contraction,CAV1,0.0333457085223913
+BP,GO:0000165,MAPK Cascade,"KDR, MAPK1",0.0346518443064573
+BP,GO:0120162,Positive Regulation Of Cold-Induced Thermogenesis,"CAV1, VEGFA",0.0346518443064573
+BP,GO:0055074,Calcium Ion Homeostasis,"CDH5, CAV1",0.0353243963223132
+BP,GO:1902950,Regulation Of Dendritic Spine Maintenance,FYN,0.0353243963223132
+BP,GO:1903596,Regulation Of Gap Junction Assembly,CAV1,0.0353243963223132
+BP,GO:1903204,Negative Regulation Of Oxidative Stress-Induced Neuron Death,HIF1A,0.0353243963223132
+BP,GO:1905165,Regulation Of Lysosomal Protein Catabolic Process,LRP1,0.0353243963223132
+BP,GO:0072182,Regulation Of Nephron Tubule Epithelial Cell Differentiation,CTNNB1,0.0353243963223132
+BP,GO:0048548,Regulation Of Pinocytosis,CAV1,0.0353243963223132
+BP,GO:1902965,Regulation Of Protein Localization To Early Endosome,ROCK2,0.0353243963223132
+BP,GO:0007063,Regulation Of Sister Chromatid Cohesion,CTNNB1,0.0353243963223132
+BP,GO:0071679,Commissural Neuron Axon Guidance,VEGFA,0.0353243963223132
+BP,GO:1903589,Positive Regulation Of Blood Vessel Endothelial Cell Proliferation Involved In Sprouting Angiogenesis,VEGFA,0.0353243963223132
+BP,GO:0070837,Dehydroascorbic Acid Transport,SLC2A1,0.0353243963223132
+BP,GO:2000049,Positive Regulation Of Cell-Cell Adhesion Mediated By Cadherin,TJP1,0.0353243963223132
+BP,GO:0033273,Response To Vitamin,SPP1,0.0353243963223132
+BP,GO:0033280,Response To Vitamin D,SPP1,0.0353243963223132
+BP,GO:0035767,Endothelial Cell Chemotaxis,VEGFA,0.0353243963223132
+BP,GO:0003198,Epithelial To Mesenchymal Transition Involved In Endocardial Cushion Formation,ENG,0.0353243963223132
+BP,GO:0061549,Sympathetic Ganglion Development,CTNNB1,0.0353243963223132
+BP,GO:0035886,Vascular Associated Smooth Muscle Cell Differentiation,ENG,0.0353243963223132
+BP,GO:0090037,Positive Regulation Of Protein Kinase C Signaling,VEGFA,0.0353243963223132
+BP,GO:1902966,Positive Regulation Of Protein Localization To Early Endosome,ROCK2,0.0353243963223132
+BP,GO:1905668,Positive Regulation Of Protein Localization To Endosome,ROCK2,0.0353243963223132
+BP,GO:0033622,Integrin Activation,FN1,0.0353243963223132
+BP,GO:0007595,Lactation,VEGFA,0.0353243963223132
+BP,GO:0015824,Proline Transport,SLC7A5,0.0353243963223132
+BP,GO:0042117,Monocyte Activation,ADAM9,0.0353243963223132
+BP,GO:1903069,Regulation Of ER-associated Ubiquitin-Dependent Protein Catabolic Process,CAV1,0.0353243963223132
+BP,GO:1902959,Regulation Of Aspartic-Type Endopeptidase Activity Involved In Amyloid Precursor Protein Catabolic Process,ROCK2,0.0353243963223132
+BP,GO:0048523,Negative Regulation Of Cellular Process,"ADAM15, ADAM10, CTNNB1, JAM2",0.0353243963223132
+BP,GO:0071417,Cellular Response To Organonitrogen Compound,"ROCK2, CTNNB1",0.0367218707368409
+BP,GO:0051592,Response To Calcium Ion,"CAV1, ADAM9",0.0372997661061395
+BP,GO:0017148,Negative Regulation Of Translation,"ROCK1, ROCK2",0.0377918612032771
+BP,GO:0010508,Positive Regulation Of Autophagy,"ROCK1, KDR",0.0377918612032771
+BP,GO:0009893,Positive Regulation Of Metabolic Process,"CAV1, VEGFA",0.0378101811827907
+BP,GO:1902075,Cellular Response To Salt,"ROCK2, FYN",0.0378101811827907
+BP,GO:1905953,Negative Regulation Of Lipid Localization,NFKBIA,0.0378101811827907
+BP,GO:0034333,Adherens Junction Assembly,CTNNB1,0.0378101811827907
+BP,GO:0071635,Negative Regulation Of Transforming Growth Factor Beta Production,FN1,0.0378101811827907
+BP,GO:0048593,Camera-Type Eye Morphogenesis,VEGFA,0.0378101811827907
+BP,GO:0140052,Cellular Response To Oxidised Low-Density Lipoprotein Particle Stimulus,AKT1,0.0378101811827907
+BP,GO:0048745,Smooth Muscle Tissue Development,ENG,0.0378101811827907
+BP,GO:0061154,Endothelial Tube Morphogenesis,CTNNB1,0.0378101811827907
+BP,GO:0033572,Transferrin Transport,TFRC,0.0378101811827907
+BP,GO:0009914,Hormone Transport,SLC7A5,0.0378101811827907
+BP,GO:0030949,Positive Regulation Of Vascular Endothelial Growth Factor Receptor Signaling Pathway,HIF1A,0.0378101811827907
+BP,GO:0015820,Leucine Transport,SLC7A5,0.0378101811827907
+BP,GO:2001214,Positive Regulation Of Vasculogenesis,KDR,0.0378101811827907
+BP,GO:0044539,Long-Chain Fatty Acid Import Into Cell,SLC2A1,0.0378101811827907
+BP,GO:0014812,Muscle Cell Migration,ROCK1,0.0378101811827907
+BP,GO:2000048,Negative Regulation Of Cell-Cell Adhesion Mediated By Cadherin,VEGFA,0.0378101811827907
+BP,GO:1903508,Positive Regulation Of Nucleic Acid-Templated Transcription,"SPP1, AKT1, CTNNB1, HIF1A",0.037946436024781
+BP,GO:0033993,Response To Lipid,"SPP1, CTNNB1",0.0381319252234933
+BP,GO:0050728,Negative Regulation Of Inflammatory Response,"CDH5, FYN",0.0385313297494607
+BP,GO:0090101,Negative Regulation Of Transmembrane Receptor Protein Serine/Threonine Kinase Signaling Pathway,"LRP1, CAV1",0.0385313297494607
+BP,GO:0017015,Regulation Of Transforming Growth Factor Beta Receptor Signaling Pathway,"CAV1, ENG",0.0385313297494607
+BP,GO:0006816,Calcium Ion Transport,"CAV1, FYN",0.0390162060612026
+BP,GO:0031348,Negative Regulation Of Defense Response,"CDH5, AKT1",0.0390162060612026
+BP,GO:0043405,Regulation Of MAP Kinase Activity,"ADAM9, VEGFA",0.0396634688175362
+BP,GO:2000402,Negative Regulation Of Lymphocyte Migration,AKT1,0.0396634688175362
+BP,GO:0060394,Negative Regulation Of Pathway-Restricted SMAD Protein Phosphorylation,LRP1,0.0396634688175362
+BP,GO:0032368,Regulation Of Lipid Transport,LRP1,0.0396634688175362
+BP,GO:0051900,Regulation Of Mitochondrial Depolarization,KDR,0.0396634688175362
+BP,GO:0071711,Basement Membrane Organization,NID1,0.0396634688175362
+BP,GO:0010517,Regulation Of Phospholipase Activity,LRP1,0.0396634688175362
+BP,GO:0015803,Branched-Chain Amino Acid Transport,SLC7A5,0.0396634688175362
+BP,GO:0036295,Cellular Response To Increased Oxygen Levels,CAV1,0.0396634688175362
+BP,GO:0045780,Positive Regulation Of Bone Resorption,SPP1,0.0396634688175362
+BP,GO:0043401,Steroid Hormone Mediated Signaling Pathway,MAPK1,0.0396634688175362
+BP,GO:0043129,Surfactant Homeostasis,VEGFA,0.0396634688175362
+BP,GO:1905954,Positive Regulation Of Lipid Localization,LRP1,0.0396634688175362
+BP,GO:0051770,Positive Regulation Of Nitric-Oxide Synthase Biosynthetic Process,KDR,0.0396634688175362
+BP,GO:0050930,Induction Of Positive Chemotaxis,VEGFA,0.0396634688175362
+BP,GO:0019065,Receptor-Mediated Endocytosis Of Virus By Host Cell,CAV1,0.0396634688175362
+BP,GO:0030224,Monocyte Differentiation,VEGFA,0.0396634688175362
+BP,GO:1905664,Regulation Of Calcium Ion Import Across Plasma Membrane,FYN,0.0396634688175362
+BP,GO:0010665,Regulation Of Cardiac Muscle Cell Apoptotic Process,ENG,0.0396634688175362
+BP,GO:0051604,Protein Maturation,"MMP16, ADAM10",0.0404860408550228
+BP,GO:0016485,Protein Processing,"MMP16, ADAM10",0.0404860408550228
+BP,GO:0001819,Positive Regulation Of Cytokine Production,"SLC7A5, ROCK2, HIF1A",0.0413036203027421
+BP,GO:0071356,Cellular Response To Tumor Necrosis Factor,"NFKBIA, AKT1",0.041621448801589
+BP,GO:1903649,Regulation Of Cytoplasmic Transport,MAPK1,0.0416514461086941
+BP,GO:0019217,Regulation Of Fatty Acid Metabolic Process,CAV1,0.0416514461086941
+BP,GO:0031115,Negative Regulation Of Microtubule Polymerization,CDH5,0.0416514461086941
+BP,GO:0010642,Negative Regulation Of Platelet-Derived Growth Factor Receptor Signaling Pathway,LRP1,0.0416514461086941
+BP,GO:1901380,Negative Regulation Of Potassium Ion Transmembrane Transport,CAV1,0.0416514461086941
+BP,GO:1903427,Negative Regulation Of Reactive Oxygen Species Biosynthetic Process,FYN,0.0416514461086941
+BP,GO:1903037,Regulation Of Leukocyte Cell-Cell Adhesion,AKT1,0.0416514461086941
+BP,GO:0010635,Regulation Of Mitochondrial Fusion,TFRC,0.0416514461086941
+BP,GO:1903817,Negative Regulation Of Voltage-Gated Potassium Channel Activity,CAV1,0.0416514461086941
+BP,GO:1905145,Cellular Response To Acetylcholine,ROCK2,0.0416514461086941
+BP,GO:0070302,Regulation Of Stress-Activated Protein Kinase Signaling Cascade,MAPK1,0.0416514461086941
+BP,GO:0098911,Regulation Of Ventricular Cardiac Muscle Cell Action Potential,CAV1,0.0416514461086941
+BP,GO:0090190,Positive Regulation Of Branching Involved In Ureteric Bud Morphogenesis,VEGFA,0.0416514461086941
+BP,GO:0032370,Positive Regulation Of Lipid Transport,LRP1,0.0416514461086941
+BP,GO:0061548,Ganglion Development,CTNNB1,0.0416514461086941
+BP,GO:1901731,Positive Regulation Of Platelet Aggregation,F11R,0.0416514461086941
+BP,GO:0042953,Lipoprotein Transport,LRP1,0.0416514461086941
+BP,GO:1901844,Regulation Of Cell Communication By Electrical Coupling Involved In Cardiac Conduction,CAV1,0.0416514461086941
+BP,GO:0010557,Positive Regulation Of Macromolecule Biosynthetic Process,"KDR, AKT1",0.0419390535117814
+BP,GO:0065003,Protein-Containing Complex Assembly,"SLC2A1, FN1, LAMC1",0.0422046592692035
+BP,GO:0006508,Proteolysis,"ADAM15, MMP16, ADAM10",0.0427959500938359
+BP,GO:0034097,Response To Cytokine,"ADAM9, NFKB2",0.0432125573214355
+BP,GO:0043933,Protein-Containing Complex Organization,"SLC2A1, LAMC1",0.0432125573214355
+BP,GO:0010745,Negative Regulation Of Macrophage Derived Foam Cell Differentiation,NFKBIA,0.0432125573214355
+BP,GO:0071676,Negative Regulation Of Mononuclear Cell Migration,AKT1,0.0432125573214355
+BP,GO:0043267,Negative Regulation Of Potassium Ion Transport,CAV1,0.0432125573214355
+BP,GO:0032328,Alanine Transport,SLC7A5,0.0432125573214355
+BP,GO:0048143,Astrocyte Activation,LRP1,0.0432125573214355
+BP,GO:0003228,Atrial Cardiac Muscle Tissue Development,ENG,0.0432125573214355
+BP,GO:0019896,Axonal Transport Of Mitochondrion,HIF1A,0.0432125573214355
+BP,GO:0045217,Cell-Cell Junction Maintenance,TJP1,0.0432125573214355
+BP,GO:0043954,Cellular Component Maintenance,FYN,0.0432125573214355
+BP,GO:0043618,Regulation Of Transcription From RNA Polymerase II Promoter In Response To Stress,HIF1A,0.0432125573214355
+BP,GO:1904294,Positive Regulation Of ERAD Pathway,CAV1,0.0432125573214355
+BP,GO:0010039,Response To Iron Ion,HIF1A,0.0432125573214355
+BP,GO:0051571,Positive Regulation Of Histone H3-K4 Methylation,CTNNB1,0.0432125573214355
+BP,GO:0006706,Steroid Catabolic Process,SPP1,0.0432125573214355
+BP,GO:0001754,Eye Photoreceptor Cell Differentiation,VEGFA,0.0432125573214355
+BP,GO:1902001,Fatty Acid Transmembrane Transport,SLC2A1,0.0432125573214355
+BP,GO:0046323,Glucose Import,SLC2A1,0.0432125573214355
+BP,GO:0045907,Positive Regulation Of Vasoconstriction,CAV1,0.0432125573214355
+BP,GO:0044872,Lipoprotein Localization,LRP1,0.0432125573214355
+BP,GO:0010649,Regulation Of Cell Communication By Electrical Coupling,CAV1,0.0432125573214355
+BP,GO:0050731,Positive Regulation Of Peptidyl-Tyrosine Phosphorylation,"PECAM1, VEGFA",0.0449549463948893
+BP,GO:0072359,Circulatory System Development,"CDH5, FN1",0.0449549463948893
+BP,GO:0031998,Regulation Of Fatty Acid Beta-Oxidation,AKT1,0.0449549463948893
+BP,GO:0002685,Regulation Of Leukocyte Migration,VEGFA,0.0449549463948893
+BP,GO:0042987,Amyloid Precursor Protein Catabolic Process,ADAM10,0.0449549463948893
+BP,GO:0051769,Regulation Of Nitric-Oxide Synthase Biosynthetic Process,KDR,0.0449549463948893
+BP,GO:0051171,Regulation Of Nitrogen Compound Metabolic Process,ROCK2,0.0449549463948893
+BP,GO:0007589,Body Fluid Secretion,VEGFA,0.0449549463948893
+BP,GO:0038083,Peptidyl-Tyrosine Autophosphorylation,KDR,0.0449549463948893
+BP,GO:1901163,Regulation Of Trophoblast Cell Migration,VEGFA,0.0449549463948893
+BP,GO:2001212,Regulation Of Vasculogenesis,KDR,0.0449549463948893
+BP,GO:0051220,Cytoplasmic Sequestering Of Protein,NFKBIA,0.0449549463948893
+BP,GO:0042994,Cytoplasmic Sequestering Of Transcription Factor,NFKBIA,0.0449549463948893
+BP,GO:1990089,Response To Nerve Growth Factor,AKT1,0.0449549463948893
+BP,GO:0032570,Response To Progesterone,CAV1,0.0449549463948893
+BP,GO:0035162,Embryonic Hemopoiesis,KDR,0.0449549463948893
+BP,GO:0045446,Endothelial Cell Differentiation,KDR,0.0449549463948893
+BP,GO:0031065,Positive Regulation Of Histone Deacetylation,VEGFA,0.0449549463948893
+BP,GO:0042462,Eye Photoreceptor Cell Development,VEGFA,0.0449549463948893
+BP,GO:0010759,Positive Regulation Of Macrophage Chemotaxis,MAPK1,0.0449549463948893
+BP,GO:0051899,Membrane Depolarization,CAV1,0.0449549463948893
+BP,GO:0071248,Cellular Response To Metal Ion,"MAPK1, AKT1",0.0463646291782236
+BP,GO:0010715,Regulation Of Extracellular Matrix Disassembly,LRP1,0.0470646503577198
+BP,GO:0051569,Regulation Of Histone H3-K4 Methylation,CTNNB1,0.0470646503577198
+BP,GO:1904893,Negative Regulation Of Receptor Signaling Pathway Via STAT,CAV1,0.0470646503577198
+BP,GO:0014912,Negative Regulation Of Smooth Muscle Cell Migration,LRP1,0.0470646503577198
+BP,GO:0035904,Aorta Development,LRP1,0.0470646503577198
+BP,GO:0055006,Cardiac Cell Development,VEGFA,0.0470646503577198
+BP,GO:0042461,Photoreceptor Cell Development,VEGFA,0.0470646503577198
+BP,GO:0003091,Renal Water Homeostasis,AQP4,0.0470646503577198
+BP,GO:0035994,Response To Muscle Stretch,CTNNB1,0.0470646503577198
+BP,GO:0007492,Endoderm Development,LAMC1,0.0470646503577198
+BP,GO:0051044,Positive Regulation Of Membrane Protein Ectodomain Proteolysis,ADAM9,0.0470646503577198
+BP,GO:0047497,Mitochondrion Transport Along Microtubule,HIF1A,0.0470646503577198
+BP,GO:0090189,Regulation Of Branching Involved In Ureteric Bud Morphogenesis,VEGFA,0.0470646503577198
+BP,GO:0043470,Regulation Of Carbohydrate Catabolic Process,HIF1A,0.0470646503577198
+BP,GO:0006874,Intracellular Calcium Ion Homeostasis,"CDH5, CAV1",0.0476298479703614
+BP,GO:0030178,Negative Regulation Of Wnt Signaling Pathway,"LRP1, CAV1",0.048181078973373
+BP,GO:0035303,Regulation Of Dephosphorylation,ROCK1,0.0494045089892791
+BP,GO:0043029,T Cell Homeostasis,AKT1,0.0494045089892791
+BP,GO:0045191,Regulation Of Isotype Switching,TFRC,0.0494045089892791
+BP,GO:0045737,Positive Regulation Of Cyclin-Dependent Protein Serine/Threonine Kinase Activity,AKT1,0.0494045089892791
+BP,GO:0010907,Positive Regulation Of Glucose Metabolic Process,AKT1,0.0494045089892791
+BP,GO:0002891,Positive Regulation Of Immunoglobulin Mediated Immune Response,TFRC,0.0494045089892791
+BP,GO:0048485,Sympathetic Nervous System Development,CTNNB1,0.0494045089892791
+BP,GO:0045830,Positive Regulation Of Isotype Switching,TFRC,0.0494045089892791
+BP,GO:1904063,Negative Regulation Of Cation Transmembrane Transport,CAV1,0.0494045089892791
+BP,GO:0007265,Ras Protein Signal Transduction,"ROCK1, ROCK2",0.0498677741961743
+MF,GO:0045296,Cadherin Binding,"TJP1, CDH5, KDR, CTNNB1, FYN, F11R, TJP2",0.0001442268769388452
+MF,GO:0050321,Tau-Protein Kinase Activity,"ROCK1, ROCK2, FYN",0.00035093514015848256
+MF,GO:0019901,Protein Kinase Binding,"CDH5, TFRC, CAV1, ADAM10, ADAM9, HIF1A, TJP2",0.0009100523901796574
+MF,GO:0004222,Metalloendopeptidase Activity,"ADAM15, MMP16, ADAM10, ADAM9",0.0009100523901796574
+MF,GO:0048156,Tau Protein Binding,"ROCK1, ROCK2, FYN",0.0010999959949563
+MF,GO:0008237,Metallopeptidase Activity,"ADAM15, MMP16, ADAM10, ADAM9",0.0013548355445153
+MF,GO:0043184,Vascular Endothelial Growth Factor Receptor 2 Binding,"CDH5, VEGFA",0.0015131875224923
+MF,GO:0042803,Protein Homodimerization Activity,"TFRC, PECAM1, AKT1, ADAM10, FYN, F11R, VEGFA",0.0020214915232245
+MF,GO:0005172,Vascular Endothelial Growth Factor Receptor Binding,"CDH5, VEGFA",0.0027620186977549
+MF,GO:0004674,Protein Serine/Threonine Kinase Activity,"ROCK1, ROCK2, MAPK1, AKT1, FYN",0.0038703653973347
+MF,GO:0019902,Phosphatase Binding,"CDH5, MAPK1, CTNNB1",0.0114262530961185
+MF,GO:0019900,Kinase Binding,"TFRC, CAV1, ADAM10, CTNNB1, HIF1A",0.0123393720449018
+MF,GO:0051879,Hsp90 Protein Binding,"KDR, HIF1A",0.0168086890126612
+MF,GO:0004175,Endopeptidase Activity,"ADAM15, MMP16, ADAM10, ADAM9",0.0245712396139226
+MF,GO:0046943,Carboxylic Acid Transmembrane Transporter Activity,"SLC7A5, SLC16A1",0.0382535367703919
+MF,GO:0017124,SH3 Domain Binding,"ADAM15, ADAM9",0.0382535367703919
+CC,GO:0016323,Basolateral Plasma Membrane,"TJP1, SLC7A5, SLC16A1, LRP1, TFRC, SLC2A1, CTNNB1, AQP4",3.699835794574769e-08
+CC,GO:0005911,Cell-Cell Junction,"TJP1, CDH5, CLDN5, PECAM1, CTNNB1, F11R, JAM2, VEGFA, TJP2",6.559906986469185e-08
+CC,GO:0070160,Tight Junction,"TJP1, CDH5, CLDN5, F11R, JAM2, TJP2",3.2910345053605546e-07
+CC,GO:0005923,Bicellular Tight Junction,"TJP1, CDH5, CLDN5, F11R, TJP2",5.60351734197554e-06
+CC,GO:0043296,Apical Junction Complex,"TJP1, CDH5, CLDN5, F11R, TJP2",1.7184849489428247e-05
+CC,GO:0005925,Focal Adhesion,"LRP1, CAV1, MAPK1, ADAM10, ADAM9, CTNNB1, ENG",5.233286252760351e-05
+CC,GO:0030055,Cell-Substrate Junction,"LRP1, CAV1, MAPK1, ADAM10, ADAM9, CTNNB1, ENG",5.233286252760351e-05
+CC,GO:0042383,Sarcolemma,"CAV1, SLC2A1, AQP4",0.0010102219072019
+CC,GO:0005788,Endoplasmic Reticulum Lumen,"SPP1, FN1, MAPK1, ADAM10, LAMC1",0.0010491813128391
+CC,GO:0005912,Adherens Junction,"TJP1, CDH5, CTNNB1, VEGFA",0.0010491813128391
+CC,GO:0031091,Platelet Alpha Granule,"FN1, PECAM1, VEGFA",0.0036118037278422
+CC,GO:0016342,Catenin Complex,"CDH5, CTNNB1",0.0071948735787538
+CC,GO:0005769,Early Endosome,"LRP1, CAV1, KDR, MAPK1",0.0119045739170055
+CC,GO:0034774,Secretory Granule Lumen,"ROCK1, FN1, MAPK1, VEGFA",0.0122782709061903
+CC,GO:0030666,Endocytic Vesicle Membrane,"LRP1, TFRC, CAV1",0.0132247340713798
+CC,GO:0030864,Cortical Actin Cytoskeleton,"CLDN5, SLC2A1",0.0132247340713798
+CC,GO:0005604,Basement Membrane,"LAMC1, NID1",0.0132247340713798
+CC,GO:0044291,Cell-Cell Contact Zone,"JAM2, TJP2",0.0132247340713798
+CC,GO:0045121,Membrane Raft,"CAV1, KDR, FYN",0.0132247340713798
+CC,GO:0070013,Intracellular Organelle Lumen,"MMP16, SPP1, FN1, MAPK1, ADAM10, LAMC1",0.0133696238173331
+CC,GO:0030659,Cytoplasmic Vesicle Membrane,"LRP1, TFRC, CAV1, PECAM1",0.0172386191158768
+CC,GO:0005901,Caveola,"CAV1, MAPK1",0.0186651981508941
+CC,GO:0030863,Cortical Cytoskeleton,"CLDN5, SLC2A1",0.0186651981508941
+CC,GO:0031093,Platelet Alpha Granule Lumen,"FN1, VEGFA",0.0195816546421875
+CC,GO:0098591,External Side Of Apical Plasma Membrane,SLC7A5,0.0275002688918108
+CC,GO:0044853,Plasma Membrane Raft,"CAV1, MAPK1",0.0275002688918108
+CC,GO:1990712,HFE-transferrin Receptor Complex,TFRC,0.0356599506448138
+CC,GO:0098588,Bounding Membrane Of Organelle,"LRP1, TFRC, CAV1, SLC2A1, PECAM1",0.0375999728773261

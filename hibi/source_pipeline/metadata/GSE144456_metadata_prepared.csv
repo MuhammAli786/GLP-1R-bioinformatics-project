@@ -1,0 +1,33 @@
+"sample_id","title","condition_ch1","condition_ch2","tissue_ch1","tissue_ch2","include_HI_vs_control"
+"GSM4288536","Hypoxia-ischemia + 3h at day 5 [P5+3h-a]","control","ischemic","Forebrain","Forebrain",TRUE
+"GSM4288537","Hypoxia-ischemia + 3h at day 5 [P5+3h-b]","control","ischemic","Forebrain","Forebrain",TRUE
+"GSM4288538","Hypoxia-ischemia + 3h at day 5 [P5+3h-c]","control","ischemic","Forebrain","Forebrain",TRUE
+"GSM4288539","Hypoxia-ischemia + 6h at day 5 [P5+6h-a]","control","ischemic","Forebrain","Forebrain",TRUE
+"GSM4288540","Hypoxia-ischemia + 6h at day 5 [P5+6h-b]","control","ischemic","Forebrain","Forebrain",TRUE
+"GSM4288541","Hypoxia-ischemia + 6h at day 5 [P5+6h-c]","control","ischemic","Forebrain","Forebrain",TRUE
+"GSM4288542","Hypoxia-ischemia + 12h at day 5 [P5+12h-a]","control","ischemic","Forebrain","Forebrain",TRUE
+"GSM4288543","Hypoxia-ischemia + 12h at day 5 [P5+12h-b]","control","ischemic","Forebrain","Forebrain",TRUE
+"GSM4288544","Hypoxia-ischemia + 12h at day 5 [P5+12h-c]","control","ischemic","Forebrain","Forebrain",TRUE
+"GSM4288545","Hypoxia-ischemia + 24h at day 5 [P5+24h-a]","control","ischemic","Forebrain","Forebrain",TRUE
+"GSM4288546","Hypoxia-ischemia + 24h at day 5 [P5+24h-b]","control","ischemic","Forebrain","Forebrain",TRUE
+"GSM4288547","Hypoxia-ischemia + 24h at day 5 [P5+24h-c]","control","ischemic","Forebrain","Forebrain",TRUE
+"GSM4288548","Hypoxia-ischemia + 3h at day 10 [P10+3h-a]","control","ischemic","Forebrain","Forebrain",TRUE
+"GSM4288549","Hypoxia-ischemia + 3h at day 10 [P10+3h-b]","control","ischemic","Forebrain","Forebrain",TRUE
+"GSM4288550","Hypoxia-ischemia + 3h at day 10 [P10+3h-c]","control","ischemic","Forebrain","Forebrain",TRUE
+"GSM4288551","Hypoxia-ischemia + 6h at day 10 [P10+6h-a]","control","ischemic","Forebrain","Forebrain",TRUE
+"GSM4288552","Hypoxia-ischemia + 6h at day 10 [P10+6h-b]","control","ischemic","Forebrain","Forebrain",TRUE
+"GSM4288553","Hypoxia-ischemia + 6h at day 10 [P10+6h-c]","control","ischemic","Forebrain","Forebrain",TRUE
+"GSM4288554","Hypoxia-ischemia + 12h at day 10 [P10+12h-a]","control","ischemic","Forebrain","Forebrain",TRUE
+"GSM4288555","Hypoxia-ischemia + 12h at day 10 [P10+12h-b]","control","ischemic","Forebrain","Forebrain",TRUE
+"GSM4288556","Hypoxia-ischemia + 12h at day 10 [P10+12h-c]","control","ischemic","Forebrain","Forebrain",TRUE
+"GSM4288557","Hypoxia-ischemia + 24h at day 10 [P10+24h-a]","control","ischemic","Forebrain","Forebrain",TRUE
+"GSM4288558","Hypoxia-ischemia + 24h at day 10 [P10+24h-b]","control","ischemic","Forebrain","Forebrain",TRUE
+"GSM4288559","Hypoxia-ischemia + 24h at day 10 [P10+24h-c]","control","ischemic","Forebrain","Forebrain",TRUE
+"GSM4288560","Basal expression at P2 [P2a ]","Pool 1 Control","Pool 2 Control","Forebrain","Forebrain",FALSE
+"GSM4288561","Basal expression at P2 [P2b]","Pool 2 Control","Pool 1 Control","Forebrain","Forebrain",FALSE
+"GSM4288562","Basal expression at P2 [P2c]","Pool 3 control","Pool 4 control","Forebrain","Forebrain",FALSE
+"GSM4288563","Basal expression at P2 [P2d]","Pool 4 Control","Pool 3 Control","Forebrain","Forebrain",FALSE
+"GSM4288564","Basal expression at P15 [P15a ]","Pool 1 Control","Pool 2 Control","Forebrain","Forebrain",FALSE
+"GSM4288565","Basal expression at P15 [P15b]","Pool 2 Control","Pool 1 Control","Forebrain","Forebrain",FALSE
+"GSM4288566","Basal expression at P15 [P15c]","Pool 3 control","Pool 4 control","Forebrain","Forebrain",FALSE
+"GSM4288567","Basal expression at P15 [P15d]","Pool 4 Control","Pool 3 Control","Forebrain","Forebrain",FALSE

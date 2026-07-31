@@ -1,0 +1,41 @@
+Category,ID,Term,Genes,adj_pval
+Reactome,R-HSA-9031628,NGF-stimulated Transcription,"EGR2, JUND, FOSB, FOS",5.2173114676469394e-05
+Reactome,R-HSA-198725,Nuclear Events (Kinase And Transcription Factor Activation),"EGR2, JUND, FOSB, FOS",0.00016176815572788682
+Reactome,R-HSA-187037,Signaling By NTRK1 (TRKA),"EGR2, JUND, FOSB, FOS",0.0011587171397734
+Reactome,R-HSA-9018519,Estrogen-dependent Gene Expression,"JUN, JUND, FOSB, FOS",0.0011587171397734
+Reactome,R-HSA-166520,Signaling By NTRKs,"EGR2, JUND, FOSB, FOS",0.0013915556533074
+Reactome,R-HSA-1280215,Cytokine Signaling In Immune System,"SOCS3, CXCL10, JUN, TNFRSF12A, IRF1, CXCL1, FOS",0.0017074398979584
+Reactome,R-HSA-450341,Activation Of AP-1 Family Of Transcription Factors,"JUN, FOS",0.0022205163086522
+Reactome,R-HSA-162582,Signal Transduction,"SOCS3, NR4A1, CXCL10, JUN, EGR2, JUND, RGS16, HSPB1, FOSB, CXCL1, FOS, IER3",0.0024209915325969
+Reactome,R-HSA-8939211,ESR-mediated Signaling,"JUN, JUND, FOSB, FOS",0.0030425602988254
+Reactome,R-HSA-449147,Signaling By Interleukins,"SOCS3, CXCL10, JUN, CXCL1, FOS",0.0083277024663906
+Reactome,R-HSA-9006931,Signaling By Nuclear Receptors,"JUN, JUND, FOSB, FOS",0.0085254291939736
+Reactome,R-HSA-9006934,Signaling By Receptor Tyrosine Kinases,"EGR2, JUND, HSPB1, FOSB, FOS",0.0104600343099194
+Reactome,R-HSA-2871796,FCERI Mediated MAPK Activation,"JUN, FOS",0.0105343568410559
+Reactome,R-HSA-450282,MAPK Targets/ Nuclear Events Mediated By MAP Kinases,"JUN, FOS",0.0105343568410559
+Reactome,R-HSA-6783783,Interleukin-10 Signaling,"CXCL10, CXCL1",0.0220661388851724
+Reactome,R-HSA-380108,Chemokine Receptors Bind Chemokines,"CXCL10, CXCL1",0.0318522476214035
+Reactome,R-HSA-450294,MAP Kinase Activation,"JUN, FOS",0.0345729509116704
+Reactome,R-HSA-6796648,TP53 Regulates Transcription Of DNA Repair Genes,"JUN, FOS",0.0345729509116704
+Reactome,R-HSA-400253,Circadian Clock,"NFIL3, BHLHE40",0.0383522900439133
+Reactome,R-HSA-448424,Interleukin-17 Signaling,"JUN, FOS",0.0383522900439133
+Reactome,R-HSA-909733,Interferon Alpha/Beta Signaling,"SOCS3, IRF1",0.0396848714790698
+Reactome,R-HSA-2559582,Senescence-Associated Secretory Phenotype (SASP),"JUN, FOS",0.047104897978533
+Reactome,R-HSA-1257604,PIP3 Activates AKT Signaling,"NR4A1, JUN, IER3",0.047104897978533
+Reactome,R-HSA-877300,Interferon Gamma Signaling,"SOCS3, IRF1",0.047104897978533
+Reactome,R-HSA-5687128,MAPK6/MAPK4 Signaling,"JUN, HSPB1",0.047104897978533
+Reactome,R-HSA-5619507,Activation Of HOX Genes During Differentiation,"JUN, EGR2",0.047104897978533
+Reactome,R-HSA-2559580,Oxidative Stress Induced Senescence,"JUN, FOS",0.047104897978533
+Reactome,R-HSA-975871,MyD88 Cascade Initiated On Plasma Membrane,"JUN, FOS",0.047104897978533
+Reactome,R-HSA-975138,TRAF6 Mediated Induction Of NFkB And MAP Kinases Upon TLR7/8 Or 9 Activation,"JUN, FOS",0.047104897978533
+Reactome,R-HSA-975155,MyD88 Dependent Cascade Initiated On Endosome,"JUN, FOS",0.047104897978533
+Reactome,R-HSA-168164,Toll Like Receptor 3 (TLR3) Cascade,"JUN, FOS",0.047104897978533
+Reactome,R-HSA-168181,Toll Like Receptor 7/8 (TLR7/8) Cascade,"JUN, FOS",0.047104897978533
+Reactome,R-HSA-196836,Vitamin C (Ascorbate) Metabolism,SLC2A1,0.047104897978533
+Reactome,R-HSA-9006925,Intracellular Signaling By Second Messengers,"NR4A1, JUN, IER3",0.047104897978533
+Reactome,R-HSA-168138,Toll Like Receptor 9 (TLR9) Cascade,"JUN, FOS",0.047104897978533
+Reactome,R-HSA-418594,G Alpha (I) Signaling Events,"CXCL10, RGS16, CXCL1",0.047104897978533
+Reactome,R-HSA-6785807,Interleukin-4 And Interleukin-13 Signaling,"SOCS3, FOS",0.047104897978533
+Reactome,R-HSA-166166,MyD88-independent TLR4 Cascade,"JUN, FOS",0.047104897978533
+Reactome,R-HSA-8939242,RUNX1 Regulates Transcription Of Genes Involved In Differentiation Of Keratinocytes,SOCS3,0.0488237349495848
+Reactome,R-HSA-166058,MyD88:MAL(TIRAP) Cascade Initiated On Plasma Membrane,"JUN, FOS",0.0488237349495848

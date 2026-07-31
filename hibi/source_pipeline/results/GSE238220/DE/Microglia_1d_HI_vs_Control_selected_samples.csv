@@ -1,0 +1,13 @@
+count_matrix_sample,sample_id,title,cell_type,treatment,time,sex,tissue,pup_id,tissue_raw,cell_type_raw,pup_id_raw,sex_raw,time_raw,treatment_raw,count_column
+GSM7660628,GSM7660628,G40_f1Nµg,Microglia,Control,1d,Female,Hippocampus,N40,Hippocampus,Microglia,N40,female,NA,None,G40_f1Nµg
+GSM7660629,GSM7660629,G50_f1Nµg,Microglia,Control,1d,Female,Hippocampus,N50,Hippocampus,Microglia,N50,female,NA,None,G50_f1Nµg
+GSM7660630,GSM7660630,G70_f1Nµg,Microglia,Control,1d,Female,Hippocampus,N70,Hippocampus,Microglia,N70,female,NA,None,G70_f1Nµg
+GSM7660631,GSM7660631,G10_m1Nµg,Microglia,Control,1d,Male,Hippocampus,N10,Hippocampus,Microglia,N10,male,NA,None,G10_m1Nµg
+GSM7660632,GSM7660632,G30_m1Nµg,Microglia,Control,1d,Male,Hippocampus,N30,Hippocampus,Microglia,N30,male,NA,None,G30_m1Nµg
+GSM7660633,GSM7660633,G60_m1Nµg,Microglia,Control,1d,Male,Hippocampus,N60,Hippocampus,Microglia,N60,male,NA,None,G60_m1Nµg
+GSM7660634,GSM7660634,G10_f1HIµg,Microglia,HI,1d,Female,Hippocampus,10,Hippocampus,Microglia,10,female,NA,Hypoxia,G10_f1HIµg
+GSM7660635,GSM7660635,G23_f1HIµg,Microglia,HI,1d,Female,Hippocampus,30,Hippocampus,Microglia,30,female,NA,Hypoxia,G23_f1HIµg
+GSM7660636,GSM7660636,G24_f1HIµg,Microglia,HI,1d,Female,Hippocampus,50,Hippocampus,Microglia,50,female,NA,Hypoxia,G24_f1HIµg
+GSM7660637,GSM7660637,G4_m1HIµg,Microglia,HI,1d,Male,Hippocampus,1,Hippocampus,Microglia,1,male,NA,Hypoxia,G4_m1HIµg
+GSM7660638,GSM7660638,G5_m1HIµg,Microglia,HI,1d,Male,Hippocampus,3,Hippocampus,Microglia,3,male,NA,Hypoxia,G5_m1HIµg
+GSM7660639,GSM7660639,G6_m1HIµg,Microglia,HI,1d,Male,Hippocampus,5,Hippocampus,Microglia,5,male,NA,Hypoxia,G6_m1HIµg

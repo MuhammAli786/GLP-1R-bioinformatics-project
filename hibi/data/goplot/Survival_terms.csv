@@ -1,0 +1,685 @@
+Category,ID,Term,Genes,adj_pval
+BP,GO:0007169,Transmembrane Receptor Protein Tyrosine Kinase Signaling Pathway,"GSK3B, GSK3A, GAB1, IRS2, PIK3R1, FOXO1, IGF1R, VEGFA, KDR, MAPK1, AKT1, FYN, GRB2, FGFR2, FGFR1",6.8376735474792114e-15
+BP,GO:0032869,Cellular Response To Insulin Stimulus,"GSK3B, GSK3A, RPS6KB1, PDPK1, GAB1, AKT1, IRS2, GRB2, PIK3R1, FOXO1, IGF1R",3.8926046493165145e-14
+BP,GO:0046777,Protein Autophosphorylation,"GSK3B, PDPK1, KDR, AKT1, ULK2, FYN, ULK1, MTOR, FGFR2, IGF1R, FGFR1",6.739428860429403e-12
+BP,GO:0006468,Protein Phosphorylation,"GSK3B, GSK3A, PDPK1, MTOR, IGF1R, RPS6KB1, AKT3, KDR, MAPK1, AKT1, ULK2, FYN, ULK1, FGFR2, FGFR1",7.45918155048103e-12
+BP,GO:0008286,Insulin Receptor Signaling Pathway,"GSK3B, GSK3A, GAB1, IRS2, GRB2, PIK3R1, FOXO1, IGF1R",1.0108881382205704e-11
+BP,GO:0042981,Regulation Of Apoptotic Process,"GSK3B, PHLPP1, BAD, XIAP, PIK3R1, FOXO1, MTOR, IGF1R, VEGFA, RPS6KB1, KDR, AKT1, BAX, FYN, BIRC2, MCL1",4.0997021289475836e-11
+BP,GO:0010506,Regulation Of Autophagy,"RPTOR, GSK3B, GSK3A, BAD, AKT1, ULK2, ULK1, FOXO1, MTOR, MCL1, EIF4G1",2.2951648028830208e-10
+BP,GO:0048522,Positive Regulation Of Cellular Process,"GSK3B, PTEN, IRS2, MTOR, IGF1R, VEGFA, RPTOR, KDR, AKT1, KRAS, HRAS, FGFR2, FGFR1, EIF4G1",8.487256643008136e-10
+BP,GO:0043069,Negative Regulation Of Programmed Cell Death,"GSK3B, RPS6KB1, KDR, XIAP, AKT1, PIK3R1, FOXO1, MTOR, BIRC2, IGF1R, MCL1, VEGFA",1.1591325471628471e-09
+BP,GO:0031331,Positive Regulation Of Cellular Catabolic Process,"RPTOR, GSK3B, GSK3A, BAD, ULK2, IRS2, ULK1, FOXO1, MTOR",1.4891705339950663e-09
+BP,GO:0042327,Positive Regulation Of Phosphorylation,"CDKN1A, CCND1, KDR, AKT1, KRAS, HRAS, FGFR2, IGF1R, VEGFA, FGFR1",2.926194786613373e-09
+BP,GO:0016310,Phosphorylation,"RPTOR, GSK3B, GSK3A, PDPK1, AKT3, MAPK1, AKT1, FYN, ULK1, PIK3CG, MTOR, FGFR1",3.4499755911605387e-09
+BP,GO:0043066,Negative Regulation Of Apoptotic Process,"GSK3B, RPS6KB1, KDR, XIAP, AKT1, PIK3R1, FOXO1, MTOR, BIRC2, IGF1R, MCL1, VEGFA",1.1598193319146572e-08
+BP,GO:0008284,Positive Regulation Of Cell Population Proliferation,"CDKN1A, BAD, PTEN, KDR, AKT1, IRS2, KRAS, HRAS, FGFR2, IGF1R, VEGFA, FGFR1",1.1598193319146572e-08
+BP,GO:0042127,Regulation Of Cell Population Proliferation,"CDKN1A, PTEN, XIAP, IRS2, IGF1R, VEGFA, KDR, AKT1, ULK1, KRAS, HRAS, BIRC2, FGFR2, FGFR1",1.3085731730135238e-08
+BP,GO:0051247,Positive Regulation Of Protein Metabolic Process,"NFKBIA, GSK3B, GSK3A, RPS6KB1, BAD, AKT1, FOXO1, MTOR, EIF4G1",1.3085731730135238e-08
+BP,GO:0032868,Response To Insulin,"GSK3A, RPS6KB1, PDPK1, AKT1, IRS2, PIK3R1, FOXO1",1.533382505408802e-08
+BP,GO:0010595,Positive Regulation Of Endothelial Cell Migration,"PDPK1, AKT3, KDR, AKT1, PIK3CG, VEGFA, FGFR1",2.4439694979322117e-08
+BP,GO:0043536,Positive Regulation Of Blood Vessel Endothelial Cell Migration,"PDPK1, AKT3, KDR, AKT1, VEGFA, FGFR1",2.6550405737791475e-08
+BP,GO:0071375,Cellular Response To Peptide Hormone Stimulus,"GSK3A, RPS6KB1, PDPK1, AKT1, IRS2, PIK3R1, FOXO1",3.05228105356289e-08
+BP,GO:0018105,Peptidyl-Serine Phosphorylation,"GSK3B, RPS6KB1, PDPK1, AKT3, MAPK1, ULK2, ULK1, MTOR",5.2307482710574425e-08
+BP,GO:0043535,Regulation Of Blood Vessel Endothelial Cell Migration,"PDPK1, AKT3, KDR, AKT1, VEGFA, FGFR1",6.24705860030109e-08
+BP,GO:0018209,Peptidyl-Serine Modification,"GSK3B, RPS6KB1, PDPK1, AKT3, MAPK1, ULK2, ULK1, MTOR",7.069232369113149e-08
+BP,GO:0018107,Peptidyl-Threonine Phosphorylation,"GSK3B, GSK3A, PDPK1, MAPK1, AKT1, ULK1",8.920611059131027e-08
+BP,GO:0010508,Positive Regulation Of Autophagy,"GSK3B, GSK3A, BAD, KDR, ULK2, ULK1, FOXO1",8.996372573497163e-08
+BP,GO:0001932,Regulation Of Protein Phosphorylation,"CDKN1A, CCND1, PTEN, KDR, AKT1, FYN, KRAS, HRAS, VEGFA",1.155284963759771e-07
+BP,GO:0048015,Phosphatidylinositol-Mediated Signaling,"RPS6KB1, PTEN, PIK3R1, PIK3CG, IGF1R, FGFR1",1.1971255166951098e-07
+BP,GO:0031929,TOR Signaling,"RPTOR, RPS6KB1, RPS6KB2, EIF4EBP1, MTOR",1.299581425931208e-07
+BP,GO:0001934,Positive Regulation Of Protein Phosphorylation,"RPTOR, CDKN1A, CCND1, KDR, MAPK1, AKT1, KRAS, HRAS, VEGFA, EIF4G1",1.3055604508200541e-07
+BP,GO:0071902,Positive Regulation Of Protein Serine/Threonine Kinase Activity,"RPTOR, CCND1, AKT1, HRAS, PIK3CG, VEGFA, FGFR1",1.4047699643478445e-07
+BP,GO:0018210,Peptidyl-Threonine Modification,"GSK3B, GSK3A, PDPK1, MAPK1, AKT1, ULK1",1.5318146485299001e-07
+BP,GO:0097191,Extrinsic Apoptotic Signaling Pathway,"GSK3B, GSK3A, PDPK1, BAD, BAX, MCL1",1.6274626534012277e-07
+BP,GO:0050679,Positive Regulation Of Epithelial Cell Proliferation,"BAD, AKT3, KDR, AKT1, HRAS, FGFR2, VEGFA",1.8126187884761786e-07
+BP,GO:1902531,Regulation Of Intracellular Signal Transduction,"NFKBIA, PHLPP1, PDPK1, PTEN, KDR, AKT1, GRB2, MTOR, VEGFA",2.3599749842560626e-07
+BP,GO:0043408,Regulation Of MAPK Cascade,"PHLPP1, KDR, MAPK1, GRB2, HRAS, FGFR2, IGF1R, FGFR1",2.3599749842560626e-07
+BP,GO:0031667,Response To Nutrient Levels,"RPTOR, RPS6KB1, ULK1, MTOR, EIF4G1",2.738380094916533e-07
+BP,GO:0001938,Positive Regulation Of Endothelial Cell Proliferation,"PDPK1, AKT3, KDR, AKT1, VEGFA, FGFR1",3.2941833717701697e-07
+BP,GO:0031669,Cellular Response To Nutrient Levels,"RPTOR, MAP1LC3A, ULK1, FOXO1, MTOR, EIF4G1",3.4695720531826226e-07
+BP,GO:0097192,Extrinsic Apoptotic Signaling Pathway In Absence Of Ligand,"GSK3B, GSK3A, BAX, MCL1",7.870549126436483e-07
+BP,GO:0006974,DNA Damage Response,"RPTOR, CDKN1A, CCND1, XIAP, BAX, GRB2, FOXO1, MTOR, MCL1",1.856916527571772e-06
+BP,GO:0010518,Positive Regulation Of Phospholipase Activity,"PDPK1, HRAS, FGFR2, FGFR1",1.9812634093315623e-06
+BP,GO:1902533,Positive Regulation Of Intracellular Signal Transduction,"RPTOR, KDR, BAX, HRAS, PIK3CG, BIRC2, FGFR2, IGF1R, VEGFA, FGFR1",2.069885402227328e-06
+BP,GO:0038127,ERBB Signaling Pathway,"PDPK1, GAB1, MAPK1, AKT1, GRB2",2.170675346482955e-06
+BP,GO:0010822,Positive Regulation Of Mitochondrion Organization,"GSK3B, GSK3A, BAD, KDR, BAX",3.055194986553221e-06
+BP,GO:0036211,Protein Modification Process,"GSK3B, GSK3A, PDPK1, AKT3, PTEN, MAPK1, AKT1, FYN, ULK1, MTOR, FGFR1",3.1785035591388304e-06
+BP,GO:0009267,Cellular Response To Starvation,"RPTOR, CDKN1A, MAP1LC3A, MAPK1, FOXO1, MTOR",4.995715044930786e-06
+BP,GO:0006446,Regulation Of Translational Initiation,"RPS6KB1, RPS6KB2, EIF4EBP1, MTOR, EIF4G1",4.995715044930786e-06
+BP,GO:0045787,Positive Regulation Of Cell Cycle,"CCND1, RPS6KB1, EIF4EBP1, AKT1, FGFR2",4.995715044930786e-06
+BP,GO:0018108,Peptidyl-Tyrosine Phosphorylation,"KDR, FYN, FGFR2, IGF1R, FGFR1",5.5906580260861954e-06
+BP,GO:0031330,Negative Regulation Of Cellular Catabolic Process,"RPTOR, GSK3A, MTOR, MCL1, EIF4G1",5.5906580260861954e-06
+BP,GO:0031401,Positive Regulation Of Protein Modification Process,"CDKN1A, CCND1, KDR, AKT1, KRAS, HRAS, VEGFA",7.474697850304609e-06
+BP,GO:0010628,Positive Regulation Of Gene Expression,"GSK3B, GSK3A, RPS6KB1, AKT1, KRAS, PIK3R1, PIK3CG, MTOR, VEGFA",9.302833052320683e-06
+BP,GO:0051347,Positive Regulation Of Transferase Activity,"GSK3A, KDR, MAPK1, FGFR2, IGF1R, FGFR1",9.302833052320683e-06
+BP,GO:2000074,Regulation Of Type B Pancreatic Cell Development,"GSK3B, GSK3A, BAD",9.302833052320683e-06
+BP,GO:0048640,Negative Regulation Of Developmental Growth,"CDKN1A, PTEN, ULK2, ULK1",9.437027609430036e-06
+BP,GO:0014065,Phosphatidylinositol 3-Kinase Signaling,"PTEN, PIK3R1, PIK3CG, IGF1R",1.0576929678057482e-05
+BP,GO:1905477,Positive Regulation Of Protein Localization To Membrane,"PDPK1, AKT1, FYN, PIK3R1, HRAS",1.1240173201556788e-05
+BP,GO:0062013,Positive Regulation Of Small Molecule Metabolic Process,"RPTOR, AKT1, IRS2, MTOR",1.160361617898841e-05
+BP,GO:0010604,Positive Regulation Of Macromolecule Metabolic Process,"NFKBIA, GSK3B, GSK3A, AKT1, KRAS, MTOR, VEGFA, EIF4G1",1.207474554921039e-05
+BP,GO:0060193,Positive Regulation Of Lipase Activity,"PDPK1, FGFR2, FGFR1",1.2540999787416676e-05
+BP,GO:0043549,Regulation Of Kinase Activity,"KDR, IRS2, FGFR2, IGF1R, FGFR1",1.514941022626313e-05
+BP,GO:0046324,Regulation Of Glucose Import,"GSK3A, AKT1, IRS2, PIK3R1",1.555058484044143e-05
+BP,GO:0051100,Negative Regulation Of Binding,"NFKBIA, GSK3B, CDKN1A, AKT1, BAX",1.555058484044143e-05
+BP,GO:0010517,Regulation Of Phospholipase Activity,"PDPK1, FGFR2, FGFR1",1.6772131154020588e-05
+BP,GO:0033135,Regulation Of Peptidyl-Serine Phosphorylation,"RPTOR, PTEN, AKT1, VEGFA, EIF4G1",2.225706345428393e-05
+BP,GO:0010634,Positive Regulation Of Epithelial Cell Migration,"KDR, AKT1, PIK3CG, MTOR, VEGFA",2.436423214880412e-05
+BP,GO:0000165,MAPK Cascade,"KDR, MAPK1, KRAS, HRAS, FGFR1",2.800421896411912e-05
+BP,GO:1905564,Positive Regulation Of Vascular Endothelial Cell Proliferation,"PDPK1, AKT3, FGFR1",2.8857972415662707e-05
+BP,GO:0007173,Epidermal Growth Factor Receptor Signaling Pathway,"PDPK1, GAB1, AKT1, GRB2",3.488997320765502e-05
+BP,GO:0033674,Positive Regulation Of Kinase Activity,"CDKN1A, KDR, FGFR2, IGF1R, FGFR1",3.597172116286877e-05
+BP,GO:2000045,Regulation Of G1/S Transition Of Mitotic Cell Cycle,"RPTOR, CDKN1A, PTEN, AKT1, EIF4G1",3.896468256064203e-05
+BP,GO:0043067,Regulation Of Programmed Cell Death,"PHLPP1, XIAP, AKT1, BAX, FYN, BIRC2",4.2248849537183086e-05
+BP,GO:2001028,Positive Regulation Of Endothelial Cell Chemotaxis,"KDR, VEGFA, FGFR1",4.3293023228756375e-05
+BP,GO:0038084,Vascular Endothelial Growth Factor Signaling Pathway,"GAB1, KDR, VEGFA",4.3293023228756375e-05
+BP,GO:0043410,Positive Regulation Of MAPK Cascade,"KDR, HRAS, PIK3CG, FGFR2, IGF1R, VEGFA, FGFR1",4.3293023228756375e-05
+BP,GO:0071900,Regulation Of Protein Serine/Threonine Kinase Activity,"RPTOR, CDKN1A, CCND1, AKT1, HRAS",4.7755480576406055e-05
+BP,GO:0031396,Regulation Of Protein Ubiquitination,"GSK3B, GSK3A, XIAP, AKT1, BIRC2",4.9243507888524486e-05
+BP,GO:0032872,Regulation Of Stress-Activated MAPK Cascade,"PHLPP1, MAPK1, FOXO1, IGF1R",5.115439970525734e-05
+BP,GO:0010907,Positive Regulation Of Glucose Metabolic Process,"AKT1, IRS2, FOXO1",5.115439970525734e-05
+BP,GO:0044843,Cell Cycle G1/S Phase Transition,"CDKN1A, CCND1, RPS6KB1, EIF4EBP1",5.411529826012135e-05
+BP,GO:0051893,Regulation Of Focal Adhesion Assembly,"PTEN, KDR, FYN, VEGFA",6.149149979831269e-05
+BP,GO:0018212,Peptidyl-Tyrosine Modification,"KDR, FYN, FGFR2, FGFR1",6.149149979831269e-05
+BP,GO:0010557,Positive Regulation Of Macromolecule Biosynthetic Process,"RPS6KB1, KDR, AKT1, IRS2, MTOR",6.655983145053895e-05
+BP,GO:0002042,Cell Migration Involved In Sprouting Angiogenesis,"KDR, AKT1, VEGFA",7.16955799524284e-05
+BP,GO:0090316,Positive Regulation Of Intracellular Protein Transport,"GSK3B, GSK3A, FYN, PIK3R1, HRAS",7.611599499038664e-05
+BP,GO:1905562,Regulation Of Vascular Endothelial Cell Proliferation,"PDPK1, AKT3, FGFR1",8.391438825880644e-05
+BP,GO:0006915,Apoptotic Process,"NFKBIA, BAD, AKT1, BAX, FOXO1, MTOR",8.597772254595678e-05
+BP,GO:0010507,Negative Regulation Of Autophagy,"RPTOR, MTOR, MCL1, EIF4G1",9.357677745133133e-05
+BP,GO:0000082,G1/S Transition Of Mitotic Cell Cycle,"CDKN1A, CCND1, RPS6KB1, EIF4EBP1",0.00010322175359683186
+BP,GO:1901992,Positive Regulation Of Mitotic Cell Cycle Phase Transition,"RPTOR, CCND1, AKT1, EIF4G1",0.00010322175359683186
+BP,GO:0051896,Regulation Of Protein Kinase B Signaling,"PHLPP1, PTEN, PIK3CG, IGF1R, FGFR1",0.00010322175359683186
+BP,GO:0045948,Positive Regulation Of Translational Initiation,"RPS6KB1, RPS6KB2, MTOR",0.00012730759092204137
+BP,GO:0043534,Blood Vessel Endothelial Cell Migration,"KDR, AKT1, VEGFA",0.00014406724327132689
+BP,GO:0050771,Negative Regulation Of Axonogenesis,"PTEN, ULK2, ULK1",0.00014406724327132689
+BP,GO:0001933,Negative Regulation Of Protein Phosphorylation,"CDKN1A, PDPK1, PTEN, AKT1, EIF4G1",0.00015406309285538494
+BP,GO:0032091,Negative Regulation Of Protein Binding,"GSK3B, CDKN1A, AKT1, BAX",0.00015736581123531324
+BP,GO:0150117,Positive Regulation Of Cell-Substrate Junction Organization,"KDR, PIK3R1, VEGFA",0.00016032494247577762
+BP,GO:0071456,Cellular Response To Hypoxia,"RPTOR, BAD, MTOR, VEGFA",0.0001629809813908847
+BP,GO:0036294,Cellular Response To Decreased Oxygen Levels,"RPTOR, BAD, MTOR, VEGFA",0.00017043523777476876
+BP,GO:0071363,Cellular Response To Growth Factor Stimulus,"RPS6KB1, PDPK1, KDR, AKT1, VEGFA",0.00017399889399890195
+BP,GO:0045834,Positive Regulation Of Lipid Metabolic Process,"RPTOR, AKT1, MTOR",0.00017399889399890195
+BP,GO:0043491,Protein Kinase B Signaling,"PTEN, KDR, AKT1",0.00017399889399890195
+BP,GO:0005979,Regulation Of Glycogen Biosynthetic Process,"GSK3B, GSK3A, IRS2",0.0001918035211929194
+BP,GO:0046326,Positive Regulation Of Glucose Import,"AKT1, IRS2, PIK3R1",0.0001918035211929194
+BP,GO:0008361,Regulation Of Cell Size,"RPTOR, PTEN, MTOR",0.0001918035211929194
+BP,GO:0030335,Positive Regulation Of Cell Migration,"KDR, GAB1, HRAS, MTOR, IGF1R, VEGFA",0.00019245533929472324
+BP,GO:0097061,Dendritic Spine Organization,"PTEN, FYN, IGF1R",0.0002098762239998585
+BP,GO:0000079,Regulation Of Cyclin-Dependent Protein Serine/Threonine Kinase Activity,"CDKN1A, CCND1, PTEN, AKT1",0.0002098762239998585
+BP,GO:0009896,Positive Regulation Of Catabolic Process,"GSK3B, GSK3A, PTEN, FOXO1",0.0002098762239998585
+BP,GO:1903322,Positive Regulation Of Protein Modification By Small Protein Conjugation Or Removal,"GSK3B, GSK3A, XIAP, BIRC2",0.0002098762239998585
+BP,GO:0045927,Positive Regulation Of Growth,"RPTOR, AKT1, MTOR, EIF4G1",0.000228028788148197
+BP,GO:0071229,Cellular Response To Acid Chemical,"RPTOR, MTOR, VEGFA",0.000228028788148197
+BP,GO:0120035,Regulation Of Plasma Membrane Bounded Cell Projection Organization,"GSK3B, GSK3A, PTEN",0.000250554832333237
+BP,GO:0048010,Vascular Endothelial Growth Factor Receptor Signaling Pathway,"KDR, FYN, VEGFA",0.000250554832333237
+BP,GO:0030334,Regulation Of Cell Migration,"PTEN, KDR, AKT1, FYN, HRAS, IGF1R, VEGFA",0.0002515300153846848
+BP,GO:0043281,Regulation Of Cysteine-Type Endopeptidase Activity Involved In Apoptotic Process,"BAD, XIAP, AKT1, VEGFA",0.0002515300153846848
+BP,GO:0031398,Positive Regulation Of Protein Ubiquitination,"GSK3B, GSK3A, XIAP, BIRC2",0.0002515300153846848
+BP,GO:0031328,Positive Regulation Of Cellular Biosynthetic Process,"RPS6KB1, AKT1, IRS2, FOXO1, MTOR",0.00026201601682011963
+BP,GO:0045893,Positive Regulation Of DNA-templated Transcription,"RPTOR, NFKBIA, AKT1, PIK3R1, HRAS, FOXO1, MTOR, FGFR2, NFKB2, VEGFA, CREB5",0.0002715046914843194
+BP,GO:0010594,Regulation Of Endothelial Cell Migration,"KDR, AKT1, PIK3CG, VEGFA",0.000294638363451699
+BP,GO:0033138,Positive Regulation Of Peptidyl-Serine Phosphorylation,"RPTOR, AKT1, VEGFA, EIF4G1",0.000305502121703969
+BP,GO:0014066,Regulation Of Phosphatidylinositol 3-Kinase Signaling,"PTEN, KDR, IGF1R, FGFR1",0.0003147150857603321
+BP,GO:1900087,Positive Regulation Of G1/S Transition Of Mitotic Cell Cycle,"RPTOR, AKT1, EIF4G1",0.0003147150857603321
+BP,GO:0010828,Positive Regulation Of Glucose Transmembrane Transport,"AKT1, IRS2, PIK3R1",0.0003147150857603321
+BP,GO:0050678,Regulation Of Epithelial Cell Proliferation,"BAD, HRAS, FGFR2, VEGFA",0.0003201925696915663
+BP,GO:0043406,Positive Regulation Of MAP Kinase Activity,"HRAS, PIK3CG, VEGFA, FGFR1",0.0003201925696915663
+BP,GO:0038061,NIK/NF-kappaB Signaling,"NFKBIA, BIRC2, NFKB2",0.0003385863719575546
+BP,GO:0001936,Regulation Of Endothelial Cell Proliferation,"AKT3, KDR, AKT1, VEGFA",0.0003418489222650254
+BP,GO:0007409,Axonogenesis,"PTEN, ULK2, FYN, ULK1, FGFR2",0.0003418489222650254
+BP,GO:0045719,Negative Regulation Of Glycogen Biosynthetic Process,"GSK3B, GSK3A",0.0003418489222650254
+BP,GO:2000465,Regulation Of Glycogen (Starch) Synthase Activity,"GSK3B, GSK3A",0.0003418489222650254
+BP,GO:0010746,Regulation Of Long-Chain Fatty Acid Import Across Plasma Membrane,"AKT1, IRS2",0.0003418489222650254
+BP,GO:0043456,Regulation Of Pentose-Phosphate Shunt,"RPTOR, MTOR",0.0003418489222650254
+BP,GO:0070417,Cellular Response To Cold,"NFKBIA, FOXO1",0.0003418489222650254
+BP,GO:0036324,Vascular Endothelial Growth Factor Receptor-2 Signaling Pathway,"KDR, VEGFA",0.0003418489222650254
+BP,GO:0051173,Positive Regulation Of Nitrogen Compound Metabolic Process,"NFKBIA, AKT1, EIF4G1",0.00034476827739537665
+BP,GO:0048017,Inositol Lipid-Mediated Signaling,"RPS6KB1, IGF1R, FGFR1",0.00034476827739537665
+BP,GO:0008637,Apoptotic Mitochondrial Changes,"BAD, BAX, MCL1",0.0003668833324802037
+BP,GO:1904646,Cellular Response To Amyloid-Beta,"GSK3B, FYN, IGF1R",0.0003668833324802037
+BP,GO:0035924,Cellular Response To Vascular Endothelial Growth Factor Stimulus,"KDR, GAB1, VEGFA",0.0003668833324802037
+BP,GO:0045913,Positive Regulation Of Carbohydrate Metabolic Process,"RPTOR, IRS2, MTOR",0.0003668833324802037
+BP,GO:0031334,Positive Regulation Of Protein-Containing Complex Assembly,"GSK3B, BAX, VEGFA, EIF4G1",0.0003800457477817243
+BP,GO:0071230,Cellular Response To Amino Acid Stimulus,"RPTOR, FYN, MTOR",0.0003951037479513744
+BP,GO:0010799,Regulation Of Peptidyl-Threonine Phosphorylation,"RPTOR, MAPK1, EIF4G1",0.0004274204557848499
+BP,GO:0051348,Negative Regulation Of Transferase Activity,"GSK3B, GSK3A, IRS2",0.00046126942621669686
+BP,GO:0045765,Regulation Of Angiogenesis,"PDPK1, KDR, GAB1, PIK3CG, VEGFA",0.0004629252550095512
+BP,GO:1904018,Positive Regulation Of Vasculature Development,"PDPK1, KDR, GAB1, VEGFA",0.0004631856935098013
+BP,GO:0070874,Negative Regulation Of Glycogen Metabolic Process,"GSK3B, GSK3A",0.00046399128241677657
+BP,GO:0061042,Vascular Wound Healing,"KDR, VEGFA",0.00046399128241677657
+BP,GO:0097193,Intrinsic Apoptotic Signaling Pathway,"CDKN1A, BAD, BAX, MCL1",0.00047120220431262855
+BP,GO:0030307,Positive Regulation Of Cell Growth,"RPTOR, AKT1, MTOR, EIF4G1",0.0004857194640760277
+BP,GO:0051881,Regulation Of Mitochondrial Membrane Potential,"BAD, AKT1, BAX",0.0005160846620406361
+BP,GO:1902808,Positive Regulation Of Cell Cycle G1/S Phase Transition,"RPTOR, AKT1, EIF4G1",0.0005502190278260222
+BP,GO:0046328,Regulation Of JNK Cascade,"PHLPP1, XIAP, HRAS, IGF1R",0.0005502190278260222
+BP,GO:0044772,Mitotic Cell Cycle Phase Transition,"CDKN1A, CCND1, RPS6KB1, EIF4EBP1",0.0005662680812845495
+BP,GO:0007264,Small GTPase Mediated Signal Transduction,"CDKN1A, KRAS, GRB2, HRAS",0.0005811493049228286
+BP,GO:1990928,Response To Amino Acid Starvation,"CDKN1A, MAPK1, MTOR",0.0005811493049228286
+BP,GO:0051130,Positive Regulation Of Cellular Component Organization,"GSK3B, BAX, IGF1R, VEGFA",0.0005900693486535818
+BP,GO:0048670,Regulation Of Collateral Sprouting,"ULK2, ULK1",0.0005900693486535818
+BP,GO:0050926,Regulation Of Positive Chemotaxis,"KDR, VEGFA",0.0005900693486535818
+BP,GO:1903689,"Regulation Of Wound Healing, Spreading Of Epidermal Cells","PTEN, MTOR",0.0005900693486535818
+BP,GO:0038089,Positive Regulation Of Cell Migration By Vascular Endothelial Growth Factor Signaling Pathway,"KDR, VEGFA",0.0005900693486535818
+BP,GO:0044805,Late Nucleophagy,"ULK2, ULK1",0.0005900693486535818
+BP,GO:0051493,Regulation Of Cytoskeleton Organization,"GSK3B, MAPK1, HRAS, MTOR",0.0005900693486535818
+BP,GO:0043405,Regulation Of MAP Kinase Activity,"HRAS, PIK3CG, VEGFA, FGFR1",0.0005900693486535818
+BP,GO:0034198,Cellular Response To Amino Acid Starvation,"CDKN1A, MAPK1, MTOR",0.0005910798612220955
+BP,GO:1904645,Response To Amyloid-Beta,"GSK3B, FYN, IGF1R",0.0006195780338913113
+BP,GO:0001954,Positive Regulation Of Cell-Matrix Adhesion,"GSK3B, KDR, VEGFA",0.0006195780338913113
+BP,GO:0001678,Intracellular Glucose Homeostasis,"PIK3R1, FOXO1, IGF1R",0.0006195780338913113
+BP,GO:0032535,Regulation Of Cellular Component Size,"RPTOR, PTEN, MTOR",0.0006195780338913113
+BP,GO:0001558,Regulation Of Cell Growth,"RPTOR, CDKN1A, AKT1, MTOR, EIF4G1",0.0006396936288572278
+BP,GO:0043393,Regulation Of Protein Binding,"GSK3B, CDKN1A, AKT1, BAX",0.0006471295970669289
+BP,GO:0009891,Positive Regulation Of Biosynthetic Process,"RPTOR, AKT1, MTOR",0.0006524539963750272
+BP,GO:0043254,Regulation Of Protein-Containing Complex Assembly,"GSK3B, BAX, ULK1, VEGFA",0.0006571872712817059
+BP,GO:0045766,Positive Regulation Of Angiogenesis,"PDPK1, KDR, GAB1, VEGFA",0.0006571872712817059
+BP,GO:0007249,I-kappaB kinase/NF-kappaB Signaling,"NFKBIA, BIRC2, NFKB2",0.0006861654190327645
+BP,GO:0007167,Enzyme-Linked Receptor Protein Signaling Pathway,"KDR, FYN, FGFR2, FGFR1",0.0007619827027883624
+BP,GO:0030308,Negative Regulation Of Cell Growth,"GSK3A, CDKN1A, ULK2, ULK1",0.0007815944429551072
+BP,GO:1900101,Regulation Of Endoplasmic Reticulum Unfolded Protein Response,"BAX, PIK3R1",0.000913141544494053
+BP,GO:0034727,Piecemeal Microautophagy Of The Nucleus,"ULK2, ULK1",0.000913141544494053
+BP,GO:0035794,Positive Regulation Of Mitochondrial Membrane Permeability,"GSK3B, GSK3A",0.000913141544494053
+BP,GO:0030855,Epithelial Cell Differentiation,"KDR, AKT1, FGFR2, VEGFA",0.00094323785481754
+BP,GO:1904377,Positive Regulation Of Protein Localization To Cell Periphery,"PDPK1, AKT1, PIK3R1",0.0009550377058141992
+BP,GO:1903078,Positive Regulation Of Protein Localization To Plasma Membrane,"PDPK1, AKT1, PIK3R1",0.0009550377058141992
+BP,GO:0071479,Cellular Response To Ionizing Radiation,"CDKN1A, GRB2, HRAS",0.0010011868464289
+BP,GO:0002040,Sprouting Angiogenesis,"KDR, AKT1, VEGFA",0.0010011868464289
+BP,GO:1901701,Cellular Response To Oxygen-Containing Compound,"RPTOR, GSK3B, MAPK1, AKT1, FOXO1, MTOR",0.001004285458326
+BP,GO:0038202,TORC1 Signaling,"RPTOR, MTOR",0.0010690688111084
+BP,GO:0060055,Angiogenesis Involved In Wound Healing,"KDR, VEGFA",0.0010690688111084
+BP,GO:0071233,Cellular Response To Leucine,"RPTOR, MTOR",0.0010690688111084
+BP,GO:0043201,Response To Leucine,"RPTOR, MTOR",0.0010690688111084
+BP,GO:1901030,Positive Regulation Of Mitochondrial Outer Membrane Permeabilization Involved In Apoptotic Signaling Pathway,"GSK3B, GSK3A",0.0010690688111084
+BP,GO:0048009,Insulin-Like Growth Factor Receptor Signaling Pathway,"PIK3R1, IGF1R",0.0010690688111084
+BP,GO:0048762,Mesenchymal Cell Differentiation,"GSK3B, FGFR2, FGFR1",0.0010742882809378
+BP,GO:0009967,Positive Regulation Of Signal Transduction,"PTEN, BAX, PIK3R1, FGFR2, VEGFA",0.0011766255006379
+BP,GO:1901653,Cellular Response To Peptide,"GSK3B, FYN, IGF1R",0.0011849585588401
+BP,GO:0007265,Ras Protein Signal Transduction,"CDKN1A, KRAS, GRB2, HRAS",0.0012171881117399
+BP,GO:0051547,Regulation Of Keratinocyte Migration,"PTEN, MTOR",0.0012530065434679
+BP,GO:1900274,Regulation Of Phospholipase C Activity,"HRAS, FGFR1",0.0012530065434679
+BP,GO:1900103,Positive Regulation Of Endoplasmic Reticulum Unfolded Protein Response,"BAX, PIK3R1",0.0012530065434679
+BP,GO:0016237,Lysosomal Microautophagy,"ULK2, ULK1",0.0012530065434679
+BP,GO:0043009,Chordate Embryonic Development,"FGFR2, VEGFA, FGFR1",0.0013426605403192
+BP,GO:1905037,Autophagosome Organization,"MAP1LC3A, ULK2, ULK1",0.0014723566637802
+BP,GO:0043954,Cellular Component Maintenance,"FYN, IGF1R",0.0014723566637802
+BP,GO:0010614,Negative Regulation Of Cardiac Muscle Hypertrophy,"GSK3A, FOXO1",0.0014723566637802
+BP,GO:0045597,Positive Regulation Of Cell Differentiation,"GSK3B, KDR, AKT1, MTOR, FGFR1",0.001483353842853
+BP,GO:0060548,Negative Regulation Of Cell Death,"AKT1, FYN, EIF4G1",0.0016673183610237
+BP,GO:0031998,Regulation Of Fatty Acid Beta-Oxidation,"AKT1, IRS2",0.0016964244054236
+BP,GO:0001569,Branching Involved In Blood Vessel Morphogenesis,"KDR, VEGFA",0.0016964244054236
+BP,GO:0038083,Peptidyl-Tyrosine Autophosphorylation,"KDR, IGF1R",0.0016964244054236
+BP,GO:0000045,Autophagosome Assembly,"MAP1LC3A, ULK2, ULK1",0.0017124226885848
+BP,GO:0000302,Response To Reactive Oxygen Species,"MAPK1, AKT1, FYN",0.0017829693179914
+BP,GO:0051726,Regulation Of Cell Cycle,"CDKN1A, XIAP, HRAS, BIRC2, FGFR2",0.0018192378039742
+BP,GO:0010468,Regulation Of Gene Expression,"GSK3B, GSK3A, KDR, AKT1, KRAS, HRAS, MTOR, NFKB2, VEGFA",0.001997429485199
+BP,GO:0014068,Positive Regulation Of Phosphatidylinositol 3-Kinase Signaling,"KDR, IGF1R, FGFR1",0.0020044062861088
+BP,GO:2001237,Negative Regulation Of Extrinsic Apoptotic Signaling Pathway,"GSK3B, AKT1, MCL1",0.0020815016058423
+BP,GO:1900034,Regulation Of Cellular Response To Heat,"GSK3B, MTOR",0.0021741944798732
+BP,GO:0045737,Positive Regulation Of Cyclin-Dependent Protein Serine/Threonine Kinase Activity,"CCND1, AKT1",0.0021741944798732
+BP,GO:1903672,Positive Regulation Of Sprouting Angiogenesis,"PDPK1, VEGFA",0.0021741944798732
+BP,GO:0045945,Positive Regulation Of Transcription By RNA Polymerase III,"RPTOR, MTOR",0.0021741944798732
+BP,GO:0010975,Regulation Of Neuron Projection Development,"GSK3B, GSK3A, PTEN, AKT1",0.0022290202113252
+BP,GO:0034614,Cellular Response To Reactive Oxygen Species,"MAPK1, AKT1, FYN",0.0022913136041828
+BP,GO:0090050,Positive Regulation Of Cell Migration Involved In Sprouting Angiogenesis,"KDR, VEGFA",0.0024264247550196
+BP,GO:0061709,Reticulophagy,"ULK2, ULK1",0.0024264247550196
+BP,GO:0050927,Positive Regulation Of Positive Chemotaxis,"KDR, VEGFA",0.0024264247550196
+BP,GO:0042326,Negative Regulation Of Phosphorylation,"CDKN1A, PTEN, IRS2",0.0024366749865536
+BP,GO:0006796,Phosphate-Containing Compound Metabolic Process,"RPTOR, AKT1, PIK3CG, MTOR",0.0026789953181484
+BP,GO:0045088,Regulation Of Innate Immune Response,"XIAP, AKT1, BIRC2",0.0026866775146384
+BP,GO:0031400,Negative Regulation Of Protein Modification Process,"GSK3B, CDKN1A, PTEN",0.0026866775146384
+BP,GO:1904706,Negative Regulation Of Vascular Associated Smooth Muscle Cell Proliferation,"CDKN1A, PTEN",0.0026866775146384
+BP,GO:0010605,Negative Regulation Of Macromolecule Metabolic Process,"GSK3B, KDR, HRAS, VEGFA",0.0027418219247627
+BP,GO:0051129,Negative Regulation Of Cellular Component Organization,"GSK3B, ULK1, VEGFA",0.0027640623759941
+BP,GO:0071901,Negative Regulation Of Protein Serine/Threonine Kinase Activity,"CDKN1A, PTEN, AKT1",0.0028431686073008
+BP,GO:1903076,Regulation Of Protein Localization To Plasma Membrane,"PDPK1, AKT1, PIK3R1",0.0028431686073008
+BP,GO:0032147,Activation Of Protein Kinase Activity,"PDPK1, MTOR, VEGFA",0.0028689101295027
+BP,GO:1901028,Regulation Of Mitochondrial Outer Membrane Permeabilization Involved In Apoptotic Signaling Pathway,"GSK3B, GSK3A",0.0028689101295027
+BP,GO:0044804,Autophagy Of Nucleus,"ULK2, ULK1",0.0028689101295027
+BP,GO:1904031,Positive Regulation Of Cyclin-Dependent Protein Kinase Activity,"CCND1, AKT1",0.0028689101295027
+BP,GO:0051894,Positive Regulation Of Focal Adhesion Assembly,"KDR, VEGFA",0.0028689101295027
+BP,GO:0045821,Positive Regulation Of Glycolytic Process,"RPTOR, MTOR",0.0028689101295027
+BP,GO:0060079,Excitatory Postsynaptic Potential,"GSK3B, GSK3A",0.0028689101295027
+BP,GO:1905898,Positive Regulation Of Response To Endoplasmic Reticulum Stress,"BAX, PIK3R1",0.0028689101295027
+BP,GO:0045595,Regulation Of Cell Differentiation,"GSK3B, BIRC2, FGFR2, FGFR1",0.0029940071807117
+BP,GO:2000060,Positive Regulation Of Ubiquitin-Dependent Protein Catabolic Process,"GSK3B, GSK3A, PTEN",0.0030362973127683
+BP,GO:0001836,Release Of Cytochrome C From Mitochondria,"BAX, MCL1",0.0031502015400109
+BP,GO:0045736,Negative Regulation Of Cyclin-Dependent Protein Serine/Threonine Kinase Activity,"CDKN1A, PTEN",0.0031502015400109
+BP,GO:0034250,Positive Regulation Of Amide Metabolic Process,"GSK3A, RPS6KB1, MTOR",0.003202203037237
+BP,GO:1903829,Positive Regulation Of Protein Localization,"GSK3B, AKT1, FYN",0.003202203037237
+BP,GO:0050796,Regulation Of Insulin Secretion,"BAD, IRS2, FOXO1",0.0033992889749574
+BP,GO:0042593,Glucose Homeostasis,"BAD, PIK3R1, FOXO1",0.0033992889749574
+BP,GO:1904030,Negative Regulation Of Cyclin-Dependent Protein Kinase Activity,"CDKN1A, PTEN",0.0034260501989578
+BP,GO:0006469,Negative Regulation Of Protein Kinase Activity,"CDKN1A, PDPK1, AKT1",0.0034726017796806
+BP,GO:0120034,Positive Regulation Of Plasma Membrane Bounded Cell Projection Assembly,"GSK3B, PIK3R1, HRAS",0.0034726017796806
+BP,GO:0062197,Cellular Response To Chemical Stress,"RPTOR, FOXO1, MTOR",0.0035745143290022
+BP,GO:0060828,Regulation Of Canonical Wnt Signaling Pathway,"GSK3B, GSK3A, XIAP, FGFR2",0.0037062041354735
+BP,GO:0045732,Positive Regulation Of Protein Catabolic Process,"GSK3B, GSK3A, FOXO1",0.0039051875746567
+BP,GO:0044089,Positive Regulation Of Cellular Component Biogenesis,"GSK3B, BAX, VEGFA",0.0039953836245685
+BP,GO:0051897,Positive Regulation Of Protein Kinase B Signaling,"PIK3CG, IGF1R, FGFR1",0.0039953836245685
+BP,GO:1900181,Negative Regulation Of Protein Localization To Nucleus,"GSK3B, MTOR",0.0039953836245685
+BP,GO:0071276,Cellular Response To Cadmium Ion,"AKT1, MAPK1",0.0039953836245685
+BP,GO:0010721,Negative Regulation Of Cell Development,"GSK3B, GSK3A",0.0039953836245685
+BP,GO:0016241,Regulation Of Macroautophagy,"KDR, ULK1, MTOR",0.0042880768992103
+BP,GO:0051246,Regulation Of Protein Metabolic Process,"NFKBIA, AKT1, EIF4G1",0.0042880768992103
+BP,GO:0048675,Axon Extension,"ULK2, ULK1",0.0042880768992103
+BP,GO:0043525,Positive Regulation Of Neuron Apoptotic Process,"BAX, MCL1",0.0042880768992103
+BP,GO:0090314,Positive Regulation Of Protein Targeting To Membrane,"FYN, HRAS",0.0042880768992103
+BP,GO:0010558,Negative Regulation Of Macromolecule Biosynthetic Process,"GSK3B, GSK3A, CDKN1A",0.0044796899191465
+BP,GO:0006661,Phosphatidylinositol Biosynthetic Process,"PTEN, PIK3R1, PIK3CG",0.0044796899191465
+BP,GO:2000147,Positive Regulation Of Cell Motility,"KDR, HRAS, IGF1R, VEGFA",0.0044796982595572
+BP,GO:2000116,Regulation Of Cysteine-Type Endopeptidase Activity,"FYN, BIRC2",0.0045687835509722
+BP,GO:0070371,ERK1 And ERK2 Cascade,"KDR, MAPK1",0.0045687835509722
+BP,GO:0010800,Positive Regulation Of Peptidyl-Threonine Phosphorylation,"RPTOR, MAPK1",0.0045687835509722
+BP,GO:0051240,Positive Regulation Of Multicellular Organismal Process,"BAD, PIK3CG, MTOR, IGF1R, VEGFA",0.0046237718804772
+BP,GO:0032148,Activation Of Protein Kinase B Activity,"PDPK1, MTOR",0.0049055279007681
+BP,GO:0099565,"Chemical Synaptic Transmission, Postsynaptic","GSK3B, GSK3A",0.0049055279007681
+BP,GO:1902532,Negative Regulation Of Intracellular Signal Transduction,"GSK3A, PHLPP1, PTEN, IGF1R",0.0051414642271163
+BP,GO:2000352,Negative Regulation Of Endothelial Cell Apoptotic Process,"PDPK1, KDR",0.0051769772117523
+BP,GO:0046627,Negative Regulation Of Insulin Receptor Signaling Pathway,"GSK3A, RPS6KB1",0.0051769772117523
+BP,GO:0006359,Regulation Of Transcription By RNA Polymerase III,"RPTOR, MTOR",0.0051769772117523
+BP,GO:0031571,Mitotic G1 DNA Damage Checkpoint Signaling,"CDKN1A, CCND1",0.0051769772117523
+BP,GO:0051094,Positive Regulation Of Developmental Process,"GSK3B, KDR, VEGFA, FGFR1",0.0051769772117523
+BP,GO:0032874,Positive Regulation Of Stress-Activated MAPK Cascade,"XIAP, HRAS, VEGFA",0.0051769772117523
+BP,GO:0043409,Negative Regulation Of MAPK Cascade,"PTEN, FOXO1, IGF1R",0.0051769772117523
+BP,GO:0080135,Regulation Of Cellular Response To Stress,"GSK3B, MTOR, EIF4G1",0.0054466826479025
+BP,GO:2001239,Regulation Of Extrinsic Apoptotic Signaling Pathway In Absence Of Ligand,"MCL1, FGFR1",0.0054472864174548
+BP,GO:0030323,Respiratory Tube Development,"FGFR2, VEGFA",0.0054472864174548
+BP,GO:0045931,Positive Regulation Of Mitotic Cell Cycle,"RPS6KB1, EIF4EBP1",0.0054472864174548
+BP,GO:0001701,In Utero Embryonic Development,"FGFR2, VEGFA",0.0054472864174548
+BP,GO:1900077,Negative Regulation Of Cellular Response To Insulin Stimulus,"GSK3A, RPS6KB1",0.0054472864174548
+BP,GO:0045727,Positive Regulation Of Translation,"RPS6KB1, RPS6KB2, MTOR",0.0054786208569743
+BP,GO:0010906,Regulation Of Glucose Metabolic Process,"AKT1, IRS2",0.0057590702088061
+BP,GO:0046890,Regulation Of Lipid Biosynthetic Process,"RPTOR, MTOR",0.0057590702088061
+BP,GO:0090313,Regulation Of Protein Targeting To Membrane,"FYN, HRAS",0.0057590702088061
+BP,GO:0071470,Cellular Response To Osmotic Stress,"RPTOR, MTOR",0.0057590702088061
+BP,GO:0070372,Regulation Of ERK1 And ERK2 Cascade,"PTEN, KDR, HRAS, FGFR2",0.0058826792575179
+BP,GO:0043068,Positive Regulation Of Programmed Cell Death,"BAD, BAX, FOXO1, MCL1",0.0059513413775281
+BP,GO:0034976,Response To Endoplasmic Reticulum Stress,"GSK3B, BAX, PIK3R1",0.0062475211316215
+BP,GO:0043200,Response To Amino Acid,"RPTOR, MTOR",0.0064781354955836
+BP,GO:0070849,Response To Epidermal Growth Factor,"PDPK1, MAPK1",0.0064781354955836
+BP,GO:0090049,Regulation Of Cell Migration Involved In Sprouting Angiogenesis,"KDR, VEGFA",0.0064781354955836
+BP,GO:0034599,Cellular Response To Oxidative Stress,"MAPK1, AKT1, FOXO1",0.0066403667045774
+BP,GO:0002831,Regulation Of Response To Biotic Stimulus,"XIAP, BIRC2",0.0068701337426219
+BP,GO:0045859,Regulation Of Protein Kinase Activity,"CDKN1A, PDPK1, AKT1",0.0069012479668275
+BP,GO:0071356,Cellular Response To Tumor Necrosis Factor,"NFKBIA, AKT1, BIRC2",0.0069012479668275
+BP,GO:0060541,Respiratory System Development,"FGFR2, VEGFA",0.0072229840027111
+BP,GO:2000134,Negative Regulation Of G1/S Transition Of Mitotic Cell Cycle,"CDKN1A, PTEN",0.0072229840027111
+BP,GO:0042176,Regulation Of Protein Catabolic Process,"GSK3B, GSK3A, FOXO1",0.0073371772244357
+BP,GO:1903670,Regulation Of Sprouting Angiogenesis,"PDPK1, VEGFA",0.0075555698168573
+BP,GO:0051254,Positive Regulation Of RNA Metabolic Process,"PIK3R1, HRAS",0.0075555698168573
+BP,GO:0001570,Vasculogenesis,"KDR, VEGFA",0.0075555698168573
+BP,GO:0030324,Lung Development,"FGFR2, VEGFA",0.0075555698168573
+BP,GO:1901216,Positive Regulation Of Neuron Death,"BAX, FYN",0.0079917025104417
+BP,GO:0043065,Positive Regulation Of Apoptotic Process,"BAD, BAX, FOXO1, MCL1",0.0080197563197481
+BP,GO:0022603,Regulation Of Anatomical Structure Morphogenesis,"GSK3B, PIK3CG, FGFR2",0.0080430461495848
+BP,GO:2000772,Regulation Of Cellular Senescence,"AKT3, PTEN",0.008305357017289
+BP,GO:0060078,Regulation Of Postsynaptic Membrane Potential,"GSK3B, GSK3A",0.008305357017289
+BP,GO:0010389,Regulation Of G2/M Transition Of Mitotic Cell Cycle,"CDKN1A, CCND1",0.008305357017289
+BP,GO:1902807,Negative Regulation Of Cell Cycle G1/S Phase Transition,"CDKN1A, PTEN",0.008305357017289
+BP,GO:0051898,Negative Regulation Of Protein Kinase B Signaling,"PHLPP1, PTEN",0.0087276338165702
+BP,GO:0010863,Positive Regulation Of Phospholipase C Activity,"HRAS, FGFR1",0.0087276338165702
+BP,GO:0048662,Negative Regulation Of Smooth Muscle Cell Proliferation,"CDKN1A, PTEN",0.0091006563709704
+BP,GO:1900744,Regulation Of p38MAPK Cascade,"PHLPP1, VEGFA",0.0091006563709704
+BP,GO:0043666,Regulation Of Phosphoprotein Phosphatase Activity,"GSK3B, MTOR",0.0091006563709704
+BP,GO:1904705,Regulation Of Vascular Associated Smooth Muscle Cell Proliferation,"CDKN1A, PTEN",0.0091006563709704
+BP,GO:0045944,Positive Regulation Of Transcription By RNA Polymerase II,"NFKBIA, PIK3R1, HRAS, FOXO1, FGFR2, NFKB2, VEGFA",0.0094362289813905
+BP,GO:1904036,Negative Regulation Of Epithelial Cell Apoptotic Process,"PDPK1, KDR",0.009505800359739
+BP,GO:0033209,Tumor Necrosis Factor-Mediated Signaling Pathway,"NFKBIA, BIRC2",0.009505800359739
+BP,GO:1990138,Neuron Projection Extension,"ULK2, ULK1",0.00991569299462
+BP,GO:0046889,Positive Regulation Of Lipid Biosynthetic Process,"RPTOR, MTOR",0.00991569299462
+BP,GO:0008543,Fibroblast Growth Factor Receptor Signaling Pathway,"FGFR2, FGFR1",0.00991569299462
+BP,GO:1901991,Negative Regulation Of Mitotic Cell Cycle Phase Transition,"CDKN1A, PTEN",0.0102379235928103
+BP,GO:0006110,Regulation Of Glycolytic Process,"RPTOR, MTOR",0.0102379235928103
+BP,GO:1903828,Negative Regulation Of Protein Localization,"GSK3B, MTOR",0.0102379235928103
+BP,GO:0032024,Positive Regulation Of Insulin Secretion,"BAD, IRS2",0.0102379235928103
+BP,GO:0090303,Positive Regulation Of Wound Healing,"HRAS, MTOR",0.0102379235928103
+BP,GO:0022408,Negative Regulation Of Cell-Cell Adhesion,"AKT1, VEGFA",0.0102379235928103
+BP,GO:0090199,Regulation Of Release Of Cytochrome C From Mitochondria,"BAD, BAX",0.0107171259213742
+BP,GO:0045860,Positive Regulation Of Protein Kinase Activity,"RPTOR, CDKN1A, VEGFA",0.0108731015690994
+BP,GO:0048754,Branching Morphogenesis Of An Epithelial Tube,"KDR, VEGFA",0.0111065978281795
+BP,GO:0003208,Cardiac Ventricle Morphogenesis,"GSK3A, FGFR2",0.0111065978281795
+BP,GO:0050770,Regulation Of Axonogenesis,"GSK3B, PTEN",0.0111065978281795
+BP,GO:2000351,Regulation Of Endothelial Cell Apoptotic Process,"PDPK1, KDR",0.0115654853969357
+BP,GO:0048705,Skeletal System Morphogenesis,"FGFR2, FGFR1",0.0115654853969357
+BP,GO:0071345,Cellular Response To Cytokine Stimulus,"NFKBIA, GSK3B, GSK3A, AKT1",0.0117170667058664
+BP,GO:0046626,Regulation Of Insulin Receptor Signaling Pathway,"GSK3A, RPS6KB1",0.0119266961842258
+BP,GO:0046854,Phosphatidylinositol Phosphate Biosynthetic Process,"PIK3R1, PIK3CG",0.0119266961842258
+BP,GO:0050921,Positive Regulation Of Chemotaxis,"KDR, VEGFA",0.0119266961842258
+BP,GO:0046824,Positive Regulation Of Nucleocytoplasmic Transport,"GSK3B, PIK3R1",0.0119266961842258
+BP,GO:0060429,Epithelium Development,"KDR, FGFR2, VEGFA",0.0124711742202418
+BP,GO:0009749,Response To Glucose,"IRS2, IGF1R",0.01286714565058
+BP,GO:0090277,Positive Regulation Of Peptide Hormone Secretion,"BAD, IRS2",0.01286714565058
+BP,GO:0031324,Negative Regulation Of Cellular Metabolic Process,"AKT3, PTEN",0.01286714565058
+BP,GO:0001837,Epithelial To Mesenchymal Transition,"GSK3B, FGFR1",0.0133836249226281
+BP,GO:0071478,Cellular Response To Radiation,"CDKN1A, GRB2",0.0138299362263416
+BP,GO:0010803,Regulation Of Tumor Necrosis Factor-Mediated Signaling Pathway,"XIAP, ULK1",0.0138299362263416
+BP,GO:2000379,Positive Regulation Of Reactive Oxygen Species Metabolic Process,"CDKN1A, GRB2",0.0138299362263416
+BP,GO:0007005,Mitochondrion Organization,"AKT3, BAX, MCL1",0.0140462297380352
+BP,GO:0008630,Intrinsic Apoptotic Signaling Pathway In Response To DNA Damage,"BAX, MCL1",0.0142794778273411
+BP,GO:0043154,Negative Regulation Of Cysteine-Type Endopeptidase Activity Involved In Apoptotic Process,"XIAP, VEGFA",0.0142794778273411
+BP,GO:0010821,Regulation Of Mitochondrion Organization,"GSK3B, GSK3A",0.0146915414374782
+BP,GO:0010942,Positive Regulation Of Cell Death,"FYN, EIF4G1",0.0146915414374782
+BP,GO:0051050,Positive Regulation Of Transport,"GSK3B, GSK3A",0.0146915414374782
+BP,GO:0031345,Negative Regulation Of Cell Projection Organization,"PTEN, FYN",0.0146915414374782
+BP,GO:0010629,Negative Regulation Of Gene Expression,"GSK3B, KDR, HRAS, VEGFA",0.0150754364936236
+BP,GO:1900180,Regulation Of Protein Localization To Nucleus,"GSK3B, MTOR",0.0157748655444363
+BP,GO:0007507,Heart Development,"CDKN1A, PTEN, VEGFA",0.015925645244918
+BP,GO:1904029,Regulation Of Cyclin-Dependent Protein Kinase Activity,"CDKN1A, CCND1",0.0161948345957901
+BP,GO:0048514,Blood Vessel Morphogenesis,"KDR, VEGFA",0.0161948345957901
+BP,GO:2000117,Negative Regulation Of Cysteine-Type Endopeptidase Activity,"XIAP, VEGFA",0.0161948345957901
+BP,GO:1903008,Organelle Disassembly,"ULK2, ULK1",0.0167054476903484
+BP,GO:0002690,Positive Regulation Of Leukocyte Chemotaxis,"MAPK1, VEGFA",0.0167054476903484
+BP,GO:0001764,Neuron Migration,"VEGFA, FGFR1",0.0172206213157594
+BP,GO:0044344,Cellular Response To Fibroblast Growth Factor Stimulus,"FGFR2, FGFR1",0.0172206213157594
+BP,GO:0070374,Positive Regulation Of ERK1 And ERK2 Cascade,"KDR, HRAS, FGFR2",0.0176461284624085
+BP,GO:2000377,Regulation Of Reactive Oxygen Species Metabolic Process,"CDKN1A, GRB2",0.0176461284624085
+BP,GO:0031325,Positive Regulation Of Cellular Metabolic Process,"CDKN1A, GRB2",0.0176461284624085
+BP,GO:0044773,Mitotic DNA Damage Checkpoint Signaling,"CDKN1A, CCND1",0.0176461284624085
+BP,GO:1901214,Regulation Of Neuron Death,"FYN, EIF4G1",0.0187923747692979
+BP,GO:0061912,Selective Autophagy,"ULK2, ULK1",0.0187923747692979
+BP,GO:0031333,Negative Regulation Of Protein-Containing Complex Assembly,"GSK3B, ULK1",0.0193755267700664
+BP,GO:1901890,Positive Regulation Of Cell Junction Assembly,"KDR, VEGFA",0.0206153922723159
+BP,GO:0031175,Neuron Projection Development,"GSK3B, PTEN, ULK1",0.0210088254901705
+BP,GO:0033673,Negative Regulation Of Kinase Activity,"PDPK1, IRS2",0.0211088752042075
+BP,GO:0032984,Protein-Containing Complex Disassembly,"GSK3B, MAP1LC3A",0.0211088752042075
+BP,GO:0008285,Negative Regulation Of Cell Population Proliferation,"CDKN1A, PTEN, ULK1, HRAS",0.0217061099380383
+BP,GO:2001056,Positive Regulation Of Cysteine-Type Endopeptidase Activity,"BAD, FYN",0.0223299023460368
+BP,GO:0060070,Canonical Wnt Signaling Pathway,"GSK3B, PTEN",0.0228904707508846
+BP,GO:0001952,Regulation Of Cell-Matrix Adhesion,"GSK3B, FYN",0.0228904707508846
+BP,GO:0050777,Negative Regulation Of Immune Response,"AKT1, FYN",0.0235147516360574
+BP,GO:0006417,Regulation Of Translation,"RPS6KB1, MTOR, EIF4G1",0.0236465366232295
+BP,GO:0006919,Activation Of Cysteine-Type Endopeptidase Activity Involved In Apoptotic Process,"BAD, BAX",0.0240832084186143
+BP,GO:0045596,Negative Regulation Of Cell Differentiation,"NFKBIA, PTEN, FOXO1",0.0251478272015499
+BP,GO:0052548,Regulation Of Endopeptidase Activity,"AKT1, BIRC2",0.0253581372895243
+BP,GO:0032970,Regulation Of Actin Filament-Based Process,"HRAS, MTOR",0.0260041509978927
+BP,GO:0010212,Response To Ionizing Radiation,"CDKN1A, GRB2",0.0273368254625533
+BP,GO:1902806,Regulation Of Cell Cycle G1/S Phase Transition,"CDKN1A, PTEN",0.0273368254625533
+BP,GO:0090394,Negative Regulation Of Excitatory Postsynaptic Potential,PTEN,0.0273368254625533
+BP,GO:0120182,Regulation Of Focal Adhesion Disassembly,PIK3R1,0.0273368254625533
+BP,GO:1900449,Regulation Of Glutamate Receptor Signaling Pathway,FYN,0.0273368254625533
+BP,GO:1901725,Regulation Of Histone Deacetylase Activity,VEGFA,0.0273368254625533
+BP,GO:0008635,Activation Of Cysteine-Type Endopeptidase Activity Involved In Apoptotic Process By Cytochrome C,BAX,0.0273368254625533
+BP,GO:0120040,Regulation Of Macrophage Proliferation,MAPK1,0.0273368254625533
+BP,GO:0060753,Regulation Of Mast Cell Chemotaxis,VEGFA,0.0273368254625533
+BP,GO:0060688,Regulation Of Morphogenesis Of A Branching Structure,FGFR2,0.0273368254625533
+BP,GO:0010749,Regulation Of Nitric Oxide Mediated Signal Transduction,VEGFA,0.0273368254625533
+BP,GO:0072672,Neutrophil Extravasation,PIK3CG,0.0273368254625533
+BP,GO:0002191,Cap-Dependent Translational Initiation,EIF4G1,0.0273368254625533
+BP,GO:0090259,Regulation Of Retinal Ganglion Cell Axon Guidance,VEGFA,0.0273368254625533
+BP,GO:0036490,Regulation Of Translation In Response To Endoplasmic Reticulum Stress,EIF4G1,0.0273368254625533
+BP,GO:1902043,Positive Regulation Of Extrinsic Apoptotic Signaling Pathway Via Death Domain Receptors,PTEN,0.0273368254625533
+BP,GO:0120183,Positive Regulation Of Focal Adhesion Disassembly,PIK3R1,0.0273368254625533
+BP,GO:0060441,Epithelial Tube Branching Involved In Lung Morphogenesis,FGFR2,0.0273368254625533
+BP,GO:0072175,Epithelial Tube Formation,FGFR2,0.0273368254625533
+BP,GO:0010918,Positive Regulation Of Mitochondrial Membrane Potential,BAD,0.0273368254625533
+BP,GO:0044342,Type B Pancreatic Cell Proliferation,BAD,0.0273368254625533
+BP,GO:0048845,Venous Blood Vessel Morphogenesis,VEGFA,0.0273368254625533
+BP,GO:0097341,Zymogen Inhibition,XIAP,0.0273368254625533
+BP,GO:1903566,Positive Regulation Of Protein Localization To Cilium,GSK3B,0.0273368254625533
+BP,GO:0032056,Positive Regulation Of Translation In Response To Stress,EIF4G1,0.0273368254625533
+BP,GO:0097107,Postsynaptic Density Assembly,PTEN,0.0273368254625533
+BP,GO:0060134,Prepulse Inhibition,PTEN,0.0273368254625533
+BP,GO:0045792,Negative Regulation Of Cell Size,PTEN,0.0273368254625533
+BP,GO:0010498,Proteasomal Protein Catabolic Process,"GSK3B, GSK3A, BIRC2",0.0274933527807808
+BP,GO:0045598,Regulation Of Fat Cell Differentiation,"AKT1, FOXO1",0.0275879452728144
+BP,GO:0050714,Positive Regulation Of Protein Secretion,"BAD, IRS2",0.0282304931286302
+BP,GO:0050776,Regulation Of Immune Response,"XIAP, BIRC2",0.0287430909825099
+BP,GO:0046330,Positive Regulation Of JNK Cascade,"XIAP, HRAS",0.0287430909825099
+BP,GO:0048568,Embryonic Organ Development,"KDR, FGFR2",0.0287430909825099
+BP,GO:0032006,Regulation Of TOR Signaling,"RPTOR, GSK3A",0.0293928306172866
+BP,GO:0051241,Negative Regulation Of Multicellular Organismal Process,"GSK3B, GSK3A, PTEN",0.0307323363572805
+BP,GO:0061000,Negative Regulation Of Dendritic Spine Development,PTEN,0.0307323363572805
+BP,GO:2000544,Regulation Of Endothelial Cell Chemotaxis To Fibroblast Growth Factor,FGFR1,0.0307323363572805
+BP,GO:0070303,Negative Regulation Of Stress-Activated Protein Kinase Signaling Cascade,FOXO1,0.0307323363572805
+BP,GO:1903376,Regulation Of Oxidative Stress-Induced Neuron Intrinsic Apoptotic Signaling Pathway,MCL1,0.0307323363572805
+BP,GO:0051150,Regulation Of Smooth Muscle Cell Differentiation,FGFR2,0.0307323363572805
+BP,GO:1903896,Positive Regulation Of IRE1-mediated Unfolded Protein Response,BAX,0.0307323363572805
+BP,GO:1903524,Positive Regulation Of Blood Circulation,GSK3A,0.0307323363572805
+BP,GO:0090045,Positive Regulation Of Deacetylase Activity,VEGFA,0.0307323363572805
+BP,GO:0035272,Exocrine System Development,FGFR2,0.0307323363572805
+BP,GO:1902416,Positive Regulation Of mRNA Binding,EIF4G1,0.0307323363572805
+BP,GO:0021884,Forebrain Neuron Development,FGFR2,0.0307323363572805
+BP,GO:1904181,Positive Regulation Of Membrane Depolarization,KDR,0.0307323363572805
+BP,GO:0022612,Gland Morphogenesis,FGFR2,0.0307323363572805
+BP,GO:0097084,Vascular Associated Smooth Muscle Cell Development,VEGFA,0.0307323363572805
+BP,GO:1904781,Positive Regulation Of Protein Localization To Centrosome,GSK3B,0.0307323363572805
+BP,GO:1901165,Positive Regulation Of Trophoblast Cell Migration,VEGFA,0.0307323363572805
+BP,GO:0045475,Locomotor Rhythm,PTEN,0.0307323363572805
+BP,GO:1902667,Regulation Of Axon Guidance,VEGFA,0.0307323363572805
+BP,GO:1905603,Regulation Of Blood-Brain Barrier Permeability,VEGFA,0.0307323363572805
+BP,GO:1903242,Regulation Of Cardiac Muscle Hypertrophy In Response To Stress,FOXO1,0.0307323363572805
+BP,GO:0010717,Regulation Of Epithelial To Mesenchymal Transition,"PTEN, MTOR",0.0314101677740641
+BP,GO:0032436,Positive Regulation Of Proteasomal Ubiquitin-Dependent Protein Catabolic Process,"GSK3B, GSK3A",0.0314101677740641
+BP,GO:0050727,Regulation Of Inflammatory Response,"NFKBIA, XIAP, BIRC2",0.0324425327156221
+BP,GO:0019722,Calcium-Mediated Signaling,"PDPK1, KDR",0.03257856681869
+BP,GO:0090263,Positive Regulation Of Canonical Wnt Signaling Pathway,"XIAP, FGFR2",0.03257856681869
+BP,GO:0045786,Negative Regulation Of Cell Cycle,"CDKN1A, PTEN",0.03257856681869
+BP,GO:0051091,Positive Regulation Of DNA-binding Transcription Factor Activity,"PTEN, AKT1, VEGFA",0.0335799486061416
+BP,GO:1901215,Negative Regulation Of Neuron Death,"AKT1, EIF4G1",0.0335799486061416
+BP,GO:0046322,Negative Regulation Of Fatty Acid Oxidation,AKT1,0.0335799486061416
+BP,GO:0046325,Negative Regulation Of Glucose Import,GSK3A,0.0335799486061416
+BP,GO:0006983,ER Overload Response,GSK3B,0.0335799486061416
+BP,GO:0010839,Negative Regulation Of Keratinocyte Proliferation,FGFR2,0.0335799486061416
+BP,GO:0061387,Regulation Of Extent Of Cell Growth,GSK3B,0.0335799486061416
+BP,GO:0010917,Negative Regulation Of Mitochondrial Membrane Potential,BAX,0.0335799486061416
+BP,GO:0050746,Regulation Of Lipoprotein Metabolic Process,ULK1,0.0335799486061416
+BP,GO:0002761,Regulation Of Myeloid Leukocyte Differentiation,MTOR,0.0335799486061416
+BP,GO:1903564,Regulation Of Protein Localization To Cilium,GSK3B,0.0335799486061416
+BP,GO:0061418,Regulation Of Transcription From RNA Polymerase II Promoter In Response To Hypoxia,VEGFA,0.0335799486061416
+BP,GO:0071732,Cellular Response To Nitric Oxide,FOXO1,0.0335799486061416
+BP,GO:1902170,Cellular Response To Reactive Nitrogen Species,FOXO1,0.0335799486061416
+BP,GO:0060977,Coronary Vasculature Morphogenesis,VEGFA,0.0335799486061416
+BP,GO:0007253,Cytoplasmic Sequestering Of NF-kappaB,NFKBIA,0.0335799486061416
+BP,GO:0097062,Dendritic Spine Maintenance,IGF1R,0.0335799486061416
+BP,GO:0045722,Positive Regulation Of Gluconeogenesis,FOXO1,0.0335799486061416
+BP,GO:0090400,Stress-Induced Premature Senescence,CDKN1A,0.0335799486061416
+BP,GO:0045838,Positive Regulation Of Membrane Potential,BAD,0.0335799486061416
+BP,GO:0097340,Inhibition Of Cysteine-Type Endopeptidase Activity,XIAP,0.0335799486061416
+BP,GO:1900748,Positive Regulation Of Vascular Endothelial Growth Factor Signaling Pathway,VEGFA,0.0335799486061416
+BP,GO:0097106,Postsynaptic Density Organization,PTEN,0.0335799486061416
+BP,GO:0002903,Negative Regulation Of B Cell Apoptotic Process,IRS2,0.0335799486061416
+BP,GO:0050730,Regulation Of Peptidyl-Tyrosine Phosphorylation,"FYN, VEGFA",0.0343550050728755
+BP,GO:1901800,Positive Regulation Of Proteasomal Protein Catabolic Process,"GSK3B, GSK3A",0.0343550050728755
+BP,GO:0032956,Regulation Of Actin Cytoskeleton Organization,"HRAS, MTOR",0.0350092427681893
+BP,GO:0019221,Cytokine-Mediated Signaling Pathway,"NFKBIA, AKT1, BIRC2",0.0364353043205502
+BP,GO:1902950,Regulation Of Dendritic Spine Maintenance,FYN,0.0367317784120676
+BP,GO:0045837,Negative Regulation Of Membrane Potential,BAX,0.0367317784120676
+BP,GO:2000628,Regulation Of miRNA Metabolic Process,HRAS,0.0367317784120676
+BP,GO:0043276,Anoikis,MTOR,0.0367317784120676
+BP,GO:0046620,Regulation Of Organ Growth,PTEN,0.0367317784120676
+BP,GO:0062207,Regulation Of Pattern Recognition Receptor Signaling Pathway,BIRC2,0.0367317784120676
+BP,GO:0071679,Commissural Neuron Axon Guidance,VEGFA,0.0367317784120676
+BP,GO:1903589,Positive Regulation Of Blood Vessel Endothelial Cell Proliferation Involved In Sprouting Angiogenesis,VEGFA,0.0367317784120676
+BP,GO:0035767,Endothelial Cell Chemotaxis,VEGFA,0.0367317784120676
+BP,GO:0032000,Positive Regulation Of Fatty Acid Beta-Oxidation,IRS2,0.0367317784120676
+BP,GO:0003376,Sphingosine-1-Phosphate Receptor Signaling Pathway,PIK3CG,0.0367317784120676
+BP,GO:0044042,Glucan Metabolic Process,GSK3B,0.0367317784120676
+BP,GO:0090037,Positive Regulation Of Protein Kinase C Signaling,VEGFA,0.0367317784120676
+BP,GO:0007595,Lactation,VEGFA,0.0367317784120676
+BP,GO:1904668,Positive Regulation Of Ubiquitin Protein Ligase Activity,PTEN,0.0367317784120676
+BP,GO:0097105,Presynaptic Membrane Assembly,PTEN,0.0367317784120676
+BP,GO:0043653,Mitochondrial Fragmentation Involved In Apoptotic Process,BAX,0.0367317784120676
+BP,GO:0031347,Regulation Of Defense Response,"XIAP, BIRC2",0.0380045143690333
+BP,GO:0120162,Positive Regulation Of Cold-Induced Thermogenesis,"IGF1R, VEGFA",0.0386694224611289
+BP,GO:0009968,Negative Regulation Of Signal Transduction,"GSK3A, RPS6KB1, AKT1",0.0387049879857667
+BP,GO:0030097,Hemopoiesis,"KDR, FGFR2",0.039319956441927
+BP,GO:1905953,Negative Regulation Of Lipid Localization,NFKBIA,0.039319956441927
+BP,GO:0070229,Negative Regulation Of Lymphocyte Apoptotic Process,IRS2,0.039319956441927
+BP,GO:0060546,Negative Regulation Of Necroptotic Process,BIRC2,0.039319956441927
+BP,GO:0014067,Negative Regulation Of Phosphatidylinositol 3-Kinase Signaling,PTEN,0.039319956441927
+BP,GO:0048593,Camera-Type Eye Morphogenesis,VEGFA,0.039319956441927
+BP,GO:1901983,Regulation Of Protein Acetylation,GSK3B,0.039319956441927
+BP,GO:1903059,Regulation Of Protein Lipidation,ULK1,0.039319956441927
+BP,GO:1904779,Regulation Of Protein Localization To Centrosome,GSK3B,0.039319956441927
+BP,GO:0140052,Cellular Response To Oxidised Low-Density Lipoprotein Particle Stimulus,AKT1,0.039319956441927
+BP,GO:0039531,Regulation Of Viral-Induced Cytoplasmic Pattern Recognition Receptor Signaling Pathway,XIAP,0.039319956441927
+BP,GO:1904861,Excitatory Synapse Assembly,PTEN,0.039319956441927
+BP,GO:0051549,Positive Regulation Of Keratinocyte Migration,MTOR,0.039319956441927
+BP,GO:0000722,Telomere Maintenance Via Recombination,PTEN,0.039319956441927
+BP,GO:0002053,Positive Regulation Of Mesenchymal Cell Proliferation,FGFR2,0.039319956441927
+BP,GO:1901838,Positive Regulation Of Transcription Of Nucleolar Large rRNA By RNA Polymerase I,MTOR,0.039319956441927
+BP,GO:2001214,Positive Regulation Of Vasculogenesis,KDR,0.039319956441927
+BP,GO:0140354,Lipid Import Into Cell,RPS6KB1,0.039319956441927
+BP,GO:0044539,Long-Chain Fatty Acid Import Into Cell,RPS6KB1,0.039319956441927
+BP,GO:0097090,Presynaptic Membrane Organization,PTEN,0.039319956441927
+BP,GO:0043217,Myelin Maintenance,PTEN,0.039319956441927
+BP,GO:2000048,Negative Regulation Of Cell-Cell Adhesion Mediated By Cadherin,VEGFA,0.039319956441927
+BP,GO:0016236,Macroautophagy,"MAP1LC3A, ULK1",0.0412715621214047
+BP,GO:0006357,Regulation Of Transcription By RNA Polymerase II,"NFKBIA, CCND1, PIK3R1, HRAS, FOXO1, FGFR2, NFKB2, VEGFA, CREB5",0.0418601102023129
+BP,GO:0071417,Cellular Response To Organonitrogen Compound,"RPTOR, MTOR",0.0418601102023129
+BP,GO:0017148,Negative Regulation Of Translation,"EIF4EBP1, EIF4G1",0.0420465429352571
+BP,GO:2000402,Negative Regulation Of Lymphocyte Migration,AKT1,0.0420465429352571
+BP,GO:0010818,T Cell Chemotaxis,PIK3CG,0.0420465429352571
+BP,GO:0062099,Negative Regulation Of Programmed Necrotic Cell Death,BIRC2,0.0420465429352571
+BP,GO:0034763,Negative Regulation Of Transmembrane Transport,IRS2,0.0420465429352571
+BP,GO:0051900,Regulation Of Mitochondrial Depolarization,KDR,0.0420465429352571
+BP,GO:0062098,Regulation Of Programmed Necrotic Cell Death,BIRC2,0.0420465429352571
+BP,GO:0036295,Cellular Response To Increased Oxygen Levels,FOXO1,0.0420465429352571
+BP,GO:0043401,Steroid Hormone Mediated Signaling Pathway,MAPK1,0.0420465429352571
+BP,GO:0043129,Surfactant Homeostasis,VEGFA,0.0420465429352571
+BP,GO:0051770,Positive Regulation Of Nitric-Oxide Synthase Biosynthetic Process,KDR,0.0420465429352571
+BP,GO:0050930,Induction Of Positive Chemotaxis,VEGFA,0.0420465429352571
+BP,GO:0002279,Mast Cell Activation Involved In Immune Response,PIK3CG,0.0420465429352571
+BP,GO:0043303,Mast Cell Degranulation,PIK3CG,0.0420465429352571
+BP,GO:0030224,Monocyte Differentiation,VEGFA,0.0420465429352571
+BP,GO:0002902,Regulation Of B Cell Apoptotic Process,IRS2,0.0420465429352571
+BP,GO:1905664,Regulation Of Calcium Ion Import Across Plasma Membrane,FYN,0.0420465429352571
+BP,GO:0034612,Response To Tumor Necrosis Factor,"NFKBIA, AKT1",0.042597896085051
+BP,GO:0009893,Positive Regulation Of Metabolic Process,"IGF1R, VEGFA",0.042597896085051
+BP,GO:0032434,Regulation Of Proteasomal Ubiquitin-Dependent Protein Catabolic Process,"GSK3B, GSK3A",0.0431025108566811
+BP,GO:0030177,Positive Regulation Of Wnt Signaling Pathway,"XIAP, FGFR2",0.0431025108566811
+BP,GO:0043280,Positive Regulation Of Cysteine-Type Endopeptidase Activity Involved In Apoptotic Process,"BAD, BAX",0.0431025108566811
+BP,GO:0042110,T Cell Activation,"PIK3R1, PIK3CG",0.0437985691782967
+BP,GO:0010829,Negative Regulation Of Glucose Transmembrane Transport,GSK3A,0.0437985691782967
+BP,GO:0045822,Negative Regulation Of Heart Contraction,PIK3CG,0.0437985691782967
+BP,GO:1903649,Regulation Of Cytoplasmic Transport,MAPK1,0.0437985691782967
+BP,GO:1903427,Negative Regulation Of Reactive Oxygen Species Biosynthetic Process,FYN,0.0437985691782967
+BP,GO:1903037,Regulation Of Leukocyte Cell-Cell Adhesion,AKT1,0.0437985691782967
+BP,GO:0043550,Regulation Of Lipid Kinase Activity,PIK3R1,0.0437985691782967
+BP,GO:0010464,Regulation Of Mesenchymal Cell Proliferation,FGFR2,0.0437985691782967
+BP,GO:0043116,Negative Regulation Of Vascular Permeability,VEGFA,0.0437985691782967
+BP,GO:0048854,Brain Morphogenesis,PTEN,0.0437985691782967
+BP,GO:0036092,Phosphatidylinositol-3-Phosphate Biosynthetic Process,PIK3CG,0.0437985691782967
+BP,GO:0070302,Regulation Of Stress-Activated Protein Kinase Signaling Cascade,MAPK1,0.0437985691782967
+BP,GO:0071378,Cellular Response To Growth Hormone Stimulus,PIK3R1,0.0437985691782967
+BP,GO:0043562,Cellular Response To Nitrogen Levels,MAP1LC3A,0.0437985691782967
+BP,GO:0006995,Cellular Response To Nitrogen Starvation,MAP1LC3A,0.0437985691782967
+BP,GO:0022010,Central Nervous System Myelination,PTEN,0.0437985691782967
+BP,GO:0021955,Central Nervous System Neuron Axonogenesis,PTEN,0.0437985691782967
+BP,GO:0090190,Positive Regulation Of Branching Involved In Ureteric Bud Morphogenesis,VEGFA,0.0437985691782967
+BP,GO:0071731,Response To Nitric Oxide,FOXO1,0.0437985691782967
+BP,GO:0055123,Digestive System Development,FGFR2,0.0437985691782967
+BP,GO:1902916,Positive Regulation Of Protein Polyubiquitination,XIAP,0.0437985691782967
+BP,GO:0043117,Positive Regulation Of Vascular Permeability,VEGFA,0.0437985691782967
+BP,GO:0002448,Mast Cell Mediated Immunity,PIK3CG,0.0437985691782967
+BP,GO:0070885,Negative Regulation Of calcineurin-NFAT Signaling Cascade,GSK3B,0.0437985691782967
+BP,GO:0106057,Negative Regulation Of Calcineurin-Mediated Signaling,GSK3B,0.0437985691782967
+BP,GO:0090090,Negative Regulation Of Canonical Wnt Signaling Pathway,"GSK3B, GSK3A",0.0447534187573622
+BP,GO:0048523,Negative Regulation Of Cellular Process,"CDKN1A, PTEN, ULK1, HRAS",0.0464620119845943
+BP,GO:0010745,Negative Regulation Of Macrophage Derived Foam Cell Differentiation,NFKBIA,0.0466791105593378
+BP,GO:0071676,Negative Regulation Of Mononuclear Cell Migration,AKT1,0.0466791105593378
+BP,GO:2000401,Regulation Of Lymphocyte Migration,AKT1,0.0466791105593378
+BP,GO:2000737,Negative Regulation Of Stem Cell Differentiation,GSK3B,0.0466791105593378
+BP,GO:1990253,Cellular Response To Leucine Starvation,MTOR,0.0466791105593378
+BP,GO:0003158,Endothelium Development,KDR,0.0466791105593378
+BP,GO:0046321,Positive Regulation Of Fatty Acid Oxidation,IRS2,0.0466791105593378
+BP,GO:0001754,Eye Photoreceptor Cell Differentiation,VEGFA,0.0466791105593378
+BP,GO:0046827,Positive Regulation Of Protein Export From Nucleus,GSK3B,0.0466791105593378
+BP,GO:1900029,Positive Regulation Of Ruffle Assembly,HRAS,0.0466791105593378
+BP,GO:1901988,Negative Regulation Of Cell Cycle Phase Transition,PTEN,0.0466791105593378
+BP,GO:0050804,Modulation Of Chemical Synaptic Transmission,"GSK3B, PTEN",0.0486200687225469
+BP,GO:2000145,Regulation Of Cell Motility,"AKT1, FYN",0.0486200687225469
+BP,GO:0002685,Regulation Of Leukocyte Migration,VEGFA,0.0486200687225469
+BP,GO:0045947,Negative Regulation Of Translational Initiation,EIF4EBP1,0.0486200687225469
+BP,GO:0051769,Regulation Of Nitric-Oxide Synthase Biosynthetic Process,KDR,0.0486200687225469
+BP,GO:0007589,Body Fluid Secretion,VEGFA,0.0486200687225469
+BP,GO:0003214,Cardiac Left Ventricle Morphogenesis,GSK3A,0.0486200687225469
+BP,GO:0080134,Regulation Of Response To Stress,EIF4G1,0.0486200687225469
+BP,GO:1901836,Regulation Of Transcription Of Nucleolar Large rRNA By RNA Polymerase I,MTOR,0.0486200687225469
+BP,GO:1901163,Regulation Of Trophoblast Cell Migration,VEGFA,0.0486200687225469
+BP,GO:2001212,Regulation Of Vasculogenesis,KDR,0.0486200687225469
+BP,GO:0070141,Response To UV-A,CCND1,0.0486200687225469
+BP,GO:0051220,Cytoplasmic Sequestering Of Protein,NFKBIA,0.0486200687225469
+BP,GO:0042994,Cytoplasmic Sequestering Of Transcription Factor,NFKBIA,0.0486200687225469
+BP,GO:0060045,Positive Regulation Of Cardiac Muscle Cell Proliferation,FGFR2,0.0486200687225469
+BP,GO:1990089,Response To Nerve Growth Factor,AKT1,0.0486200687225469
+BP,GO:0035162,Embryonic Hemopoiesis,KDR,0.0486200687225469
+BP,GO:0045446,Endothelial Cell Differentiation,KDR,0.0486200687225469
+BP,GO:0045725,Positive Regulation Of Glycogen Biosynthetic Process,IRS2,0.0486200687225469
+BP,GO:0031065,Positive Regulation Of Histone Deacetylation,VEGFA,0.0486200687225469
+BP,GO:0042462,Eye Photoreceptor Cell Development,VEGFA,0.0486200687225469
+BP,GO:0010759,Positive Regulation Of Macrophage Chemotaxis,MAPK1,0.0486200687225469
+BP,GO:1903894,Regulation Of IRE1-mediated Unfolded Protein Response,BAX,0.0486200687225469
+BP,GO:0007346,Regulation Of Mitotic Cell Cycle,"RPS6KB1, EIF4EBP1",0.0498954854957028
+BP,GO:0034097,Response To Cytokine,"MCL1, NFKB2",0.0498954854957028
+MF,GO:0004674,Protein Serine/Threonine Kinase Activity,"GSK3B, GSK3A, RPS6KB1, PDPK1, AKT3, RPS6KB2, MAPK1, AKT1, ULK2, FYN, ULK1, MTOR",3.49817124443854e-10
+MF,GO:0004713,Protein Tyrosine Kinase Activity,"KDR, FYN, FGFR2, IGF1R, FGFR1",0.00011699039426418075
+MF,GO:0004714,Transmembrane Receptor Protein Tyrosine Kinase Activity,"KDR, FGFR2, IGF1R, FGFR1",0.00014600421130967915
+MF,GO:0019901,Protein Kinase Binding,"RPTOR, GSK3B, GSK3A, CDKN1A, CCND1, BAD, XIAP, GRB2",0.0002314820030806675
+MF,GO:0050321,Tau-Protein Kinase Activity,"GSK3B, GSK3A, FYN",0.0002314820030806675
+MF,GO:0046875,Ephrin Receptor Binding,"FYN, GRB2, PIK3CG",0.0002314820030806675
+MF,GO:0005167,Neurotrophin TRK Receptor Binding,"GRB2, PIK3R1",0.0006840759959927333
+MF,GO:0005168,Neurotrophin TRKA Receptor Binding,"GRB2, PIK3R1",0.0006840759959927333
+MF,GO:0019887,Protein Kinase Regulator Activity,"RPTOR, CDKN1A, CCND1, AKT1",0.0007751926546049908
+MF,GO:0001006,RNA Polymerase III Type 3 Promoter Sequence-Specific DNA Binding,"RPTOR, MTOR",0.0007751926546049908
+MF,GO:0016301,Kinase Activity,"GSK3B, AKT1, PIK3CG, MTOR",0.0007751926546049908
+MF,GO:0048156,Tau Protein Binding,"GSK3B, GSK3A, FYN",0.0007751926546049908
+MF,GO:0000992,RNA Polymerase III Cis-Regulatory Region Sequence-Specific DNA Binding,"RPTOR, MTOR",0.0008817464353904739
+MF,GO:0106310,Protein Serine Kinase Activity,"GSK3B, PIK3CG",0.0013066274348176
+MF,GO:0008190,Eukaryotic Initiation Factor 4E Binding,"EIF4EBP1, EIF4G1",0.0013066274348176
+MF,GO:0016004,Phospholipase Activator Activity,"PDPK1, FYN",0.0015292177872171
+MF,GO:0031625,Ubiquitin Protein Ligase Binding,"NFKBIA, GSK3B, CDKN1A, MAP1LC3A, FOXO1",0.00174475849476
+MF,GO:0060229,Lipase Activator Activity,"PDPK1, FYN",0.0018838210318603
+MF,GO:0034236,Protein Kinase A Catalytic Subunit Binding,"GSK3B, GSK3A",0.0018838210318603
+MF,GO:0044389,Ubiquitin-Like Protein Ligase Binding,"NFKBIA, GSK3B, CDKN1A, MAP1LC3A, FOXO1",0.0019956217868359
+MF,GO:0019900,Kinase Binding,"RPTOR, GSK3B, CDKN1A, CCND1, BAD, GRB2",0.0020770120100283
+MF,GO:0042803,Protein Homodimerization Activity,"AKT1, BAX, FYN, FGFR2, MCL1, VEGFA, FGFR1",0.0021662363355688
+MF,GO:0043274,Phospholipase Binding,"PDPK1, FYN",0.0024661505681671
+MF,GO:0043027,Cysteine-Type Endopeptidase Inhibitor Activity Involved In Apoptotic Process,"XIAP, BIRC2",0.0038290281550487
+MF,GO:0017134,Fibroblast Growth Factor Binding,"FGFR2, FGFR1",0.0040070845995484
+MF,GO:0030295,Protein Kinase Activator Activity,"RPTOR, CDKN1A, AKT1",0.0040070845995484
+MF,GO:0070851,Growth Factor Receptor Binding,"FYN, GRB2, VEGFA",0.0049674212248901
+MF,GO:0051059,NF-kappaB Binding,"NFKBIA, GSK3B",0.006181383910307
+MF,GO:0030291,Protein Serine/Threonine Kinase Inhibitor Activity,"RPTOR, CDKN1A",0.0090378772061998
+MF,GO:0035639,Purine Ribonucleoside Triphosphate Binding,"AKT3, AKT1, KRAS, HRAS, EIF4G1",0.0123518532402
+MF,GO:0001784,Phosphotyrosine Residue Binding,"GRB2, PIK3R1",0.0125170409426804
+MF,GO:0019209,Kinase Activator Activity,"RPTOR, AKT1",0.0151296539555217
+MF,GO:0004860,Protein Kinase Inhibitor Activity,"RPTOR, CDKN1A",0.0151296539555217
+MF,GO:0045309,Protein Phosphorylated Amino Acid Binding,"GRB2, PIK3R1",0.0151296539555217
+MF,GO:0016538,Cyclin-Dependent Protein Serine/Threonine Kinase Regulator Activity,"CDKN1A, CCND1",0.0153455758798118
+MF,GO:0015267,Channel Activity,"BAX, MCL1",0.0189662899158894
+MF,GO:0004722,Protein Serine/Threonine Phosphatase Activity,"PHLPP1, PTEN",0.0205864887492056
+MF,GO:0019003,GDP Binding,"KRAS, HRAS",0.0293855524425915
+MF,GO:0003720,Telomerase Activity,PTEN,0.0318140112421581
+MF,GO:0051400,BH Domain Binding,MCL1,0.0318140112421581
+MF,GO:0051434,BH3 Domain Binding,MCL1,0.0318140112421581
+MF,GO:0046934,"Phosphatidylinositol-4,5-Bisphosphate 3-Kinase Activity",PIK3CG,0.0318140112421581
+MF,GO:0003964,RNA-directed DNA Polymerase Activity,PTEN,0.0318140112421581
+MF,GO:0035005,1-Phosphatidylinositol-4-Phosphate 3-Kinase Activity,PIK3CG,0.0356514021228167
+MF,GO:0034594,Phosphatidylinositol Trisphosphate Phosphatase Activity,PTEN,0.0356514021228167
+MF,GO:0005021,Vascular Endothelial Growth Factor Receptor Activity,KDR,0.0356514021228167
+MF,GO:0052813,Phosphatidylinositol Bisphosphate Kinase Activity,PIK3CG,0.0445358716257134
+MF,GO:0043184,Vascular Endothelial Growth Factor Receptor 2 Binding,VEGFA,0.0445358716257134
+MF,GO:0008353,RNA Polymerase II CTD Heptapeptide Repeat Kinase Activity,MAPK1,0.0445358716257134
+MF,GO:0016303,1-Phosphatidylinositol-3-Kinase Activity,PIK3CG,0.0480900192582472
+MF,GO:0035497,cAMP Response Element Binding,CREB5,0.0480900192582472
+MF,GO:0005524,ATP Binding,"AKT3, AKT1, EIF4G1",0.0499345402667229
+CC,GO:0043231,Intracellular Membrane-Bounded Organelle,"GSK3B, GSK3A, CDKN1A, PHLPP1, PTEN, XIAP, PIK3R1, FOXO1, IGF1R, MAP1LC3A, CCND1, MAPK1, AKT1, FYN, MCL1, MTOR, NFKB2, NFKBIA, BAX, GRB2, BIRC2, FGFR2, FGFR1, CREB5, EIF4G1",0.00015060581453888743
+CC,GO:0005634,Nucleus,"GSK3B, GSK3A, CDKN1A, PTEN, XIAP, PIK3R1, FOXO1, MTOR, NFKB2, NFKBIA, CCND1, MAPK1, AKT1, BAX, FYN, GRB2, BIRC2, FGFR2, MCL1, FGFR1, CREB5, EIF4G1",0.0003131664019975263
+CC,GO:0005741,Mitochondrial Outer Membrane,"BAD, BAX, ULK1, KRAS, MCL1",0.0003131664019975263
+CC,GO:0031968,Organelle Outer Membrane,"BAD, BAX, ULK1, KRAS, MCL1",0.0004159950173419957
+CC,GO:0097651,"Phosphatidylinositol 3-Kinase Complex, Class I","PIK3R1, PIK3CG",0.0011594467523085
+CC,GO:0005943,"Phosphatidylinositol 3-Kinase Complex, Class IA","PIK3R1, PIK3CG",0.0011594467523085
+CC,GO:0009898,Cytoplasmic Side Of Plasma Membrane,"PTEN, FYN, KRAS, BIRC2",0.0011594467523085
+CC,GO:0005776,Autophagosome,"MAP1LC3A, ULK2, ULK1",0.0055728147138774
+CC,GO:0000421,Autophagosome Membrane,"MAP1LC3A, ULK1",0.0176592959824836
+CC,GO:0000307,Cyclin-Dependent Protein Kinase Holoenzyme Complex,"CDKN1A, CCND1",0.0207005378981001
+CC,GO:0031966,Mitochondrial Membrane,"BAD, BAX, ULK1, KRAS, MCL1",0.0292592904204596
+CC,GO:0043005,Neuron Projection,"GSK3B, GSK3A, PTEN, FYN, IGF1R",0.0305476745733155
+CC,GO:0005774,Vacuolar Membrane,"MAP1LC3A, ULK1",0.0326965523582831
+CC,GO:1902554,Serine/Threonine Protein Kinase Complex,"CDKN1A, CCND1",0.0326965523582831
+CC,GO:0030424,Axon,"GSK3B, GSK3A, IGF1R",0.0385157280687161
+CC,GO:0010494,Cytoplasmic Stress Granule,"RPTOR, EIF4G1",0.0421557352393061
+CC,GO:0031234,Extrinsic Component Of Cytoplasmic Side Of Plasma Membrane,"FYN, KRAS",0.0421557352393061
+CC,GO:0098978,Glutamatergic Synapse,"GSK3B, HRAS",0.0421557352393061

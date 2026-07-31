@@ -1,0 +1,54 @@
+Category,ID,Term,Genes,adj_pval
+KEGG,,TNF signaling pathway,"SOCS3, CXCL10, JUN, IRF1, FAS, CXCL1, FOS, JUNB",4.6362781427618545e-10
+KEGG,,IL-17 signaling pathway,"CXCL10, JUN, JUND, FOSB, CXCL1, FOS",2.907634940175478e-07
+KEGG,,Osteoclast differentiation,"SOCS3, JUN, JUND, FOSB, FOS, JUNB",1.1895248869420854e-06
+KEGG,,MAPK signaling pathway,"NR4A1, JUN, JUND, HSPB1, FAS, CD14, FOS",6.1546150718640935e-06
+KEGG,,Pertussis,"JUN, IRF1, CD14, FOS",0.0001145283252501902
+KEGG,,Lipid and atherosclerosis,"JUN, FAS, CXCL1, CD14, FOS",0.00028477395220724566
+KEGG,,Toll-like receptor signaling pathway,"CXCL10, JUN, CD14, FOS",0.00028477395220724566
+KEGG,,Non-alcoholic fatty liver disease,"SOCS3, JUN, FAS, FOS",0.0011886837962594
+KEGG,,Hepatitis B,"JUN, EGR2, FAS, FOS",0.0012537833868622
+KEGG,,Amphetamine addiction,"JUN, FOSB, FOS",0.0016568401548407
+KEGG,,Prolactin signaling pathway,"SOCS3, IRF1, FOS",0.0016568401548407
+KEGG,,Kaposi sarcoma-associated herpesvirus infection,"JUN, FAS, CXCL1, FOS",0.0018425271052084
+KEGG,,Pathogenic Escherichia coli infection,"TUBB6, JUN, FAS, FOS",0.0018425271052084
+KEGG,,Human T-cell leukemia virus 1 infection,"JUN, EGR2, SLC2A1, FOS",0.0025618218627147
+KEGG,,Rheumatoid arthritis,"JUN, CXCL1, FOS",0.0028141243895894
+KEGG,,Amoebiasis,"HSPB1, CXCL1, CD14",0.003083284889993
+KEGG,,Chagas disease,"JUN, FAS, FOS",0.003083284889993
+KEGG,,Salmonella infection,"TUBB6, JUN, CD14, FOS",0.003083284889993
+KEGG,,C-type lectin receptor signaling pathway,"JUN, EGR2, IRF1",0.003083284889993
+KEGG,,"Growth hormone synthesis, secretion and action","SOCS3, FOS, JUNB",0.0043381343562963
+KEGG,,Cytokine-cytokine receptor interaction,"CXCL10, TNFRSF12A, FAS, CXCL1",0.0052329659505572
+KEGG,,Measles,"JUN, FAS, FOS",0.0061822022719123
+KEGG,,Apoptosis,"JUN, FAS, FOS",0.0062884633161821
+KEGG,,Hepatitis C,"SOCS3, CXCL10, FAS",0.0080391578496374
+KEGG,,Influenza A,"SOCS3, CXCL10, FAS",0.0100122414918304
+KEGG,,Cocaine addiction,"JUN, FOSB",0.0110170718000823
+KEGG,,Legionellosis,"CXCL1, CD14",0.0140860924785689
+KEGG,,Epstein-Barr virus infection,"CXCL10, JUN, FAS",0.0140860924785689
+KEGG,,Human immunodeficiency virus 1 infection,"JUN, FAS, FOS",0.0155753568049529
+KEGG,,Adipocytokine signaling pathway,"SOCS3, SLC2A1",0.0176023663929277
+KEGG,,Renal cell carcinoma,"JUN, SLC2A1",0.0176023663929277
+KEGG,,Epithelial cell signaling in Helicobacter pylori infection,"JUN, CXCL1",0.0176023663929277
+KEGG,,Coronavirus disease,"CXCL10, JUN, FOS",0.0176023663929277
+KEGG,,Leishmaniasis,"JUN, FOS",0.020423440702399
+KEGG,,B cell receptor signaling pathway,"JUN, FOS",0.0218876136505638
+KEGG,,Colorectal cancer,"JUN, FOS",0.0238941723861035
+KEGG,,Pathways in cancer,"JUN, SLC2A1, FAS, FOS",0.0241856625937755
+KEGG,,PD-L1 expression and PD-1 checkpoint pathway in cancer,"JUN, FOS",0.0241856625937755
+KEGG,,Th1 and Th2 cell differentiation,"JUN, FOS",0.0251203454612944
+KEGG,,Choline metabolism in cancer,"JUN, FOS",0.0276556505857732
+KEGG,,Viral protein interaction with cytokine and cytokine receptor,"CXCL10, CXCL1",0.0280474050005631
+KEGG,,T cell receptor signaling pathway,"JUN, FOS",0.028829322016161
+KEGG,,NF-kappa B signaling pathway,"CXCL1, CD14",0.028829322016161
+KEGG,,"Parathyroid hormone synthesis, secretion and action","JUND, FOS",0.028964999706067
+KEGG,,Th17 cell differentiation,"JUN, FOS",0.028964999706067
+KEGG,,Insulin resistance,"SOCS3, SLC2A1",0.028964999706067
+KEGG,,Relaxin signaling pathway,"JUN, FOS",0.039727375132518
+KEGG,,Yersinia infection,"JUN, FOS",0.0426817030340875
+KEGG,,Estrogen signaling pathway,"JUN, FOS",0.0426817030340875
+KEGG,,Fluid shear stress and atherosclerosis,"JUN, FOS",0.0429833382014209
+KEGG,,Breast cancer,"JUN, FOS",0.0468025264634969
+KEGG,,Phagosome,"TUBB6, CD14",0.0488633489564298
+KEGG,,Oxytocin signaling pathway,"JUN, FOS",0.0491248527720813

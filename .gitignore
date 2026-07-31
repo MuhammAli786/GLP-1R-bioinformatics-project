@@ -22,6 +22,14 @@ env/
 *.mtx
 *_RAW/
 raw/
+*.txt.gz
+*.tsv.gz
+*_supplementary/
+# Serialized R objects (ExpressionSets, DESeq2 dds, enrichment result objects).
+# Excluded by design: ~313 MB across the HIBI arm, and regenerable by re-running
+# the stage scripts. Their derived CSV/TXT tables ARE tracked.
+*.rds
+*.RDS
 # Large compressed matrices, should they ever be added
 *.bam
 *.bam.gz

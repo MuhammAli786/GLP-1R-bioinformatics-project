@@ -4,6 +4,34 @@ Transcriptomic **meta-analysis of GLP-1 receptor (GLP-1R) agonism across the cen
 
 This meta-analysis is the transcriptomic arm (Aim 3 / "bioinformatic meta-analysis") of an MSc thesis on **semaglutide neuroprotection in neonatal hypoxic-ischemic brain injury**. It asks which pathways and consensus genes are consistently modulated by GLP-1R agonists across brain regions, disease contexts, and drug analogues — with a focused read-out on **blood-brain-barrier / MMP, JAK-STAT3 inflammatory, PI3K-Akt pro-survival, and ion-channel** programs.
 
+## Two arms
+
+The repository holds two parallel meta-analyses run through the same pipeline,
+thresholds (padj < 0.05, |log2FC| ≥ 0.2, consensus = significant in ≥ 2 groups)
+and figure styling, so their consensus gene sets are directly comparable:
+
+| Arm | Location | Question | Datasets | Groups | Consensus genes |
+|---|---|---|---|---|---|
+| **GLP-1R** (drug) | repository root | What does GLP-1R agonism do to the CNS? | 9 GEO accessions | 31 | 4,769 |
+| **HIBI** (injury) | [`hibi/`](hibi/) | What does neonatal hypoxic-ischemic injury do? | 6 GEO accessions | 12 | 5,346 |
+
+**1,715 consensus genes are shared** between the two — 875 moving the same
+direction, **840 moving in opposite directions**. That discordant set is the
+core neuroprotection read-out: genes the injury pushes one way and GLP-1R
+agonism pushes back. The immediate-early / stress genes `Fos`, `Fosb`, `Egr2`,
+`Nfil3` and `Bhlhe40` are all HI-induced but GLP-1R-suppressed; `Fkbp5` is
+HI-suppressed but is the strongest GLP-1R consensus gene of all. See
+[`hibi/README.md`](hibi/README.md) and `hibi/hibi_vs_glp1r_consensus_comparison.csv`.
+
+Everything below this point describes the **GLP-1R arm**.
+
+## Contributors
+
+- **Melody** and **Kate** — HIBI transcriptomic work (the injury-arm
+  meta-analysis under [`hibi/`](hibi/): per-dataset DEG pipeline, consensus
+  derivation, enrichment and figures).
+- **Muhammad Ali** — GLP-1R arm and repository assembly.
+
 ## Datasets
 
 Nine GEO accessions, spanning obesity, aging, neuroinflammation, neurodegeneration, and traumatic brain injury contexts. Raw count matrices are **not** included in this repo (they are re-downloadable from GEO by accession); the processed per-group DEG tables that feed the meta-analysis are under `data/`.
@@ -42,7 +70,14 @@ GLP-1R bioinformatics project/
 │   ├── cross_accession/             # cross-accession ORA/GSEA result tables + NES matrices
 │   ├── gsea/                        # per-group .rnk inputs and GSEA/ORA result CSVs
 │   └── goplot/                      # curated pathway gene/term lists for the chord plots
-└── reports/                      # written analysis reports & methods write-ups (.docx)
+├── reports/                      # written analysis reports & methods write-ups (.docx)
+└── hibi/                         # HIBI (injury) arm — see hibi/README.md
+    ├── code/                        # 01_meta_analysis_pipeline/ + 04_goplot_chord/
+    ├── data/                        # master DEG, consensus, GOplot input tables
+    ├── figures/                     # 5 Cnets (consensus + 4 restricted pathways)
+    ├── figures_goplot/              # 31 GOplot figures across 5 pathway folders
+    ├── source_pipeline/             # original per-dataset HIBI R pipeline
+    └── hibi_vs_glp1r_consensus_comparison.csv
 ```
 
 ## Pipeline overview

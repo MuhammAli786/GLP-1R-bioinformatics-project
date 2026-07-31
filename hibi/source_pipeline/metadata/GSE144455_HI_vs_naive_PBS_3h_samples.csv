@@ -1,0 +1,4 @@
+"sample_id","title","time_ch1","time_ch2","injury_ch1","injury_ch2","treatment_ch1","treatment_ch2","include_HI_vs_naive_PBS_3h"
+"GSM4288524","Hypoxia-ischemia vs naive mice + 3h  [RV PBS 3h a]","3h","3h",NA,"Hypoxia-ischemia (RV)","PBS","MgSO4 (600 mg/kg)",TRUE
+"GSM4288525","Hypoxia-ischemia vs naive mice + 3h  [RV PBS 3h b]","3h","3h",NA,"Hypoxia-ischemia (RV)","PBS","MgSO4 (600 mg/kg)",TRUE
+"GSM4288526","Hypoxia-ischemia vs naive mice + 3h  [RV PBS 3h c]","3h","3h",NA,"Hypoxia-ischemia (RV)","PBS","MgSO4 (600 mg/kg)",TRUE

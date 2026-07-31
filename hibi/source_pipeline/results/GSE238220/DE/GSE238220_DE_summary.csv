@@ -1,0 +1,3 @@
+comparison,control_samples,HI_samples,tested_genes,significant_DEGs,upregulated,downregulated,mapped_entrez,design
+Microglia_1d_HI_vs_Control,6,6,11956,4002,1729,2273,3736,~sex + treatment
+Microglia_3d_HI_vs_Control,8,8,12527,4444,2009,2435,4175,~sex + treatment

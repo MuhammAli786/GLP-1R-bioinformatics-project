@@ -1,0 +1,49 @@
+Category,ID,Term,Genes,adj_pval
+Reactome,R-HSA-112316,Neuronal System,"GRIA1, GABRB3, KCNJ4, GRIA2, GABRA1, CACNA2D1, GRIK1, GRM1, GRIN2A, GRM5, CACNB4, KCNMA1, KCNK3, HCN1",1.6379915121979757e-19
+Reactome,R-HSA-112315,Transmission Across Chemical Synapses,"GRIA1, GABRB3, KCNJ4, GRIA2, GABRA1, GRIN2A, CACNB4, CACNA2D1, GRIK1",8.966900093987788e-12
+Reactome,R-HSA-112314,Neurotransmitter Receptors And Postsynaptic Signal Transmission,"GRIA1, GABRB3, KCNJ4, GRIA2, GABRA1, GRIN2A, GRIK1",3.2746234164314518e-09
+Reactome,R-HSA-5576891,Cardiac Conduction,"KCNJ4, CACNA1C, SCN2A, SCN3A, KCNK3",1.3415114246771329e-06
+Reactome,R-HSA-397014,Muscle Contraction,"KCNJ4, CACNA1C, SCN2A, SCN3A, KCNK3",9.685822604495647e-06
+Reactome,R-HSA-438066,"Unblocking Of NMDA Receptors, Glutamate Binding And Activation","GRIA1, GRIA2, GRIN2A",9.780040962835908e-06
+Reactome,R-HSA-6794362,Protein-protein Interactions At Synapses,"GRIA1, GRIN2A, GRM5, GRM1",9.780040962835908e-06
+Reactome,R-HSA-9620244,Long-term Potentiation,"GRIA1, GRIA2, GRIN2A",9.780040962835908e-06
+Reactome,R-HSA-1296071,Potassium Channels,"KCNJ4, KCNMA1, KCNK3, HCN1",1.497841011731506e-05
+Reactome,R-HSA-5576892,Phase 0 - Rapid Depolarisation,"CACNA1C, SCN2A, SCN3A",2.18021668649599e-05
+Reactome,R-HSA-9717207,"Sensory Perception Of Sweet, Bitter, And Umami (Glutamate) Taste","SCN2A, SCN3A, GRM1",4.23825043836514e-05
+Reactome,R-HSA-9717189,Sensory Perception Of Taste,"SCN2A, SCN3A, GRM1",5.889701614402006e-05
+Reactome,R-HSA-6794361,Neurexins And Neuroligins,"GRIN2A, GRM5, GRM1",9.755443493464034e-05
+Reactome,R-HSA-977443,GABA Receptor Activation,"GABRB3, KCNJ4, GABRA1",0.0001005317483998241
+Reactome,R-HSA-438064,Post NMDA Receptor Activation Events,"GRIA1, GRIA2, GRIN2A",0.00010375997031984766
+Reactome,R-HSA-442755,Activation Of NMDA Receptors And Postsynaptic Events,"GRIA1, GRIA2, GRIN2A",0.00017393219642860194
+Reactome,R-HSA-112308,Presynaptic Depolarization And Calcium Channel Opening,"CACNB4, CACNA2D1",0.0002156571466544917
+Reactome,R-HSA-416993,Trafficking Of GluR2-containing AMPA Receptors,"GRIA1, GRIA2",0.0004185813981841749
+Reactome,R-HSA-9022699,MECP2 Regulates Neuronal Receptors And Channels,"GRIA2, GRIN2A",0.00044588224764455074
+Reactome,R-HSA-5576886,Phase 4 - Resting Membrane Potential,"KCNJ4, KCNK3",0.0004731700792295746
+Reactome,R-HSA-8849932,Synaptic Adhesion-Like Molecules,"GRIA1, GRIN2A",0.0005528263299271539
+Reactome,R-HSA-445095,Interaction Between L1 And Ankyrins,"SCN2A, SCN3A",0.0010158787529142
+Reactome,R-HSA-399721,"Glutamate Binding, Activation Of AMPA Receptors And Synaptic Plasticity","GRIA1, GRIA2",0.0011117343856987
+Reactome,R-HSA-419037,NCAM1 Interactions,"CACNB4, CACNA1C",0.0015210765549755
+Reactome,R-HSA-420499,Class C/3 (Metabotropic Glutamate/Pheromone Receptors),"GRM5, GRM1",0.0017074530402051
+Reactome,R-HSA-422475,Axon Guidance,"CACNB4, CACNA1C, SCN2A, SCN3A",0.002882914294794
+Reactome,R-HSA-375165,NCAM Signaling For Neurite Out-Growth,"CACNB4, CACNA1C",0.003091273059335
+Reactome,R-HSA-1236394,Signaling By ERBB4,"GABRB3, GABRA1",0.003091273059335
+Reactome,R-HSA-9675108,Nervous System Development,"CACNB4, CACNA1C, SCN2A, SCN3A",0.0030987121634964
+Reactome,R-HSA-8986944,Transcriptional Regulation By MECP2,"GRIA2, GRIN2A",0.0031946319295179
+Reactome,R-HSA-9709957,Sensory Perception,"KCNMA1, SCN2A, SCN3A, GRM1",0.004550549926928
+Reactome,R-HSA-373760,L1CAM Interactions,"SCN2A, SCN3A",0.008039641300442
+Reactome,R-HSA-9667769,Acetylcholine Inhibits Contraction Of Outer Hair Cells,KCNMA1,0.0099374959912935
+Reactome,R-HSA-1296052,Ca2+ Activated K+ Channels,KCNMA1,0.015412723429116
+Reactome,R-HSA-451308,Activation Of Ca-permeable Kainate Receptor,GRIK1,0.0168367602752474
+Reactome,R-HSA-1296346,Tandem Pore Domain Potassium Channels,KCNK3,0.0217976671941582
+Reactome,R-HSA-5576893,Phase 2 - Plateau Phase,CACNA1C,0.0257801937914148
+Reactome,R-HSA-418457,cGMP Effects,KCNMA1,0.0257801937914148
+Reactome,R-HSA-1266738,Developmental Biology,"CACNB4, CACNA1C, SCN2A, SCN3A",0.025794782248983
+Reactome,R-HSA-416476,G Alpha (Q) Signaling Events,"GRM5, GRM1",0.027927091339767
+Reactome,R-HSA-9617324,Negative Regulation Of NMDA Receptor-Mediated Neuronal Transmission,GRIN2A,0.0325719164215602
+Reactome,R-HSA-392154,Nitric Oxide Stimulates Guanylate Cyclase,KCNMA1,0.0325719164215602
+Reactome,R-HSA-9609736,Assembly And Cell Surface Presentation Of NMDA Receptors,GRIN2A,0.037810146073769
+Reactome,R-HSA-400042,"Adrenaline,noradrenaline Inhibits Insulin Secretion",CACNA1C,0.040929904788155
+Reactome,R-HSA-1296041,Activation Of G Protein Gated Potassium Channels,KCNJ4,0.040929904788155
+Reactome,R-HSA-451326,Activation Of Kainate Receptors Upon Glutamate Binding,GRIK1,0.040929904788155
+Reactome,R-HSA-5694530,Cargo Concentration In ER,GRIA1,0.0441469495386818
+Reactome,R-HSA-1296065,Inwardly Rectifying K+ Channels,KCNJ4,0.0472197369453869

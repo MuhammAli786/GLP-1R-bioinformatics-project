@@ -1,0 +1,3 @@
+data/GSE238220_supplementary/GSE238220_RAW.tar
+data/GSE238220_supplementary/GSE238220_read_counts.tsv.gz
+data/GSE238220_supplementary/GSE238220_RPKM_expression.tsv.gz

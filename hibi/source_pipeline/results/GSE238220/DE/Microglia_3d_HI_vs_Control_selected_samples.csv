@@ -1,0 +1,17 @@
+count_matrix_sample,sample_id,title,cell_type,treatment,time,sex,tissue,pup_id,tissue_raw,cell_type_raw,pup_id_raw,sex_raw,time_raw,treatment_raw,count_column
+GSM7660640,GSM7660640,G5_f3Nµg,Microglia,Control,3d,Female,Hippocampus,N5,Hippocampus,Microglia,N5,female,NA,None,G5_f3Nµg
+GSM7660641,GSM7660641,G6_f3Nµg,Microglia,Control,3d,Female,Hippocampus,N6,Hippocampus,Microglia,N6,female,NA,None,G6_f3Nµg
+GSM7660642,GSM7660642,G7_f3Nµg,Microglia,Control,3d,Female,Hippocampus,N7,Hippocampus,Microglia,N7,female,NA,None,G7_f3Nµg
+GSM7660643,GSM7660643,G8_f3Nµg,Microglia,Control,3d,Female,Hippocampus,N8,Hippocampus,Microglia,N8,female,NA,None,G8_f3Nµg
+GSM7660644,GSM7660644,G1_m3Nµg,Microglia,Control,3d,Male,Hippocampus,N1,Hippocampus,Microglia,N1,male,NA,None,G1_m3Nµg
+GSM7660645,GSM7660645,G2_m3Nµg,Microglia,Control,3d,Male,Hippocampus,N2,Hippocampus,Microglia,N2,male,NA,None,G2_m3Nµg
+GSM7660646,GSM7660646,G3_m3Nµg,Microglia,Control,3d,Male,Hippocampus,N3,Hippocampus,Microglia,N3,male,NA,None,G3_m3Nµg
+GSM7660647,GSM7660647,G4_m3Nµg,Microglia,Control,3d,Male,Hippocampus,N4,Hippocampus,Microglia,N4,male,NA,None,G4_m3Nµg
+GSM7660648,GSM7660648,G18_f3HIµg,Microglia,HI,3d,Female,Hippocampus,10,Hippocampus,Microglia,10,female,NA,Hypoxia,G18_f3HIµg
+GSM7660649,GSM7660649,G22_f3HIµg,Microglia,HI,3d,Female,Hippocampus,30,Hippocampus,Microglia,30,female,NA,Hypoxia,G22_f3HIµg
+GSM7660650,GSM7660650,G20_f3HIµg,Microglia,HI,3d,Female,Hippocampus,30,Hippocampus,Microglia,30,female,NA,Hypoxia,G20_f3HIµg
+GSM7660651,GSM7660651,G26_f3HIµg,Microglia,HI,3d,Female,Hippocampus,10,Hippocampus,Microglia,10,female,NA,Hypoxia,G26_f3HIµg
+GSM7660652,GSM7660652,G28_f3HIµg,Microglia,HI,3d,Female,Hippocampus,30,Hippocampus,Microglia,30,female,NA,Hypoxia,G28_f3HIµg
+GSM7660653,GSM7660653,G16_m3HIµg,Microglia,HI,3d,Male,Hippocampus,7,Hippocampus,Microglia,7,male,NA,Hypoxia,G16_m3HIµg
+GSM7660654,GSM7660654,G14_m3HIµg,Microglia,HI,3d,Male,Hippocampus,1,Hippocampus,Microglia,1,male,NA,Hypoxia,G14_m3HIµg
+GSM7660655,GSM7660655,G12_m3HIµg,Microglia,HI,3d,Male,Hippocampus,3,Hippocampus,Microglia,3,male,NA,Hypoxia,G12_m3HIµg

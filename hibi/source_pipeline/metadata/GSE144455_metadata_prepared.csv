@@ -1,0 +1,36 @@
+"sample_id","title","time_ch1","time_ch2","injury_ch1","injury_ch2","treatment_ch1","treatment_ch2","include_HI_vs_naive_PBS_3h"
+"GSM4288501","Effect of MgSO4 + 1h30 [Mg 1h30 a]","1h30","1h30",NA,"None","PBS","MgSO4 (600 mg/kg)",FALSE
+"GSM4288502","Effect of MgSO4 + 1h30 [Mg 1h30 b]","1h30","1h30",NA,"None","PBS","MgSO4 (600 mg/kg)",FALSE
+"GSM4288503","Effect of MgSO4 + 1h30 [Mg 1h30 c]","1h30","1h30",NA,"None","PBS","MgSO4 (600 mg/kg)",FALSE
+"GSM4288504","Effect of MgSO4 + 1h30 [Mg 1h30 d]","1h30","1h30",NA,"None","PBS","MgSO4 (600 mg/kg)",FALSE
+"GSM4288505","Effect of MgSO4 + 3h [Mg 3h a]","3h","3h",NA,"None","PBS","MgSO4 (600 mg/kg)",FALSE
+"GSM4288506","Effect of MgSO4 + 3h [Mg 3h b]","3h","3h",NA,"None","PBS","MgSO4 (600 mg/kg)",FALSE
+"GSM4288507","Effect of MgSO4 + 3h [Mg 3h c]","3h","3h",NA,"None","PBS","MgSO4 (600 mg/kg)",FALSE
+"GSM4288508","Effect of MgSO4 + 3h [Mg 3h d]","3h","3h",NA,"None","PBS","MgSO4 (600 mg/kg)",FALSE
+"GSM4288509","Effect of MgSO4 + 6h [Mg 6h a]","6h","6h",NA,"None","PBS","MgSO4 (600 mg/kg)",FALSE
+"GSM4288510","Effect of MgSO4 + 6h [Mg 6h b]","6h","6h",NA,"None","PBS","MgSO4 (600 mg/kg)",FALSE
+"GSM4288511","Effect of MgSO4 + 6h [Mg 6h c]","6h","6h",NA,"None","PBS","MgSO4 (600 mg/kg)",FALSE
+"GSM4288512","Effect of MgSO4 + 6h [Mg 6h d]","6h","6h",NA,"None","PBS","MgSO4 (600 mg/kg)",FALSE
+"GSM4288513","Effect of MgSO4 + 6h [Mg 6h e]","6h","6h",NA,"None","PBS","MgSO4 (600 mg/kg)",FALSE
+"GSM4288514","Effect of MgSO4 + 6h [Mg 6h f]","6h","6h",NA,"None","PBS","MgSO4 (600 mg/kg)",FALSE
+"GSM4288515","Effect of MgSO4 + 6h [Mg 6h g]","6h","6h",NA,"None","PBS","MgSO4 (600 mg/kg)",FALSE
+"GSM4288516","Effect of MgSO4 + 12h [Mg 12h a]","12h","12h",NA,"None","PBS","MgSO4 (600 mg/kg)",FALSE
+"GSM4288517","Effect of MgSO4 + 12h [Mg 12h b]","12h","12h",NA,"None","PBS","MgSO4 (600 mg/kg)",FALSE
+"GSM4288518","Effect of MgSO4 + 12h [Mg 12h c]","12h","12h",NA,"None","PBS","MgSO4 (600 mg/kg)",FALSE
+"GSM4288519","Effect of MgSO4 + 12h [Mg 12h d]","12h","12h",NA,"None","PBS","MgSO4 (600 mg/kg)",FALSE
+"GSM4288520","Effect of MgSO4 + 24h [Mg 24h a]","24h","24h",NA,"None","PBS","MgSO4 (600 mg/kg)",FALSE
+"GSM4288521","Effect of MgSO4 + 24h [Mg 24h b]","24h","24h",NA,"None","PBS","MgSO4 (600 mg/kg)",FALSE
+"GSM4288522","Effect of MgSO4 + 24h [Mg 24h c]","24h","24h",NA,"None","PBS","MgSO4 (600 mg/kg)",FALSE
+"GSM4288523","Effect of MgSO4 + 24h [Mg 24h d]","24h","24h",NA,"None","PBS","MgSO4 (600 mg/kg)",FALSE
+"GSM4288524","Hypoxia-ischemia vs naive mice + 3h  [RV PBS 3h a]","3h","3h",NA,"Hypoxia-ischemia (RV)","PBS","MgSO4 (600 mg/kg)",TRUE
+"GSM4288525","Hypoxia-ischemia vs naive mice + 3h  [RV PBS 3h b]","3h","3h",NA,"Hypoxia-ischemia (RV)","PBS","MgSO4 (600 mg/kg)",TRUE
+"GSM4288526","Hypoxia-ischemia vs naive mice + 3h  [RV PBS 3h c]","3h","3h",NA,"Hypoxia-ischemia (RV)","PBS","MgSO4 (600 mg/kg)",TRUE
+"GSM4288527","Mg-treated Hypoxia-ischemia vs Mg-treated naive mice + 3h  [RV Mg 3h a]","3h","3h",NA,"Hypoxia-ischemia (RV)","MgSO4 (600 mg/kg)","MgSO4 (600 mg/kg)",FALSE
+"GSM4288528","Mg-treated Hypoxia-ischemia vs Mg-treated naive mice + 3h  [RV Mg 3h b]","3h","3h",NA,"Hypoxia-ischemia (RV)","MgSO4 (600 mg/kg)","MgSO4 (600 mg/kg)",FALSE
+"GSM4288529","Mg-treated Hypoxia-ischemia vs Mg-treated naive mice + 3h  [RV Mg 3h c]","3h","3h",NA,"Hypoxia-ischemia (RV)","MgSO4 (600 mg/kg)","MgSO4 (600 mg/kg)",FALSE
+"GSM4288530","Hypoxia-ischemia vs naive mice + 12h  [RV PBS 12h a]","12h","12h",NA,"Hypoxia-ischemia (RV)","PBS","MgSO4 (600 mg/kg)",FALSE
+"GSM4288531","Hypoxia-ischemia vs naive mice + 12h  [RV PBS 12h b]","12h","12h",NA,"Hypoxia-ischemia (RV)","PBS","MgSO4 (600 mg/kg)",FALSE
+"GSM4288532","Hypoxia-ischemia vs naive mice + 12h  [RV PBS 12h c]","12h","12h",NA,"Hypoxia-ischemia (RV)","PBS","MgSO4 (600 mg/kg)",FALSE
+"GSM4288533","Mg-treated Hypoxia-ischemia vs Mg-treated naive mice + 12h  [RV Mg 12h a]","12h","12h",NA,"Hypoxia-ischemia (RV)","MgSO4 (600 mg/kg)","MgSO4 (600 mg/kg)",FALSE
+"GSM4288534","Mg-treated Hypoxia-ischemia vs Mg-treated naive mice + 12h  [RV Mg 12h b]","12h","12h",NA,"Hypoxia-ischemia (RV)","MgSO4 (600 mg/kg)","MgSO4 (600 mg/kg)",FALSE
+"GSM4288535","Mg-treated Hypoxia-ischemia vs Mg-treated naive mice + 12h  [RV Mg 12h c]","12h","12h",NA,"Hypoxia-ischemia (RV)","MgSO4 (600 mg/kg)","MgSO4 (600 mg/kg)",FALSE

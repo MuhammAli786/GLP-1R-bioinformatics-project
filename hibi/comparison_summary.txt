@@ -1,0 +1,54 @@
+HIBI (hypoxic-ischemic brain injury) vs GLP-1R (GLP-1R agonism, CNS) consensus DEG comparison
+Threshold: padj<0.05, |log2FC|>=0.2, gene significant in >=2 groups within each project
+
+HIBI consensus genes:   5346  (from 12 HIBI groups: 6 GEO datasets)
+GLP-1R consensus genes: 4769  (from GLP-1R-bioinformatics-project, 9 accessions)
+Shared consensus genes: 1715
+  - same predominant direction (concordant):    875
+  - opposite predominant direction (discordant): 840
+HIBI-only consensus genes:   3631
+GLP-1R-only consensus genes: 3054
+
+Top 20 shared, concordant-direction genes (by combined recurrence):
+  Slc2a1: HIBI n_groups=11 (UP), GLP-1R n_groups=4 (UP)
+  Csrnp1: HIBI n_groups=10 (UP), GLP-1R n_groups=4 (UP)
+  Errfi1: HIBI n_groups=9 (UP), GLP-1R n_groups=5 (UP)
+  Arl4d: HIBI n_groups=8 (UP), GLP-1R n_groups=6 (UP)
+  Cdkn1a: HIBI n_groups=5 (UP), GLP-1R n_groups=8 (UP)
+  Maff: HIBI n_groups=11 (UP), GLP-1R n_groups=2 (UP)
+  Cd53: HIBI n_groups=6 (UP), GLP-1R n_groups=7 (UP)
+  Atp2b2: HIBI n_groups=7 (DOWN), GLP-1R n_groups=6 (DOWN)
+  Hspe1: HIBI n_groups=7 (UP), GLP-1R n_groups=6 (UP)
+  Epm2aip1: HIBI n_groups=6 (DOWN), GLP-1R n_groups=7 (DOWN)
+  Fam168a: HIBI n_groups=9 (DOWN), GLP-1R n_groups=4 (DOWN)
+  Mbnl2: HIBI n_groups=8 (DOWN), GLP-1R n_groups=5 (DOWN)
+  Map2: HIBI n_groups=7 (DOWN), GLP-1R n_groups=5 (DOWN)
+  Cpd: HIBI n_groups=7 (DOWN), GLP-1R n_groups=5 (DOWN)
+  Uhmk1: HIBI n_groups=8 (DOWN), GLP-1R n_groups=4 (DOWN)
+  Kcnd2: HIBI n_groups=6 (DOWN), GLP-1R n_groups=6 (DOWN)
+  Mpp5: HIBI n_groups=3 (DOWN), GLP-1R n_groups=9 (DOWN)
+  Bmpr2: HIBI n_groups=6 (DOWN), GLP-1R n_groups=6 (DOWN)
+  Tnfrsf12a: HIBI n_groups=10 (UP), GLP-1R n_groups=2 (UP)
+  Homer1: HIBI n_groups=4 (DOWN), GLP-1R n_groups=7 (DOWN)
+
+Discordant-direction shared genes (opposite regulation between injury and GLP-1R agonism):
+  Fos: HIBI=UP (n=10), GLP-1R=DOWN (n=6)
+  Nfil3: HIBI=UP (n=10), GLP-1R=DOWN (n=4)
+  Egr2: HIBI=UP (n=10), GLP-1R=DOWN (n=4)
+  Bhlhe40: HIBI=UP (n=10), GLP-1R=DOWN (n=2)
+  Ank3: HIBI=DOWN (n=9), GLP-1R=UP (n=7)
+  Fosb: HIBI=UP (n=9), GLP-1R=DOWN (n=6)
+  Hspb1: HIBI=UP (n=9), GLP-1R=DOWN (n=2)
+  Sat1: HIBI=UP (n=9), GLP-1R=DOWN (n=2)
+  Nrxn3: HIBI=DOWN (n=9), GLP-1R=UP (n=2)
+  Ntrk3: HIBI=DOWN (n=9), GLP-1R=UP (n=2)
+  Fkbp5: HIBI=DOWN (n=8), GLP-1R=UP (n=12)
+  Hspa1a: HIBI=UP (n=8), GLP-1R=DOWN (n=7)
+  Plekho2: HIBI=UP (n=8), GLP-1R=DOWN (n=5)
+  Hspa5: HIBI=UP (n=8), GLP-1R=DOWN (n=5)
+  Adgrl4: HIBI=UP (n=8), GLP-1R=DOWN (n=4)
+  Plxna4: HIBI=DOWN (n=8), GLP-1R=UP (n=4)
+  Celsr2: HIBI=DOWN (n=8), GLP-1R=UP (n=4)
+  Nes: HIBI=UP (n=8), GLP-1R=DOWN (n=3)
+  Insig1: HIBI=UP (n=8), GLP-1R=DOWN (n=3)
+  Celf2: HIBI=DOWN (n=8), GLP-1R=UP (n=3)

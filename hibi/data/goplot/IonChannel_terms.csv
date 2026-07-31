@@ -1,0 +1,191 @@
+Category,ID,Term,Genes,adj_pval
+BP,GO:0007215,Glutamate Receptor Signaling Pathway,"GRIA2, GRIN2A, GRM5, GRIK1, GRM1, GRIN1",5.256782002728928e-11
+BP,GO:0007268,Chemical Synaptic Transmission,"GRIA1, GABRB3, GRIA2, GABRA1, GRIN2A, CACNB4, GRIK1, KCNK3, GRIN1",5.256782002728928e-11
+BP,GO:0098916,Anterograde Trans-Synaptic Signaling,"GRIA1, GABRB3, GRIA2, GRIN2A, CACNB4, GRIK1, KCNK3, GRIN1",1.8654448788787568e-10
+BP,GO:0051966,"Regulation Of Synaptic Transmission, Glutamatergic","GRIN2A, GRM5, GRIK1, GRM1, GRIN1, HCN1",2.4657662169076547e-10
+BP,GO:0097553,Calcium Ion Transmembrane Import Into Cytosol,"GRIN2A, CACNA2D1, CACNA1C, SCN2A, SCN3A, GRIN1",2.531688734109164e-09
+BP,GO:0030001,Metal Ion Transport,"KCNJ4, CACNA2D1, KCNMA1, SCN2A, SCN3A, KCNK3",1.6974613056319037e-07
+BP,GO:0035249,"Synaptic Transmission, Glutamatergic","GRIA1, GRIA2, GRIN2A, GRIK1",1.897443228733666e-07
+BP,GO:1904646,Cellular Response To Amyloid-Beta,"GRIN2A, GRM5, CACNA2D1, GRIN1",4.3701485003920173e-07
+BP,GO:0098659,Inorganic Cation Import Across Plasma Membrane,"KCNJ4, CACNA2D1, CACNA1C, SCN2A, SCN3A",4.950564412887645e-07
+BP,GO:0098703,Calcium Ion Import Across Plasma Membrane,"CACNA2D1, CACNA1C, SCN2A, SCN3A",4.970556304953284e-07
+BP,GO:1904645,Response To Amyloid-Beta,"GRIN2A, GRM5, CACNA2D1, GRIN1",8.415234074935937e-07
+BP,GO:0050804,Modulation Of Chemical Synaptic Transmission,"GRIA1, GRIA2, GRM5, GRIK1, GRM1",9.065372172098344e-07
+BP,GO:0098655,Monoatomic Cation Transmembrane Transport,"GRIN2A, CACNA1C, SCN2A, KCNK3, GRIN1, HCN1",1.5090537812125882e-06
+BP,GO:0035235,Ionotropic Glutamate Receptor Signaling Pathway,"GRIA2, GRIN2A, GRIN1",1.5979976553003535e-06
+BP,GO:1901653,Cellular Response To Peptide,"GRIN2A, GRM5, CACNA2D1, GRIN1",1.823340607220008e-06
+BP,GO:0070588,Calcium Ion Transmembrane Transport,"GRIN2A, CACNA2D1, CACNA1C, GRIN1",7.262456166710755e-06
+BP,GO:0034765,Regulation Of Monoatomic Ion Transmembrane Transport,"KCNJ4, GRIN2A, GRIN1",2.165024641946848e-05
+BP,GO:0006813,Potassium Ion Transport,"KCNJ4, KCNMA1, KCNK3, HCN1",3.4580862985500725e-05
+BP,GO:0060078,Regulation Of Postsynaptic Membrane Potential,"GABRA1, GRIN2A, GRIN1",3.4580862985500725e-05
+BP,GO:0099177,Regulation Of Trans-Synaptic Signaling,"GRIA1, GRIA2, GRIK1",3.581822157977502e-05
+BP,GO:1904062,Regulation Of Monoatomic Cation Transmembrane Transport,"GRIN2A, GRIN1, HCN1",4.358962864855456e-05
+BP,GO:0086091,Regulation Of Heart Rate By Cardiac Conduction,"CACNA2D1, CACNA1C, HCN1",4.847861802787522e-05
+BP,GO:0061337,Cardiac Conduction,"CACNA2D1, CACNA1C, HCN1",6.584749268977488e-05
+BP,GO:0060402,Calcium Ion Transport Into Cytosol,"CACNA2D1, CACNA1C",0.00019091767659368345
+BP,GO:0007216,G Protein-Coupled Glutamate Receptor Signaling Pathway,"GRM5, GRM1",0.0003354798023847134
+BP,GO:1904862,Inhibitory Synapse Assembly,"GABRB3, GABRA1",0.0003810243546874586
+BP,GO:0006814,Sodium Ion Transport,"SCN2A, SCN3A, HCN1",0.00040960980341462645
+BP,GO:0051932,"Synaptic Transmission, GABAergic","GABRB3, GABRA1",0.0004125568635162996
+BP,GO:0086012,Membrane Depolarization During Cardiac Muscle Cell Action Potential,"CACNA2D1, CACNA1C",0.0005247126351924879
+BP,GO:0098662,Inorganic Cation Transmembrane Transport,"CACNA1C, SCN2A, KCNK3, HCN1",0.0005795202297064293
+BP,GO:0086003,Cardiac Muscle Cell Contraction,"CACNA2D1, CACNA1C",0.0005872911464409131
+BP,GO:0060079,Excitatory Postsynaptic Potential,"GRIN2A, GRIN1",0.0005872911464409131
+BP,GO:0045471,Response To Ethanol,"GRIN2A, GRIN1",0.0005872911464409131
+BP,GO:0007214,Gamma-Aminobutyric Acid Signaling Pathway,"GABRB3, GABRA1",0.0007071120575538339
+BP,GO:0051968,"Positive Regulation Of Synaptic Transmission, Glutamatergic","GRIN2A, GRIN1",0.0008110741626247947
+BP,GO:2000463,Positive Regulation Of Excitatory Postsynaptic Potential,"GRIN2A, GRIN1",0.0008110741626247947
+BP,GO:0099565,"Chemical Synaptic Transmission, Postsynaptic","GRIN2A, GRIN1",0.001023238386844
+BP,GO:0071805,Potassium Ion Transmembrane Transport,"KCNJ4, KCNK3, HCN1",0.0010457380977166
+BP,GO:0098901,Regulation Of Cardiac Muscle Cell Action Potential,"CACNA1C, HCN1",0.0012212107679761
+BP,GO:0086001,Cardiac Muscle Cell Action Potential,"CACNA2D1, CACNA1C",0.0012470225653882
+BP,GO:0097305,Response To Alcohol,"GRIN2A, GRIN1",0.0012470225653882
+BP,GO:0086002,Cardiac Muscle Cell Action Potential Involved In Contraction,"CACNA2D1, CACNA1C",0.0013035893444585
+BP,GO:0098815,Modulation Of Excitatory Postsynaptic Potential,"GRIN2A, GRIN1",0.0013603605528732
+BP,GO:0048168,Regulation Of Neuronal Synaptic Plasticity,"GRIN2A, GRIN1",0.0016013482898061
+BP,GO:0006812,Monoatomic Cation Transport,"GRIN2A, GRIN1",0.0023928519287673
+BP,GO:1902476,Chloride Transmembrane Transport,"GABRB3, GABRA1",0.0030569527653397
+BP,GO:0098656,Monoatomic Anion Transmembrane Transport,"GABRB3, GABRA1",0.0037834817191989
+BP,GO:2001257,Regulation Of Cation Channel Activity,"CACNB4, HCN1",0.0039826014700343
+BP,GO:0098661,Inorganic Anion Transmembrane Transport,"GABRB3, GABRA1",0.0049291829633842
+BP,GO:2001056,Positive Regulation Of Cysteine-Type Endopeptidase Activity,"GRIN2A, GRIN1",0.0049837711528103
+BP,GO:0007416,Synapse Assembly,"GABRB3, GABRA1",0.0060003348689668
+BP,GO:0051262,Protein Tetramerization,"GRIN1, HCN1",0.006157331804031
+BP,GO:0007417,Central Nervous System Development,"GRIN2A, GRIK1, GRIN1",0.006157331804031
+BP,GO:0006821,Chloride Transport,"GABRB3, GABRA1",0.0065304635884866
+BP,GO:0050806,Positive Regulation Of Synaptic Transmission,"GRIN2A, GRIN1",0.0065304635884866
+BP,GO:0035725,Sodium Ion Transmembrane Transport,"SCN2A, HCN1",0.0072603515249657
+BP,GO:0007200,Phospholipase C-activating G Protein-Coupled Receptor Signaling Pathway,"GRM5, GRM1",0.0073052115227184
+BP,GO:0019722,Calcium-Mediated Signaling,"GRM5, CACNA1C",0.0075235662096514
+BP,GO:0071417,Cellular Response To Organonitrogen Compound,"GABRB3, HCN1",0.0111918988085765
+BP,GO:0006816,Calcium Ion Transport,"CACNA2D1, CACNA1C",0.0124826381845419
+BP,GO:0098976,Excitatory Chemical Synaptic Transmission,GRIN2A,0.0140605283095474
+BP,GO:0098907,Regulation Of SA Node Cell Action Potential,HCN1,0.0140605283095474
+BP,GO:0010359,Regulation Of Anion Channel Activity,GRM5,0.0140605283095474
+BP,GO:0071420,Cellular Response To Histamine,GABRB3,0.0140605283095474
+BP,GO:0050808,Synapse Organization,"GRM5, CACNB4",0.0156254273183887
+BP,GO:0010524,Positive Regulation Of Calcium Ion Transport Into Cytosol,GRIN1,0.0181638529743712
+BP,GO:0034776,Response To Histamine,GABRB3,0.0199066159165523
+BP,GO:0071407,Cellular Response To Organic Cyclic Compound,"GABRB3, HCN1",0.0199066159165523
+BP,GO:1902514,Regulation Of Calcium Ion Transmembrane Transport Via High Voltage-Gated Calcium Channel,CACNA2D1,0.0216992299360725
+BP,GO:0008542,Visual Learning,GRIN1,0.0230478073585557
+BP,GO:0098911,Regulation Of Ventricular Cardiac Muscle Cell Action Potential,CACNA1C,0.0230478073585557
+BP,GO:0007420,Brain Development,"GRIN2A, GRIN1",0.0230478073585557
+BP,GO:0051290,Protein Heterotetramerization,GRIN1,0.0236206876660561
+BP,GO:1903428,Positive Regulation Of Reactive Oxygen Species Biosynthetic Process,GRIN1,0.0236206876660561
+BP,GO:0086014,Atrial Cardiac Muscle Cell Action Potential,CACNA1C,0.0236206876660561
+BP,GO:1901387,Positive Regulation Of Voltage-Gated Calcium Channel Activity,CACNA2D1,0.0236206876660561
+BP,GO:0086010,Membrane Depolarization During Action Potential,CACNA1C,0.0246068988715276
+BP,GO:0030007,Intracellular Potassium Ion Homeostasis,KCNMA1,0.0246068988715276
+BP,GO:0031281,Positive Regulation Of Cyclase Activity,CACNA1C,0.0246068988715276
+BP,GO:0051349,Positive Regulation Of Lyase Activity,CACNA1C,0.0261573906880228
+BP,GO:0050805,Negative Regulation Of Synaptic Transmission,HCN1,0.0276680381870994
+BP,GO:0097202,Activation Of Cysteine-Type Endopeptidase Activity,GRIN2A,0.0281118191010478
+BP,GO:0030322,Stabilization Of Membrane Potential,KCNK3,0.0281118191010478
+BP,GO:0086064,Cell Communication By Electrical Coupling Involved In Cardiac Conduction,CACNA1C,0.0281118191010478
+BP,GO:0010881,Regulation Of Cardiac Muscle Contraction By Regulation Of The Release Of Sequestered Calcium Ion,CACNA1C,0.0281118191010478
+BP,GO:0045761,Regulation Of Adenylate Cyclase Activity,CACNA1C,0.0295089761038163
+BP,GO:0008306,Associative Learning,GRIN1,0.0305217404097922
+BP,GO:0060307,Regulation Of Ventricular Cardiac Muscle Cell Membrane Repolarization,CACNA2D1,0.0305217404097922
+BP,GO:0051291,Protein Heterooligomerization,GRIN1,0.0313875541533743
+BP,GO:0051402,Neuron Apoptotic Process,SCN2A,0.0313875541533743
+BP,GO:0035584,Calcium-Mediated Signaling Using Intracellular Calcium Source,GRM5,0.0313875541533743
+BP,GO:0003254,Regulation Of Membrane Depolarization,HCN1,0.0313875541533743
+BP,GO:1903169,Regulation Of Calcium Ion Transmembrane Transport,CACNA2D1,0.0313875541533743
+BP,GO:0010882,Regulation Of Cardiac Muscle Contraction By Calcium Ion Signaling,CACNA1C,0.0313875541533743
+BP,GO:0060291,Long-Term Synaptic Potentiation,GRIN2A,0.0313875541533743
+BP,GO:0010880,Regulation Of Release Of Sequestered Calcium Ion Into Cytosol By Sarcoplasmic Reticulum,CACNA1C,0.0337857616866443
+BP,GO:0099623,Regulation Of Cardiac Muscle Cell Membrane Repolarization,CACNA2D1,0.0337857616866443
+BP,GO:0055075,Potassium Ion Homeostasis,KCNMA1,0.0349462350340008
+BP,GO:2000116,Regulation Of Cysteine-Type Endopeptidase Activity,GRIN1,0.0357211766834199
+BP,GO:0007528,Neuromuscular Junction Development,CACNB4,0.0357211766834199
+BP,GO:0043010,Camera-Type Eye Development,CACNA1C,0.0371780268931915
+BP,GO:0045762,Positive Regulation Of Adenylate Cyclase Activity,CACNA1C,0.0371780268931915
+BP,GO:1903426,Regulation Of Reactive Oxygen Species Biosynthetic Process,GRIN1,0.0371780268931915
+BP,GO:0086004,Regulation Of Cardiac Muscle Cell Contraction,CACNA1C,0.0371780268931915
+BP,GO:0009967,Positive Regulation Of Signal Transduction,"GRIN2A, GRIN1",0.0372717483519375
+BP,GO:0051482,Positive Regulation Of Cytosolic Calcium Ion Concentration Involved In Phospholipase C-activating G Protein-Coupled Signaling Pathway,GRM1,0.0378634480033173
+BP,GO:0043269,Regulation Of Monoatomic Ion Transport,KCNJ4,0.0385223246658577
+BP,GO:0071470,Cellular Response To Osmotic Stress,SCN2A,0.0385223246658577
+BP,GO:1901385,Regulation Of Voltage-Gated Calcium Channel Activity,CACNB4,0.0391561056765388
+BP,GO:0010950,Positive Regulation Of Endopeptidase Activity,GRIN1,0.0391561056765388
+BP,GO:0043200,Response To Amino Acid,GRIN1,0.0401243898045333
+BP,GO:0071320,Cellular Response To cAMP,HCN1,0.0410742687061768
+BP,GO:1901019,Regulation Of Calcium Ion Transmembrane Transporter Activity,CACNB4,0.0416377561798983
+BP,GO:0034762,Regulation Of Transmembrane Transport,KCNJ4,0.0416377561798983
+BP,GO:0010959,Regulation Of Metal Ion Transport,CACNA2D1,0.0434405402550043
+BP,GO:0030326,Embryonic Limb Morphogenesis,CACNA1C,0.0434405402550043
+BP,GO:0051591,Response To cAMP,HCN1,0.0476475200365152
+BP,GO:0061098,Positive Regulation Of Protein Tyrosine Kinase Activity,GRM5,0.0476475200365152
+BP,GO:0061097,Regulation Of Protein Tyrosine Kinase Activity,GRM5,0.0484699431495159
+MF,GO:0022824,Transmitter-Gated Monoatomic Ion Channel Activity,"GRIA1, GABRB3, GRIA2, GABRA1, GRIN2A, GRIK1",4.5704859007267294e-11
+MF,GO:0005245,Voltage-Gated Calcium Channel Activity,"CACNB4, CACNA2D1, CACNA1C, SCN2A, SCN3A",1.3974860607919184e-08
+MF,GO:0004970,Ionotropic Glutamate Receptor Activity,"GRIA2, GRIN2A, GRIK1, GRIN1",1.6043912685691445e-08
+MF,GO:0099529,Neurotransmitter Receptor Activity Involved In Regulation Of Postsynaptic Membrane Potential,"GRIA1, GRIA2, GRIN2A, GRIK1",3.946002531493125e-08
+MF,GO:0008331,High Voltage-Gated Calcium Channel Activity,"CACNB4, CACNA1C, SCN2A, SCN3A",4.6653916207772274e-08
+MF,GO:0022843,Voltage-Gated Monoatomic Cation Channel Activity,"CACNB4, CACNA2D1, KCNMA1, CACNA1C, HCN1",5.523105949982423e-08
+MF,GO:1904315,Transmitter-Gated Monoatomic Ion Channel Activity Involved In Regulation Of Postsynaptic Membrane Potential,"GRIA1, GRIA2, GRIN2A, GRIK1",1.7126613205170506e-07
+MF,GO:0022890,Inorganic Cation Transmembrane Transporter Activity,"GRIA1, GRIA2, GRIN2A, GRIN1",1.7126613205170506e-07
+MF,GO:0005272,Sodium Channel Activity,"GRIK1, SCN2A, SCN3A, HCN1",1.9181122134882935e-07
+MF,GO:0008066,Glutamate Receptor Activity,"GRIA2, GRM5, GRM1",1.9733736928536503e-06
+MF,GO:0098960,Postsynaptic Neurotransmitter Receptor Activity,"GRIA1, GRM5, GRM1",2.9507922891543125e-06
+MF,GO:0001540,Amyloid-Beta Binding,"GRIA1, GRIA2, GRIN2A, GRIN1",2.9507922891543125e-06
+MF,GO:0005267,Potassium Channel Activity,"KCNMA1, GRIK1, KCNK3, HCN1",2.9507922891543125e-06
+MF,GO:0005262,Calcium Channel Activity,"CACNB4, CACNA2D1, CACNA1C, GRIN1",4.841318463085955e-06
+MF,GO:0005244,Voltage-Gated Monoatomic Ion Channel Activity,"GRIN2A, GRIN1, HCN1",6.8293124327029655e-06
+MF,GO:0001640,Adenylate Cyclase Inhibiting G Protein-Coupled Glutamate Receptor Activity,"GRM5, GRM1",7.739894201502986e-05
+MF,GO:0005261,Monoatomic Cation Channel Activity,"KCNK3, GRIN1, HCN1",0.00035426260771758827
+MF,GO:0099604,Ligand-Gated Calcium Channel Activity,"GRIN2A, GRIN1",0.00035426260771758827
+MF,GO:0099095,Ligand-Gated Monoatomic Anion Channel Activity,"GABRB3, GABRA1",0.00035426260771758827
+MF,GO:0005248,Voltage-Gated Sodium Channel Activity,"SCN2A, SCN3A",0.00037594335062075785
+MF,GO:0016917,GABA Receptor Activity,"GABRB3, GABRA1",0.00043923187857225927
+MF,GO:0015276,Ligand-Gated Monoatomic Ion Channel Activity,"GRIA1, GRIN1",0.0005045790277755103
+MF,GO:0015079,Potassium Ion Transmembrane Transporter Activity,"KCNK3, HCN1",0.0008832958132949288
+MF,GO:0030165,PDZ Domain Binding,"GRIA1, KCNJ4",0.0033860377624132
+MF,GO:0005254,Chloride Channel Activity,"GABRB3, GABRA1",0.0034617811600359
+MF,GO:0099094,Ligand-Gated Monoatomic Cation Channel Activity,"KCNJ4, GRIK1",0.0045550779749606
+MF,GO:0005249,Voltage-Gated Potassium Channel Activity,"KCNJ4, KCNMA1",0.0049816573768725
+MF,GO:0004972,NMDA Glutamate Receptor Activity,GRIN2A,0.013016603960496
+MF,GO:0005222,Intracellular cAMP-activated Cation Channel Activity,HCN1,0.0143570574408204
+MF,GO:0016594,Glycine Binding,GRIN1,0.0156066773327636
+MF,GO:0099507,Ligand-Gated Monoatomic Ion Channel Activity Involved In Regulation Of Presynaptic Membrane Potential,GRIA1,0.016250059544192
+MF,GO:0005221,Intracellular Cyclic Nucleotide Activated Monoatomic Cation Channel Activity,HCN1,0.016250059544192
+MF,GO:0030552,cAMP Binding,HCN1,0.0168164545535104
+MF,GO:0015269,Calcium-Activated Potassium Channel Activity,KCNMA1,0.0168164545535104
+MF,GO:0022834,Ligand-Gated Channel Activity,GRIN1,0.0173186944830298
+MF,GO:0022851,GABA-gated Chloride Ion Channel Activity,GABRB3,0.0173186944830298
+MF,GO:0022841,Potassium Ion Leak Channel Activity,KCNK3,0.0210364854188368
+MF,GO:0022840,Leak Channel Activity,KCNK3,0.0233208028520328
+MF,GO:0005227,Calcium Activated Cation Channel Activity,KCNMA1,0.0233208028520328
+MF,GO:0004890,GABA-A Receptor Activity,GABRB3,0.0233208028520328
+MF,GO:0030551,Cyclic Nucleotide Binding,HCN1,0.0265102533922221
+MF,GO:0004930,G Protein-Coupled Receptor Activity,"GRM5, GRM1",0.0288217710300129
+MF,GO:0005242,Inward Rectifier Potassium Channel Activity,KCNJ4,0.0312293354991966
+MF,GO:0030296,Protein Tyrosine Kinase Activator Activity,GRM5,0.0339978163059768
+MF,GO:0016597,Amino Acid Binding,GRIN1,0.0411441384665877
+MF,GO:0005216,Monoatomic Ion Channel Activity,KCNK3,0.0413502360577111
+MF,GO:0022839,Monoatomic Ion Gated Channel Activity,GRIN1,0.0436963027838999
+CC,GO:0098839,Postsynaptic Density Membrane,"GRIA1, GRIA2, GRIN2A, GRM5, GRIK1, GRM1",7.725270077656078e-12
+CC,GO:0014069,Postsynaptic Density,"GRIA1, GRIA2, GRIN2A, GRM5, GRIK1, CACNA1C, GRM1, GRIN1",7.725270077656078e-12
+CC,GO:0099634,Postsynaptic Specialization Membrane,"GRIA1, GRIA2, GRIN2A, GRM5, GRIK1, GRM1",8.131926914198309e-12
+CC,GO:0008328,Ionotropic Glutamate Receptor Complex,"GRIA1, GRIA2, GRIN2A, GRIK1, GRIN1",8.075967152075046e-10
+CC,GO:0005891,Voltage-Gated Calcium Channel Complex,"CACNB4, CACNA2D1, CACNA1C, SCN2A, SCN3A",5.146295871589404e-09
+CC,GO:0034704,Calcium Channel Complex,"CACNB4, CACNA2D1, CACNA1C, SCN2A, SCN3A",1.1198632599798e-08
+CC,GO:0032279,Asymmetric Synapse,"GRIA1, GRIA2, GRIN2A, CACNA1C, GRIN1",5.919886006526374e-07
+CC,GO:0043005,Neuron Projection,"GRIA1, GABRB3, GRIA2, GABRA1, SCN2A, GRIN1, HCN1",1.6394137647518452e-06
+CC,GO:0097060,Synaptic Membrane,"GRIA1, GRIN2A, GRIN1",1.293881978117307e-05
+CC,GO:0030425,Dendrite,"GRIA1, GRIA2, GABRA1, GRIN1, HCN1",1.3785695605812416e-05
+CC,GO:0008076,Voltage-Gated Potassium Channel Complex,"KCNJ4, KCNMA1, HCN1",0.0001430618269066812
+CC,GO:0034705,Potassium Channel Complex,"KCNJ4, KCNMA1, GRIK1",0.00017908920044842888
+CC,GO:0032281,AMPA Glutamate Receptor Complex,"GRIA1, GRIA2",0.0004287948030952941
+CC,GO:0060076,Excitatory Synapse,"GRIA2, GRIN1",0.000640946231600256
+CC,GO:0032590,Dendrite Membrane,"GRIA1, GABRA1",0.0008175530770043639
+CC,GO:0038037,G Protein-Coupled Receptor Dimeric Complex,GRM1,0.0144815022110308
+CC,GO:0032591,Dendritic Spine Membrane,GRIA1,0.0150114857935223
+CC,GO:0017146,NMDA Selective Glutamate Receptor Complex,GRIN2A,0.0150114857935223
+CC,GO:0030666,Endocytic Vesicle Membrane,"GRIA1, GRIA2",0.0192759327006968
+CC,GO:0098984,Neuron To Neuron Synapse,GRIA2,0.0192759327006968
+CC,GO:0030139,Endocytic Vesicle,"GRIA1, GRIA2",0.027000288649511
+CC,GO:0030424,Axon,"SCN2A, HCN1",0.0280663449671725
+CC,GO:1902711,GABA-A Receptor Complex,GABRB3,0.0288159345585463
+CC,GO:0034706,Sodium Channel Complex,SCN2A,0.0288159345585463

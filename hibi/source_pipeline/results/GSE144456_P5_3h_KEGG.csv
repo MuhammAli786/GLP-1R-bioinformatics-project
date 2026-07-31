@@ -1,0 +1,6 @@
+"category","subcategory","ID","Description","GeneRatio","BgRatio","RichFactor","FoldEnrichment","zScore","pvalue","p.adjust","qvalue","geneID","Count"
+"Organismal Systems","Immune system","mmu04657","IL-17 signaling pathway","3/6","85/7211",0.0352941176470588,42.4176470588235,11.0840440165038,3.08206341897416e-05,0.00184923805138449,0.00158969586873404,"Fos/Cxcl1/Fosb",3
+"Human Diseases","Substance dependence","mmu05031","Amphetamine addiction","2/6","64/7211",0.03125,37.5572916666667,8.47673047538204,0.00113684539009649,0.0336928553428046,0.0289640335403057,"Fos/Fosb",2
+"Human Diseases","Immune disease","mmu05323","Rheumatoid arthritis","2/6","78/7211",0.0256410256410256,30.8162393162393,7.63994654421937,0.00168464276714023,0.0336928553428046,0.0289640335403057,"Fos/Cxcl1",2
+"Environmental Information Processing","Signal transduction","mmu04668","TNF signaling pathway","2/6","109/7211",0.018348623853211,22.0519877675841,6.39060962194325,0.00326411603146906,0.0442711226164009,0.038057631722871,"Fos/Cxcl1",2
+"Organismal Systems","Development and regeneration","mmu04380","Osteoclast differentiation","2/6","116/7211",0.0172413793103448,20.7212643678161,6.1789376748925,0.00368926021803341,0.0442711226164009,0.038057631722871,"Fos/Fosb",2

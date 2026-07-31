@@ -1,0 +1,7 @@
+comparison,genotype,time,total_tested,significant_DEGs,upregulated,downregulated,mapped_entrez_DEGs
+WT_3h_ipsilateral_vs_contralateral,WT,3h,22275,1732,712,1020,1709
+WT_6h_ipsilateral_vs_contralateral,WT,6h,22275,2364,1241,1123,2327
+NEIL1KO_3h_ipsilateral_vs_contralateral,NEIL1-KO,3h,22275,1277,513,764,1263
+NEIL1KO_6h_ipsilateral_vs_contralateral,NEIL1-KO,6h,22275,1747,1070,677,1727
+NEIL2KO_3h_ipsilateral_vs_contralateral,NEIL2-KO,3h,22275,2632,887,1745,2595
+NEIL2KO_6h_ipsilateral_vs_contralateral,NEIL2-KO,6h,22275,3709,1892,1817,3665

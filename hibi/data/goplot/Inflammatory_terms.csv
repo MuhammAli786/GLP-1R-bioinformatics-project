@@ -1,0 +1,481 @@
+Category,ID,Term,Genes,adj_pval
+BP,GO:0034097,Response To Cytokine,"IL1R1, STAT1, LIFR, OSMR, IL6ST, NFKB2, MCL1",3.634619410813692e-08
+BP,GO:0071345,Cellular Response To Cytokine Stimulus,"PTPRT, NFKBIA, STAT1, AKT1, LIFR, OSMR, IL6ST, HIF1A",2.806778673772957e-07
+BP,GO:0007167,Enzyme-Linked Receptor Protein Signaling Pathway,"PTPRT, PTPRD, LIFR, FYN, IL6ST, FGFR1",8.449678949713988e-07
+BP,GO:0019221,Cytokine-Mediated Signaling Pathway,"NFKBIA, IL1R1, STAT1, AKT1, LIFR, OSMR, IL6ST",1.4131650270967085e-06
+BP,GO:0008284,Positive Regulation Of Cell Population Proliferation,"CDKN1A, STAT1, AKT1, LIFR, OSMR, IL6ST, VEGFA, FGFR1",3.801497723356381e-06
+BP,GO:0043536,Positive Regulation Of Blood Vessel Endothelial Cell Migration,"AKT1, HIF1A, VEGFA, FGFR1",2.1226324982199964e-05
+BP,GO:0043535,Regulation Of Blood Vessel Endothelial Cell Migration,"AKT1, HIF1A, VEGFA, FGFR1",3.505738758253012e-05
+BP,GO:0007169,Transmembrane Receptor Protein Tyrosine Kinase Signaling Pathway,"PTPRT, MAPK1, AKT1, FYN, VEGFA, FGFR1",4.39109658624488e-05
+BP,GO:0000302,Response To Reactive Oxygen Species,"MAPK1, AKT1, FYN, HIF1A",6.160526143075777e-05
+BP,GO:0042127,Regulation Of Cell Population Proliferation,"CDKN1A, STAT1, AKT1, LIFR, OSMR, IL6ST, VEGFA, FGFR1",6.490485539222893e-05
+BP,GO:0001938,Positive Regulation Of Endothelial Cell Proliferation,"AKT1, HIF1A, VEGFA, FGFR1",9.38958633570126e-05
+BP,GO:0010595,Positive Regulation Of Endothelial Cell Migration,"AKT1, HIF1A, VEGFA, FGFR1",0.000128040629111382
+BP,GO:0001936,Regulation Of Endothelial Cell Proliferation,"STAT1, AKT1, HIF1A, VEGFA",0.0001694520316080342
+BP,GO:0042327,Positive Regulation Of Phosphorylation,"CDKN1A, CCND1, AKT1, VEGFA, FGFR1",0.00023116577418929937
+BP,GO:0042981,Regulation Of Apoptotic Process,"SOCS3, STAT1, AKT1, FYN, IL6ST, VEGFA, MCL1",0.00034359693243508595
+BP,GO:0071902,Positive Regulation Of Protein Serine/Threonine Kinase Activity,"CCND1, AKT1, VEGFA, FGFR1",0.00034359693243508595
+BP,GO:0001932,Regulation Of Protein Phosphorylation,"CDKN1A, CCND1, AKT1, FYN, VEGFA",0.0003712747964584714
+BP,GO:0007249,I-kappaB kinase/NF-kappaB Signaling,"NFKBIA, IKBKG, NFKB2",0.0006477905790003694
+BP,GO:1903376,Regulation Of Oxidative Stress-Induced Neuron Intrinsic Apoptotic Signaling Pathway,"HIF1A, MCL1",0.0006665946595454154
+BP,GO:0061418,Regulation Of Transcription From RNA Polymerase II Promoter In Response To Hypoxia,"HIF1A, VEGFA",0.0008859829424423769
+BP,GO:0048522,Positive Regulation Of Cellular Process,"AKT1, LIFR, OSMR, IL6ST, VEGFA, FGFR1",0.001160962463003
+BP,GO:0060548,Negative Regulation Of Cell Death,"AKT1, FYN, IKBKG",0.0014444091785672
+BP,GO:0001934,Positive Regulation Of Protein Phosphorylation,"CDKN1A, CCND1, MAPK1, AKT1, VEGFA",0.0014444091785672
+BP,GO:0042509,Regulation Of Tyrosine Phosphorylation Of STAT Protein,"SOCS3, IL6ST, VEGFA",0.0014444091785672
+BP,GO:0043069,Negative Regulation Of Programmed Cell Death,"SOCS3, AKT1, IL6ST, VEGFA, MCL1",0.0014444091785672
+BP,GO:0034614,Cellular Response To Reactive Oxygen Species,"MAPK1, AKT1, FYN",0.0019268824802514
+BP,GO:0000079,Regulation Of Cyclin-Dependent Protein Serine/Threonine Kinase Activity,"CDKN1A, CCND1, AKT1",0.0023160216281278
+BP,GO:0036211,Protein Modification Process,"PTPRT, PTPRD, MAPK1, AKT1, FYN, FGFR1",0.0023160216281278
+BP,GO:0031401,Positive Regulation Of Protein Modification Process,"CDKN1A, CCND1, AKT1, VEGFA",0.0023160216281278
+BP,GO:1904893,Negative Regulation Of Receptor Signaling Pathway Via STAT,"PTPRT, SOCS3",0.0023160216281278
+BP,GO:1901522,Positive Regulation Of Transcription From RNA Polymerase II Promoter Involved In Cellular Response To Chemical Stimulus,"HIF1A, VEGFA",0.0023160216281278
+BP,GO:0002675,Positive Regulation Of Acute Inflammatory Response,"OSMR, IL6ST",0.0023160216281278
+BP,GO:2001028,Positive Regulation Of Endothelial Cell Chemotaxis,"VEGFA, FGFR1",0.0023160216281278
+BP,GO:0051100,Negative Regulation Of Binding,"NFKBIA, CDKN1A, AKT1",0.0023818464920251
+BP,GO:1901215,Negative Regulation Of Neuron Death,"AKT1, IKBKG, IL6ST",0.0023818464920251
+BP,GO:0006469,Negative Regulation Of Protein Kinase Activity,"PTPRT, CDKN1A, AKT1",0.0023818464920251
+BP,GO:0045737,Positive Regulation Of Cyclin-Dependent Protein Serine/Threonine Kinase Activity,"CCND1, AKT1",0.0023818464920251
+BP,GO:0043066,Negative Regulation Of Apoptotic Process,"SOCS3, AKT1, IL6ST, VEGFA, MCL1",0.0027141746925139
+BP,GO:0010634,Positive Regulation Of Epithelial Cell Migration,"AKT1, HIF1A, VEGFA",0.0027141746925139
+BP,GO:0051000,Positive Regulation Of Nitric-Oxide Synthase Activity,"AKT1, HIF1A",0.0027141746925139
+BP,GO:0036003,Positive Regulation Of Transcription From RNA Polymerase II Promoter In Response To Stress,"HIF1A, VEGFA",0.0027141746925139
+BP,GO:0002042,Cell Migration Involved In Sprouting Angiogenesis,"AKT1, VEGFA",0.0027141746925139
+BP,GO:1904031,Positive Regulation Of Cyclin-Dependent Protein Kinase Activity,"CCND1, AKT1",0.0029804518873893
+BP,GO:0002673,Regulation Of Acute Inflammatory Response,"OSMR, IL6ST",0.0031884988013448
+BP,GO:0050729,Positive Regulation Of Inflammatory Response,"NFKBIA, OSMR, IL6ST",0.0031884988013448
+BP,GO:0071900,Regulation Of Protein Serine/Threonine Kinase Activity,"CDKN1A, CCND1, AKT1",0.0038817721769915
+BP,GO:0045893,Positive Regulation Of DNA-templated Transcription,"NFKBIA, STAT1, AKT1, IKBKG, HIF1A, NFKB2, VEGFA",0.0039383903980529
+BP,GO:0043534,Blood Vessel Endothelial Cell Migration,"AKT1, VEGFA",0.0039383903980529
+BP,GO:0071276,Cellular Response To Cadmium Ion,"AKT1, MAPK1",0.0039383903980529
+BP,GO:0034599,Cellular Response To Oxidative Stress,"MAPK1, AKT1, HIF1A",0.0040614374946399
+BP,GO:0071354,Cellular Response To Interleukin-6,"PTPRT, IL6ST",0.0041048864278664
+BP,GO:0071356,Cellular Response To Tumor Necrosis Factor,"NFKBIA, STAT1, AKT1",0.0041048864278664
+BP,GO:0010575,Positive Regulation Of Vascular Endothelial Growth Factor Production,"IL6ST, HIF1A",0.0043446810573925
+BP,GO:0050679,Positive Regulation Of Epithelial Cell Proliferation,"AKT1, HIF1A, VEGFA",0.004356215725418
+BP,GO:0032770,Positive Regulation Of Monooxygenase Activity,"AKT1, HIF1A",0.0046687634786056
+BP,GO:0031571,Mitotic G1 DNA Damage Checkpoint Signaling,"CDKN1A, CCND1",0.0046687634786056
+BP,GO:0010574,Regulation Of Vascular Endothelial Growth Factor Production,"IL6ST, HIF1A",0.0046687634786056
+BP,GO:0045648,Positive Regulation Of Erythrocyte Differentiation,"STAT1, HIF1A",0.0046687634786056
+BP,GO:2001239,Regulation Of Extrinsic Apoptotic Signaling Pathway In Absence Of Ligand,"FGFR1, MCL1",0.0049535040237131
+BP,GO:0045944,Positive Regulation Of Transcription By RNA Polymerase II,"NFKBIA, STAT1, IKBKG, HIF1A, NFKB2, VEGFA",0.0049966698936501
+BP,GO:0048010,Vascular Endothelial Growth Factor Receptor Signaling Pathway,"FYN, VEGFA",0.0050730417590045
+BP,GO:0050999,Regulation Of Nitric-Oxide Synthase Activity,"AKT1, HIF1A",0.0050730417590045
+BP,GO:0038061,NIK/NF-kappaB Signaling,"NFKBIA, NFKB2",0.0065336089484622
+BP,GO:0051173,Positive Regulation Of Nitrogen Compound Metabolic Process,"NFKBIA, AKT1",0.0067366426384359
+BP,GO:0062013,Positive Regulation Of Small Molecule Metabolic Process,"AKT1, HIF1A",0.0067366426384359
+BP,GO:0010604,Positive Regulation Of Macromolecule Metabolic Process,"NFKBIA, AKT1, HIF1A, VEGFA",0.0067631235606613
+BP,GO:0010389,Regulation Of G2/M Transition Of Mitotic Cell Cycle,"CDKN1A, CCND1",0.007355073093843
+BP,GO:0045646,Regulation Of Erythrocyte Differentiation,"STAT1, HIF1A",0.0075120479219138
+BP,GO:0045639,Positive Regulation Of Myeloid Cell Differentiation,"STAT1, HIF1A",0.0075120479219138
+BP,GO:0046777,Protein Autophosphorylation,"AKT1, FYN, FGFR1",0.0075120479219138
+BP,GO:0006974,DNA Damage Response,"CDKN1A, CCND1, IKBKG, MCL1",0.00768151964269
+BP,GO:0033209,Tumor Necrosis Factor-Mediated Signaling Pathway,"NFKBIA, STAT1",0.007959947046993
+BP,GO:1901652,Response To Peptide,"STAT1, FYN",0.007959947046993
+BP,GO:0022408,Negative Regulation Of Cell-Cell Adhesion,"AKT1, VEGFA",0.0085848560241408
+BP,GO:0043542,Endothelial Cell Migration,"STAT1, VEGFA",0.0085848560241408
+BP,GO:1990928,Response To Amino Acid Starvation,"CDKN1A, MAPK1",0.0089004288235572
+BP,GO:0034198,Cellular Response To Amino Acid Starvation,"CDKN1A, MAPK1",0.0092179447637428
+BP,GO:0016310,Phosphorylation,"MAPK1, AKT1, FYN, FGFR1",0.0105607878028838
+BP,GO:0030334,Regulation Of Cell Migration,"PTPRT, AKT1, FYN, VEGFA",0.0108841136570028
+BP,GO:0001837,Epithelial To Mesenchymal Transition,"HIF1A, FGFR1",0.0109591270205866
+BP,GO:0048661,Positive Regulation Of Smooth Muscle Cell Proliferation,"STAT1, AKT1",0.0109591270205866
+BP,GO:0043067,Regulation Of Programmed Cell Death,"STAT1, AKT1, FYN",0.0109591270205866
+BP,GO:0045765,Regulation Of Angiogenesis,"STAT1, HIF1A, VEGFA",0.01249994277694
+BP,GO:0002040,Sprouting Angiogenesis,"AKT1, VEGFA",0.0127205623203431
+BP,GO:0044843,Cell Cycle G1/S Phase Transition,"CDKN1A, CCND1",0.0127205623203431
+BP,GO:1904029,Regulation Of Cyclin-Dependent Protein Kinase Activity,"CDKN1A, CCND1",0.0127205623203431
+BP,GO:0038127,ERBB Signaling Pathway,"MAPK1, AKT1",0.0127205623203431
+BP,GO:0002690,Positive Regulation Of Leukocyte Chemotaxis,"MAPK1, VEGFA",0.0127205623203431
+BP,GO:0051893,Regulation Of Focal Adhesion Assembly,"FYN, VEGFA",0.0127205623203431
+BP,GO:0018212,Peptidyl-Tyrosine Modification,"FYN, FGFR1",0.0127205623203431
+BP,GO:0048762,Mesenchymal Cell Differentiation,"HIF1A, FGFR1",0.0127205623203431
+BP,GO:0048660,Regulation Of Smooth Muscle Cell Proliferation,"STAT1, AKT1",0.0127205623203431
+BP,GO:0001764,Neuron Migration,"VEGFA, FGFR1",0.0129111296672966
+BP,GO:0042531,Positive Regulation Of Tyrosine Phosphorylation Of STAT Protein,"IL6ST, VEGFA",0.0129111296672966
+BP,GO:0044773,Mitotic DNA Damage Checkpoint Signaling,"CDKN1A, CCND1",0.0132395708724535
+BP,GO:1901214,Regulation Of Neuron Death,"FYN, IKBKG",0.0137577022671564
+BP,GO:0018107,Peptidyl-Threonine Phosphorylation,"MAPK1, AKT1",0.0137577022671564
+BP,GO:0072001,Renal System Development,"STAT1, VEGFA",0.0137577022671564
+BP,GO:0043009,Chordate Embryonic Development,"VEGFA, FGFR1",0.0140627114675285
+BP,GO:0006915,Apoptotic Process,"NFKBIA, AKT1, IKBKG",0.0140627114675285
+BP,GO:0006468,Protein Phosphorylation,"MAPK1, AKT1, FYN, FGFR1",0.0143243512971824
+BP,GO:1901890,Positive Regulation Of Cell Junction Assembly,"PTPRD, VEGFA",0.0146043972447057
+BP,GO:0000082,G1/S Transition Of Mitotic Cell Cycle,"CDKN1A, CCND1",0.0152659584699611
+BP,GO:1901992,Positive Regulation Of Mitotic Cell Cycle Phase Transition,"CCND1, AKT1",0.0152659584699611
+BP,GO:0010506,Regulation Of Autophagy,"AKT1, GFAP, MCL1",0.0156827068256671
+BP,GO:0045787,Positive Regulation Of Cell Cycle,"CCND1, AKT1",0.0159307104278312
+BP,GO:0050777,Negative Regulation Of Immune Response,"AKT1, FYN",0.0160141638459489
+BP,GO:0018210,Peptidyl-Threonine Modification,"MAPK1, AKT1",0.0160141638459489
+BP,GO:0051091,Positive Regulation Of DNA-binding Transcription Factor Activity,"AKT1, IKBKG, VEGFA",0.0160141638459489
+BP,GO:0018108,Peptidyl-Tyrosine Phosphorylation,"FYN, FGFR1",0.0162965728032103
+BP,GO:2001237,Negative Regulation Of Extrinsic Apoptotic Signaling Pathway,"AKT1, MCL1",0.0174475018512668
+BP,GO:0008593,Regulation Of Notch Signaling Pathway,"AKT1, IL6ST",0.0174475018512668
+BP,GO:0032091,Negative Regulation Of Protein Binding,"CDKN1A, AKT1",0.0177825247064554
+BP,GO:0071456,Cellular Response To Hypoxia,"HIF1A, VEGFA",0.0181181066710378
+BP,GO:0036294,Cellular Response To Decreased Oxygen Levels,"HIF1A, VEGFA",0.018454219847686
+BP,GO:0009967,Positive Regulation Of Signal Transduction,"IL6ST, HIF1A, VEGFA",0.0186302318686333
+BP,GO:0043524,Negative Regulation Of Neuron Apoptotic Process,"IL6ST, HIF1A",0.0186302318686333
+BP,GO:0050769,Positive Regulation Of Neurogenesis,"PTPRD, VEGFA",0.0189658319650723
+BP,GO:1905477,Positive Regulation Of Protein Localization To Membrane,"AKT1, FYN",0.0208248223357069
+BP,GO:0071901,Negative Regulation Of Protein Serine/Threonine Kinase Activity,"CDKN1A, AKT1",0.0211667338497684
+BP,GO:0045597,Positive Regulation Of Cell Differentiation,"AKT1, IL6ST, FGFR1",0.0213326421955862
+BP,GO:0071347,Cellular Response To Interleukin-1,"IL1R1, HIF1A",0.0213326421955862
+BP,GO:0043281,Regulation Of Cysteine-Type Endopeptidase Activity Involved In Apoptotic Process,"AKT1, VEGFA",0.0227204113557725
+BP,GO:1903829,Positive Regulation Of Protein Localization,"AKT1, FYN",0.0228804009570526
+BP,GO:0070555,Response To Interleukin-1,"IL1R1, HIF1A",0.0228804009570526
+BP,GO:1902531,Regulation Of Intracellular Signal Transduction,"NFKBIA, AKT1, VEGFA",0.0235608708812841
+BP,GO:0010594,Regulation Of Endothelial Cell Migration,"AKT1, VEGFA",0.024099511581951
+BP,GO:0033138,Positive Regulation Of Peptidyl-Serine Phosphorylation,"AKT1, VEGFA",0.0244446772433375
+BP,GO:0050730,Regulation Of Peptidyl-Tyrosine Phosphorylation,"FYN, VEGFA",0.0247899686922204
+BP,GO:0043406,Positive Regulation Of MAP Kinase Activity,"VEGFA, FGFR1",0.0251353715543039
+BP,GO:0033135,Regulation Of Peptidyl-Serine Phosphorylation,"AKT1, VEGFA",0.0260236047758684
+BP,GO:0006357,Regulation Of Transcription By RNA Polymerase II,"NFKBIA, CCND1, STAT1, IKBKG, HIF1A, NFKB2, VEGFA",0.0262070871872753
+BP,GO:0050852,T Cell Receptor Signaling Pathway,"FYN, IKBKG",0.0262940487709407
+BP,GO:0051246,Regulation Of Protein Metabolic Process,"NFKBIA, AKT1",0.0262940487709407
+BP,GO:0001819,Positive Regulation Of Cytokine Production,"IL1R1, IL6ST, HIF1A",0.0262940487709407
+BP,GO:0000165,MAPK Cascade,"MAPK1, FGFR1",0.0262940487709407
+BP,GO:0007185,Transmembrane Receptor Protein Tyrosine Phosphatase Signaling Pathway,PTPRD,0.0262940487709407
+BP,GO:1900449,Regulation Of Glutamate Receptor Signaling Pathway,FYN,0.0262940487709407
+BP,GO:1901725,Regulation Of Histone Deacetylase Activity,VEGFA,0.0262940487709407
+BP,GO:0046885,Regulation Of Hormone Biosynthetic Process,HIF1A,0.0262940487709407
+BP,GO:0036324,Vascular Endothelial Growth Factor Receptor-2 Signaling Pathway,VEGFA,0.0262940487709407
+BP,GO:0048845,Venous Blood Vessel Morphogenesis,VEGFA,0.0262940487709407
+BP,GO:0010746,Regulation Of Long-Chain Fatty Acid Import Across Plasma Membrane,AKT1,0.0262940487709407
+BP,GO:0120040,Regulation Of Macrophage Proliferation,MAPK1,0.0262940487709407
+BP,GO:0060753,Regulation Of Mast Cell Chemotaxis,VEGFA,0.0262940487709407
+BP,GO:0070106,Interleukin-27-Mediated Signaling Pathway,STAT1,0.0262940487709407
+BP,GO:0032364,Intracellular Oxygen Homeostasis,HIF1A,0.0262940487709407
+BP,GO:0010749,Regulation Of Nitric Oxide Mediated Signal Transduction,VEGFA,0.0262940487709407
+BP,GO:0090259,Regulation Of Retinal Ganglion Cell Axon Guidance,VEGFA,0.0262940487709407
+BP,GO:0072161,Mesenchymal Cell Differentiation Involved In Kidney Development,STAT1,0.0262940487709407
+BP,GO:0070417,Cellular Response To Cold,NFKBIA,0.0262940487709407
+BP,GO:2000556,Positive Regulation Of T-helper 1 Cell Cytokine Production,IL1R1,0.0262940487709407
+BP,GO:2000554,Regulation Of T-helper 1 Cell Cytokine Production,IL1R1,0.0262940487709407
+BP,GO:0033674,Positive Regulation Of Kinase Activity,"CDKN1A, FGFR1",0.027336031723687
+BP,GO:1904018,Positive Regulation Of Vasculature Development,"HIF1A, VEGFA",0.027336031723687
+BP,GO:0097193,Intrinsic Apoptotic Signaling Pathway,"CDKN1A, MCL1",0.0276698253499375
+BP,GO:2000045,Regulation Of G1/S Transition Of Mitotic Cell Cycle,"CDKN1A, AKT1",0.0280037168149881
+BP,GO:0034612,Response To Tumor Necrosis Factor,"NFKBIA, AKT1",0.0282167156107117
+BP,GO:0044772,Mitotic Cell Cycle Phase Transition,"CDKN1A, CCND1",0.0282167156107117
+BP,GO:0032352,Positive Regulation Of Hormone Metabolic Process,HIF1A,0.0282167156107117
+BP,GO:2000544,Regulation Of Endothelial Cell Chemotaxis To Fibroblast Growth Factor,FGFR1,0.0282167156107117
+BP,GO:0097084,Vascular Associated Smooth Muscle Cell Development,VEGFA,0.0282167156107117
+BP,GO:0061042,Vascular Wound Healing,VEGFA,0.0282167156107117
+BP,GO:0038113,Interleukin-9-Mediated Signaling Pathway,STAT1,0.0282167156107117
+BP,GO:1901165,Positive Regulation Of Trophoblast Cell Migration,VEGFA,0.0282167156107117
+BP,GO:0010742,Macrophage Derived Foam Cell Differentiation,STAT1,0.0282167156107117
+BP,GO:0071355,Cellular Response To Interleukin-9,STAT1,0.0282167156107117
+BP,GO:0032909,Regulation Of Transforming Growth Factor Beta2 Production,HIF1A,0.0282167156107117
+BP,GO:1902667,Regulation Of Axon Guidance,VEGFA,0.0282167156107117
+BP,GO:1905603,Regulation Of Blood-Brain Barrier Permeability,VEGFA,0.0282167156107117
+BP,GO:0090045,Positive Regulation Of Deacetylase Activity,VEGFA,0.0282167156107117
+BP,GO:0043405,Regulation Of MAP Kinase Activity,"VEGFA, FGFR1",0.0294286133783264
+BP,GO:0043393,Regulation Of Protein Binding,"CDKN1A, AKT1",0.0299270497028048
+BP,GO:0045859,Regulation Of Protein Kinase Activity,"CDKN1A, AKT1",0.0299270497028048
+BP,GO:0043254,Regulation Of Protein-Containing Complex Assembly,"GFAP, VEGFA",0.0299270497028048
+BP,GO:0045766,Positive Regulation Of Angiogenesis,"HIF1A, VEGFA",0.0299270497028048
+BP,GO:1904714,Regulation Of Chaperone-Mediated Autophagy,GFAP,0.0299270497028048
+BP,GO:0070099,Regulation Of Chemokine-Mediated Signaling Pathway,HIF1A,0.0299270497028048
+BP,GO:0046322,Negative Regulation Of Fatty Acid Oxidation,AKT1,0.0299270497028048
+BP,GO:0090400,Stress-Induced Premature Senescence,CDKN1A,0.0299270497028048
+BP,GO:0090077,Foam Cell Differentiation,STAT1,0.0299270497028048
+BP,GO:0072540,T-helper 17 Cell Lineage Commitment,SOCS3,0.0299270497028048
+BP,GO:1900748,Positive Regulation Of Vascular Endothelial Growth Factor Signaling Pathway,VEGFA,0.0299270497028048
+BP,GO:0050926,Regulation Of Positive Chemotaxis,VEGFA,0.0299270497028048
+BP,GO:1990264,Peptidyl-Tyrosine Dephosphorylation Involved In Inactivation Of Protein Kinase Activity,PTPRT,0.0299270497028048
+BP,GO:0060977,Coronary Vasculature Morphogenesis,VEGFA,0.0299270497028048
+BP,GO:0007253,Cytoplasmic Sequestering Of NF-kappaB,NFKBIA,0.0299270497028048
+BP,GO:0038089,Positive Regulation Of Cell Migration By Vascular Endothelial Growth Factor Signaling Pathway,VEGFA,0.0299270497028048
+BP,GO:2000145,Regulation Of Cell Motility,"AKT1, FYN",0.0310117137406001
+BP,GO:0006470,Protein Dephosphorylation,"PTPRT, PTPRD",0.0313334240950381
+BP,GO:0009267,Cellular Response To Starvation,"CDKN1A, MAPK1",0.03165847851049
+BP,GO:1902950,Regulation Of Dendritic Spine Maintenance,FYN,0.03165847851049
+BP,GO:1903204,Negative Regulation Of Oxidative Stress-Induced Neuron Death,HIF1A,0.03165847851049
+BP,GO:0072539,T-helper 17 Cell Differentiation,SOCS3,0.03165847851049
+BP,GO:0090037,Positive Regulation Of Protein Kinase C Signaling,VEGFA,0.03165847851049
+BP,GO:0043276,Anoikis,IKBKG,0.03165847851049
+BP,GO:0060575,Intestinal Epithelial Cell Differentiation,IL6ST,0.03165847851049
+BP,GO:0007595,Lactation,VEGFA,0.03165847851049
+BP,GO:0097105,Presynaptic Membrane Assembly,PTPRD,0.03165847851049
+BP,GO:0002821,Positive Regulation Of Adaptive Immune Response,IL6ST,0.03165847851049
+BP,GO:0071679,Commissural Neuron Axon Guidance,VEGFA,0.03165847851049
+BP,GO:1903589,Positive Regulation Of Blood Vessel Endothelial Cell Proliferation Involved In Sprouting Angiogenesis,VEGFA,0.03165847851049
+BP,GO:0035767,Endothelial Cell Chemotaxis,VEGFA,0.03165847851049
+BP,GO:0050731,Positive Regulation Of Peptidyl-Tyrosine Phosphorylation,"IL6ST, VEGFA",0.031960240749848
+BP,GO:0030855,Epithelial Cell Differentiation,"AKT1, VEGFA",0.0327508657852493
+BP,GO:0050851,Antigen Receptor-Mediated Signaling Pathway,"FYN, IKBKG",0.0329964225033982
+BP,GO:0071248,Cellular Response To Metal Ion,"MAPK1, AKT1",0.0329964225033982
+BP,GO:0031327,Negative Regulation Of Cellular Biosynthetic Process,"CDKN1A, FYN",0.0329964225033982
+BP,GO:0060193,Positive Regulation Of Lipase Activity,FGFR1,0.0329964225033982
+BP,GO:1905953,Negative Regulation Of Lipid Localization,NFKBIA,0.0329964225033982
+BP,GO:0002053,Positive Regulation Of Mesenchymal Cell Proliferation,STAT1,0.0329964225033982
+BP,GO:0060333,Type II Interferon-Mediated Signaling Pathway,STAT1,0.0329964225033982
+BP,GO:0042532,Negative Regulation Of Tyrosine Phosphorylation Of STAT Protein,SOCS3,0.0329964225033982
+BP,GO:0030949,Positive Regulation Of Vascular Endothelial Growth Factor Receptor Signaling Pathway,HIF1A,0.0329964225033982
+BP,GO:0097090,Presynaptic Membrane Organization,PTPRD,0.0329964225033982
+BP,GO:0048593,Camera-Type Eye Morphogenesis,VEGFA,0.0329964225033982
+BP,GO:0072202,Cell Differentiation Involved In Metanephros Development,STAT1,0.0329964225033982
+BP,GO:0140052,Cellular Response To Oxidised Low-Density Lipoprotein Particle Stimulus,AKT1,0.0329964225033982
+BP,GO:2000048,Negative Regulation Of Cell-Cell Adhesion Mediated By Cadherin,VEGFA,0.0329964225033982
+BP,GO:0051347,Positive Regulation Of Transferase Activity,"MAPK1, FGFR1",0.0347943767530761
+BP,GO:0043401,Steroid Hormone Mediated Signaling Pathway,MAPK1,0.0347943767530761
+BP,GO:0043129,Surfactant Homeostasis,VEGFA,0.0347943767530761
+BP,GO:2000402,Negative Regulation Of Lymphocyte Migration,AKT1,0.0347943767530761
+BP,GO:0002295,T-helper Cell Lineage Commitment,SOCS3,0.0347943767530761
+BP,GO:0050930,Induction Of Positive Chemotaxis,VEGFA,0.0347943767530761
+BP,GO:0060055,Angiogenesis Involved In Wound Healing,VEGFA,0.0347943767530761
+BP,GO:0010517,Regulation Of Phospholipase Activity,FGFR1,0.0347943767530761
+BP,GO:0072075,Metanephric Mesenchyme Development,STAT1,0.0347943767530761
+BP,GO:0030224,Monocyte Differentiation,VEGFA,0.0347943767530761
+BP,GO:1905664,Regulation Of Calcium Ion Import Across Plasma Membrane,FYN,0.0347943767530761
+BP,GO:0045860,Positive Regulation Of Protein Kinase Activity,"CDKN1A, VEGFA",0.0347943767530761
+BP,GO:0016311,Dephosphorylation,"PTPRT, PTPRD",0.0355629225318503
+BP,GO:0001933,Negative Regulation Of Protein Phosphorylation,"CDKN1A, AKT1",0.0360113847863248
+BP,GO:0007411,Axon Guidance,"FYN, VEGFA",0.0360113847863248
+BP,GO:1903649,Regulation Of Cytoplasmic Transport,MAPK1,0.0360113847863248
+BP,GO:1901731,Positive Regulation Of Platelet Aggregation,IL6ST,0.0360113847863248
+BP,GO:1903427,Negative Regulation Of Reactive Oxygen Species Biosynthetic Process,FYN,0.0360113847863248
+BP,GO:1903037,Regulation Of Leukocyte Cell-Cell Adhesion,AKT1,0.0360113847863248
+BP,GO:0010464,Regulation Of Mesenchymal Cell Proliferation,STAT1,0.0360113847863248
+BP,GO:0043116,Negative Regulation Of Vascular Permeability,VEGFA,0.0360113847863248
+BP,GO:0043117,Positive Regulation Of Vascular Permeability,VEGFA,0.0360113847863248
+BP,GO:1900274,Regulation Of Phospholipase C Activity,FGFR1,0.0360113847863248
+BP,GO:0099172,Presynapse Organization,PTPRD,0.0360113847863248
+BP,GO:0070302,Regulation Of Stress-Activated Protein Kinase Signaling Cascade,MAPK1,0.0360113847863248
+BP,GO:0090190,Positive Regulation Of Branching Involved In Ureteric Bud Morphogenesis,VEGFA,0.0360113847863248
+BP,GO:0060429,Epithelium Development,"STAT1, VEGFA",0.036650435825953
+BP,GO:0071363,Cellular Response To Growth Factor Stimulus,"AKT1, VEGFA",0.0369547296601354
+BP,GO:0099560,Synaptic Membrane Adhesion,PTPRD,0.0369993009128821
+BP,GO:0001754,Eye Photoreceptor Cell Differentiation,VEGFA,0.0369993009128821
+BP,GO:0010745,Negative Regulation Of Macrophage Derived Foam Cell Differentiation,NFKBIA,0.0369993009128821
+BP,GO:0071676,Negative Regulation Of Mononuclear Cell Migration,AKT1,0.0369993009128821
+BP,GO:2000401,Regulation Of Lymphocyte Migration,AKT1,0.0369993009128821
+BP,GO:0019896,Axonal Transport Of Mitochondrion,HIF1A,0.0369993009128821
+BP,GO:1905564,Positive Regulation Of Vascular Endothelial Cell Proliferation,FGFR1,0.0369993009128821
+BP,GO:0043954,Cellular Component Maintenance,FYN,0.0369993009128821
+BP,GO:0043618,Regulation Of Transcription From RNA Polymerase II Promoter In Response To Stress,HIF1A,0.0369993009128821
+BP,GO:0002827,Positive Regulation Of T-helper 1 Type Immune Response,IL1R1,0.0369993009128821
+BP,GO:0070741,Response To Interleukin-6,PTPRT,0.0369993009128821
+BP,GO:0010039,Response To Iron Ion,HIF1A,0.0369993009128821
+BP,GO:0010770,Positive Regulation Of Cell Morphogenesis Involved In Differentiation,PTPRD,0.0369993009128821
+BP,GO:0031065,Positive Regulation Of Histone Deacetylation,VEGFA,0.0380146350969897
+BP,GO:0042462,Eye Photoreceptor Cell Development,VEGFA,0.0380146350969897
+BP,GO:0010759,Positive Regulation Of Macrophage Chemotaxis,MAPK1,0.0380146350969897
+BP,GO:0031998,Regulation Of Fatty Acid Beta-Oxidation,AKT1,0.0380146350969897
+BP,GO:0002685,Regulation Of Leukocyte Migration,VEGFA,0.0380146350969897
+BP,GO:0070102,Interleukin-6-Mediated Signaling Pathway,IL6ST,0.0380146350969897
+BP,GO:0007589,Body Fluid Secretion,VEGFA,0.0380146350969897
+BP,GO:0001569,Branching Involved In Blood Vessel Morphogenesis,VEGFA,0.0380146350969897
+BP,GO:1901163,Regulation Of Trophoblast Cell Migration,VEGFA,0.0380146350969897
+BP,GO:0050862,Positive Regulation Of T Cell Receptor Signaling Pathway,IKBKG,0.0380146350969897
+BP,GO:0070141,Response To UV-A,CCND1,0.0380146350969897
+BP,GO:0051220,Cytoplasmic Sequestering Of Protein,NFKBIA,0.0380146350969897
+BP,GO:0042994,Cytoplasmic Sequestering Of Transcription Factor,NFKBIA,0.0380146350969897
+BP,GO:1990089,Response To Nerve Growth Factor,AKT1,0.0380146350969897
+BP,GO:0007507,Heart Development,"CDKN1A, VEGFA",0.0394521838659425
+BP,GO:0010628,Positive Regulation Of Gene Expression,"AKT1, HIF1A, VEGFA",0.0394521838659425
+BP,GO:0048699,Generation Of Neurons,"PTPRD, FGFR1",0.0394521838659425
+BP,GO:0098742,Cell-Cell Adhesion Via Plasma-Membrane Adhesion Molecules,"PTPRT, PTPRD",0.0394521838659425
+BP,GO:0038084,Vascular Endothelial Growth Factor Signaling Pathway,VEGFA,0.0394521838659425
+BP,GO:0055006,Cardiac Cell Development,VEGFA,0.0394521838659425
+BP,GO:0042461,Photoreceptor Cell Development,VEGFA,0.0394521838659425
+BP,GO:0047497,Mitochondrion Transport Along Microtubule,HIF1A,0.0394521838659425
+BP,GO:0090189,Regulation Of Branching Involved In Ureteric Bud Morphogenesis,VEGFA,0.0394521838659425
+BP,GO:0043470,Regulation Of Carbohydrate Catabolic Process,HIF1A,0.0394521838659425
+BP,GO:0030182,Neuron Differentiation,"PTPRD, VEGFA",0.0394521838659425
+BP,GO:0031328,Positive Regulation Of Cellular Biosynthetic Process,"AKT1, HIF1A",0.0397450833136676
+BP,GO:0010907,Positive Regulation Of Glucose Metabolic Process,AKT1,0.0413996044157567
+BP,GO:0043029,T Cell Homeostasis,AKT1,0.0413996044157567
+BP,GO:1903672,Positive Regulation Of Sprouting Angiogenesis,VEGFA,0.0413996044157567
+BP,GO:0099054,Presynapse Assembly,PTPRD,0.0413996044157567
+BP,GO:0006796,Phosphate-Containing Compound Metabolic Process,"PTPRD, AKT1",0.0418286614647396
+BP,GO:0034112,Positive Regulation Of Homotypic Cell-Cell Adhesion,IL6ST,0.0418286614647396
+BP,GO:0002862,Negative Regulation Of Inflammatory Response To Antigenic Stimulus,FYN,0.0418286614647396
+BP,GO:0097192,Extrinsic Apoptotic Signaling Pathway In Absence Of Ligand,MCL1,0.0418286614647396
+BP,GO:1903140,Regulation Of Establishment Of Endothelial Barrier,VEGFA,0.0418286614647396
+BP,GO:0014742,Positive Regulation Of Muscle Hypertrophy,IL6ST,0.0418286614647396
+BP,GO:0003015,Heart Process,FYN,0.0418286614647396
+BP,GO:0050927,Positive Regulation Of Positive Chemotaxis,VEGFA,0.0418286614647396
+BP,GO:0046426,Negative Regulation Of Receptor Signaling Pathway Via JAK-STAT,SOCS3,0.0418286614647396
+BP,GO:1904355,Positive Regulation Of Telomere Capping,MAPK1,0.0418286614647396
+BP,GO:0090036,Regulation Of Protein Kinase C Signaling,VEGFA,0.0418286614647396
+BP,GO:0071634,Regulation Of Transforming Growth Factor Beta Production,HIF1A,0.0418286614647396
+BP,GO:1903358,Regulation Of Golgi Organization,MAPK1,0.0418286614647396
+BP,GO:0090050,Positive Regulation Of Cell Migration Involved In Sprouting Angiogenesis,VEGFA,0.0418286614647396
+BP,GO:2000811,Negative Regulation Of Anoikis,MCL1,0.0418286614647396
+BP,GO:1903587,Regulation Of Blood Vessel Endothelial Cell Proliferation Involved In Sprouting Angiogenesis,VEGFA,0.0418286614647396
+BP,GO:0010605,Negative Regulation Of Macromolecule Metabolic Process,"HIF1A, VEGFA",0.0419908173214235
+BP,GO:0006977,"DNA Damage Response, Signal Transduction By P53 Class Mediator Resulting In Cell Cycle Arrest",CDKN1A,0.0427434642424756
+BP,GO:0070665,Positive Regulation Of Leukocyte Proliferation,MAPK1,0.0427434642424756
+BP,GO:1902176,Negative Regulation Of Oxidative Stress-Induced Intrinsic Apoptotic Signaling Pathway,HIF1A,0.0427434642424756
+BP,GO:0002861,Regulation Of Inflammatory Response To Antigenic Stimulus,FYN,0.0427434642424756
+BP,GO:0030521,Androgen Receptor Signaling Pathway,MAPK1,0.0427434642424756
+BP,GO:1904706,Negative Regulation Of Vascular Associated Smooth Muscle Cell Proliferation,CDKN1A,0.0427434642424756
+BP,GO:1904892,Regulation Of Receptor Signaling Pathway Via STAT,PTPRT,0.0427434642424756
+BP,GO:0050918,Positive Chemotaxis,VEGFA,0.0427434642424756
+BP,GO:0010613,Positive Regulation Of Cardiac Muscle Hypertrophy,IL6ST,0.0427434642424756
+BP,GO:0009792,Embryo Development Ending In Birth Or Egg Hatching,FGFR1,0.0427434642424756
+BP,GO:0050775,Positive Regulation Of Dendrite Morphogenesis,PTPRD,0.0427434642424756
+BP,GO:1902533,Positive Regulation Of Intracellular Signal Transduction,"IKBKG, VEGFA, FGFR1",0.0428108326504508
+BP,GO:0051247,Positive Regulation Of Protein Metabolic Process,"NFKBIA, AKT1",0.0428108326504508
+BP,GO:0045821,Positive Regulation Of Glycolytic Process,HIF1A,0.0428108326504508
+BP,GO:0051650,Establishment Of Vesicle Localization,IKBKG,0.0428108326504508
+BP,GO:0050995,Negative Regulation Of Lipid Catabolic Process,AKT1,0.0428108326504508
+BP,GO:0010888,Negative Regulation Of Lipid Storage,NFKBIA,0.0428108326504508
+BP,GO:1905523,Positive Regulation Of Macrophage Migration,MAPK1,0.0428108326504508
+BP,GO:0002052,Positive Regulation Of Neuroblast Proliferation,VEGFA,0.0428108326504508
+BP,GO:2000434,Regulation Of Protein Neddylation,HIF1A,0.0428108326504508
+BP,GO:0008053,Mitochondrial Fusion,MCL1,0.0428108326504508
+BP,GO:0032793,Positive Regulation Of CREB Transcription Factor Activity,VEGFA,0.0428108326504508
+BP,GO:1905562,Regulation Of Vascular Endothelial Cell Proliferation,FGFR1,0.0428108326504508
+BP,GO:0002819,Regulation Of Adaptive Immune Response,IL6ST,0.0428108326504508
+BP,GO:0046683,Response To Organophosphorus,STAT1,0.0428108326504508
+BP,GO:1900017,Positive Regulation Of Cytokine Production Involved In Inflammatory Response,HIF1A,0.0428108326504508
+BP,GO:1902749,Regulation Of Cell Cycle G2/M Phase Transition,CDKN1A,0.0428108326504508
+BP,GO:2000047,Regulation Of Cell-Cell Adhesion Mediated By Cadherin,VEGFA,0.0428108326504508
+BP,GO:0051894,Positive Regulation Of Focal Adhesion Assembly,VEGFA,0.0428108326504508
+BP,GO:0002223,Stimulatory C-type Lectin Receptor Signaling Pathway,FYN,0.0433589304336748
+BP,GO:0061436,Establishment Of Skin Barrier,FGFR1,0.0433589304336748
+BP,GO:0048592,Eye Morphogenesis,VEGFA,0.0433589304336748
+BP,GO:2000641,Regulation Of Early Endosome To Late Endosome Transport,MAPK1,0.0433589304336748
+BP,GO:1903038,Negative Regulation Of Leukocyte Cell-Cell Adhesion,AKT1,0.0433589304336748
+BP,GO:0071622,Regulation Of Granulocyte Chemotaxis,MAPK1,0.0433589304336748
+BP,GO:0070498,Interleukin-1-Mediated Signaling Pathway,IL1R1,0.0433589304336748
+BP,GO:0007498,Mesoderm Development,VEGFA,0.0433589304336748
+BP,GO:1990858,Cellular Response To Lectin,FYN,0.0433589304336748
+BP,GO:1900746,Regulation Of Vascular Endothelial Growth Factor Signaling Pathway,VEGFA,0.0433589304336748
+BP,GO:0001836,Release Of Cytochrome C From Mitochondria,MCL1,0.0433589304336748
+BP,GO:0045773,Positive Regulation Of Axon Extension,VEGFA,0.0433589304336748
+BP,GO:0071542,Dopaminergic Neuron Differentiation,VEGFA,0.0433589304336748
+BP,GO:0045736,Negative Regulation Of Cyclin-Dependent Protein Serine/Threonine Kinase Activity,CDKN1A,0.0433589304336748
+BP,GO:0043408,Regulation Of MAPK Cascade,"MAPK1, FGFR1",0.0436779170629692
+BP,GO:0031098,Stress-Activated Protein Kinase Signaling Cascade,MAPK1,0.0443499447231649
+BP,GO:0038096,Fc-gamma Receptor Signaling Pathway Involved In Phagocytosis,FYN,0.0443499447231649
+BP,GO:1902894,Negative Regulation Of miRNA Transcription,HIF1A,0.0443499447231649
+BP,GO:0045936,Negative Regulation Of Phosphate Metabolic Process,CDKN1A,0.0443499447231649
+BP,GO:0010518,Positive Regulation Of Phospholipase Activity,FGFR1,0.0443499447231649
+BP,GO:0010758,Regulation Of Macrophage Chemotaxis,MAPK1,0.0443499447231649
+BP,GO:0050857,Positive Regulation Of Antigen Receptor-Mediated Signaling Pathway,IKBKG,0.0443499447231649
+BP,GO:1903169,Regulation Of Calcium Ion Transmembrane Transport,FYN,0.0443499447231649
+BP,GO:1904030,Negative Regulation Of Cyclin-Dependent Protein Kinase Activity,CDKN1A,0.0443499447231649
+BP,GO:1903508,Positive Regulation Of Nucleic Acid-Templated Transcription,"STAT1, AKT1, HIF1A",0.0450416772663664
+BP,GO:0032727,Positive Regulation Of Interferon-Alpha Production,STAT1,0.0450416772663664
+BP,GO:2000629,Negative Regulation Of miRNA Metabolic Process,HIF1A,0.0450416772663664
+BP,GO:0010883,Regulation Of Lipid Storage,NFKBIA,0.0450416772663664
+BP,GO:0030225,Macrophage Differentiation,VEGFA,0.0450416772663664
+BP,GO:1990090,Cellular Response To Nerve Growth Factor Stimulus,AKT1,0.0450416772663664
+BP,GO:0010971,Positive Regulation Of G2/M Transition Of Mitotic Cell Cycle,CCND1,0.0450416772663664
+BP,GO:0002726,Positive Regulation Of T Cell Cytokine Production,IL1R1,0.0450416772663664
+BP,GO:0046686,Response To Cadmium Ion,MAPK1,0.0450416772663664
+BP,GO:2000209,Regulation Of Anoikis,MCL1,0.0450416772663664
+BP,GO:0098773,Skin Epidermis Development,FGFR1,0.0450416772663664
+BP,GO:0090109,Regulation Of Cell-Substrate Junction Assembly,FYN,0.0450416772663664
+BP,GO:2001240,Negative Regulation Of Extrinsic Apoptotic Signaling Pathway In Absence Of Ligand,MCL1,0.0456394064036411
+BP,GO:0002431,Fc Receptor Mediated Stimulatory Signaling Pathway,FYN,0.0456394064036411
+BP,GO:0031954,Positive Regulation Of Protein Autophosphorylation,VEGFA,0.0456394064036411
+BP,GO:1901099,Negative Regulation Of Signal Transduction In Absence Of Ligand,MCL1,0.0456394064036411
+BP,GO:0002092,Positive Regulation Of Receptor Internalization,VEGFA,0.0456394064036411
+BP,GO:0071675,Regulation Of Mononuclear Cell Migration,MAPK1,0.0456394064036411
+BP,GO:0030879,Mammary Gland Development,VEGFA,0.0456394064036411
+BP,GO:0035458,Cellular Response To Interferon-Beta,STAT1,0.0456394064036411
+BP,GO:1904353,Regulation Of Telomere Capping,MAPK1,0.0456394064036411
+BP,GO:0071404,Cellular Response To Low-Density Lipoprotein Particle Stimulus,AKT1,0.0456394064036411
+BP,GO:0030947,Regulation Of Vascular Endothelial Growth Factor Receptor Signaling Pathway,HIF1A,0.0456394064036411
+BP,GO:0010875,Positive Regulation Of Cholesterol Efflux,NFKBIA,0.0456394064036411
+BP,GO:0045892,Negative Regulation Of DNA-templated Transcription,"CCND1, STAT1, HIF1A, VEGFA",0.0456394064036411
+BP,GO:1905332,Positive Regulation Of Morphogenesis Of An Epithelium,VEGFA,0.0466464709900411
+BP,GO:1903202,Negative Regulation Of Oxidative Stress-Induced Cell Death,FYN,0.0466464709900411
+BP,GO:0043525,Positive Regulation Of Neuron Apoptotic Process,MCL1,0.0466464709900411
+BP,GO:0090314,Positive Regulation Of Protein Targeting To Membrane,FYN,0.0466464709900411
+BP,GO:0060840,Artery Development,VEGFA,0.0466464709900411
+BP,GO:0150117,Positive Regulation Of Cell-Substrate Junction Organization,VEGFA,0.0466464709900411
+BP,GO:0048841,Regulation Of Axon Extension Involved In Axon Guidance,VEGFA,0.0466464709900411
+BP,GO:0010611,Regulation Of Cardiac Muscle Hypertrophy,IL6ST,0.0466464709900411
+BP,GO:0001558,Regulation Of Cell Growth,"CDKN1A, AKT1",0.0472076544807307
+BP,GO:2000116,Regulation Of Cysteine-Type Endopeptidase Activity,FYN,0.0472076544807307
+BP,GO:0070371,ERK1 And ERK2 Cascade,MAPK1,0.0472076544807307
+BP,GO:0038094,Fc-gamma Receptor Signaling Pathway,FYN,0.0472076544807307
+BP,GO:0045834,Positive Regulation Of Lipid Metabolic Process,AKT1,0.0472076544807307
+BP,GO:1900745,Positive Regulation Of p38MAPK Cascade,VEGFA,0.0472076544807307
+BP,GO:0010800,Positive Regulation Of Peptidyl-Threonine Phosphorylation,MAPK1,0.0472076544807307
+BP,GO:1902692,Regulation Of Neuroblast Proliferation,VEGFA,0.0472076544807307
+BP,GO:0043491,Protein Kinase B Signaling,AKT1,0.0472076544807307
+BP,GO:1903131,Mononuclear Cell Differentiation,VEGFA,0.0472076544807307
+BP,GO:1902751,Positive Regulation Of Cell Cycle G2/M Phase Transition,CCND1,0.0472076544807307
+BP,GO:0014074,Response To Purine-Containing Compound,STAT1,0.0472076544807307
+BP,GO:0043122,Regulation Of I-kappaB kinase/NF-kappaB Signaling,"STAT1, IKBKG",0.0479723942629263
+BP,GO:0051094,Positive Regulation Of Developmental Process,"VEGFA, FGFR1",0.0482370291924693
+BP,GO:0046326,Positive Regulation Of Glucose Import,AKT1,0.0484314105115471
+BP,GO:0090330,Regulation Of Platelet Aggregation,IL6ST,0.0484314105115471
+BP,GO:0071383,Cellular Response To Steroid Hormone Stimulus,MAPK1,0.0484314105115471
+BP,GO:1901987,Regulation Of Cell Cycle Phase Transition,CDKN1A,0.0484314105115471
+BP,GO:0006954,Inflammatory Response,"IKBKG, NFKB2",0.0487926687468658
+BP,GO:0032647,Regulation Of Interferon-Alpha Production,STAT1,0.0496088867932157
+BP,GO:0043010,Camera-Type Eye Development,VEGFA,0.0496088867932157
+BP,GO:0048284,Organelle Fusion,MCL1,0.0496088867932157
+BP,GO:0055013,Cardiac Muscle Cell Development,VEGFA,0.0496088867932157
+BP,GO:0097061,Dendritic Spine Organization,FYN,0.0496088867932157
+BP,GO:0050727,Regulation Of Inflammatory Response,"NFKBIA, IL1R1",0.0496088867932157
+MF,GO:0005127,Ciliary Neurotrophic Factor Receptor Binding,"LIFR, IL6ST, OSMR",1.130276776652905e-06
+MF,GO:0042803,Protein Homodimerization Activity,"PTPRT, STAT1, AKT1, FYN, IKBKG, VEGFA, FGFR1, MCL1",1.4346854259467268e-05
+MF,GO:0004896,Cytokine Receptor Activity,"IL1R1, LIFR, OSMR, IL6ST",4.367017765332903e-05
+MF,GO:0070851,Growth Factor Receptor Binding,"IL1R1, FYN, IL6ST, VEGFA",7.379640129635127e-05
+MF,GO:0005126,Cytokine Receptor Binding,"LIFR, OSMR, IL6ST, VEGFA",7.379640129635127e-05
+MF,GO:0019887,Protein Kinase Regulator Activity,"SOCS3, CDKN1A, CCND1, AKT1",7.379640129635127e-05
+MF,GO:0044389,Ubiquitin-Like Protein Ligase Binding,"NFKBIA, CDKN1A, STAT1, IKBKG, HIF1A",0.00018338947392192016
+MF,GO:0005161,Platelet-Derived Growth Factor Receptor Binding,"IL1R1, VEGFA",0.0009276176779553296
+MF,GO:0061629,RNA Polymerase II-specific DNA-binding Transcription Factor Binding,"PTPRT, NFKBIA, STAT1, HIF1A",0.001114994694044
+MF,GO:0030295,Protein Kinase Activator Activity,"CDKN1A, AKT1, IL6ST",0.0011213967653835
+MF,GO:0019198,Transmembrane Receptor Protein Phosphatase Activity,"PTPRT, PTPRD",0.0011213967653835
+MF,GO:0005001,Transmembrane Receptor Protein Tyrosine Phosphatase Activity,"PTPRT, PTPRD",0.0011213967653835
+MF,GO:0031625,Ubiquitin Protein Ligase Binding,"NFKBIA, CDKN1A, IKBKG, HIF1A",0.0014998722097237
+MF,GO:0001223,Transcription Coactivator Binding,"STAT1, HIF1A",0.0041440748105981
+MF,GO:0019210,Kinase Inhibitor Activity,"SOCS3, CDKN1A",0.0041440748105981
+MF,GO:0004860,Protein Kinase Inhibitor Activity,"SOCS3, CDKN1A",0.0063205625181618
+MF,GO:0046982,Protein Heterodimerization Activity,"IKBKG, HIF1A, MCL1",0.0063205625181618
+MF,GO:0016538,Cyclin-Dependent Protein Serine/Threonine Kinase Regulator Activity,"CDKN1A, CCND1",0.0063205625181618
+MF,GO:0004725,Protein Tyrosine Phosphatase Activity,"PTPRT, PTPRD",0.016162765494321
+MF,GO:0045296,Cadherin Binding,"PTPRT, STAT1, FYN",0.0224109235602254
+MF,GO:0001221,Transcription Coregulator Binding,"STAT1, HIF1A",0.0224109235602254
+MF,GO:0004713,Protein Tyrosine Kinase Activity,"FYN, FGFR1",0.0224109235602254
+MF,GO:0051400,BH Domain Binding,MCL1,0.0224109235602254
+MF,GO:0051434,BH3 Domain Binding,MCL1,0.0224109235602254
+MF,GO:0004674,Protein Serine/Threonine Kinase Activity,"MAPK1, AKT1, FYN",0.0233558805108017
+MF,GO:0005138,Interleukin-6 Receptor Binding,IL6ST,0.0233558805108017
+MF,GO:0030292,Protein Tyrosine Kinase Inhibitor Activity,SOCS3,0.0233558805108017
+MF,GO:0019902,Phosphatase Binding,"PTPRT, MAPK1",0.0233558805108017
+MF,GO:0016922,Nuclear Receptor Binding,"STAT1, HIF1A",0.0237330555517247
+MF,GO:0030368,Interleukin-17 Receptor Activity,IL6ST,0.0250739410515905
+MF,GO:0043184,Vascular Endothelial Growth Factor Receptor 2 Binding,VEGFA,0.0268508599713373
+MF,GO:0008353,RNA Polymerase II CTD Heptapeptide Repeat Kinase Activity,MAPK1,0.0268508599713373
+MF,GO:0005164,Tumor Necrosis Factor Receptor Binding,STAT1,0.0276035556331293
+MF,GO:0019966,Interleukin-1 Binding,IL1R1,0.0276035556331293
+MF,GO:0097677,STAT Family Protein Binding,PTPRT,0.0276035556331293
+MF,GO:1990459,Transferrin Receptor Binding,IKBKG,0.0282344505602169
+MF,GO:0016004,Phospholipase Activator Activity,FYN,0.0282344505602169
+MF,GO:0070513,Death Domain Binding,MCL1,0.0282344505602169
+MF,GO:0004707,MAP Kinase Activity,MAPK1,0.0302456833077853
+MF,GO:0005172,Vascular Endothelial Growth Factor Receptor Binding,VEGFA,0.0306224318605937
+MF,GO:0060229,Lipase Activator Activity,FYN,0.0306224318605937
+MF,GO:0000979,RNA Polymerase II Core Promoter Sequence-Specific DNA Binding,STAT1,0.0306224318605937
+MF,GO:0019900,Kinase Binding,"CDKN1A, CCND1, HIF1A",0.0306559112429155
+MF,GO:0046935,1-Phosphatidylinositol-3-Kinase Regulator Activity,SOCS3,0.0333094986016668
+MF,GO:0061575,Cyclin-Dependent Protein Serine/Threonine Kinase Activator Activity,CCND1,0.0333094986016668
+MF,GO:0043274,Phospholipase Binding,FYN,0.0348946188236492
+MF,GO:0019901,Protein Kinase Binding,"CDKN1A, CCND1, HIF1A",0.0370870985787374
+MF,GO:0035014,Phosphatidylinositol 3-Kinase Regulator Activity,SOCS3,0.0370870985787374
+MF,GO:0035035,Histone Acetyltransferase Binding,STAT1,0.0370870985787374
+MF,GO:0050321,Tau-Protein Kinase Activity,FYN,0.0418550156443639
+MF,GO:0017134,Fibroblast Growth Factor Binding,FGFR1,0.0418550156443639
+MF,GO:0046875,Ephrin Receptor Binding,FYN,0.0430800552634761
+MF,GO:0070530,K63-linked Polyubiquitin Modification-Dependent Protein Binding,IKBKG,0.0453878577057865
+MF,GO:0097718,Disordered Domain Specific Binding,FYN,0.0453878577057865
+MF,GO:0008139,Nuclear Localization Sequence Binding,NFKBIA,0.0464757982473075
+MF,GO:0043325,"Phosphatidylinositol-3,4-Bisphosphate Binding",AKT1,0.0475229086090454
+MF,GO:0051059,NF-kappaB Binding,NFKBIA,0.0485313396882764
+MF,GO:0032813,Tumor Necrosis Factor Receptor Superfamily Binding,STAT1,0.049503094027026
+CC,GO:0000307,Cyclin-Dependent Protein Kinase Holoenzyme Complex,"CDKN1A, CCND1",0.0261627248785024
+CC,GO:0005634,Nucleus,"NFKBIA, CDKN1A, CCND1, STAT1, MAPK1, AKT1, FYN, IKBKG, HIF1A, NFKB2, FGFR1, MCL1",0.0261627248785024
+CC,GO:1902554,Serine/Threonine Protein Kinase Complex,"CDKN1A, CCND1",0.0327823099489074
+CC,GO:0043231,Intracellular Membrane-Bounded Organelle,"NFKBIA, CDKN1A, CCND1, STAT1, MAPK1, AKT1, FYN, IKBKG, HIF1A, NFKB2, FGFR1, MCL1",0.048687875279334
