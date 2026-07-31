@@ -33,3 +33,10 @@ raw/
 # Large compressed matrices, should they ever be added
 *.bam
 *.bam.gz
+
+# Written analysis reports / interpretation write-ups — kept locally, not in the
+# repository.
+reports/
+*.docx
+*.doc
+*.odt

@@ -1,6 +1,6 @@
 # GLP-1R Bioinformatics Project
 
-Transcriptomic **meta-analysis of GLP-1 receptor (GLP-1R) agonism across the central nervous system**, using nine public bulk-RNA / microarray GEO datasets. This repository is the cleaned, reproducible subset of a larger working directory: it contains the analysis code, the processed (non-raw) data tables the code consumes, the figures used in the thesis / presentation, and the written reports.
+Transcriptomic **meta-analysis of GLP-1 receptor (GLP-1R) agonism across the central nervous system**, using nine public bulk-RNA / microarray GEO datasets. This repository is the cleaned, reproducible subset of a larger working directory: it contains the analysis code, the processed (non-raw) data tables the code consumes, and the figures used in the thesis / presentation. The written analysis reports and interpretation write-ups are kept outside the repository.
 
 This meta-analysis is the transcriptomic arm (Aim 3 / "bioinformatic meta-analysis") of an MSc thesis on **semaglutide neuroprotection in neonatal hypoxic-ischemic brain injury**. It asks which pathways and consensus genes are consistently modulated by GLP-1R agonists across brain regions, disease contexts, and drug analogues — with a focused read-out on **blood-brain-barrier / MMP, JAK-STAT3 inflammatory, PI3K-Akt pro-survival, and ion-channel** programs.
 
@@ -70,7 +70,6 @@ GLP-1R bioinformatics project/
 │   ├── cross_accession/             # cross-accession ORA/GSEA result tables + NES matrices
 │   ├── gsea/                        # per-group .rnk inputs and GSEA/ORA result CSVs
 │   └── goplot/                      # curated pathway gene/term lists for the chord plots
-├── reports/                      # written analysis reports & methods write-ups (.docx)
 └── hibi/                         # HIBI (injury) arm — see hibi/README.md
     ├── code/                        # 01_meta_analysis_pipeline/ + 04_goplot_chord/
     ├── data/                        # master DEG, consensus, GOplot input tables
