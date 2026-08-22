@@ -1,15 +1,16 @@
 #!/usr/bin/env python3
-"""
-06b_consensus_top5_cnet.py
--------------------------------------------------------------
-A SEPARATE consensus concept-network for the LFC0.2 threshold that
-includes ONLY the top 5 most-enriched terms (smallest adjusted
-p-value across all databases). Same cnet_style.py styling as the
-main cnets (enlarged gene dots, thick edges).
+"""Consensus Cnet at the LFC0.2 threshold restricted to the 5 most enriched terms (smallest adjusted p-value across all databases).
 
-Output:
-  Plots/Cnet plots/Consensus/LFC0.2/<PDF|PNG>/Cnet_Consensus_Top5Terms_LFC0.2.*
+Data/consensus_LFC02.csv, enrichment_LFC02.csv, gene_lfc_comprehensive_LFC02.csv -> Plots/Cnet plots/Consensus/LFC0.2/<PDF|PNG>/Cnet_Consensus_Top5Terms_LFC0.2.*
 """
+import os as _os
+BASE = _os.environ.get("GLP1R_BASE")
+if not BASE:
+    raise SystemExit(
+        "Set GLP1R_BASE to the directory holding the analysis data tree, e.g.\n"
+        "  export GLP1R_BASE=/path/to/workspace"
+    )
+
 import os, re, csv, textwrap, sys
 import numpy as np
 import matplotlib
@@ -21,7 +22,7 @@ import networkx as nx
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from cnet_style import *
 
-BASE = "/sessions/amazing-zen-bardeen/mnt/Bulk RNA sequencing/Finalized Bioinformatics Workflow"
+BASE = BASE + "/mnt/Bulk RNA sequencing/Finalized Bioinformatics Workflow"
 DATA = os.path.join(BASE, "Data")
 OUTDIR = os.path.join(BASE, "Plots", "Cnet plots", "Consensus", "LFC0.2")
 THR = "LFC02"
@@ -29,15 +30,16 @@ N_TERMS = 5
 
 
 def clean_term(t):
+    """Strip GO and Reactome accessions from a term and truncate it for display."""
     t = re.sub(r"\s*\(GO:\d+\)", "", t)
     t = re.sub(r"\s*R-HSA-\d+", "", t)
     return t[:52] + "..." if len(t) > 55 else t
 
 def wrap_label(t, width=TERM_WRAP_WIDTH):
+    """Hard-wrap a term label for use as node text."""
     return "\n".join(textwrap.wrap(t, width=width))
 
 
-# Load data
 cons_map = {r["gene_symbol"].upper(): r["gene_symbol"]
             for r in csv.DictReader(open(os.path.join(DATA, f"consensus_{THR}.csv")))}
 lfc_map = {r["gene_symbol"].upper(): float(r["mean_log2FC"])
@@ -45,12 +47,11 @@ lfc_map = {r["gene_symbol"].upper(): float(r["mean_log2FC"])
 enr = [r for r in csv.DictReader(open(os.path.join(DATA, f"enrichment_{THR}.csv")))
        if r.get("Adjusted P-value") and float(r["Adjusted P-value"]) < 0.05]
 
-# Top 5 enriched terms by adjusted p-value (most significant)
+# Terms are ranked by adjusted p-value across all databases; only the first N_TERMS are drawn.
 enr.sort(key=lambda r: float(r["Adjusted P-value"]))
 selected = enr[:N_TERMS]
 input_upper = set(cons_map.keys())
 
-# Build graph
 G = nx.Graph()
 for r in selected:
     t = clean_term(r["Term"])

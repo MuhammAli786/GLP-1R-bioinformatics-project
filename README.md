@@ -16,11 +16,18 @@ and figure styling, so their consensus gene sets are directly comparable:
 | **HIBI** (injury) | [`hibi/`](hibi/) | What does neonatal hypoxic-ischemic injury do? | 6 GEO accessions | 12 | 5,346 |
 
 **1,715 consensus genes are shared** between the two — 875 moving the same
-direction, **840 moving in opposite directions**. That discordant set is the
-core neuroprotection read-out: genes the injury pushes one way and GLP-1R
-agonism pushes back. The immediate-early / stress genes `Fos`, `Fosb`, `Egr2`,
-`Nfil3` and `Bhlhe40` are all HI-induced but GLP-1R-suppressed; `Fkbp5` is
-HI-suppressed but is the strongest GLP-1R consensus gene of all. See
+direction, **840 moving in opposite directions**. Individual genes show a
+suggestive trend: the immediate-early / stress genes `Fos`, `Fosb`, `Egr2`,
+`Nfil3` and `Bhlhe40` are all HI-induced but GLP-1R-suppressed, and `Fkbp5` is
+HI-suppressed but is the strongest GLP-1R consensus gene of all.
+
+Treat that as a trend and a source of candidate genes, not as a demonstrated
+reversal. Across the shared set as a whole the direction split is at chance and
+the correlation is near zero, and the two arms are meta-analyses of different
+conditions — the GLP-1R datasets are obesity, aging, neurodegeneration and TBI
+models, none of them neonatal hypoxic-ischemic injury. The statistics behind
+this and the full set of tests are in
+[`hibi/FIGURE_INDEX.md`](hibi/FIGURE_INDEX.md). See also
 [`hibi/README.md`](hibi/README.md) and `hibi/hibi_vs_glp1r_consensus_comparison.csv`.
 
 Everything below this point describes the **GLP-1R arm**.
@@ -95,6 +102,20 @@ Each stage folder keeps its own original `README` where one existed. Scripts tak
 - **Python** ≥ 3.10: `pandas`, `numpy`, `matplotlib`, `networkx`, `gseapy`, `mygene`.
 - **R** ≥ 4.5: `limma`, `GEO2R`, and (for chord plots) `GOplot`.
 - Raw GEO matrices must be downloaded separately from GEO by accession if you want to regenerate the per-group DEG tables in `data/`. Everything downstream of the DEG tables runs from the data included here.
+
+**Set `GLP1R_BASE` before running anything.** Every pipeline script resolves its
+input and output paths from this one environment variable, and exits with a clear
+message if it is unset:
+
+```bash
+export GLP1R_BASE=/path/to/your/workspace
+```
+
+The scripts expect the analysis tree to live under `$GLP1R_BASE` in the same
+layout the original run used (`mnt/…`, `stage/`, `work/`). The R chord-plot
+scripts read the same variable. `01b_build_arrays_limma.py` invokes `Rscript`
+from `PATH`; override with `RSCRIPT=/path/to/Rscript` if you need a specific
+R installation.
 
 ## Provenance
 

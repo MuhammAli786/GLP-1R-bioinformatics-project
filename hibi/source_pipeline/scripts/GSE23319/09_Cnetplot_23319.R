@@ -1,6 +1,4 @@
-############################################################
-# GSE23317 - GO Cnet Plot
-############################################################
+# GSE23319 GO cnet plot; input: ego and deg_annot from 06_GO_KEGG -> output: figures/GSE23319_cnetplot.pdf
 
 library(clusterProfiler)
 library(enrichplot)

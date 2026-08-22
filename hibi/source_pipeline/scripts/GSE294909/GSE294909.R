@@ -1,3 +1,5 @@
+# Differential expression and enrichment analysis for GSE294909 (LPS_HI vs NaCl_HI microglia)
+# Input: GSE294909_DESeq2_removedbatch_log_2025-04-15.csv.gz -> Output: volcano, bar, GO/KEGG dotplots, cnetplot
 library(limma)
 library(ggplot2)
 library(clusterProfiler)
@@ -73,7 +75,7 @@ deg_sig <- res[
 
 dim(deg_sig)
 
-#VolcanoPlot
+
 EnhancedVolcano(
   res,
   lab = rownames(res),
@@ -82,7 +84,6 @@ EnhancedVolcano(
   title = "GSE294909: LPS_HI vs NaCl_HI microglia"
 )
 
-#Bar Plot
 top_up <- head(
   deg_sig[order(-deg_sig$logFC),],
   10
@@ -117,7 +118,6 @@ ggplot(
     y="log2 Fold Change"
   )
 
-#GO Plot
 gene_list <- rownames(deg_sig)
 
 
@@ -145,7 +145,7 @@ dotplot(
   title="GO Biological Processes LPS_HI vs NaCl_HI"
 )
 
-#KEGG Plot 
+
 ekegg <- enrichKEGG(
   gene=gene_entrez$ENTREZID,
   organism="rno",
@@ -159,7 +159,7 @@ dotplot(
   title="KEGG Pathways LPS_HI vs NaCl_HI"
 )
 
-#Cnet Plot
+
 gene_fc <- deg_sig$logFC
 
 names(gene_fc) <- rownames(deg_sig)

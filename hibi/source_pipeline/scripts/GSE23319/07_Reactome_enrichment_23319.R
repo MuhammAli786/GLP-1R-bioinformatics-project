@@ -1,3 +1,5 @@
+# GSE23319 Reactome pathway enrichment; input: entrez vector from 06_GO_KEGG -> output: results/Reactome_GSE23319_3h.csv
+
 library(ReactomePA)
 library(enrichplot)
 
@@ -19,7 +21,7 @@ write.csv(
   row.names = FALSE
 )
 
-#Dotplot
+# Dotplot
 pdf(
   "figures/Reactome_dotplot.pdf",
   width = 10,
@@ -30,7 +32,7 @@ dotplot(reactome, showCategory = 20)
 
 dev.off()
 
-#Barplot
+# Barplot
 pdf(
   "figures/Reactome_barplot_GSE23319.pdf",
   width = 10,

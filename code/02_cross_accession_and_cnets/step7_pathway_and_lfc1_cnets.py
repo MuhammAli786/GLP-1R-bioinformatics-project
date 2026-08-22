@@ -1,3 +1,7 @@
+# Cnet plots for the |log2FC| >= 1 consensus and for each pathway gene list, with
+# database-diverse term selection.
+# final_consensus_*.csv + final_enrichment_*.csv -> final_plots/cnet_*.png
+
 import pandas as pd
 import numpy as np
 import matplotlib
@@ -11,6 +15,7 @@ import os
 lfc_all = pd.read_csv('final_gene_lfc_COMPREHENSIVE.csv').set_index('symbol')['mean_lfc'].to_dict()
 lfc_lower = {k.lower(): v for k, v in lfc_all.items()}
 
+# Look up a gene's mean log2FC, falling back to a case-insensitive match, then 0.
 def get_lfc(gene):
     v = lfc_all.get(gene)
     if v is not None: return v
@@ -18,6 +23,7 @@ def get_lfc(gene):
     if v is not None: return v
     return 0.0
 
+# Greedy set cover over enrichment terms, capped at max_per_db terms per database.
 def diverse_greedy_select(sig_df, input_genes, max_terms=10, max_per_db=3):
     cons_lower = {g.lower(): g for g in input_genes}
     sig = sig_df.copy()
@@ -45,6 +51,7 @@ def diverse_greedy_select(sig_df, input_genes, max_terms=10, max_per_db=3):
         remaining = remaining.drop(best_idx)
     return selected
 
+# Render one cnet figure from a set-cover term selection, colouring genes by mean log2FC.
 def build_cnet(selected_terms, title, outpath):
     G = nx.Graph()
     for item in selected_terms:
@@ -83,9 +90,7 @@ def build_cnet(selected_terms, title, outpath):
     non_zero = sum(1 for v in lfc_vals if abs(v) > 0.001)
     print(f"  Saved {outpath} ({len(terms)} terms, {len(genes)} genes, {non_zero}/{len(genes)} LFC≠0)")
 
-# ============================================================
-# LFC≥1 CNET
-# ============================================================
+# Cnet for the |log2FC| >= 1 consensus
 print("=== LFC≥1 CNET ===")
 cons1 = pd.read_csv('final_consensus_LFC1.csv')
 genes1 = cons1['symbol'].tolist()
@@ -93,29 +98,27 @@ enrich1 = pd.read_csv('final_enrichment_LFC1.csv')
 sig1 = enrich1[enrich1['Adjusted P-value'] < 0.05]
 print(f"LFC≥1: {len(genes1)} genes, {len(sig1)} sig terms (all Reactome)")
 
-# Since only Reactome is significant, use relaxed threshold for other DBs
-# Use padj < 0.1 for non-Reactome to get some diversity
+# Only Reactome terms reach padj < 0.05 here, so relax to padj < 0.1 for the other
+# databases to retain some library diversity.
 sig_relaxed = enrich1[(enrich1['Adjusted P-value'] < 0.1) | (enrich1['Gene_set'] == 'Reactome_2022') & (enrich1['Adjusted P-value'] < 0.05)]
 sig_strict = enrich1[enrich1['Adjusted P-value'] < 0.05]
-# Try with nominal p-value < 0.01 for diversity
+# Nominal p < 0.01 as a further diversity fallback.
 sig_nominal = enrich1[enrich1['P-value'] < 0.01]
 print(f"  Nominal p<0.01: {len(sig_nominal)} terms")
 for db in sig_nominal['Gene_set'].unique():
     print(f"    {db}: {len(sig_nominal[sig_nominal['Gene_set']==db])}")
 
-# Use nominal p<0.01 for diverse cnet, but note in title
+# The plotted network uses the nominal p < 0.01 terms; the title states this.
 selected1 = diverse_greedy_select(sig_nominal, genes1, max_terms=10, max_per_db=3)
 dbs = set(s['db'] for s in selected1)
 print(f"  Databases used: {dbs}")
 build_cnet(selected1, 'Consensus Gene Network (LFC≥1.0)\nAll Databases (p<0.01)', 
            'final_plots/cnet_NEW_all_LFC1.png')
 
-# ============================================================
-# PATHWAY-BASED CNETS
-# ============================================================
+# Pathway-based cnets
 print("\n=== PATHWAY-BASED CNETS ===")
 
-# Load pathway gene lists
+# Pathway gene lists
 pathway_genes = {
     'JAKSTAT3': ['Jak1','Jak2','Jak3','Tyk2','Stat1','Stat2','Stat3','Stat4','Stat5a','Stat5b','Stat6',
                  'Socs1','Socs2','Socs3','Socs4','Socs5','Socs6','Socs7','Cish','Pias1','Pias2','Pias3','Pias4',
@@ -144,7 +147,7 @@ pathway_genes = {
                 'Grb2','Sos1','Hras','Kras','Nras','Raf1','Map2k1','Map2k2','Mapk1','Mapk3'],
 }
 
-# Combined = all pathway genes
+# The Combined set is the union of all pathway gene lists.
 combined_genes = set()
 for v in pathway_genes.values():
     combined_genes.update(v)

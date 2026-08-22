@@ -1,6 +1,4 @@
-############################################################
-## Inspect metadata
-############################################################
+# Inspect GSE23319 sample metadata; input: data/GSE23319.rds -> output: metadata/GSE23319_metadata.csv
 
 gse <- readRDS("data/GSE23319.rds")
 

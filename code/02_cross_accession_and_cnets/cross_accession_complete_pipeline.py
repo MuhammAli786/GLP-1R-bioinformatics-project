@@ -1,9 +1,7 @@
 #!/usr/bin/env python3
 """
-Cross-Accession Pathway Analysis — Complete Pipeline
-=====================================================
-Accessions: 3, 4, 5, 6, 7, 8, 10, 11, 12
-Output: Cross_Accession_Pathway_Analysis/Complete_Analysis/
+Cross-accession pathway analysis pipeline over accessions 3-8 and 10-12.
+Per-accession DEG CSVs -> Cross_Accession_Pathway_Analysis/Complete_Analysis/
 
 Figures generated:
   01_venn_gene_overlaps         — 3-way Venn (Obesity/Neuro/Aging) + DEG bar chart
@@ -51,9 +49,6 @@ import urllib.request, json, time, io, gzip
 warnings.filterwarnings('ignore')
 plt.rcParams.update({'font.family': 'DejaVu Sans'})
 
-# ─────────────────────────────────────────────────────────────────
-# CONFIGURATION
-# ─────────────────────────────────────────────────────────────────
 MNT = '/path/to/Bulk RNA sequencing/'   # <-- UPDATE THIS PATH
 OUT = '/path/to/Cross_Accession_Pathway_Analysis/Complete_Analysis/'  # <-- UPDATE
 os.makedirs(OUT, exist_ok=True)
@@ -90,9 +85,6 @@ COND_COLOR = {
 SIG_PADJ = 0.05
 SIG_LFC  = 0.2
 
-# ─────────────────────────────────────────────────────────────────
-# STEP 1: BUILD GENE ID MAPS
-# ─────────────────────────────────────────────────────────────────
 def download_ilmn_map():
     """Download GPL6885 probe → mouse gene symbol map from GEO."""
     url = 'https://ftp.ncbi.nlm.nih.gov/geo/platforms/GPL6nnn/GPL6885/annot/GPL6885.annot.gz'
@@ -128,9 +120,7 @@ def fetch_ensm_map(ensm_ids, batch_size=200, sleep=0.15):
         time.sleep(sleep)
     return result
 
-# ─────────────────────────────────────────────────────────────────
-# STEP 2: LOAD & STANDARDIZE DEG DATA
-# ─────────────────────────────────────────────────────────────────
+# Resolve one DEG row to a mouse gene symbol, mapping ILMN_ probes and ENSMUSG IDs.
 def std_gene(row, ilmn_map, ensm_map):
     gid = str(row.get('gene_id','')); gnm = str(row.get('gene_name',''))
     if gid.startswith('ILMN_'): return ilmn_map.get(gid, None)
@@ -140,6 +130,7 @@ def std_gene(row, ilmn_map, ensm_map):
     if gnm and gnm not in ('nan','None',''): return gnm
     return None
 
+# Load and concatenate every accession's DEG CSVs with standardized gene symbols.
 def load_all_data(ilmn_map, ensm_map):
     all_data = {}
     for acc_id, cfg in ACC_CFG.items():
@@ -167,9 +158,7 @@ def load_all_data(ilmn_map, ensm_map):
             print(f"  {acc_id}: {df['gene'].nunique():,} genes | {df['group'].nunique()} groups")
     return all_data
 
-# ─────────────────────────────────────────────────────────────────
-# STEP 3: BUILD DEG SETS + RANKED LISTS
-# ─────────────────────────────────────────────────────────────────
+# Build per-accession DEG sets (padj < 0.05, |log2FC| > 0.2), ranked lists, and background.
 def build_gene_sets(all_data):
     acc_deg = {}; acc_rnk = {}; bg_all = set()
     for acc_id, df in all_data.items():
@@ -183,9 +172,7 @@ def build_gene_sets(all_data):
     for acc_id, genes in acc_deg.items(): cond_deg[ACC_CFG[acc_id]['condition']] |= genes
     return acc_deg, acc_rnk, bg_all, dict(cond_deg)
 
-# ─────────────────────────────────────────────────────────────────
-# STEP 4: GSEA
-# ─────────────────────────────────────────────────────────────────
+# Run gseapy prerank GSEA against the Hallmark and KEGG gene sets.
 def run_gsea(acc_rnk, hallmark_gmt, kegg_upper):
     gsea_hm = {}; gsea_kegg = {}
     for acc_id, rnk in acc_rnk.items():
@@ -205,9 +192,7 @@ def run_gsea(acc_rnk, hallmark_gmt, kegg_upper):
         print("done")
     return gsea_hm, gsea_kegg
 
-# ─────────────────────────────────────────────────────────────────
-# STEP 5: ORA
-# ─────────────────────────────────────────────────────────────────
+# Benjamini-Hochberg FDR correction.
 def bh_fdr(pvals):
     pv=np.asarray(pvals,float); n=len(pv)
     if n==0: return np.array([])
@@ -215,6 +200,7 @@ def bh_fdr(pvals):
     idx=np.argsort(pv)[::-1]; fdr[idx]=np.minimum.accumulate(fdr[idx])
     return fdr
 
+# Hypergeometric over-representation test of a gene list against gene sets.
 def local_ora(gene_list, gene_sets, background, min_size=5, max_size=500):
     bg=set(background); gl=set(gene_list)&bg; N,K=len(bg),len(gl)
     if K==0: return pd.DataFrame()
@@ -233,9 +219,6 @@ def local_ora(gene_list, gene_sets, background, min_size=5, max_size=500):
     df['combined_score']=df['neg_log10_pval']*np.log1p(df['odds_ratio'])
     return df.sort_values('pval').reset_index(drop=True)
 
-# ─────────────────────────────────────────────────────────────────
-# PLOTTING HELPERS (see full implementation in this file's __main__)
-# ─────────────────────────────────────────────────────────────────
 if __name__ == '__main__':
     print("Cross-Accession Pathway Analysis")
     print("="*50)
@@ -243,7 +226,7 @@ if __name__ == '__main__':
     ilmn_map = download_ilmn_map()
     print(f"  ILMN map: {len(ilmn_map):,} probes")
 
-    # Collect ENSMUSG IDs that need mapping
+    # Collect the ENSMUSG IDs that need mapping
     all_ensm = set()
     for cfg in ACC_CFG.values():
         for fp in glob.glob(cfg['dir']+'*.csv'):
@@ -263,7 +246,7 @@ if __name__ == '__main__':
     print("\nStep 4: Running GSEA...")
     hallmark_gmt_path = '/tmp/mh_hallmark_mouse.gmt'   # download from MSigDB
     kegg_gmt_path     = '/tmp/kegg_mouse.gmt'           # from gseapy Enrichr
-    # See README for how to obtain these GMT files
+    # See README for how to obtain these GMT files.
     def read_gmt(fp):
         gs={}
         with open(fp) as f:
@@ -282,6 +265,5 @@ if __name__ == '__main__':
 
     print("\nStep 6: Generating figures...")
     print(f"  Output: {OUT}")
-    # Figures 01-08 generated by plotting functions above
-    # (see complete implementation in cross_accession_pipeline.py)
+    # Figures 01-08 are produced by step4_plots.py / GenerateEnrichmentPlots.py.
     print("\nComplete!")

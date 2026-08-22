@@ -1,15 +1,9 @@
-############################################################
-# GSE144456 - GO Cnet Plot
-# Comparison: P5 HI versus control at 3 hours
-############################################################
+# Create GO cnet plot for GSE144456 P5 HI vs control at 3h
+# Input: results/GSE144456_P5_3h_GO_BP.rds, results/GSE144456_P5_3h_DEGs_annotated.csv -> Output: figures/GSE144456_P5_3h_cnetplot.pdf/.png
 
 library(clusterProfiler)
 library(enrichplot)
 library(ggplot2)
-
-#-----------------------------------------------------------
-# 1. Load GO enrichment object
-#-----------------------------------------------------------
 
 ego_file <- "results/GSE144456_P5_3h_GO_BP.rds"
 
@@ -33,10 +27,6 @@ if (nrow(go_results) == 0) {
   )
 }
 
-#-----------------------------------------------------------
-# 2. Load annotated DEG results
-#-----------------------------------------------------------
-
 deg_file <- "results/GSE144456_P5_3h_DEGs_annotated.csv"
 
 if (!file.exists(deg_file)) {
@@ -52,10 +42,6 @@ deg <- read.csv(
   check.names = FALSE,
   stringsAsFactors = FALSE
 )
-
-#-----------------------------------------------------------
-# 3. Detect gene-symbol column
-#-----------------------------------------------------------
 
 possible_symbol_columns <- c(
   "GENE_SYMBOL",
@@ -96,10 +82,6 @@ if (is.na(symbol_column)) {
 
 cat("Using symbol column:", symbol_column, "\n")
 
-#-----------------------------------------------------------
-# 4. Clean gene symbols
-#-----------------------------------------------------------
-
 clean_symbols <- function(x) {
   
   x <- as.character(x)
@@ -125,10 +107,6 @@ deg$clean_symbol <- clean_symbols(
   deg[[symbol_column]]
 )
 
-#-----------------------------------------------------------
-# 5. Create named logFC vector
-#-----------------------------------------------------------
-
 fold_change_data <- deg[
   !is.na(deg$clean_symbol) &
     !is.na(deg$logFC),
@@ -136,8 +114,6 @@ fold_change_data <- deg[
   drop = FALSE
 ]
 
-# Retain the probe with the largest absolute logFC when
-# several probes map to the same gene
 fold_change_data <- fold_change_data[
   order(
     abs(fold_change_data$logFC),
@@ -162,10 +138,6 @@ geneList <- sort(
 )
 
 cat("Named fold-change values:", length(geneList), "\n")
-
-#-----------------------------------------------------------
-# 6. Confirm overlap with GO genes
-#-----------------------------------------------------------
 
 go_genes <- unique(
   unlist(
@@ -197,12 +169,6 @@ if (overlap_count == 0) {
   )
 }
 
-#-----------------------------------------------------------
-# 7. Optionally reduce redundant GO terms
-#-----------------------------------------------------------
-
-# Keep this FALSE initially. Change to TRUE if the network
-# contains many very similar GO terms.
 simplify_terms <- FALSE
 
 if (simplify_terms) {
@@ -219,11 +185,6 @@ if (simplify_terms) {
   ego_plot <- ego
 }
 
-#-----------------------------------------------------------
-# 8. Create cnetplot
-#-----------------------------------------------------------
-
-# Show all terms when fewer than 10 were found.
 show_n <- min(
   10,
   nrow(as.data.frame(ego_plot))
@@ -235,10 +196,6 @@ cnet_plot <- cnetplot(
   foldChange = geneList,
   node_label = "all"
 )
-
-#-----------------------------------------------------------
-# 9. Save cnetplot
-#-----------------------------------------------------------
 
 pdf(
   "figures/GSE144456_P5_3h_cnetplot.pdf",

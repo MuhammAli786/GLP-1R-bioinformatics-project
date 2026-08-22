@@ -1,3 +1,5 @@
+# Annotate and enrichment analysis for GSE97299 (HI SVZ P10 vs Sham SVZ P10)
+# Input: GSE97299.top.table.tsv, GPL22388-48305.txt -> Output: annotated CSV, gene symbols CSV, GO/KEGG dotplots, bar, cnetplot
 BiocManager::install("org.Rn.eg.db")
 BiocManager::install("GOplot")
 
@@ -66,7 +68,6 @@ gene_entrez <- bitr(
   toType = "ENTREZID",
   OrgDb = org.Rn.eg.db)
 
-#GO Plot
 ego <- enrichGO(
   gene = gene_entrez$ENTREZID,
   OrgDb = org.Rn.eg.db,
@@ -104,7 +105,6 @@ gene_entrez <- bitr(
   toType = "ENTREZID",
   OrgDb = org.Mm.eg.db)
 
-#GO Plot
 ego <- enrichGO(
   gene = gene_entrez$ENTREZID,
   OrgDb = org.Mm.eg.db,
@@ -117,7 +117,6 @@ dotplot(
   ego,
   showCategory = 20)
 
-#KEGG
 ekegg <- enrichKEGG(
   gene = gene_entrez$ENTREZID,
   organism = "rno",
@@ -127,7 +126,6 @@ dotplot(
   ekegg,
   showCategory = 20)
 
-# Bar plot of log2 fold change
 top_up <- head(
   deg_sig[order(-deg_sig$logFC),],
   10)
@@ -154,7 +152,6 @@ ggplot(
     x="Gene",
     y="log2 Fold Change")
 
-#Cnet Plot
 gene_fc <- deg_sig[,c(
   "GENE_SYMBOL",
   "logFC")]

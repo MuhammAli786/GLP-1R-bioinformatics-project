@@ -1,23 +1,28 @@
 """
-Fix two issues:
-1. Use MASTER data mean LFC for cnet gene coloring (not just consensus)
-2. Remove groups with <5 significant DEGs from overlap analysis
+Rebuilds the consensus tables after dropping groups with fewer than 5 significant
+DEGs, and writes a whole-master mean log2FC lookup used to colour cnet genes.
+final_master_deg*.csv -> final_consensus_*.csv, final_gene_lfc_lookup*.csv
 """
+import os as _os
+BASE = _os.environ.get("GLP1R_BASE")
+if not BASE:
+    raise SystemExit(
+        "Set GLP1R_BASE to the directory holding the analysis data tree, e.g.\n"
+        "  export GLP1R_BASE=/path/to/workspace"
+    )
+
 import pandas as pd
 import numpy as np
 import os
 
-OUT = "/sessions/practical-ecstatic-mendel/mnt/outputs"
+OUT = BASE + "/mnt/outputs"
 
-# ============================================================
-# FIX 1: Remove low-DEG groups and rebuild consensus
-# ============================================================
+# Drop groups with fewer than 5 DEGs, then rebuild the |LFC| >= 0.5 consensus.
 print("=== Fixing group overlap: removing groups with <5 DEGs ===")
 
 master = pd.read_csv(os.path.join(OUT, 'final_master_deg.csv'))
 master['group'] = master['treatment_class'] + '|' + master['region'].fillna('unknown')
 
-# Count DEGs per group
 group_counts = master.groupby('group')['symbol'].nunique()
 valid_groups = group_counts[group_counts >= 5].index.tolist()
 removed_groups = group_counts[group_counts < 5].index.tolist()
@@ -26,16 +31,15 @@ print(f"Total groups: {len(group_counts)}")
 print(f"Valid groups (≥5 DEGs): {len(valid_groups)}")
 print(f"Removed groups (<5 DEGs): {removed_groups}")
 
-# Filter master to valid groups only
 master_filtered = master[master['group'].isin(valid_groups)]
 print(f"Records after filtering: {len(master_filtered)} (from {len(master)})")
 
-# Rebuild consensus
+# Consensus requires a gene in at least 2 valid groups.
 gene_groups = master_filtered.groupby('symbol')['group'].nunique().reset_index()
 gene_groups.columns = ['symbol', 'n_groups']
 cons_new = gene_groups[gene_groups['n_groups'] >= 2].sort_values('n_groups', ascending=False)
 
-# Add stats using ALL master data (for accurate LFC)
+# Summary statistics over all filtered records, not only the consensus genes.
 gene_stats = master_filtered.groupby('symbol').agg(
     mean_lfc=('log2FC', 'mean'),
     median_lfc=('log2FC', 'median'),
@@ -52,23 +56,19 @@ print(f"New consensus (LFC≥0.5, ≥2 valid groups): {len(cons_new)} genes")
 cons_new.to_csv(os.path.join(OUT, 'final_consensus_LFC05.csv'), index=False)
 master_filtered.to_csv(os.path.join(OUT, 'final_master_deg.csv'), index=False)
 
-# ============================================================
-# FIX 2: Build a complete LFC lookup from ALL data (for cnet coloring)
-# ============================================================
+# Gene-level mean log2FC lookup used for cnet node colouring.
 print("\n=== Building complete gene LFC lookup for cnet coloring ===")
 
-# Use ALL records in master (not just consensus) to get accurate mean LFC per gene
+# Averaged over all master records, not only consensus genes.
 all_gene_lfc = master_filtered.groupby('symbol')['log2FC'].mean().to_dict()
 print(f"LFC lookup: {len(all_gene_lfc)} genes")
 
-# Save this lookup
 lfc_df = pd.DataFrame(list(all_gene_lfc.items()), columns=['symbol', 'mean_lfc'])
 lfc_df.to_csv(os.path.join(OUT, 'final_gene_lfc_lookup.csv'), index=False)
 
-# Also fix LFC0
+# Same treatment for the |LFC| >= 0 consensus.
 print("\n=== Fixing LFC0 consensus ===")
 master_lfc0 = pd.read_csv(os.path.join(OUT, 'final_master_deg_LFC0.csv'))
-# Remove same invalid groups
 master_lfc0_valid = master_lfc0[master_lfc0['group'].isin(
     master_lfc0.groupby('group')['symbol'].nunique().pipe(lambda x: x[x>=5]).index
 )]
@@ -86,7 +86,6 @@ cons0_new['predominant_direction'] = np.where(cons0_new['n_up']>=cons0_new['n_do
 print(f"New LFC0 consensus: {len(cons0_new)} genes")
 cons0_new.to_csv(os.path.join(OUT, 'final_consensus_LFC0.csv'), index=False)
 
-# LFC0 lookup
 all_gene_lfc0 = master_lfc0_valid.groupby('symbol')['log2FC'].mean().to_dict()
 lfc0_df = pd.DataFrame(list(all_gene_lfc0.items()), columns=['symbol', 'mean_lfc'])
 lfc0_df.to_csv(os.path.join(OUT, 'final_gene_lfc_lookup_LFC0.csv'), index=False)

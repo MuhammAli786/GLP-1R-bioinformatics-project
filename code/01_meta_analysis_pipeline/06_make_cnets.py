@@ -1,19 +1,17 @@
 #!/usr/bin/env python3
-"""
-06_make_cnets.py
--------------------------------------------------------------
-Concept-network (Cnet) plots in the cnet_style.py reference style
-(with enlarged gene dots and thicker edges, per request).
+"""Concept-network (Cnet) plots linking consensus genes to enriched terms, styled by cnet_style.py.
 
-Produces, for both thresholds (LFC0.2, LFC1):
-  * Consensus    : all consensus genes vs all enrichment terms
-  * BBB          : blood-brain-barrier / MMP gene+term set
-  * Inflammatory : JAK-STAT3 inflammatory gene+term set
-  * Survival     : PI3K/Akt pro-survival gene+term set
-
-Saved as transparent PNG + PDF into:
-  Plots/Cnet plots/<sub>/<LFCfolder>/<PDF|PNG>/
+Data/consensus_<thr>.csv, enrichment_<thr>.csv, gene_lfc_comprehensive_<thr>.csv -> transparent PNG and PDF under Plots/Cnet plots/<sub>/<LFCfolder>/<PDF|PNG>/.
+One network per gene set: Consensus (all consensus genes and terms), BBB (blood-brain barrier / MMP), Inflammatory (JAK-STAT3), Survival (PI3K/Akt) and IonChannel.
 """
+import os as _os
+BASE = _os.environ.get("GLP1R_BASE")
+if not BASE:
+    raise SystemExit(
+        "Set GLP1R_BASE to the directory holding the analysis data tree, e.g.\n"
+        "  export GLP1R_BASE=/path/to/workspace"
+    )
+
 import os, re, csv, textwrap, sys
 import numpy as np
 import matplotlib
@@ -27,34 +25,40 @@ from cnet_style import *
 from cnet_gene_lists import (BBB_GENES, JAK_STAT3_GENES, PI3K_AKT_GENES,
                              ION_CHANNEL_BASE_GENES, KEYWORD_FILTERS)
 
-BASE = "/sessions/amazing-zen-bardeen/mnt/Bulk RNA sequencing/Finalized Bioinformatics Workflow"
+BASE = BASE + "/mnt/Bulk RNA sequencing/Finalized Bioinformatics Workflow"
 DATA = os.path.join(BASE, "Data")
 PLOTS = os.path.join(BASE, "Plots", "Cnet plots")
 THR_FOLDER = {"LFC02": "LFC0.2", "LFC05": "LFC0.5", "LFC1": "LFC1"}
 
 
 def load_consensus(thr):
+    """Return an upper-case -> display-case symbol map of the consensus genes."""
     p = os.path.join(DATA, f"consensus_{thr}.csv")
     return {r["gene_symbol"].upper(): r["gene_symbol"] for r in csv.DictReader(open(p))}
 
 def load_enrichment(thr):
+    """Return the enrichment rows with adjusted p-value < 0.05."""
     p = os.path.join(DATA, f"enrichment_{thr}.csv")
     return [r for r in csv.DictReader(open(p)) if r.get("Adjusted P-value") and float(r["Adjusted P-value"]) < 0.05]
 
 def load_lfc(thr):
+    """Return an upper-case symbol -> mean log2FC map."""
     p = os.path.join(DATA, f"gene_lfc_comprehensive_{thr}.csv")
     return {r["gene_symbol"].upper(): float(r["mean_log2FC"]) for r in csv.DictReader(open(p))}
 
 def clean_term(t):
+    """Strip GO and Reactome accessions from a term and truncate it for display."""
     t = re.sub(r"\s*\(GO:\d+\)", "", t)
     t = re.sub(r"\s*R-HSA-\d+", "", t)
     return t[:52] + "..." if len(t) > 55 else t
 
 def wrap_label(t, width=TERM_WRAP_WIDTH):
+    """Hard-wrap a term label for use as node text."""
     return "\n".join(textwrap.wrap(t, width=width))
 
 
 def build_cnet(ref_genes, term_filter, title, sub, thr, lfc_map, cons_map, enr_rows):
+    """Draw and save one Cnet; returns False if the gene or term set is too small."""
     input_genes = [cons_map[g.upper()] for g in ref_genes if g.upper() in cons_map] if ref_genes else list(cons_map.values())
     input_upper = {g.upper() for g in input_genes}
     if len(input_genes) < 3:
@@ -62,6 +66,7 @@ def build_cnet(ref_genes, term_filter, title, sub, thr, lfc_map, cons_map, enr_r
 
     if term_filter:
         pat = re.compile(term_filter)
+        # A term qualifies on a name match or on sharing at least two input genes.
         ft = [r for r in enr_rows if pat.search(r["Term"]) or
               len(set(r["Genes"].upper().split(";")) & input_upper) >= 2]
     else:
@@ -70,6 +75,7 @@ def build_cnet(ref_genes, term_filter, title, sub, thr, lfc_map, cons_map, enr_r
         print(f"  SKIP {sub}/{thr}: no matching terms"); return False
     ft.sort(key=lambda r: float(r["Adjusted P-value"]))
 
+    # Greedy set cover: pick terms that add the most uncovered genes, breaking ties on Combined Score.
     covered, selected, remaining = set(), [], list(range(len(ft)))
     while len(selected) < MAX_TERMS and remaining:
         best = max(remaining, key=lambda i: (
@@ -145,6 +151,7 @@ def build_cnet(ref_genes, term_filter, title, sub, thr, lfc_map, cons_map, enr_r
 
 
 def main():
+    """Build every Cnet for each threshold."""
     SPECS = [
         ("Consensus", None, None, "Consensus genes — GLP-1R agonist CNS meta-analysis"),
         ("BBB", BBB_GENES, KEYWORD_FILTERS["BBB"], "Blood-Brain Barrier / MMP Cnet"),

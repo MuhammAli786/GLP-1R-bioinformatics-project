@@ -1,7 +1,4 @@
-############################################################
-# GSE236133
-# GO BP and Reactome cnetplots
-############################################################
+# GSE236133 GO BP and Reactome cnetplots; input: results/GSE236133/DE/*_DEGs.csv, enrichment RDS -> output: figures/GSE236133/cnetplots/
 
 library(enrichplot)
 library(clusterProfiler)
@@ -10,10 +7,7 @@ library(readr)
 library(dplyr)
 library(ggplot2)
 
-#-----------------------------------------------------------
-# 1. Paths
-#-----------------------------------------------------------
-
+# Paths
 de_directory <- "results/GSE236133/DE"
 
 go_directory <- "results/GSE236133/enrichment/GO_KEGG"
@@ -28,10 +22,7 @@ dir.create(
   showWarnings = FALSE
 )
 
-#-----------------------------------------------------------
-# 2. Find DEG files
-#-----------------------------------------------------------
-
+# Find DEG files
 deg_files <- list.files(
   de_directory,
   pattern = "_DEGs\\.csv$",
@@ -44,10 +35,7 @@ if (length(deg_files) == 0) {
   )
 }
 
-#-----------------------------------------------------------
-# 3. Create named fold-change vector
-#-----------------------------------------------------------
-
+# Create named fold-change vector
 make_fold_change_vector <- function(deg) {
   
   fold_change_table <- deg %>%
@@ -71,10 +59,7 @@ make_fold_change_vector <- function(deg) {
   fold_change
 }
 
-#-----------------------------------------------------------
-# 4. Save one cnetplot safely
-#-----------------------------------------------------------
-
+# Save one cnetplot safely with fallback layout
 save_cnetplot <- function(
     enrichment_object,
     fold_change,
@@ -175,10 +160,8 @@ save_cnetplot <- function(
   
   invisible(network_plot)
 }
-#-----------------------------------------------------------
-# 5. Process one comparison
-#-----------------------------------------------------------
 
+# Process one comparison
 process_comparison <- function(deg_file) {
   
   comparison_name <- sub(
@@ -223,10 +206,7 @@ process_comparison <- function(deg_file) {
       next
     }
     
-    #-------------------------------------------------------
     # GO Biological Process
-    #-------------------------------------------------------
-    
     go_file <- file.path(
       go_directory,
       paste0(
@@ -265,10 +245,7 @@ process_comparison <- function(deg_file) {
       )
     }
     
-    #-------------------------------------------------------
     # Reactome
-    #-------------------------------------------------------
-    
     reactome_file <- file.path(
       reactome_directory,
       paste0(
@@ -311,10 +288,7 @@ process_comparison <- function(deg_file) {
   }
 }
 
-#-----------------------------------------------------------
-# 6. Run all comparisons
-#-----------------------------------------------------------
-
+# Run all comparisons
 invisible(
   lapply(
     deg_files,

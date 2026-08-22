@@ -1,13 +1,5 @@
-############################################################
-# GSE236133
-# Differential expression using normalized counts
-#
-# Input gene identifiers are mouse SYMBOLS, not Ensembl IDs.
-#
-# Contrast direction:
-# positive logFC = higher in ipsilateral hippocampus
-# negative logFC = higher in contralateral hippocampus
-############################################################
+# GSE236133 differential expression using normalized counts; input: data/GSE236133_prepared_data.rds -> output: results/GSE236133/DE/
+# Input gene identifiers are mouse SYMBOLS. Contrast: positive logFC = higher in ipsilateral, negative = higher in contralateral
 
 library(limma)
 library(dplyr)
@@ -16,10 +8,7 @@ library(tibble)
 library(AnnotationDbi)
 library(org.Mm.eg.db)
 
-#-----------------------------------------------------------
-# 1. Paths and thresholds
-#-----------------------------------------------------------
-
+# Paths and thresholds: logFC >= 0.2, FDR < 0.05
 input_file <- "data/GSE236133_prepared_data.rds"
 
 results_directory <- "results/GSE236133/DE"
@@ -48,10 +37,7 @@ if (!file.exists(input_file)) {
   )
 }
 
-#-----------------------------------------------------------
-# 2. Load prepared data
-#-----------------------------------------------------------
-
+# Load prepared data
 prepared_data <- readRDS(input_file)
 
 expression_matrix <- prepared_data$expression
@@ -69,10 +55,7 @@ if (!identical(
 cat("\nOriginal expression dimensions:\n")
 print(dim(expression_matrix))
 
-#-----------------------------------------------------------
-# 3. Clean gene symbols
-#-----------------------------------------------------------
-
+# Clean gene symbols
 gene_symbols <- rownames(expression_matrix)
 
 if (is.null(gene_symbols)) {
@@ -101,10 +84,7 @@ cat(
   "rows with missing or blank gene symbols.\n"
 )
 
-#-----------------------------------------------------------
-# 4. Collapse duplicate gene symbols
-#-----------------------------------------------------------
-
+# Collapse duplicate gene symbols by mean expression
 if (anyDuplicated(rownames(expression_matrix))) {
   
   cat(
@@ -121,10 +101,7 @@ if (anyDuplicated(rownames(expression_matrix))) {
 cat("\nExpression dimensions after cleaning:\n")
 print(dim(expression_matrix))
 
-#-----------------------------------------------------------
-# 5. Validate and transform expression values
-#-----------------------------------------------------------
-
+# Validate and transform expression values
 storage.mode(expression_matrix) <- "numeric"
 
 if (anyNA(expression_matrix)) {
@@ -155,12 +132,7 @@ saveRDS(
   "data/GSE236133_log2_expression.rds"
 )
 
-#-----------------------------------------------------------
-# 6. Filter very low-expression genes
-#-----------------------------------------------------------
-
-# Keep genes with normalized expression > 1
-# in at least two samples
+# Filter very low-expression genes: keep genes with normalized expression > 1 in at least two samples
 keep_gene <- rowSums(
   expression_matrix > 1,
   na.rm = TRUE
@@ -188,10 +160,7 @@ if (nrow(expression_filtered) == 0) {
   stop("No genes remained after expression filtering.")
 }
 
-#-----------------------------------------------------------
-# 7. Map gene SYMBOLS to Entrez and Ensembl IDs
-#-----------------------------------------------------------
-
+# Map gene SYMBOLS to Entrez and Ensembl IDs
 symbols <- rownames(expression_filtered)
 
 gene_annotation <- tibble(
@@ -249,10 +218,7 @@ cat(
   "\n"
 )
 
-#-----------------------------------------------------------
-# 8. Define comparisons
-#-----------------------------------------------------------
-
+# Define comparisons: WT, NEIL1-KO, NEIL2-KO at 3h and 6h
 comparisons <- tribble(
   ~genotype,  ~time, ~comparison_name,
   
@@ -281,10 +247,7 @@ comparisons <- tribble(
   "NEIL2KO_6h_ipsilateral_vs_contralateral"
 )
 
-#-----------------------------------------------------------
-# 9. Function to run one comparison
-#-----------------------------------------------------------
-
+# Function to run one limma comparison
 run_limma_comparison <- function(
     selected_genotype,
     selected_time,
@@ -440,10 +403,7 @@ run_limma_comparison <- function(
   deg <- result %>%
     filter(significant)
   
-  #---------------------------------------------------------
   # Save all genes and significant DEGs
-  #---------------------------------------------------------
-  
   write_csv(
     result,
     file.path(
@@ -466,10 +426,7 @@ run_limma_comparison <- function(
     )
   )
   
-  #---------------------------------------------------------
   # Save gene lists
-  #---------------------------------------------------------
-  
   symbol_list <- deg %>%
     filter(
       !is.na(SYMBOL),
@@ -509,10 +466,7 @@ run_limma_comparison <- function(
     )
   )
   
-  #---------------------------------------------------------
   # Summary
-  #---------------------------------------------------------
-  
   summary_row <- tibble(
     comparison = comparison_name,
     genotype = selected_genotype,
@@ -533,10 +487,7 @@ run_limma_comparison <- function(
   return(summary_row)
 }
 
-#-----------------------------------------------------------
-# 10. Run all comparisons
-#-----------------------------------------------------------
-
+# Run all comparisons
 summary_results <- bind_rows(
   lapply(
     seq_len(nrow(comparisons)),
@@ -551,10 +502,7 @@ summary_results <- bind_rows(
   )
 )
 
-#-----------------------------------------------------------
-# 11. Save summary
-#-----------------------------------------------------------
-
+# Save summary
 write_csv(
   summary_results,
   file.path(

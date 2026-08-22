@@ -1,6 +1,4 @@
-############################################################
-## Download GSE23319
-############################################################
+# Download GSE23319 GEO metadata and expression matrix; input: GEO accession -> output: data/GSE23319.rds
 
 library(GEOquery)
 

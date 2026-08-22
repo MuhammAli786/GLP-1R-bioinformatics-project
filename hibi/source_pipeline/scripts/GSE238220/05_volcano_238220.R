@@ -1,19 +1,15 @@
-############################################################
 # GSE238220
 # Volcano plots for DESeq2 results
 #
 # Positive log2FoldChange = higher in HI
 # Negative log2FoldChange = higher in Control
-############################################################
 
 library(readr)
 library(dplyr)
 library(ggplot2)
 library(ggrepel)
 
-#-----------------------------------------------------------
-# 1. Paths and thresholds
-#-----------------------------------------------------------
+# Paths and thresholds
 
 input_directory <- "results/GSE238220/DE"
 figure_directory <- "figures/GSE238220/volcano"
@@ -28,9 +24,7 @@ dir.create(
   showWarnings = FALSE
 )
 
-#-----------------------------------------------------------
-# 2. Find all complete DESeq2 result files
-#-----------------------------------------------------------
+# Find all complete DESeq2 result files
 
 result_files <- list.files(
   input_directory,
@@ -49,9 +43,7 @@ if (length(result_files) == 0) {
 cat("\nResult files found:\n")
 print(result_files)
 
-#-----------------------------------------------------------
-# 3. Function to make one volcano plot
-#-----------------------------------------------------------
+# Function to make one volcano plot
 
 make_volcano <- function(result_file) {
   
@@ -90,9 +82,7 @@ make_volcano <- function(result_file) {
     )
   }
   
-  #---------------------------------------------------------
   # Prepare plotting variables
-  #---------------------------------------------------------
   
   result <- result %>%
     mutate(
@@ -158,9 +148,7 @@ make_volcano <- function(result_file) {
     logfc_threshold
   )
   
-  #---------------------------------------------------------
   # Build volcano plot
-  #---------------------------------------------------------
   
   volcano_plot <- ggplot(
     result,
@@ -213,9 +201,7 @@ make_volcano <- function(result_file) {
       legend.position = "right"
     )
   
-  #---------------------------------------------------------
   # Save PDF and PNG
-  #---------------------------------------------------------
   
   pdf_file <- file.path(
     figure_directory,
@@ -252,9 +238,7 @@ make_volcano <- function(result_file) {
   cat(pdf_file, "\n")
   cat(png_file, "\n")
   
-  #---------------------------------------------------------
   # Save plotted significant genes
-  #---------------------------------------------------------
   
   write_csv(
     label_data %>%
@@ -278,9 +262,7 @@ make_volcano <- function(result_file) {
   invisible(volcano_plot)
 }
 
-#-----------------------------------------------------------
-# 4. Generate all volcano plots
-#-----------------------------------------------------------
+# Generate all volcano plots
 
 invisible(
   lapply(

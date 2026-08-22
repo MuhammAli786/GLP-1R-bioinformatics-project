@@ -1,3 +1,15 @@
+"""Montage of one concept network per group, using each group's own LFC0.2 DEGs with no gene-list restriction.
+
+work/group_genes.json and the per-group Enrichr results in work/group_enr/ -> work/montage/Cnet_PerGroup_AllGroups_LFC0.2.png and .pdf.
+"""
+import os as _os
+BASE = _os.environ.get("GLP1R_BASE")
+if not BASE:
+    raise SystemExit(
+        "Set GLP1R_BASE to the directory holding the analysis data tree, e.g.\n"
+        "  export GLP1R_BASE=/path/to/workspace"
+    )
+
 import os, re, csv, math, json, time, textwrap
 import numpy as np
 import matplotlib; matplotlib.use("Agg")
@@ -5,22 +17,25 @@ import matplotlib.pyplot as plt
 from matplotlib.lines import Line2D
 import networkx as nx
 import sys
-sys.path.insert(0,"/sessions/amazing-zen-bardeen/mnt/Bulk RNA sequencing/Finalized Bioinformatics Workflow/scripts")
+sys.path.insert(0,BASE + "/mnt/Bulk RNA sequencing/Finalized Bioinformatics Workflow/scripts")
 from cnet_style import LIB_COLORS, LIB_LABELS, VMAX
-DATA_LOCAL="/sessions/amazing-zen-bardeen/work"
-ENRDIR="/sessions/amazing-zen-bardeen/work/group_enr"
-OUT_LOCAL="/sessions/amazing-zen-bardeen/work/montage"; os.makedirs(OUT_LOCAL,exist_ok=True)
+DATA_LOCAL=BASE + "/work"
+ENRDIR=BASE + "/work/group_enr"
+OUT_LOCAL=BASE + "/work/montage"; os.makedirs(OUT_LOCAL,exist_ok=True)
 MAXT=6; MAXG=8
 
 groups=json.load(open(f"{DATA_LOCAL}/group_genes.json"))
 import pandas as pd
 cat=pd.read_csv(f"{DATA_LOCAL}/data_local/group_catalog.csv") if os.path.exists(f"{DATA_LOCAL}/data_local/group_catalog.csv") else None
 order=sorted(groups.keys())
-# include empty groups from catalog too
+# The catalog also carries groups with no DEGs, which get an empty panel.
 all_groups=sorted(cat["group"].tolist()) if cat is not None else order
 
-def clean(t): t=re.sub(r'\s*\(GO:\d+\)','',str(t)); return re.sub(r'\s*R-HSA-\d+','',t).strip()
+def clean(t):
+    """Strip GO and Reactome accessions from a term."""
+    t=re.sub(r'\s*\(GO:\d+\)','',str(t)); return re.sub(r'\s*R-HSA-\d+','',t).strip()
 def load_enr(g):
+    """Return one group's enrichment rows with adjusted p-value < 0.05, or [] if absent."""
     safe="".join(c if c.isalnum() else "_" for c in g)
     p=f"{ENRDIR}/{safe}.csv"
     if not os.path.exists(p): return []
@@ -28,6 +43,7 @@ def load_enr(g):
     return [r for r in rows if float(r["Adjusted P-value"])<0.05]
 
 def build_graph(genes, lfc, enr):
+    """Build one group's gene-term graph by greedy set cover, or None if too small."""
     input_upper={g.upper() for g in genes}
     if len(genes)<3 or not enr: return None
     enr=sorted(enr, key=lambda r:float(r["Adjusted P-value"]))
@@ -53,6 +69,7 @@ def build_graph(genes, lfc, enr):
     return G
 
 def draw(ax,G,title):
+    """Draw one montage panel, or a placeholder when the group has too few DEGs."""
     ax.set_title(title,fontsize=8,fontweight="bold")
     ax.axis("off")
     if G is None:
@@ -84,7 +101,6 @@ for i,g in enumerate(all_groups):
     G=build_graph(d["genes"],{k.upper():v for k,v in d["lfc"].items()},load_enr(g))
     draw(axes[i],G,f"{g}\n({len(d['genes'])} DEGs, LFC0.2)")
 for j in range(N,len(axes)): axes[j].axis("off")
-# shared legend + colorbar
 libs=[lib for lib in LIB_COLORS if lib in {"GO_Biological_Process_2023","GO_Molecular_Function_2023","GO_Cellular_Component_2023","KEGG_2021_Human","Reactome_2022"}]
 handles=[Line2D([0],[0],marker="s",color="w",markerfacecolor=LIB_COLORS[l],markersize=10,label=LIB_LABELS[l]) for l in libs]
 fig.legend(handles=handles,loc="lower center",ncol=5,fontsize=11,frameon=False,bbox_to_anchor=(0.5,0.005))

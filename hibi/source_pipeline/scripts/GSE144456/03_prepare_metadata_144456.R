@@ -1,14 +1,7 @@
-############################################################
-# GSE144456 - Prepare Metadata
-# Comparison selected for downstream analysis:
-# P5 hypoxia-ischemia versus control at 3 hours
-############################################################
+# Prepare GSE144456 metadata: select P5 HI vs control at 3h arrays
+# Input: data/GSE144456.rds -> Output: metadata/GSE144456_metadata_prepared_all_samples.csv, metadata/GSE144456_HI_vs_control_all_times.csv/.rds, metadata/GSE144456_P5_3h_samples.csv/.rds
 
 library(GEOquery)
-
-#-----------------------------------------------------------
-# 1. Load dataset
-#-----------------------------------------------------------
 
 gse_file <- "data/GSE144456.rds"
 
@@ -25,17 +18,12 @@ gse <- readRDS(gse_file)
 eset <- gse[[1]]
 pheno <- pData(eset)
 
-# Confirm metadata rows match expression-matrix columns
 stopifnot(
   identical(
     rownames(pheno),
     colnames(exprs(eset))
   )
 )
-
-#-----------------------------------------------------------
-# 2. Build clean metadata table
-#-----------------------------------------------------------
 
 sample_metadata <- data.frame(
   
@@ -63,10 +51,6 @@ sample_metadata <- data.frame(
   
   stringsAsFactors = FALSE
 )
-
-#-----------------------------------------------------------
-# 3. Identify true ischemic-versus-control arrays
-#-----------------------------------------------------------
 
 sample_metadata$include_HI_vs_control <-
   tolower(trimws(sample_metadata$condition_ch1)) == "control" &
@@ -104,10 +88,6 @@ if (nrow(selected_metadata) == 0) {
   )
 }
 
-#-----------------------------------------------------------
-# 4. Extract developmental age from title
-#-----------------------------------------------------------
-
 selected_metadata$age <- ifelse(
   grepl(
     "day 5|P5\\+",
@@ -126,17 +106,12 @@ selected_metadata$age <- ifelse(
   )
 )
 
-#-----------------------------------------------------------
-# 5. Extract post-injury time from title
-#-----------------------------------------------------------
-
 selected_metadata$time_point <- sub(
   ".*\\+([0-9]+h).*",
   "\\1",
   selected_metadata$title
 )
 
-# Replace failed matches with NA
 failed_time_match <-
   !grepl(
     "\\+[0-9]+h",
@@ -146,10 +121,6 @@ failed_time_match <-
 selected_metadata$time_point[
   failed_time_match
 ] <- NA_character_
-
-#-----------------------------------------------------------
-# 6. Create clean group labels
-#-----------------------------------------------------------
 
 selected_metadata$analysis_group <- paste(
   selected_metadata$age,
@@ -168,10 +139,6 @@ print(
     useNA = "ifany"
   )
 )
-
-#-----------------------------------------------------------
-# 7. Select P5 at 3 hours
-#-----------------------------------------------------------
 
 selected_P5_3h <- selected_metadata[
   selected_metadata$age == "P5" &
@@ -217,10 +184,6 @@ if (nrow(selected_P5_3h) != 3) {
   )
 }
 
-#-----------------------------------------------------------
-# 8. Confirm selected samples exist in expression matrix
-#-----------------------------------------------------------
-
 if (!all(
   selected_P5_3h$sample_id %in%
   colnames(exprs(eset))
@@ -230,10 +193,6 @@ if (!all(
     "from the expression matrix."
   )
 }
-
-#-----------------------------------------------------------
-# 9. Save prepared metadata
-#-----------------------------------------------------------
 
 write.csv(
   sample_metadata,

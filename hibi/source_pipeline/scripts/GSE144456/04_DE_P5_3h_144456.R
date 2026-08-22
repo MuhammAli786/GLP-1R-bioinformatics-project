@@ -1,18 +1,8 @@
-############################################################
-# GSE144456 - Differential Expression
-# Comparison: P5 hypoxia-ischemia versus control at 3 hours
-#
-# Two-colour microarray:
-# Each selected array already contains an ischemic-versus-
-# control log-ratio, so an intercept-only limma model is used.
-############################################################
+# Differential expression for GSE144456 P5 HI vs control at 3h using intercept-only limma
+# Input: data/GSE144456.rds, metadata/GSE144456_P5_3h_samples.rds -> Output: results/GSE144456_P5_3h_*.csv/.rds
 
 library(GEOquery)
 library(limma)
-
-#-----------------------------------------------------------
-# 1. Load GEO dataset
-#-----------------------------------------------------------
 
 gse_file <- "data/GSE144456.rds"
 
@@ -34,10 +24,6 @@ print(annotation(eset))
 
 cat("\nFull expression-matrix dimensions:\n")
 print(dim(expr))
-
-#-----------------------------------------------------------
-# 2. Load samples selected in script 03
-#-----------------------------------------------------------
 
 metadata_file <-
   "metadata/GSE144456_P5_3h_samples.rds"
@@ -84,10 +70,6 @@ print(dim(expr_selected))
 cat("\nExpression-value summary:\n")
 print(summary(as.vector(expr_selected)))
 
-#-----------------------------------------------------------
-# 3. Check that values look like processed log-ratios
-#-----------------------------------------------------------
-
 if (
   min(expr_selected, na.rm = TRUE) >= 0
 ) {
@@ -98,11 +80,6 @@ if (
   )
 }
 
-#-----------------------------------------------------------
-# 4. Filter uninformative probes
-#-----------------------------------------------------------
-
-# Remove probes that are all missing
 keep_not_all_na <- rowSums(
   !is.na(expr_selected)
 ) > 0
@@ -113,7 +90,6 @@ expr_filtered <- expr_selected[
   drop = FALSE
 ]
 
-# Remove probes equal to zero across all three arrays
 keep_nonzero <- rowSums(
   expr_filtered != 0,
   na.rm = TRUE
@@ -137,19 +113,6 @@ cat(
   "\n"
 )
 
-#-----------------------------------------------------------
-# 5. Fit intercept-only limma model
-#-----------------------------------------------------------
-
-# Channel 1 = control
-# Channel 2 = ischemic
-#
-# Assuming GEO stores the processed ratio as:
-# log2(channel 2 / channel 1)
-#
-# Positive logFC = higher expression in ischemic tissue
-# Negative logFC = lower expression in ischemic tissue
-
 design <- matrix(
   1,
   nrow = ncol(expr_filtered),
@@ -168,10 +131,6 @@ fit <- lmFit(
 )
 
 fit <- eBayes(fit)
-
-#-----------------------------------------------------------
-# 6. Extract all limma results
-#-----------------------------------------------------------
 
 de_all <- topTable(
   fit,
@@ -194,10 +153,6 @@ de_all <- de_all[
   )
 ]
 
-#-----------------------------------------------------------
-# 7. Add platform annotation
-#-----------------------------------------------------------
-
 feature_annotation <- fData(eset)
 
 feature_annotation$probe_id <-
@@ -211,7 +166,6 @@ de_annotated <- merge(
   sort = FALSE
 )
 
-# Restore limma ranking after merge
 de_annotated <- de_annotated[
   match(
     de_all$probe_id,
@@ -221,21 +175,12 @@ de_annotated <- de_annotated[
   drop = FALSE
 ]
 
-# Verify ordering was preserved
 stopifnot(
   identical(
     de_annotated$probe_id,
     de_all$probe_id
   )
 )
-
-#-----------------------------------------------------------
-# 8. Apply DEG thresholds
-#-----------------------------------------------------------
-
-# Same thresholds used in the previous datasets:
-# |logFC| >= 0.2
-# adjusted P-value < 0.05
 
 deg <- de_annotated[
   !is.na(de_annotated$logFC) &
@@ -268,10 +213,6 @@ print(
     deg$direction
   )
 )
-
-#-----------------------------------------------------------
-# 9. Save results
-#-----------------------------------------------------------
 
 write.csv(
   de_all,

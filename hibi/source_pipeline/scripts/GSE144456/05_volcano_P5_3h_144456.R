@@ -1,14 +1,8 @@
-############################################################
-# GSE144456 - Volcano Plot
-# Comparison: P5 HI versus control at 3 hours
-############################################################
+# Create volcano plot for GSE144456 P5 HI vs control at 3h
+# Input: results/GSE144456_P5_3h_all_annotated.csv -> Output: figures/GSE144456_P5_3h_volcano.pdf/.png
 
 library(EnhancedVolcano)
 library(ggplot2)
-
-#-----------------------------------------------------------
-# 1. Load annotated limma results
-#-----------------------------------------------------------
 
 results_file <- "results/GSE144456_P5_3h_all_annotated.csv"
 
@@ -25,10 +19,6 @@ de_results <- read.csv(
   check.names = FALSE,
   stringsAsFactors = FALSE
 )
-
-#-----------------------------------------------------------
-# 2. Check required columns
-#-----------------------------------------------------------
 
 required_columns <- c(
   "probe_id",
@@ -48,12 +38,10 @@ if (length(missing_columns) > 0) {
   )
 }
 
-# Replace missing adjusted p-values for plotting
 de_results$adj.P.Val[
   is.na(de_results$adj.P.Val)
 ] <- 1
 
-# Prevent zero p-values from generating infinity
 nonzero_p <- de_results$adj.P.Val[
   de_results$adj.P.Val > 0
 ]
@@ -65,10 +53,6 @@ if (length(nonzero_p) > 0) {
     de_results$adj.P.Val == 0
   ] <- smallest_nonzero
 }
-
-#-----------------------------------------------------------
-# 3. Detect gene-symbol column
-#-----------------------------------------------------------
 
 possible_symbol_columns <- c(
   "GENE_SYMBOL",
@@ -99,17 +83,12 @@ if (is.na(symbol_column)) {
   }
 }
 
-#-----------------------------------------------------------
-# 4. Create plot labels
-#-----------------------------------------------------------
-
 if (!is.na(symbol_column)) {
   
   plot_labels <- as.character(
     de_results[[symbol_column]]
   )
   
-  # Keep first symbol when multiple annotations are present
   plot_labels <- sub("\\s*///.*$", "", plot_labels)
   plot_labels <- sub("\\s*//.*$", "", plot_labels)
   plot_labels <- sub("\\s*;.*$", "", plot_labels)
@@ -142,10 +121,6 @@ if (!is.na(symbol_column)) {
 
 de_results$plot_label <- plot_labels
 
-#-----------------------------------------------------------
-# 5. Identify significant DEGs
-#-----------------------------------------------------------
-
 significant_results <- de_results[
   !is.na(de_results$logFC) &
     abs(de_results$logFC) >= 0.2 &
@@ -160,7 +135,6 @@ significant_results <- significant_results[
   drop = FALSE
 ]
 
-# Since there are only about 15 DEGs, label up to 15
 genes_to_label <- head(
   significant_results$plot_label,
   15
@@ -171,10 +145,6 @@ cat(
   nrow(significant_results),
   "\n"
 )
-
-#-----------------------------------------------------------
-# 6. Create volcano plot
-#-----------------------------------------------------------
 
 volcano_plot <- EnhancedVolcano(
   de_results,
@@ -210,10 +180,6 @@ volcano_plot <- EnhancedVolcano(
   
   max.overlaps = 20
 )
-
-#-----------------------------------------------------------
-# 7. Save plot
-#-----------------------------------------------------------
 
 pdf(
   "figures/GSE144456_P5_3h_volcano.pdf",

@@ -1,14 +1,6 @@
-############################################################
-## Differential Expression Analysis
-## GSE23319
-## 3 h HI vs Sham
-############################################################
+# GSE23319 differential expression: 3h HI vs Sham using limma; input: data/GSE23319.rds -> output: results/GSE23319_3h_DEGs.csv
 
 library(limma)
-
-############################################################
-# Load data
-############################################################
 
 gse <- readRDS("data/GSE23319.rds")
 
@@ -18,10 +10,7 @@ expr <- exprs(eset)
 
 pheno <- pData(eset)
 
-############################################################
 # Keep only 3-hour Sham and HI samples
-############################################################
-
 keep <- grepl("3h", pheno$title) &
   (grepl("Sham", pheno$title) |
      grepl("HI-", pheno$title))
@@ -30,10 +19,7 @@ expr_sub <- expr[, keep]
 
 pheno_sub <- pheno[keep, ]
 
-############################################################
 # Create experimental groups
-############################################################
-
 group <- ifelse(
   grepl("Sham", pheno_sub$title),
   "Sham",
@@ -44,26 +30,17 @@ group <- factor(group)
 
 table(group)
 
-############################################################
 # Design matrix
-############################################################
-
 design <- model.matrix(~group)
 
 design
 
-############################################################
 # Differential expression
-############################################################
-
 fit <- lmFit(expr_sub, design)
 
 fit <- eBayes(fit)
 
-############################################################
 # Extract results
-############################################################
-
 results <- topTable(
   fit,
   coef = 2,
@@ -71,36 +48,23 @@ results <- topTable(
   adjust.method = "BH"
 )
 
-############################################################
 # Save all genes
-############################################################
-
 write.csv(
   results,
   "results/GSE23319_3h_all_genes.csv"
 )
 
-############################################################
-# Significant DEGs
-############################################################
-
+# Significant DEGs: |logFC| >= 0.2, adj.P.Val < 0.05
 deg <- subset(
   results,
   abs(logFC) >= 0.2 &
     adj.P.Val < 0.05
 )
 
-############################################################
 # Save DEGs
-############################################################
-
 write.csv(
   deg,
   "results/GSE23319_3h_DEGs.csv"
 )
-
-############################################################
-# Summary
-############################################################
 
 cat("Number of DEGs:", nrow(deg), "\n")

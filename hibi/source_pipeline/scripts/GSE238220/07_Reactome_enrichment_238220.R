@@ -1,4 +1,3 @@
-############################################################
 # GSE238220
 # Reactome pathway enrichment
 #
@@ -6,7 +5,6 @@
 #   All significant DEGs
 #   Upregulated DEGs in HI
 #   Downregulated DEGs in HI
-############################################################
 
 library(ReactomePA)
 library(enrichplot)
@@ -14,9 +12,7 @@ library(readr)
 library(dplyr)
 library(ggplot2)
 
-#-----------------------------------------------------------
-# 1. Paths
-#-----------------------------------------------------------
+# Paths
 
 de_directory <- "results/GSE238220/DE"
 
@@ -42,9 +38,7 @@ dir.create(
   showWarnings = FALSE
 )
 
-#-----------------------------------------------------------
-# 2. Find DEG files
-#-----------------------------------------------------------
+# Find DEG files
 
 deg_files <- list.files(
   de_directory,
@@ -58,9 +52,7 @@ if (length(deg_files) == 0) {
   )
 }
 
-#-----------------------------------------------------------
-# 3. Save one Reactome result
-#-----------------------------------------------------------
+# Save one Reactome result
 
 save_reactome_result <- function(
     reactome_object,
@@ -157,9 +149,7 @@ save_reactome_result <- function(
   invisible(dotplot_object)
 }
 
-#-----------------------------------------------------------
-# 4. Run one comparison
-#-----------------------------------------------------------
+# Run one comparison
 
 run_reactome <- function(deg_file) {
   
@@ -304,9 +294,7 @@ run_reactome <- function(deg_file) {
   )
 }
 
-#-----------------------------------------------------------
-# 5. Run all comparisons
-#-----------------------------------------------------------
+# Run all comparisons
 
 invisible(
   lapply(

@@ -1,6 +1,5 @@
-############################################################
-# GSE144456 - Download GEO data
-############################################################
+# Download GSE144456 GEO dataset and save as RDS
+# Input: none (downloads from GEO) -> Output: data/GSE144456.rds
 
 library(GEOquery)
 

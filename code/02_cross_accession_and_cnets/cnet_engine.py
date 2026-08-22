@@ -1,12 +1,6 @@
 """
-cnet_engine.py — Core Cnet plot builder
-=======================================
-Provides:
-  - Data loading (consensus genes, enrichment, LFC map)
-  - Term cleaning (strip GO/Reactome IDs)
-  - Greedy set-cover term selection
-  - NetworkX graph construction
-  - Matplotlib figure rendering in the reference style
+Core cnet plot builder: loads consensus/enrichment/log2FC tables, selects terms by
+greedy set cover, and renders the gene-concept network.
 """
 import csv, re, os, textwrap
 import numpy as np
@@ -38,17 +32,18 @@ def load_lfc(data_dir):
     return {r['gene_symbol'].upper(): float(r['mean_log2FC'])
             for r in csv.DictReader(open(path))}
 
-# Helpers
 def clean_term(t):
     """Remove GO / Reactome IDs and truncate long names."""
     t = re.sub(r'\s*\(GO:\d+\)', '', t)
     t = re.sub(r'\s*R-HSA-\d+', '', t)
     return t[:52] + '...' if len(t) > 55 else t
 
+# Wrap a term label to the configured character width.
 def wrap_label(t, width=TERM_WRAP_WIDTH):
     return '\n'.join(textwrap.wrap(t, width=width))
-# Core builder
 
+
+# Build and save one cnet figure for a reference gene list.
 def build_cnet(ref_genes, term_filter, title, fname, out_dir,
                lfc_map, cons_map, enr_rows):
 
@@ -60,7 +55,7 @@ def build_cnet(ref_genes, term_filter, title, fname, out_dir,
         print(f"  SKIP {fname}: only {len(input_genes)} consensus genes")
         return False
 
-    #  Filter enrichment terms 
+    # Keep terms matching the pathway keyword filter, or sharing >= 2 input genes.
     if term_filter:
         pat = re.compile(term_filter)
         ft = [r for r in enr_rows
@@ -108,7 +103,7 @@ def build_cnet(ref_genes, term_filter, title, fname, out_dir,
         print(f"  SKIP {fname}: no terms after set-cover")
         return False
 
-    # Build NetworkX graph 
+    # Build the term-gene graph
     G = nx.Graph()
     for idx in selected:
         r = ft[idx]
@@ -135,20 +130,17 @@ def build_cnet(ref_genes, term_filter, title, fname, out_dir,
     print(f"  {fname}: {len(term_nodes)} terms, "
           f"{len(gene_nodes)} genes, {n_edges} edges")
 
-    # ── Spring layout ────────────────────────────────────────
     pos = nx.spring_layout(G, k=K_SPRING, iterations=ITERATIONS, seed=SEED)
 
-    # ── Figure ───────────────────────────────────────────────
     fig, ax = plt.subplots(figsize=FIGSIZE)
     fig.patch.set_alpha(0)
     ax.set_facecolor('none')
 
-    # Edges
     nx.draw_networkx_edges(G, pos, ax=ax,
                            alpha=EDGE_ALPHA, width=EDGE_WIDTH,
                            edge_color=EDGE_COLOR)
 
-    # Gene nodes (scatter, coloured by LFC)
+    # Gene nodes: colour by mean log2FC, size by degree
     gene_lfcs = [G.nodes[g].get('lfc', 0) for g in gene_nodes]
     gene_sizes = [max(GENE_MIN_SIZE, G.degree(g) * GENE_DEGREE_SCALE)
                   for g in gene_nodes]
@@ -161,12 +153,11 @@ def build_cnet(ref_genes, term_filter, title, fname, out_dir,
         s=gene_sizes, zorder=3,
         edgecolors=GENE_EDGE_COLOR, linewidths=GENE_EDGE_WIDTH)
 
-    # Colorbar
     cbar = plt.colorbar(sc, ax=ax, shrink=0.35, pad=0.02)
     cbar.set_label('mean log₂FC', fontsize=20)
     cbar.ax.tick_params(labelsize=14)
 
-    # Term nodes (coloured squares)
+    # Term nodes: squares coloured by source library
     for t in term_nodes:
         color = LIB_COLORS.get(G.nodes[t].get('lib', ''), '#888888')
         xy = pos[t]
@@ -174,7 +165,7 @@ def build_cnet(ref_genes, term_filter, title, fname, out_dir,
                    zorder=4, edgecolors=TERM_EDGE_COLOR,
                    linewidths=TERM_EDGE_WIDTH, marker=TERM_MARKER)
 
-    # Term labels (white on coloured box, ABOVE node)
+    # Term labels sit above their node
     for t in term_nodes:
         color = LIB_COLORS.get(G.nodes[t].get('lib', ''), '#888888')
         xy = pos[t]
@@ -185,7 +176,7 @@ def build_cnet(ref_genes, term_filter, title, fname, out_dir,
                 bbox=dict(boxstyle='round,pad=0.3', facecolor=color,
                           alpha=TERM_BOX_ALPHA, edgecolor='none'))
 
-    # Gene labels (white on dark box, BELOW node)
+    # Gene labels sit below their node
     for g in gene_nodes:
         xy = pos[g]
         ax.text(xy[0], xy[1] - GENE_LABEL_OFFSET, g,
@@ -195,7 +186,6 @@ def build_cnet(ref_genes, term_filter, title, fname, out_dir,
                           facecolor=GENE_BOX_COLOR,
                           alpha=GENE_BOX_ALPHA, edgecolor='none'))
 
-    # Legend
     libs_used = {G.nodes[t].get('lib') for t in term_nodes}
     legend_els = [
         Line2D([0], [0], marker='s', color='w',
@@ -210,7 +200,6 @@ def build_cnet(ref_genes, term_filter, title, fname, out_dir,
     ax.set_title(title, fontsize=24, fontweight='bold', pad=20)
     ax.axis('off')
 
-    # ── Save ─────────────────────────────────────────────────
     os.makedirs(out_dir, exist_ok=True)
     fig.savefig(os.path.join(out_dir, f'{fname}.png'),
                 dpi=DPI, bbox_inches='tight', transparent=True)

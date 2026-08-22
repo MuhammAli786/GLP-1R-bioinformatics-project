@@ -1,3 +1,15 @@
+# Plots the enrichment and consensus results: per-database dot plots, top-20 gene
+# barplots, and mean-log2FC heatmaps.
+# final_enrichment_*.csv, final_consensus_*.csv, final_master_deg*.csv -> final_plots/*.png
+
+import os as _os
+BASE = _os.environ.get("GLP1R_BASE")
+if not BASE:
+    raise SystemExit(
+        "Set GLP1R_BASE to the directory holding the analysis data tree, e.g.\n"
+        "  export GLP1R_BASE=/path/to/workspace"
+    )
+
 import pandas as pd
 import numpy as np
 import matplotlib
@@ -6,19 +18,18 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import os
 
-OUT = "/sessions/practical-ecstatic-mendel/mnt/outputs"
+OUT = BASE + "/mnt/outputs"
 PLOT_DIR = os.path.join(OUT, "final_plots")
 os.makedirs(PLOT_DIR, exist_ok=True)
 
 
-# ENRICHMENT DOT PLOTS
 def make_dotplot(enr_df, db_name, threshold_label, top_n=20):
-    """Create enrichment dot plot for a single database"""
+    """Dot plot of the top_n terms with adjusted p < 0.05 for one enrichment database."""
     subset = enr_df[(enr_df['Database'] == db_name) & (enr_df['Adjusted P-value'] < 0.05)]
     if subset.empty:
         return
     
-    # Get Combined_Score column
+    # Enrichr output spells this column either way
     score_col = 'Combined_Score' if 'Combined_Score' in subset.columns else 'Combined Score'
     if score_col not in subset.columns:
         return
@@ -70,7 +81,7 @@ for thr_label, enr_file in [('LFC05', 'final_enrichment_LFC05.csv'), ('LFC0', 'f
             print(f"  Created: {fname}")
 
 
-# TOP 20 GENE BARPLOT (by group frequency)
+# Barplot of the 20 most frequent consensus genes, coloured by predominant direction.
 def make_top_gene_barplot(cons_df, threshold_label):
     top = cons_df.head(20).copy()
     
@@ -84,7 +95,6 @@ def make_top_gene_barplot(cons_df, threshold_label):
     ax.set_title(f'Top 20 Consensus Genes by Group Frequency ({threshold_label})', fontsize=14)
     ax.invert_yaxis()
     
-    # Legend
     from matplotlib.patches import Patch
     legend_elements = [Patch(facecolor='#d73027', label='Predominantly UP'),
                        Patch(facecolor='#4575b4', label='Predominantly DOWN')]
@@ -101,7 +111,7 @@ for thr_label, cons_file in [('LFC05', 'final_consensus_LFC05.csv'), ('LFC0', 'f
     make_top_gene_barplot(cons, thr_label)
 
 
-# HEATMAP: Top genes × groups (average LFC)
+# Heatmap of mean log2FC for the top consensus genes across treatment x region groups.
 def make_heatmap(master_file, cons_file, threshold_label, top_n=30):
     master = pd.read_csv(os.path.join(OUT, master_file))
     cons = pd.read_csv(os.path.join(OUT, cons_file))
@@ -112,9 +122,8 @@ def make_heatmap(master_file, cons_file, threshold_label, top_n=30):
     sub = master[master['symbol'].isin(top_genes)]
     pivot = sub.pivot_table(index='symbol', columns='group', values='log2FC', aggfunc='mean')
     
-    # Reorder by consensus frequency
+    # Keep rows in consensus-frequency order
     pivot = pivot.reindex(top_genes)
-    # Drop columns with all NaN
     pivot = pivot.dropna(axis=1, how='all')
     
     fig, ax = plt.subplots(figsize=(max(14, len(pivot.columns)*0.8), max(8, len(pivot)*0.4)))

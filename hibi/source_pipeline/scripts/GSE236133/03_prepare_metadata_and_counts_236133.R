@@ -1,17 +1,11 @@
-############################################################
-# GSE236133
-# Prepare metadata and normalized expression matrix
-############################################################
+# GSE236133 prepare metadata and normalized expression matrix from supplementary files; input: data/GSE236133_supplementary/GSE236133_genelist_full_normalized_counts.txt.gz -> output: data/GSE236133_prepared_data.rds, metadata/GSE236133_prepared_metadata.csv
 
 library(readr)
 library(dplyr)
 library(stringr)
 library(tibble)
 
-#-----------------------------------------------------------
-# 1. File paths
-#-----------------------------------------------------------
-
+# File paths
 counts_file <- paste0(
   "data/GSE236133_supplementary/",
   "GSE236133_genelist_full_normalized_counts.txt.gz"
@@ -24,10 +18,7 @@ output_metadata <- paste0(
   "GSE236133_prepared_metadata.csv"
 )
 
-#-----------------------------------------------------------
-# 2. Check input file
-#-----------------------------------------------------------
-
+# Check input file
 if (!file.exists(counts_file)) {
   stop(
     "Normalized-count file not found:\n",
@@ -36,10 +27,7 @@ if (!file.exists(counts_file)) {
   )
 }
 
-#-----------------------------------------------------------
-# 3. Read normalized-count table
-#-----------------------------------------------------------
-
+# Read normalized-count table
 cat("\nReading normalized-count file...\n")
 
 counts_raw <- read_tsv(
@@ -53,10 +41,7 @@ print(dim(counts_raw))
 cat("\nCount-table columns:\n")
 print(colnames(counts_raw))
 
-#-----------------------------------------------------------
-# 4. Confirm gene ID column
-#-----------------------------------------------------------
-
+# Confirm gene ID column
 if (!"gene_id" %in% colnames(counts_raw)) {
   stop("The expected gene_id column was not found.")
 }
@@ -78,16 +63,8 @@ if (length(sample_columns) != 24) {
   )
 }
 
-#-----------------------------------------------------------
-# 5. Build metadata directly from count-column names
-#
-# Examples:
-# wt_con1_3h
-# wt_ips2_6h
-# neil1_con1_3h
-# neil2_ips2_6h
-#-----------------------------------------------------------
-
+# Build metadata directly from count-column names
+# Examples: wt_con1_3h, wt_ips2_6h, neil1_con1_3h, neil2_ips2_6h
 metadata <- tibble(
   count_column = sample_columns
 ) %>%
@@ -136,10 +113,7 @@ metadata <- tibble(
     tissue
   )
 
-#-----------------------------------------------------------
-# 6. Validate metadata parsing
-#-----------------------------------------------------------
-
+# Validate metadata parsing
 cat("\nPrepared metadata:\n")
 print(metadata)
 
@@ -184,10 +158,7 @@ print(
   )
 )
 
-#-----------------------------------------------------------
-# 7. Construct expression matrix
-#-----------------------------------------------------------
-
+# Construct expression matrix
 expression_table <- counts_raw %>%
   select(all_of(sample_columns)) %>%
   mutate(
@@ -202,10 +173,7 @@ expression_matrix <- as.matrix(expression_table)
 rownames(expression_matrix) <- counts_raw$gene_id
 colnames(expression_matrix) <- sample_columns
 
-#-----------------------------------------------------------
-# 8. Validate expression matrix
-#-----------------------------------------------------------
-
+# Validate expression matrix
 cat("\nExpression matrix dimensions:\n")
 print(dim(expression_matrix))
 
@@ -240,10 +208,7 @@ if (anyDuplicated(rownames(expression_matrix))) {
   )
 }
 
-#-----------------------------------------------------------
-# 9. Save prepared metadata
-#-----------------------------------------------------------
-
+# Save prepared metadata
 dir.create(
   "metadata",
   recursive = TRUE,
@@ -262,10 +227,7 @@ cat(
   "\n"
 )
 
-#-----------------------------------------------------------
-# 10. Save combined prepared object
-#-----------------------------------------------------------
-
+# Save combined prepared object
 prepared_data <- list(
   expression = expression_matrix,
   metadata = metadata,

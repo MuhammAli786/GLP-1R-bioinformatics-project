@@ -1,14 +1,8 @@
-############################################################
-# GSE236133
-# Inspect supplementary files and sample metadata
-############################################################
+# GSE236133 inspect supplementary files and sample metadata; input: data/GSE236133_supplementary/, metadata/GSE236133_raw_metadata.csv -> output: metadata/GSE236133_supplementary_file_inventory.csv, metadata/GSE236133_metadata_inspection.csv
 
 library(dplyr)
 
-#-----------------------------------------------------------
-# 1. List supplementary files
-#-----------------------------------------------------------
-
+# List supplementary files
 supplementary_directory <- "data/GSE236133_supplementary"
 
 if (!dir.exists(supplementary_directory)) {
@@ -38,10 +32,7 @@ write.csv(
   row.names = FALSE
 )
 
-#-----------------------------------------------------------
-# 2. Inspect sample metadata
-#-----------------------------------------------------------
-
+# Inspect sample metadata
 metadata_file <- "metadata/GSE236133_raw_metadata.csv"
 
 if (!file.exists(metadata_file)) {
@@ -66,10 +57,7 @@ print(metadata$title)
 cat("\nSource names:\n")
 print(metadata$source_name_ch1)
 
-#-----------------------------------------------------------
-# 3. Inspect characteristics fields
-#-----------------------------------------------------------
-
+# Inspect characteristics fields
 characteristic_columns <- grep(
   "^characteristics",
   colnames(metadata),
@@ -94,10 +82,7 @@ for (column in characteristic_columns) {
   )
 }
 
-#-----------------------------------------------------------
-# 4. Show one row per sample
-#-----------------------------------------------------------
-
+# Show one row per sample
 candidate_columns <- c(
   "title",
   "geo_accession",

@@ -1,17 +1,11 @@
-############################################################
-# GSE238220
-# Prepare metadata and raw read-count matrix
-############################################################
+# GSE238220 prepare metadata and raw read-count matrix; input: metadata/GSE238220_raw_metadata.csv, data/GSE238220_supplementary/GSE238220_read_counts.tsv.gz -> output: data/GSE238220_prepared_data.rds, metadata/GSE238220_prepared_metadata.csv
 
 library(readr)
 library(dplyr)
 library(stringr)
 library(tibble)
 
-#-----------------------------------------------------------
-# 1. File paths
-#-----------------------------------------------------------
-
+# File paths
 metadata_file <- "metadata/GSE238220_raw_metadata.csv"
 
 counts_file <- paste0(
@@ -26,10 +20,7 @@ output_metadata_file <- paste0(
   "GSE238220_prepared_metadata.csv"
 )
 
-#-----------------------------------------------------------
-# 2. Check input files
-#-----------------------------------------------------------
-
+# Check input files
 if (!file.exists(metadata_file)) {
   stop(
     "Metadata file not found:\n",
@@ -46,10 +37,7 @@ if (!file.exists(counts_file)) {
   )
 }
 
-#-----------------------------------------------------------
-# 3. Read metadata and counts
-#-----------------------------------------------------------
-
+# Read metadata and counts
 metadata_raw <- read.csv(
   metadata_file,
   check.names = FALSE,
@@ -70,10 +58,7 @@ print(dim(counts_raw))
 cat("\nCount-table columns:\n")
 print(colnames(counts_raw))
 
-#-----------------------------------------------------------
-# 4. Identify GEO characteristics columns
-#-----------------------------------------------------------
-
+# Identify GEO characteristics columns
 characteristic_columns <- grep(
   "^characteristics",
   colnames(metadata_raw),
@@ -88,10 +73,7 @@ if (length(characteristic_columns) == 0) {
 cat("\nCharacteristics columns:\n")
 print(characteristic_columns)
 
-#-----------------------------------------------------------
-# 5. Function to extract one characteristic
-#-----------------------------------------------------------
-
+# Function to extract one characteristic
 get_characteristic <- function(data, pattern) {
   
   apply(
@@ -125,10 +107,7 @@ get_characteristic <- function(data, pattern) {
   )
 }
 
-#-----------------------------------------------------------
-# 6. Build clean metadata
-#-----------------------------------------------------------
-
+# Build clean metadata
 metadata <- tibble(
   sample_id = metadata_raw$geo_accession,
   title = metadata_raw$title,
@@ -254,10 +233,7 @@ metadata <- tibble(
     treatment_raw
   )
 
-#-----------------------------------------------------------
-# 7. Validate parsed metadata
-#-----------------------------------------------------------
-
+# Validate parsed metadata
 cat("\nPrepared metadata:\n")
 print(metadata)
 
@@ -309,10 +285,7 @@ if (anyNA(metadata$time)) {
   warning("One or more time values could not be parsed.")
 }
 
-#-----------------------------------------------------------
-# 8. Identify gene-ID column in count table
-#-----------------------------------------------------------
-
+# Identify gene-ID column in count table
 possible_gene_columns <- c(
   "gene_id",
   "gene",
@@ -336,10 +309,7 @@ if (length(gene_column) == 0) {
 cat("\nUsing gene column:\n")
 print(gene_column)
 
-#-----------------------------------------------------------
-# 9. Match count columns to GEO samples
-#-----------------------------------------------------------
-
+# Match count columns to GEO samples
 count_columns <- setdiff(
   colnames(counts_raw),
   gene_column
@@ -428,10 +398,7 @@ if (anyDuplicated(metadata$count_column)) {
   stop("Duplicate count-column matches were detected.")
 }
 
-#-----------------------------------------------------------
-# 10. Construct raw count matrix
-#-----------------------------------------------------------
-
+# Construct raw count matrix
 count_table <- counts_raw %>%
   select(
     all_of(metadata$count_column)
@@ -467,10 +434,7 @@ gene_ids <- trimws(
 rownames(count_matrix) <- gene_ids
 colnames(count_matrix) <- metadata$sample_id
 
-#-----------------------------------------------------------
-# 11. Collapse duplicate genes
-#-----------------------------------------------------------
-
+# Collapse duplicate genes by sum
 if (anyDuplicated(rownames(count_matrix))) {
   
   cat(
@@ -486,10 +450,7 @@ if (anyDuplicated(rownames(count_matrix))) {
   )
 }
 
-#-----------------------------------------------------------
-# 12. Validate count matrix
-#-----------------------------------------------------------
-
+# Validate count matrix
 if (anyNA(count_matrix)) {
   stop("Missing count values were detected.")
 }
@@ -516,10 +477,7 @@ print(dim(count_matrix))
 cat("\nCount-value summary:\n")
 print(summary(as.vector(count_matrix)))
 
-#-----------------------------------------------------------
-# 13. Save prepared metadata
-#-----------------------------------------------------------
-
+# Save prepared metadata
 write.csv(
   metadata,
   output_metadata_file,
@@ -532,10 +490,7 @@ cat(
   "\n"
 )
 
-#-----------------------------------------------------------
-# 14. Save combined prepared object
-#-----------------------------------------------------------
-
+# Save combined prepared object
 prepared_data <- list(
   counts = count_matrix,
   metadata = metadata,

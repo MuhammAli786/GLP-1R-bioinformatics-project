@@ -1,9 +1,13 @@
+"""Run Enrichr per group and cache the results, resuming where a previous run stopped.
+
+group_genes.json -> one CSV per group in group_enr/. Groups with fewer than 3 genes get a header-only CSV.
+"""
 import os, json, time, sys
 import gseapy as gp
 DB=['GO_Biological_Process_2023','GO_Molecular_Function_2023','GO_Cellular_Component_2023','KEGG_2021_Human','Reactome_2022']
 groups=json.load(open("group_genes.json"))
-items=sorted(groups.items(), key=lambda kv: len(kv[1]["genes"]))  # small first (fast wins)
-deadline=time.time()+30
+items=sorted(groups.items(), key=lambda kv: len(kv[1]["genes"]))  # Smallest groups first, so a truncated run still completes the most groups.
+deadline=time.time()+30   # Wall-clock budget in seconds; unfinished groups are left for the next run.
 done=skip=0
 for g,d in items:
     safe="".join(ch if ch.isalnum() else "_" for ch in g)

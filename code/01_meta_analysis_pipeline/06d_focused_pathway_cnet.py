@@ -1,21 +1,17 @@
 #!/usr/bin/env python3
-"""
-06d_focused_pathway_cnet.py
--------------------------------------------------------------
-Build a pathway Cnet whose enrichment TERMS come from enriching ONLY
-that pathway's consensus genes (the way the GOplot chord does), rather
-than filtering the whole-consensus enrichment by keyword.
+"""Pathway Cnet whose terms come from enriching only that pathway's consensus genes, rather than keyword-filtering the whole-consensus enrichment as 06_make_cnets.py does.
 
-Difference vs 06_make_cnets.py:
-  06   : terms = (enrichment of all 4769 consensus genes) filtered to
-         pathway-keyword / overlap, then greedy set-cover.
-  06d  : terms = (enrichment of just the pathway's consensus genes),
-         then greedy set-cover. -> sharp, pathway-specific terms.
-
-Same cnet_style.py styling. Output saved beside the standard cnet with a
-"_FocusedTerms" suffix:
-  Plots/Cnet plots/<Pathway>/<LFCfolder>/<PDF|PNG>/Cnet_<Pathway>_FocusedTerms_<LFC>.*
+Data/consensus_<thr>.csv plus a fresh Enrichr run -> Plots/Cnet plots/<Pathway>/<LFCfolder>/<PDF|PNG>/Cnet_<Pathway>_FocusedTerms_<LFC>.*
+Pathways: BBB (blood-brain barrier / MMP), Inflammatory (JAK-STAT3), Survival (PI3K/Akt), IonChannel.
 """
+import os as _os
+BASE = _os.environ.get("GLP1R_BASE")
+if not BASE:
+    raise SystemExit(
+        "Set GLP1R_BASE to the directory holding the analysis data tree, e.g.\n"
+        "  export GLP1R_BASE=/path/to/workspace"
+    )
+
 import os, re, csv, textwrap, sys, time
 import numpy as np
 import pandas as pd
@@ -30,7 +26,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from cnet_style import *
 from cnet_gene_lists import BBB_GENES, JAK_STAT3_GENES, PI3K_AKT_GENES, ION_CHANNEL_BASE_GENES
 
-BASE = "/sessions/amazing-zen-bardeen/mnt/Bulk RNA sequencing/Finalized Bioinformatics Workflow"
+BASE = BASE + "/mnt/Bulk RNA sequencing/Finalized Bioinformatics Workflow"
 DATA = os.path.join(BASE, "Data")
 PLOTS = os.path.join(BASE, "Plots", "Cnet plots")
 THR_FOLDER = {"LFC02": "LFC0.2", "LFC05": "LFC0.5", "LFC1": "LFC1"}
@@ -44,15 +40,18 @@ TITLES = {"BBB": "Blood-Brain Barrier / MMP", "Inflammatory": "JAK-STAT3 Inflamm
 
 
 def clean_term(t):
+    """Strip GO and Reactome accessions from a term and truncate it for display."""
     t = re.sub(r"\s*\(GO:\d+\)", "", t)
     t = re.sub(r"\s*R-HSA-\d+", "", t)
     return t[:52] + "..." if len(t) > 55 else t
 
 def wrap_label(t, width=TERM_WRAP_WIDTH):
+    """Hard-wrap a term label for use as node text."""
     return "\n".join(textwrap.wrap(t, width=width))
 
 
 def build(pathway, thr):
+    """Draw and save the focused-enrichment Cnet for one pathway and threshold."""
     cons = pd.read_csv(os.path.join(DATA, f"consensus_{thr}.csv"))
     cons_map = {r.gene_symbol.upper(): r.gene_symbol for r in cons.itertuples()}
     lfc_map = {r.gene_symbol.upper(): float(r.mean_log2FC) for r in cons.itertuples()}
@@ -61,7 +60,7 @@ def build(pathway, thr):
     if len(genes) < 3:
         print(f"  {pathway}/{thr}: only {len(genes)} consensus genes; skip"); return
 
-    # ---- enrich ONLY the pathway's consensus genes ----
+    # Enrich only this pathway's consensus genes, so the terms are pathway-specific.
     rows = []
     for db in DATABASES:
         for attempt in range(4):
@@ -77,9 +76,8 @@ def build(pathway, thr):
         print(f"  {pathway}/{thr}: no significant focused terms"); return
     enr.sort(key=lambda r: float(r["Adjusted P-value"]))
 
-    # ---- select TOP terms by adjusted p-value (like the GOplot chord), ----
-    # dropping near-duplicate terms (pathway-gene Jaccard >= 0.8 with one
-    # already chosen) so the network stays readable.
+    # Take the most significant terms, dropping any whose pathway-gene Jaccard with an
+    # already-chosen term is >= 0.8, so near-duplicates do not crowd the network.
     MAXT = 12
     selected, sel_sets = [], []
     for i in range(len(enr)):

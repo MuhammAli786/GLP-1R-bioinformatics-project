@@ -1,16 +1,16 @@
 #!/usr/bin/env python3
-"""
-06c_bbb_freq1_cnet.py
--------------------------------------------------------------
-A SEPARATE Blood-Brain-Barrier consensus concept-network that relaxes
-the consensus gene-frequency requirement from >= 2 groups to >= 1
-group (i.e. show every BBB gene PRESENT/significant in any group, not
-only recurrent ones). Same cnet_style.py styling as the main cnets.
+"""Blood-brain-barrier Cnet that relaxes the consensus rule from >= 2 groups to >= 1, so every BBB gene significant in any group is shown.
 
-Generated for each threshold (LFC0.2, LFC0.5, LFC1). Saved alongside
-the standard BBB cnet with a _Freq1 suffix:
-  Plots/Cnet plots/BBB/<LFC>/<PDF|PNG>/Cnet_BBB_Freq1_<LFC>.*
+Data/master_deg_<thr>.csv plus a fresh Enrichr run -> Plots/Cnet plots/BBB/<LFC>/<PDF|PNG>/Cnet_BBB_Freq1_<LFC>.*, for each of LFC0.2, LFC0.5 and LFC1.
 """
+import os as _os
+BASE = _os.environ.get("GLP1R_BASE")
+if not BASE:
+    raise SystemExit(
+        "Set GLP1R_BASE to the directory holding the analysis data tree, e.g.\n"
+        "  export GLP1R_BASE=/path/to/workspace"
+    )
+
 import os, re, csv, textwrap, sys, time
 import numpy as np
 import pandas as pd
@@ -28,23 +28,25 @@ from cnet_gene_lists import BBB_GENES, KEYWORD_FILTERS
 DATABASES = ['GO_Biological_Process_2023', 'GO_Molecular_Function_2023',
              'GO_Cellular_Component_2023', 'KEGG_2021_Human', 'Reactome_2022']
 
-BASE = "/sessions/amazing-zen-bardeen/mnt/Bulk RNA sequencing/Finalized Bioinformatics Workflow"
+BASE = BASE + "/mnt/Bulk RNA sequencing/Finalized Bioinformatics Workflow"
 DATA = os.path.join(BASE, "Data")
 PLOTS = os.path.join(BASE, "Plots", "Cnet plots", "BBB")
 THR_FOLDER = {"LFC02": "LFC0.2", "LFC05": "LFC0.5", "LFC1": "LFC1"}
 
 
 def clean_term(t):
+    """Strip GO and Reactome accessions from a term and truncate it for display."""
     t = re.sub(r"\s*\(GO:\d+\)", "", t)
     t = re.sub(r"\s*R-HSA-\d+", "", t)
     return t[:52] + "..." if len(t) > 55 else t
 
 def wrap_label(t, width=TERM_WRAP_WIDTH):
+    """Hard-wrap a term label for use as node text."""
     return "\n".join(textwrap.wrap(t, width=width))
 
 
 def presence_maps(thr):
-    """genes present (significant) in >= 1 group, with mean log2FC."""
+    """Return symbol maps for genes significant in >= 1 group, with mean log2FC."""
     m = pd.read_csv(os.path.join(DATA, f"master_deg_{thr}.csv"))
     g = m.groupby("symbol").agg(mean_lfc=("log2FC", "mean")).reset_index()
     cons_map = {s.upper(): s for s in g["symbol"]}
@@ -53,8 +55,7 @@ def presence_maps(thr):
 
 
 def enrich_present(genes):
-    """Run Enrichr on the present BBB gene list so term gene-lists include
-    the present-only genes (e.g. Mmp2, Mmp14)."""
+    """Run Enrichr on the present BBB genes so term gene-lists include present-only genes."""
     rows = []
     for db in DATABASES:
         for attempt in range(4):
@@ -68,6 +69,7 @@ def enrich_present(genes):
 
 
 def build(thr):
+    """Draw and save the relaxed-frequency BBB Cnet for one threshold."""
     cons_map, lfc_map = presence_maps(thr)
     input_genes = [cons_map[g.upper()] for g in BBB_GENES if g.upper() in cons_map]
     input_upper = {g.upper() for g in input_genes}
@@ -79,13 +81,14 @@ def build(thr):
         print(f"  {thr}: enrichment failed"); return
     enr = edf.to_dict("records")
     pat = re.compile(KEYWORD_FILTERS["BBB"])
-    # keep BBB-keyword terms OR significant terms OR terms overlapping >=2 input genes
+    # Keep a term on a BBB keyword match, padj < 0.05, or an overlap of >= 2 input genes.
     ft = [r for r in enr if pat.search(str(r["Term"])) or float(r["Adjusted P-value"]) < 0.05
           or len(set(str(r["Genes"]).upper().split(";")) & input_upper) >= 2]
     if not ft:
         print(f"  {thr}: no matching BBB terms"); return
     ft.sort(key=lambda r: float(r["Adjusted P-value"]))
 
+    # Greedy set cover: pick terms that add the most uncovered genes, breaking ties on Combined Score.
     covered, selected, remaining = set(), [], list(range(len(ft)))
     while len(selected) < MAX_TERMS and remaining:
         best = max(remaining, key=lambda i: (

@@ -1,15 +1,8 @@
-############################################################
-# GSE144455 - Prepare Metadata
-# Comparison: HI + PBS versus Naive + PBS at 3 hours
-############################################################
+# Prepare GSE144455 metadata: select HI+PBS vs Naive+PBS at 3h arrays
+# Input: data/GSE144455.rds -> Output: metadata/GSE144455_metadata_prepared.csv, metadata/GSE144455_HI_vs_naive_PBS_3h_samples.csv/.rds
 
 library(GEOquery)
 
-#-----------------------------------------------------------
-# 1. Load the GEO object
-#-----------------------------------------------------------
-
-# Use the saved file if script 01 created it
 if (file.exists("data/GSE144455.rds")) {
   
   gse <- readRDS("data/GSE144455.rds")
@@ -28,14 +21,9 @@ if (file.exists("data/GSE144455.rds")) {
 eset <- gse[[1]]
 pheno <- pData(eset)
 
-# Confirm sample order matches the expression matrix
 stopifnot(
   identical(rownames(pheno), colnames(exprs(eset)))
 )
-
-#-----------------------------------------------------------
-# 2. Inspect the channel-specific column names
-#-----------------------------------------------------------
 
 channel_columns <- grep(
   "time point|delay for observation|hypoxia|treatment|tissue",
@@ -46,12 +34,6 @@ channel_columns <- grep(
 
 print(channel_columns)
 
-#-----------------------------------------------------------
-# 3. Helper function
-#-----------------------------------------------------------
-
-# Returns a metadata column when it exists.
-# Otherwise, fills the column with NA.
 get_metadata_column <- function(data, column_name) {
   
   if (column_name %in% colnames(data)) {
@@ -61,10 +43,6 @@ get_metadata_column <- function(data, column_name) {
   }
   
 }
-
-#-----------------------------------------------------------
-# 4. Construct a clean metadata table
-#-----------------------------------------------------------
 
 sample_metadata <- data.frame(
   
@@ -105,16 +83,7 @@ sample_metadata <- data.frame(
   stringsAsFactors = FALSE
 )
 
-# Some channel-1 values may be absent because channel 1 is consistently
-# the naive/control reference. Retain the title for verification.
 print(sample_metadata)
-
-#-----------------------------------------------------------
-# 5. Identify the HI versus naive PBS arrays at 3 hours
-#-----------------------------------------------------------
-
-# Titles for this comparison contain "RV PBS 3h".
-# We also use channel-specific columns wherever available.
 
 is_3h <- sample_metadata$time_ch2 == "3h" |
   grepl("PBS 3h", sample_metadata$title, ignore.case = TRUE)
@@ -138,10 +107,6 @@ selected_metadata <- sample_metadata[
   ,
   drop = FALSE
 ]
-
-#-----------------------------------------------------------
-# 6. Verify the selected arrays
-#-----------------------------------------------------------
 
 cat("\n====================================================\n")
 cat("Selected arrays: HI + PBS versus Naive + PBS, 3 h\n")
@@ -170,17 +135,11 @@ if (nrow(selected_metadata) == 0) {
   )
 }
 
-# The title list shown previously suggests there should be
-# approximately three biological replicate arrays.
 if (nrow(selected_metadata) < 2) {
   warning(
     "Fewer than two arrays were selected. Check the metadata carefully."
   )
 }
-
-#-----------------------------------------------------------
-# 7. Save prepared metadata
-#-----------------------------------------------------------
 
 write.csv(
   sample_metadata,

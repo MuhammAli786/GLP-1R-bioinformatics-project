@@ -1,20 +1,17 @@
 #!/usr/bin/env Rscript
-# limma_array_engine.R
-# ---------------------------------------------------------------
-# GEO2R-style differential expression for Illumina GPL6885 arrays
+# GEO2R-style limma differential expression for Illumina GPL6885 arrays
 # (GSE71850/Acc10, GSE41345/Acc11, GSE39586/Acc12).
 #
-# Mirrors the GEO2R limma workflow supplied by the user:
-#   log2 auto-transform -> lmFit(~0+group) -> makeContrasts ->
-#   contrasts.fit -> eBayes(0.01) -> topTable(adjust="fdr", number=Inf)
+# Workflow: log2 auto-transform -> lmFit(~0+group) -> makeContrasts ->
+# contrasts.fit -> eBayes(0.01) -> topTable(adjust="fdr", number=Inf)
 #
-# Inputs (prepared by the Python driver, per dataset):
-#   <work>/<tag>_exprs.tsv    probe x sample expression matrix (ID_REF + GSMs)
-#   <work>/<tag>_groups.tsv   two cols: sample <tab> group
-#   <work>/<tag>_contrasts.tsv one contrast per line, e.g. "Exendin4-Control"
+# Inputs  (per dataset, prepared by the Python driver):
+#   <work>/<tag>_exprs.tsv      probe x sample matrix (ID_REF + GSMs)
+#   <work>/<tag>_groups.tsv     sample <tab> group
+#   <work>/<tag>_contrasts.tsv  one contrast per line, e.g. "Exendin4-Control"
 # Output:
 #   <work>/<tag>__<contrast>__topTable.tsv  (ID, logFC, adj.P.Val, P.Value, t, B)
-# ---------------------------------------------------------------
+
 suppressMessages(library(limma))
 
 args <- commandArgs(trailingOnly = TRUE)

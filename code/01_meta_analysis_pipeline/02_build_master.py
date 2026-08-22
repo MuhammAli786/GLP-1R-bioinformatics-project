@@ -1,39 +1,30 @@
 #!/usr/bin/env python3
+"""Standardize every GLP-1R-agonist / multi-agonist CNS DEG file to mouse gene symbols and build the master DEG table.
+
+Per-group DEG CSVs (RNA-seq DESeq2 + limma arrays) -> Data/master_deg_<thr>.csv (long: group x gene) and Data/group_catalog.csv.
+Thresholds are padj < 0.05 with |log2FC| >= 0.2 (LFC02), 0.5 (LFC05) and 1.0 (LFC1). Ensembl mouse IDs map to symbols via mygene; symbol columns are title-cased; arrays are already symbol-mapped by 01b. Each treatment-vs-control comparison within a region is its own group, never merged across regions or accessions.
 """
-02_build_master.py
--------------------------------------------------------------
-Standardize every GLP-1R-agonist / multi-agonist CNS DEG file to
-MOUSE gene symbols and build the per-comparison ("distinct group")
-master DEG table at two thresholds:
-    LFC02 : padj < 0.05 AND |log2FC| >= 0.2
-    LFC1  : padj < 0.05 AND |log2FC| >= 1.0
+import os as _os
+BASE = _os.environ.get("GLP1R_BASE")
+if not BASE:
+    raise SystemExit(
+        "Set GLP1R_BASE to the directory holding the analysis data tree, e.g.\n"
+        "  export GLP1R_BASE=/path/to/workspace"
+    )
 
-Gene-ID standardization:
-    Ensembl mouse (ENSMUSG..)  -> symbol  (mygene)
-    rat / mouse symbol columns -> mouse title-case
-    Illumina arrays            -> already symbol-mapped in 01b (limma)
-
-Each distinct treatment-vs-control comparison within a region is its
-own group (groups are NOT merged across regions/accessions).
-
-Outputs (Data/):
-    master_deg_LFC02.csv, master_deg_LFC1.csv   (long: group x gene)
-    group_catalog.csv                            (group -> acc/region/treatment, n genes)
-"""
 import os, glob, json, csv
 import pandas as pd
 import numpy as np
 
-STAGE   = "/sessions/amazing-zen-bardeen/stage"
+STAGE   = BASE + "/stage"
 ARRAYS  = os.path.join(STAGE, "arrays")
-OUTDATA = "/sessions/amazing-zen-bardeen/mnt/Bulk RNA sequencing/Finalized Bioinformatics Workflow/Data"
+OUTDATA = BASE + "/mnt/Bulk RNA sequencing/Finalized Bioinformatics Workflow/Data"
 os.makedirs(OUTDATA, exist_ok=True)
 
-# ---- full RNA-seq group config (g-index -> meta + symbol source) ----
-# source: 'index'=symbol is row index; 'gene_name'=use gene_name col;
-#         'ensembl'=map gene_id ENSMUSG -> symbol
+# (g-index, accession, region, treatment, symbol source). Source is 'index' (symbol is the
+# row index), 'gene_name' (use the gene_name column) or 'ensembl' (map gene_id ENSMUSG -> symbol).
 RNASEQ = [
- # Accession 1 excluded per user request
+ # Accession 1 is excluded.
  (6,3,"accumbens","GLP_1","gene_name"), (7,3,"accumbens","GLP_1_MK_801","gene_name"),
  (8,3,"brainstem","GLP_1","gene_name"), (9,3,"brainstem","GLP_1_MK_801","gene_name"),
  (10,3,"hypothalamus","GLP_1","gene_name"), (11,3,"hypothalamus","GLP_1_MK_801","gene_name"),
@@ -55,6 +46,7 @@ THRESHOLDS = {"LFC02": 0.2, "LFC05": 0.5, "LFC1": 1.0}
 
 
 def mouse_sym(s):
+    """Normalize a gene symbol to mouse title-case, or None if it is missing."""
     s = str(s).strip()
     if not s or s.lower() in ("nan", "na", "none"):
         return None
@@ -62,6 +54,7 @@ def mouse_sym(s):
 
 
 def build_ensembl_map(ens_ids):
+    """Query mygene in batches of 1000 for mouse ENSMUSG -> symbol."""
     import mygene
     mg = mygene.MyGeneInfo()
     ens_ids = sorted(ens_ids)
@@ -78,6 +71,7 @@ def build_ensembl_map(ens_ids):
 
 
 def load_group_df(gidx, acc, source):
+    """Load one group's DEG CSV as raw_sym/lfc/padj, or None if unusable."""
     path = os.path.join(STAGE, f"g{gidx:02d}_acc{acc}.csv")
     if not os.path.exists(path) or os.path.getsize(path) == 0:
         return None
@@ -98,7 +92,7 @@ def load_group_df(gidx, acc, source):
 
 
 def main():
-    # 1. collect ENSMUSG ids for ensembl-source groups
+    """Build and write the master DEG tables and group catalog."""
     ens_ids = set()
     for gidx, acc, region, treat, source in RNASEQ:
         if source != "ensembl":
@@ -107,7 +101,7 @@ def main():
         if df is not None:
             ens_ids.update(x for x in df["raw_sym"] if str(x).startswith("ENSMUSG"))
     print(f"Ensembl IDs to map: {len(ens_ids)}")
-    cache = "/sessions/amazing-zen-bardeen/work/ens_map.json"
+    cache = BASE + "/work/ens_map.json"
     if os.path.exists(cache):
         ens_map = json.load(open(cache))
         print(f"Ensembl map loaded from cache: {len(ens_map)}")
@@ -115,14 +109,12 @@ def main():
         ens_map = build_ensembl_map(ens_ids) if ens_ids else {}
         print(f"Ensembl mapped: {len(ens_map)}")
 
-    # 2. assemble all groups (RNA-seq readable + arrays)
     group_rows = {t: [] for t in THRESHOLDS}
     catalog = []
     skipped = []
 
     def add_group(acc, region, treat, df, gse, kind):
         gname = f"Acc{acc}_{region}_{treat}"
-        # standardize symbol
         syms = []
         for raw in df["raw_sym"]:
             if kind == "ensembl":
@@ -162,7 +154,6 @@ def main():
             continue
         add_group(acc, region, treat, df, gse_map.get(acc, ""), source)
 
-    # arrays
     amani = json.load(open(os.path.join(ARRAYS, "array_manifest.json")))
     for a in amani:
         df = pd.read_csv(a["file"]).rename(columns={"log2FoldChange": "lfc"})
@@ -170,7 +161,6 @@ def main():
         add_group(a["acc"], a["region"], a["treatment"], df[["raw_sym","lfc","padj"]],
                   a["gse"], "array")
 
-    # 3. write outputs
     for thr in THRESHOLDS:
         m = pd.DataFrame(group_rows[thr])
         m.to_csv(os.path.join(OUTDATA, f"master_deg_{thr}.csv"), index=False)

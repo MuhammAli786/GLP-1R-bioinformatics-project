@@ -1,29 +1,29 @@
 #!/usr/bin/env python3
+"""Build the input tables GOplot's circle_dat() needs from the consensus meta-analysis.
+
+Inputs: consensus_LFC02.csv and enrichment_LFC02.csv -> <name>_terms.csv
+(Category, ID, Term, Genes, adj_pval) and <name>_genes.csv (ID, logFC).
+Two sets are produced: consensus, from the existing consensus GO enrichment; and
+restricted, where for each curated pathway (BBB, Inflammatory, Survival,
+IonChannel) the consensus genes are intersected with that pathway's gene list and
+re-enriched against GO BP/MF/CC, KEGG and Reactome.
+Requires a python with pandas and gseapy.
 """
-prepare_goplot_data.py
--------------------------------------------------------------
-Builds the input tables that GOplot's circle_dat() needs, from the
-consensus meta-analysis outputs:
+import os as _os
+BASE = _os.environ.get("GLP1R_BASE")
+if not BASE:
+    raise SystemExit(
+        "Set GLP1R_BASE to the directory holding the analysis data tree, e.g.\n"
+        "  export GLP1R_BASE=/path/to/workspace"
+    )
 
-  <name>_terms.csv : Category, ID, Term, Genes, adj_pval   (GO BP/MF/CC)
-  <name>_genes.csv : ID, logFC
-
-Two kinds of inputs are produced:
-  * Consensus  — uses the already-computed consensus GO enrichment.
-  * Restricted — for each curated pathway (BBB, Inflammatory, Survival,
-    IonChannel) the consensus genes are intersected with the pathway
-    gene list and RE-ENRICHED against GO (BP/MF/CC) so the term/gene
-    tables are specific to that mechanism.
-
-Run with the GOplot env python (any python with pandas + gseapy).
-"""
 import os, re, sys
 import pandas as pd
 import gseapy as gp
 
-BASE = "/sessions/amazing-zen-bardeen/mnt/Bulk RNA sequencing/Finalized Bioinformatics Workflow"
+BASE = BASE + "/mnt/Bulk RNA sequencing/Finalized Bioinformatics Workflow"
 DATA = os.path.join(BASE, "Data")
-OUT = "/sessions/amazing-zen-bardeen/mnt/Bulk RNA sequencing/GOPLOT analyis/data"
+OUT = BASE + "/mnt/Bulk RNA sequencing/GOPLOT analyis/data"
 os.makedirs(OUT, exist_ok=True)
 sys.path.insert(0, os.path.join(BASE, "scripts"))
 from cnet_gene_lists import BBB_GENES, JAK_STAT3_GENES, PI3K_AKT_GENES, ION_CHANNEL_BASE_GENES
@@ -48,7 +48,7 @@ def parse_id(term):
 
 
 def terms_from_enrichment(df):
-    """df: gseapy results -> tidy term table with Category in BP/MF/CC/KEGG/Reactome."""
+    """Turn gseapy results into a tidy term table with Category in BP/MF/CC/KEGG/Reactome."""
     rows = []
     for _, r in df.iterrows():
         if r['Gene_set'] not in CAT:
@@ -65,7 +65,7 @@ def terms_from_enrichment(df):
 
 
 def write_pair(name, terms_df, genes_df):
-    """Write GO term table + genes, plus separate KEGG and Reactome term tables."""
+    """Write the GO term and gene tables, plus separate KEGG and Reactome term tables."""
     go = terms_df[terms_df['Category'].isin(['BP', 'MF', 'CC'])]
     go.to_csv(os.path.join(OUT, f"{name}_terms.csv"), index=False)
     genes_df.to_csv(os.path.join(OUT, f"{name}_genes.csv"), index=False)
@@ -81,14 +81,14 @@ def main():
     cons = pd.read_csv(os.path.join(DATA, f"consensus_{THR}.csv"))     # gene_symbol, n_groups, mean_log2FC
     cons_lfc = dict(zip(cons['gene_symbol'], cons['mean_log2FC']))
 
-    # ---- Consensus (reuse existing enrichment) ----
+    # Consensus set: reuse the precomputed enrichment, keeping adj p < 0.05
     enr = pd.read_csv(os.path.join(DATA, f"enrichment_{THR}.csv"))
     enr = enr[enr['Adjusted P-value'] < 0.05]
     cterms = terms_from_enrichment(enr)
     cgenes = cons[['gene_symbol', 'mean_log2FC']].rename(columns={'gene_symbol': 'ID', 'mean_log2FC': 'logFC'})
     write_pair("consensus", cterms, cgenes)
 
-    # ---- Restricted pathways ----
+    # Restricted sets: one re-enrichment per curated pathway
     MECH = {"BBB": BBB_GENES, "Inflammatory": JAK_STAT3_GENES,
             "Survival": PI3K_AKT_GENES, "IonChannel": ION_CHANNEL_BASE_GENES}
     cons_keys = {g.upper() for g in cons['gene_symbol']}
@@ -102,7 +102,7 @@ def main():
         except Exception as e:
             print(f"  {name}: enrichr ERR {str(e)[:80]}"); continue
         terms = terms_from_enrichment(res)
-        # per category keep significant; if too few, keep top 12 by p-value
+        # per category keep terms at adj p < 0.05, or the top 12 by p-value if fewer than 3
         keep = []
         for cat in ['BP', 'MF', 'CC', 'KEGG', 'Reactome']:
             c = terms[terms['Category'] == cat]

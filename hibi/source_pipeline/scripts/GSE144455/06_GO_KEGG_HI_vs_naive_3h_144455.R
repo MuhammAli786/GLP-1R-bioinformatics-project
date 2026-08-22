@@ -1,17 +1,11 @@
-############################################################
-# GSE144455 - GO and KEGG Enrichment
-# Comparison: HI + PBS versus Naive + PBS at 3 hours
-############################################################
+# GO and KEGG enrichment for GSE144455 HI vs Naive at 3h
+# Input: results/GSE144455_HI_vs_naive_3h_all_annotated.csv -> Output: results/GSE144455_HI_vs_naive_3h_GO_BP.csv/.rds, results/GSE144455_HI_vs_naive_3h_KEGG.csv/.rds, figures/GO_BP_*.pdf/.png, figures/KEGG_*.pdf/.png
 
 library(clusterProfiler)
 library(enrichplot)
 library(org.Mm.eg.db)
 library(AnnotationDbi)
 library(ggplot2)
-
-#-----------------------------------------------------------
-# 1. Load annotated limma results
-#-----------------------------------------------------------
 
 results_file <-
   "results/GSE144455_HI_vs_naive_3h_all_annotated.csv"
@@ -29,10 +23,6 @@ de_results <- read.csv(
   stringsAsFactors = FALSE
 )
 
-#-----------------------------------------------------------
-# 2. Locate the gene-symbol column
-#-----------------------------------------------------------
-
 possible_symbol_columns <- c(
   "Gene.Symbol",
   "Gene symbol",
@@ -48,7 +38,6 @@ symbol_column <- possible_symbol_columns[
   possible_symbol_columns %in% colnames(de_results)
 ][1]
 
-# Try a broader search if no exact match was found
 if (is.na(symbol_column)) {
   
   symbol_matches <- grep(
@@ -80,15 +69,10 @@ cat(
   "\n"
 )
 
-#-----------------------------------------------------------
-# 3. Clean gene symbols
-#-----------------------------------------------------------
-
 clean_symbols <- function(x) {
   
   x <- as.character(x)
   
-  # Keep the first annotation when several are present
   x <- sub("\\s*///.*$", "", x)
   x <- sub("\\s*//.*$", "", x)
   x <- sub("\\s*;.*$", "", x)
@@ -108,10 +92,6 @@ clean_symbols <- function(x) {
 de_results$clean_symbol <- clean_symbols(
   de_results[[symbol_column]]
 )
-
-#-----------------------------------------------------------
-# 4. Define significant DEGs
-#-----------------------------------------------------------
 
 deg <- de_results[
   !is.na(de_results$clean_symbol) &
@@ -135,10 +115,6 @@ cat(
   "\n"
 )
 
-#-----------------------------------------------------------
-# 5. Convert gene symbols to Entrez IDs
-#-----------------------------------------------------------
-
 deg_conversion <- bitr(
   unique(deg$clean_symbol),
   fromType = "SYMBOL",
@@ -146,7 +122,6 @@ deg_conversion <- bitr(
   OrgDb = org.Mm.eg.db
 )
 
-# Create background from all tested and annotated genes
 background_symbols <- unique(
   na.omit(de_results$clean_symbol)
 )
@@ -185,7 +160,6 @@ if (length(entrez_deg) < 10) {
   )
 }
 
-# Save the symbol-to-Entrez conversion
 write.csv(
   deg_conversion,
   paste0(
@@ -195,10 +169,6 @@ write.csv(
   ),
   row.names = FALSE
 )
-
-#-----------------------------------------------------------
-# 6. GO Biological Process enrichment
-#-----------------------------------------------------------
 
 ego <- enrichGO(
   gene = entrez_deg,
@@ -234,10 +204,6 @@ saveRDS(
   ego,
   "results/GSE144455_HI_vs_naive_3h_GO_BP.rds"
 )
-
-#-----------------------------------------------------------
-# 7. Save GO plots only when results exist
-#-----------------------------------------------------------
 
 if (nrow(go_results) > 0) {
   
@@ -295,10 +261,6 @@ if (nrow(go_results) > 0) {
   )
 }
 
-#-----------------------------------------------------------
-# 8. KEGG pathway enrichment
-#-----------------------------------------------------------
-
 ekegg <- enrichKEGG(
   gene = entrez_deg,
   universe = entrez_background,
@@ -311,7 +273,6 @@ ekegg <- enrichKEGG(
   qvalueCutoff = 0.05
 )
 
-# Convert Entrez IDs to readable mouse symbols
 if (nrow(as.data.frame(ekegg)) > 0) {
   
   ekegg <- setReadable(
@@ -339,10 +300,6 @@ saveRDS(
   ekegg,
   "results/GSE144455_HI_vs_naive_3h_KEGG.rds"
 )
-
-#-----------------------------------------------------------
-# 9. Save KEGG plots only when results exist
-#-----------------------------------------------------------
 
 if (nrow(kegg_results) > 0) {
   
@@ -399,10 +356,6 @@ if (nrow(kegg_results) > 0) {
     "No KEGG plot was created."
   )
 }
-
-#-----------------------------------------------------------
-# 10. Final summary
-#-----------------------------------------------------------
 
 cat("\n============================================\n")
 cat("GSE144455 enrichment analysis complete\n")

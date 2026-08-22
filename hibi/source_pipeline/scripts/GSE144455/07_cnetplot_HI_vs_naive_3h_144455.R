@@ -1,16 +1,10 @@
-############################################################
-# GSE144455 - GO Cnet Plot
-# Comparison: HI + PBS versus Naive + PBS at 3 hours
-############################################################
+# Create GO cnet plot for GSE144455 HI vs Naive at 3h
+# Input: results/GSE144455_HI_vs_naive_3h_GO_BP.rds, results/GSE144455_HI_vs_naive_3h_DEGs_annotated.csv -> Output: figures/GSE144455_HI_vs_naive_3h_cnetplot.pdf/.png
 
 library(clusterProfiler)
 library(enrichplot)
 library(org.Mm.eg.db)
 library(ggplot2)
-
-#-----------------------------------------------------------
-# 1. Load GO enrichment object
-#-----------------------------------------------------------
 
 ego_file <-
   "results/GSE144455_HI_vs_naive_3h_GO_BP.rds"
@@ -32,10 +26,6 @@ if (nrow(as.data.frame(ego)) == 0) {
   )
 }
 
-#-----------------------------------------------------------
-# 2. Load annotated DEG results
-#-----------------------------------------------------------
-
 deg_file <-
   "results/GSE144455_HI_vs_naive_3h_DEGs_annotated.csv"
 
@@ -52,10 +42,6 @@ deg <- read.csv(
   check.names = FALSE,
   stringsAsFactors = FALSE
 )
-
-#-----------------------------------------------------------
-# 3. Detect the gene-symbol column
-#-----------------------------------------------------------
 
 possible_symbol_columns <- c(
   "Gene.Symbol",
@@ -101,10 +87,6 @@ cat(
   "\n"
 )
 
-#-----------------------------------------------------------
-# 4. Clean symbols and create fold-change vector
-#-----------------------------------------------------------
-
 clean_symbols <- function(x) {
   
   x <- as.character(x)
@@ -137,8 +119,6 @@ fold_change_data <- deg[
   drop = FALSE
 ]
 
-# When multiple probes map to the same symbol,
-# retain the probe with the largest absolute logFC.
 fold_change_data <- fold_change_data[
   order(
     abs(fold_change_data$logFC),
@@ -163,10 +143,6 @@ cat(
   length(geneList),
   "\n"
 )
-
-#-----------------------------------------------------------
-# 5. Check identifier overlap
-#-----------------------------------------------------------
 
 go_genes <- unique(
   unlist(
@@ -198,10 +174,6 @@ if (overlap_count == 0) {
   )
 }
 
-#-----------------------------------------------------------
-# 6. Build cnet plot
-#-----------------------------------------------------------
-
 show_n <- min(
   15,
   nrow(as.data.frame(ego))
@@ -213,10 +185,6 @@ cnet_plot <- cnetplot(
   foldChange = geneList,
   node_label = "all"
 )
-
-#-----------------------------------------------------------
-# 7. Save plot
-#-----------------------------------------------------------
 
 pdf(
   "figures/GSE144455_HI_vs_naive_3h_cnetplot.pdf",

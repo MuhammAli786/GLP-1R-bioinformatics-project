@@ -1,7 +1,4 @@
-############################################################
-# GSE238220
-# Inspect sample metadata and read-count file
-############################################################
+# GSE238220 inspect sample metadata and read-count file; input: metadata/GSE238220_raw_metadata.csv, data/GSE238220_supplementary/GSE238220_read_counts.tsv.gz -> output: console inspection
 
 library(readr)
 library(dplyr)
@@ -25,10 +22,7 @@ if (!file.exists(counts_file)) {
   )
 }
 
-#-----------------------------------------------------------
 # Metadata inspection
-#-----------------------------------------------------------
-
 metadata <- read.csv(
   metadata_file,
   check.names = FALSE,
@@ -68,10 +62,7 @@ for (column in characteristic_columns) {
   )
 }
 
-#-----------------------------------------------------------
 # Count-file inspection
-#-----------------------------------------------------------
-
 counts_preview <- read_tsv(
   counts_file,
   n_max = 6,

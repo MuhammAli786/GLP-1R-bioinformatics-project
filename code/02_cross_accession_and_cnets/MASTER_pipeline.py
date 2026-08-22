@@ -1,43 +1,37 @@
 """
-=============================================================================
-GLP-1R AGONIST META-ANALYSIS: COMPLETE PIPELINE
-=============================================================================
-Accessions: 3-8, 10-12 (excluding 1, 9)
-Species: Mouse (Acc 4 = rat, converted to mouse orthologs)
-Gene ID types: Ensembl (Acc 3,5,6), Gene Symbols (Acc 4,7,8), Illumina probes (Acc 10,11,12)
-Platform for probes: GPL6885 (Illumina MouseRef-8 v2)
+Reference header for the GLP-1R agonist cross-accession meta-analysis: pipeline
+description plus the pathway gene lists shared by the cnet scripts.
+
+Accessions 3-8 and 10-12 (1 and 9 excluded). Species mouse; accession 4 is rat,
+converted to mouse orthologs. Gene IDs are Ensembl (3, 5, 6), symbols (4, 7, 8),
+and Illumina probes (10, 11, 12) on GPL6885 (Illumina MouseRef-8 v2).
 
 Pipeline steps:
-  1. Load DEG files + standardize gene IDs
-  2. Build group-overlap consensus (treatment×region, freq≥2)
-  3. Run functional enrichment (GO BP/MF/CC, KEGG, Reactome)
-  4. Generate dot plots, barplots, heatmaps
-  5. Build cnet plots (greedy set-cover): All, JAK-STAT3, BBB, Akt/PI3K, Combined
+  1. Load DEG files and standardize gene IDs
+  2. Build group-overlap consensus (treatment x region, freq >= 2)
+  3. Functional enrichment (GO BP/MF/CC, KEGG, Reactome)
+  4. Dot plots, barplots, heatmaps
+  5. Cnet plots (greedy set-cover): All, JAK-STAT3, BBB, Akt/PI3K, Combined
 
 Two thresholds:
-  - LFC≥0.5: Uses *_significant.csv files (pre-filtered |LFC|≥0.5, padj<0.05)
-  - LFC≥0: Uses full DEG files (padj<0.05 only)
+  - |LFC| >= 0.5: *_significant.csv files, pre-filtered to |LFC| >= 0.5 and padj < 0.05
+  - |LFC| >= 0:   full DEG files, padj < 0.05 only
 
-Cnet plot style:
-  - Font size 20 for all labels
-  - Edge width 2.5, alpha 0.35
-  - Spring layout k=4.0, iterations=150, seed=42
-  - Figure size 30×26, transparent background
-  - RdBu_r colormap for log2FC
-  - Term labels: white on colored boxes (Set3 palette)
-  - Gene labels: white on dark boxes
-  - Greedy set-cover term selection (max 15 terms, maximize gene coverage)
-=============================================================================
+Cnet plot style: font size 20 for all labels; edge width 2.5, alpha 0.35; spring
+layout k=4.0, iterations=150, seed=42; figure 30x26, transparent background;
+RdBu_r colormap for log2FC; term labels white on Set3-coloured boxes; gene labels
+white on dark boxes; greedy set-cover term selection (max 15 terms, maximizing
+gene coverage).
+
+Step scripts:
+  - final_pipeline_step1.py: gene ID standardization and data loading
+  - step2b_fast.py: |LFC| >= 0 consensus building from full DEG files
+  - step3_enrichment.py: Enrichr analysis over 5 databases
+  - step4_plots.py: dot plots, barplots, heatmaps
+  - step5_cnets.py: cnet plot generation
 """
 
-# This is the documentation header. Individual step scripts:
-# - final_pipeline_step1.py: Gene ID standardization + data loading
-# - step2b_fast.py: LFC≥0 consensus building (full DEG files)
-# - step3_enrichment.py: Enrichr analysis (5 databases)
-# - step4_plots.py: Dot plots, barplots, heatmaps
-# - step5_cnets.py: Cnet plot generation
-
-# PATHWAY GENE LISTS (from GLP1R_Pathway_Gene_Tables.docx):
+# Pathway gene lists, from GLP1R_Pathway_Gene_Tables.docx.
 JAK_STAT3_GENES = [
     'Gfap','Il1r1','Il6ra','Il6st','Lifr','Osmr','Mapk1','Fyn','Akt1','Jak1',
     'Nfkbia','Nfkb2','Ikbkg','Pias2','Pias1','Ptpn11','Ptprd','Ptprt','Egfr',
@@ -66,14 +60,14 @@ AKT_PI3K_GENES = [
 
 COMBINED_GENES = list(set(JAK_STAT3_GENES + AKT_PI3K_GENES))  # 88 unique
 
-# TREATMENT CLASSIFICATIONS:
+# Treatment classifications:
 # GLP1_Mono: Liraglutide, Exendin-4, GLP-1, Ex4 (±TBI context)
 # Dual_Agonist: PYY+Lira, IP118/PY115, AC710222
 # Conjugate: GLP-1/MK-801 conjugates
 # Combination: Multi-drug combos (COMBO)
 # KD_Experiment: Knockdown experiments
 
-# ACCESSION INFO:
+# Accessions:
 # Acc 3 (GSE162614): Mouse, hypothalamus/accumbens/brainstem, GLP-1 conjugates
 # Acc 4 (GSE190218): Rat→Mouse, hypothalamus, Liraglutide/PYY
 # Acc 5 (GSE155178): Mouse, NTS/PVN/ARC, dual agonist IP118/PY115

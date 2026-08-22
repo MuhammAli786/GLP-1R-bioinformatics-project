@@ -1,3 +1,5 @@
+# Annotate and enrichment analysis for GSE36215 (HI vs Control)
+# Input: GSE36215.top.table.tsv, GPL6246-18741.txt -> Output: GSE36215_HI_vs_Control_annotated.csv, GO/KEGG dotplots, bar, cnetplot
 library(clusterProfiler)
 library(org.Mm.eg.db)
 library(enrichplot)

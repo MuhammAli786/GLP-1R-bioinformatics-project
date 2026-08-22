@@ -1,0 +1,607 @@
+arm,term,db,padj
+HIBI,Regulation Of Cell Migration,GO-BP,4.044011240273927e-17
+HIBI,Modulation Of Chemical Synaptic Transmission,GO-BP,1.6560426102411245e-14
+HIBI,MAPK signaling pathway,KEGG,3.0239537837766754e-14
+HIBI,TNF signaling pathway,KEGG,7.734641821906818e-14
+HIBI,Interleukin-10 Signaling,Reactome,2.3496112667576163e-13
+HIBI,Regulation Of Cell Population Proliferation,GO-BP,9.267705502519011e-13
+HIBI,Lipid and atherosclerosis,KEGG,2.164114790323633e-12
+HIBI,Neurexins And Neuroligins,Reactome,1.1611110209536315e-11
+HIBI,Immune System,Reactome,1.5532171791627853e-11
+HIBI,Chemical Synaptic Transmission,GO-BP,5.976386802570967e-11
+HIBI,Proteoglycans in cancer,KEGG,1.5118800661282086e-10
+HIBI,Human cytomegalovirus infection,KEGG,3.3471279135838085e-10
+HIBI,Cytokine Signaling In Immune System,Reactome,3.403981772098545e-10
+HIBI,Hemostasis,Reactome,3.91006826890579e-10
+HIBI,Positive Regulation Of Cell Migration,GO-BP,5.259652824835263e-10
+HIBI,Positive Regulation Of Excitatory Postsynaptic Potential,GO-BP,6.52715998971841e-10
+HIBI,Negative Regulation Of Cell Population Proliferation,GO-BP,6.75151314164148e-10
+HIBI,Positive Regulation Of Transcription By RNA Polymerase II,GO-BP,7.77209289981482e-10
+HIBI,Signaling By GPCR,Reactome,1.0825117018860712e-09
+HIBI,GPCR Downstream Signaling,Reactome,1.4895431727255718e-09
+HIBI,Aldosterone synthesis and secretion,KEGG,2.22045074901491e-09
+HIBI,Regulation Of Inflammatory Response,GO-BP,3.0602894827189073e-09
+HIBI,Neuron Development,GO-BP,5.428456066592958e-09
+HIBI,Signaling By Interleukins,Reactome,5.8805844075474885e-09
+HIBI,Positive Regulation Of DNA-templated Transcription,GO-BP,6.020689580496314e-09
+HIBI,Calcium signaling pathway,KEGG,7.894005998669594e-09
+HIBI,C-type lectin receptor signaling pathway,KEGG,8.071272234355932e-09
+HIBI,Positive Regulation Of Signal Transduction,GO-BP,1.1608373004285294e-08
+HIBI,Positive Regulation Of Response To External Stimulus,GO-BP,1.1730529718808074e-08
+HIBI,AGE-RAGE signaling pathway in diabetic complications,KEGG,1.2517588765537412e-08
+HIBI,Positive Regulation Of Intracellular Signal Transduction,GO-BP,1.3390806862210125e-08
+HIBI,Neuron Projection Development,GO-BP,1.3390806862210125e-08
+HIBI,Interleukin-4 And Interleukin-13 Signaling,Reactome,1.3618073200676988e-08
+HIBI,Positive Regulation Of Inflammatory Response,GO-BP,1.3787243251642443e-08
+HIBI,Positive Regulation Of MAPK Cascade,GO-BP,1.4187630054946164e-08
+HIBI,Modulation Of Excitatory Postsynaptic Potential,GO-BP,1.7403466637344244e-08
+HIBI,"Platelet Activation, Signaling And Aggregation",Reactome,2.0518340516647625e-08
+HIBI,Cytoskeleton,GO-CC,2.3604193812761944e-08
+HIBI,Synapse Assembly,GO-BP,2.5040445954082504e-08
+HIBI,GABA-ergic Synapse,GO-CC,2.54834000142216e-08
+HIBI,Activation Of NMDA Receptors And Postsynaptic Events,Reactome,3.062639629485783e-08
+HIBI,Negative Regulation Of Cellular Process,GO-BP,3.348071328140905e-08
+HIBI,Regulation Of Synapse Assembly,GO-BP,3.685331431509065e-08
+HIBI,Pathways in cancer,KEGG,5.128476946445752e-08
+HIBI,Apelin signaling pathway,KEGG,8.273556533671447e-08
+HIBI,Regulation Of ERK1 And ERK2 Cascade,GO-BP,8.657579060662886e-08
+HIBI,Positive Regulation Of Cell Motility,GO-BP,9.048165602299017e-08
+HIBI,Anterograde Trans-Synaptic Signaling,GO-BP,1.0288990954596297e-07
+HIBI,Positive Regulation Of Cytokine Production,GO-BP,1.0533366292326161e-07
+HIBI,Positive Regulation Of Synaptic Transmission,GO-BP,1.2778019171558754e-07
+HIBI,"Regulation Of Synaptic Transmission, Glutamatergic",GO-BP,1.446844931978945e-07
+HIBI,Cholinergic synapse,KEGG,1.593537228315525e-07
+HIBI,Human T-cell leukemia virus 1 infection,KEGG,1.6732164511552394e-07
+HIBI,Apoptosis,KEGG,1.6732164511552394e-07
+HIBI,Positive Regulation Of Peptidyl-Tyrosine Phosphorylation,GO-BP,1.702417543937402e-07
+HIBI,Positive Regulation Of Cell Junction Assembly,GO-BP,1.702417543937402e-07
+HIBI,IL-17 signaling pathway,KEGG,1.8119418881991044e-07
+HIBI,Calcium-Mediated Signaling,GO-BP,1.978785889666049e-07
+HIBI,Positive Regulation Of Synapse Assembly,GO-BP,2.409728629780143e-07
+HIBI,Positive Regulation Of Macromolecule Metabolic Process,GO-BP,2.584706881103535e-07
+HIBI,Kaposi sarcoma-associated herpesvirus infection,KEGG,3.588978261534442e-07
+HIBI,Rap1 signaling pathway,KEGG,3.83151218457077e-07
+HIBI,Regulation Of Apoptotic Process,GO-BP,3.953534408848683e-07
+HIBI,Positive Regulation Of Cell Differentiation,GO-BP,4.159224463161761e-07
+HIBI,Learning,GO-BP,4.593688942540172e-07
+HIBI,Regulation Of Gene Expression,GO-BP,4.876043026512606e-07
+HIBI,Inflammatory Response,GO-BP,5.238677689384955e-07
+HIBI,Response To Lipopolysaccharide,GO-BP,5.507209404039596e-07
+HIBI,Regulation Of Neuron Projection Development,GO-BP,5.507209404039596e-07
+HIBI,Positive Regulation Of Defense Response,GO-BP,5.992523110403763e-07
+HIBI,Neuron Projection Guidance,GO-BP,5.992523110403763e-07
+HIBI,Cellular Response To Lipopolysaccharide,GO-BP,5.992523110403763e-07
+HIBI,Synapse Organization,GO-BP,5.992523110403763e-07
+HIBI,Neuron Migration,GO-BP,6.551902078995024e-07
+HIBI,Nicotine addiction,KEGG,8.073590339818924e-07
+HIBI,Excitatory Synapse,GO-CC,8.794245760389264e-07
+HIBI,Cell-Cell Junction,GO-CC,1.4571102516096236e-06
+HIBI,Inflammatory mediator regulation of TRP channels,KEGG,1.5502091923947488e-06
+HIBI,PLC Beta Mediated Events,Reactome,1.5557435649140714e-06
+HIBI,Regulation Of Angiogenesis,GO-BP,1.5700502641946327e-06
+HIBI,Osteoclast differentiation,KEGG,1.5994038296706615e-06
+HIBI,Negative Regulation Of Intracellular Signal Transduction,GO-BP,1.954544375659635e-06
+HIBI,Cellular Response To Oxygen-Containing Compound,GO-BP,2.109227950057456e-06
+HIBI,Cellular Response To Molecule Of Bacterial Origin,GO-BP,2.169933900277716e-06
+HIBI,Regulation Of Establishment Of Endothelial Barrier,GO-BP,2.169933900277716e-06
+HIBI,Regulation Of miRNA Transcription,GO-BP,2.169933900277716e-06
+HIBI,Transmembrane Receptor Protein Tyrosine Kinase Signaling Pathway,GO-BP,2.4574728098310225e-06
+HIBI,Negative Regulation Of Cell Adhesion,GO-BP,2.8152036391998912e-06
+HIBI,Negative Regulation Of Cell Migration,GO-BP,2.815438245857209e-06
+HIBI,Post NMDA Receptor Activation Events,Reactome,3.0882936493737858e-06
+HIBI,DAG And IP3 Signaling,Reactome,3.0882936493737858e-06
+HIBI,Positive Regulation Of Nervous System Development,GO-BP,3.0906630801240715e-06
+HIBI,Innate Immune System,Reactome,3.139980797903517e-06
+HIBI,Fluid shear stress and atherosclerosis,KEGG,3.275747154602613e-06
+HIBI,Regulation Of MAPK Cascade,GO-BP,3.4331260630971576e-06
+HIBI,Positive Regulation Of Cellular Process,GO-BP,3.4331260630971576e-06
+HIBI,Positive Regulation Of Cellular Component Organization,GO-BP,3.4331260630971576e-06
+HIBI,Regulation Of Nitric Oxide Biosynthetic Process,GO-BP,3.6573323284572094e-06
+HIBI,Actin Cytoskeleton,GO-CC,3.941339633816312e-06
+HIBI,Negative Regulation Of Apoptotic Process,GO-BP,4.422591426961505e-06
+HIBI,Ca-dependent Events,Reactome,4.430865400306912e-06
+HIBI,NF-kappa B signaling pathway,KEGG,4.607144018126379e-06
+HIBI,Regulation Of Cell Adhesion,GO-BP,4.616999545542872e-06
+HIBI,Salmonella infection,KEGG,4.649530342815153e-06
+HIBI,Sphingolipid signaling pathway,KEGG,4.649530342815153e-06
+HIBI,G-protein Mediated Events,Reactome,5.92839700633291e-06
+HIBI,Rheumatoid arthritis,KEGG,7.73937780021228e-06
+HIBI,Insulin secretion,KEGG,7.73937780021228e-06
+HIBI,Positive Regulation Of Protein Phosphorylation,GO-BP,7.943186222059417e-06
+HIBI,Regulation Of Trans-Synaptic Signaling,GO-BP,7.993898912363254e-06
+HIBI,Regulation Of Astrocyte Differentiation,GO-BP,7.993898912363254e-06
+HIBI,Cellular Response To Lipid,GO-BP,8.128854947936394e-06
+HIBI,Negative Regulation Of Cell Motility,GO-BP,8.36862587248528e-06
+HIBI,Negative Regulation Of MAPK Cascade,GO-BP,9.92945142020348e-06
+HIBI,Positive Regulation Of Nitric Oxide Biosynthetic Process,GO-BP,1.0404552332869776e-05
+HIBI,G Alpha (I) Signaling Events,Reactome,1.2124727081190923e-05
+HIBI,CaM Pathway,Reactome,1.3433444142040042e-05
+HIBI,Negative Regulation Of Signal Transduction,GO-BP,1.3551871861349771e-05
+HIBI,Positive Regulation Of miRNA Transcription,GO-BP,1.405578987268728e-05
+HIBI,T cell receptor signaling pathway,KEGG,1.473792552232315e-05
+HIBI,Transcriptional misregulation in cancer,KEGG,1.5283808700829375e-05
+HIBI,Positive Regulation Of miRNA Metabolic Process,GO-BP,1.5765148200278152e-05
+HIBI,Positive Regulation Of Nitric Oxide Metabolic Process,GO-BP,1.606001386955516e-05
+HIBI,Positive Regulation Of Multicellular Organismal Process,GO-BP,1.6780134326344273e-05
+HIBI,Positive Regulation Of Apoptotic Process,GO-BP,1.7583787762557478e-05
+HIBI,Negative Regulation Of Transcription By RNA Polymerase II,GO-BP,1.7693541743323356e-05
+HIBI,Positive Regulation Of Cell Population Proliferation,GO-BP,1.7693541743323356e-05
+HIBI,Regulation Of Interleukin-8 Production,GO-BP,1.807893063462201e-05
+HIBI,Cell Junction Assembly,GO-BP,1.919140110855217e-05
+HIBI,Synaptic Membrane,GO-CC,2.0981308311681552e-05
+HIBI,Regulation Of Neuronal Synaptic Plasticity,GO-BP,2.2938575870027272e-05
+HIBI,Regulation Of calcineurin-NFAT Signaling Cascade,GO-BP,2.2938575870027272e-05
+HIBI,Cell-Cell Adhesion Via Plasma-Membrane Adhesion Molecules,GO-BP,2.347803209059176e-05
+HIBI,Central Nervous System Development,GO-BP,2.477910459097592e-05
+HIBI,Protein Kinase Binding,GO-MF,2.482106483555764e-05
+HIBI,Ras signaling pathway,KEGG,2.505774875589229e-05
+HIBI,GnRH signaling pathway,KEGG,2.505774875589229e-05
+HIBI,Pathogenic Escherichia coli infection,KEGG,2.505774875589229e-05
+HIBI,Hippo signaling pathway,KEGG,2.505774875589229e-05
+HIBI,Positive Regulation Of Gene Expression,GO-BP,2.652398345438304e-05
+HIBI,Negative Regulation Of DNA-templated Transcription,GO-BP,2.652398345438304e-05
+HIBI,Regulation Of Peptidyl-Tyrosine Phosphorylation,GO-BP,2.652398345438304e-05
+HIBI,Aortic Valve Development,GO-BP,2.67378881288872e-05
+HIBI,Negative Regulation Of Mitotic Cell Cycle Phase Transition,GO-BP,2.67378881288872e-05
+HIBI,Regulation Of Protein-Containing Complex Assembly,GO-BP,2.67378881288872e-05
+HIBI,Negative Regulation Of Extrinsic Apoptotic Signaling Pathway,GO-BP,2.67378881288872e-05
+HIBI,Cellular senescence,KEGG,2.7127062854014287e-05
+HIBI,Transmitter-Gated Monoatomic Ion Channel Activity,GO-MF,2.763938488101031e-05
+HIBI,Protein Tyrosine Phosphatase Activity,GO-MF,2.763938488101031e-05
+HIBI,Regulation Of Tumor Necrosis Factor Production,GO-BP,2.793781764046473e-05
+HIBI,Regulation Of Anatomical Structure Morphogenesis,GO-BP,2.793781764046473e-05
+HIBI,HIF-1 signaling pathway,KEGG,2.8643979628746985e-05
+HIBI,Glutamate Receptor Signaling Pathway,GO-BP,2.969814593297867e-05
+HIBI,Chagas disease,KEGG,3.076084601384018e-05
+HIBI,"Unblocking Of NMDA Receptors, Glutamate Binding And Activation",Reactome,3.259554696408141e-05
+HIBI,L1CAM Interactions,Reactome,3.259554696408141e-05
+HIBI,Negative Regulation Of NMDA Receptor-Mediated Neuronal Transmission,Reactome,3.259554696408141e-05
+HIBI,Cellular Response To Organic Cyclic Compound,GO-BP,3.5998061736154874e-05
+HIBI,Regulation Of Cell Differentiation,GO-BP,3.746400684876931e-05
+HIBI,Regulation Of MAP Kinase Activity,GO-BP,3.7486173049495184e-05
+HIBI,Regulation Of MECP2 Expression And Activity,Reactome,3.9463948166106886e-05
+HIBI,Positive Regulation Of Glial Cell Differentiation,GO-BP,4.155356325901925e-05
+HIBI,Negative Regulation Of Cellular Component Organization,GO-BP,4.155356325901925e-05
+HIBI,Toll-like receptor signaling pathway,KEGG,4.205277278091645e-05
+HIBI,Amyloid-Beta Binding,GO-MF,4.271897527317749e-05
+HIBI,Glioma,KEGG,4.347444398611831e-05
+HIBI,Positive Regulation Of DNA-binding Transcription Factor Activity,GO-BP,4.403420826289303e-05
+HIBI,Dendrite Membrane,GO-CC,4.686640345022844e-05
+HIBI,Renin secretion,KEGG,4.9178475199573344e-05
+HIBI,African trypanosomiasis,KEGG,4.9178475199573344e-05
+HIBI,Cytokine-cytokine receptor interaction,KEGG,4.9178475199573344e-05
+HIBI,Positive Regulation Of ERK1 And ERK2 Cascade,GO-BP,4.9465832626872514e-05
+HIBI,Regulation Of Blood Vessel Endothelial Cell Migration,GO-BP,4.984094952640874e-05
+HIBI,Signaling By VEGF,Reactome,5.0640555858590415e-05
+HIBI,Cellular Response To Growth Factor Stimulus,GO-BP,5.108686343069308e-05
+HIBI,"Parathyroid hormone synthesis, secretion and action",KEGG,5.18488301324735e-05
+HIBI,Regulation Of Neurogenesis,GO-BP,5.307789813541851e-05
+HIBI,Negative Regulation Of Multicellular Organismal Process,GO-BP,5.475824062171553e-05
+HIBI,Regulation Of p38MAPK Cascade,GO-BP,5.520773438754756e-05
+HIBI,Effects Of PIP2 Hydrolysis,Reactome,5.6639706058192704e-05
+HIBI,"Positive Regulation Of Synaptic Transmission, Glutamatergic",GO-BP,5.741844870879543e-05
+HIBI,Regulation Of Endothelial Cell Migration,GO-BP,5.827821531443408e-05
+HIBI,Negative Regulation Of G1/S Transition Of Mitotic Cell Cycle,GO-BP,6.126835280254344e-05
+HIBI,Regulation Of Transcription By RNA Polymerase II,GO-BP,6.251624159251084e-05
+HIBI,Negative Regulation Of Cell Differentiation,GO-BP,6.380317468867393e-05
+HIBI,Insulin resistance,KEGG,6.730016538958222e-05
+HIBI,Negative Regulation Of Nervous System Development,GO-BP,6.863790624385685e-05
+HIBI,Regulation Of Intracellular Signal Transduction,GO-BP,7.344485796644605e-05
+HIBI,Chemokine signaling pathway,KEGG,7.3709289556706e-05
+HIBI,Melanogenesis,KEGG,7.3709289556706e-05
+HIBI,Positive Regulation Of Angiogenesis,GO-BP,7.380493534121134e-05
+HIBI,Cortisol synthesis and secretion,KEGG,8.022739127060821e-05
+HIBI,Calcium Ion Transmembrane Import Into Cytosol,GO-BP,8.206980633764095e-05
+HIBI,Cellular Response To Cytokine Stimulus,GO-BP,8.48115733922562e-05
+HIBI,Inorganic Anion Transmembrane Transport,GO-BP,8.527739315568062e-05
+HIBI,Artery Development,GO-BP,8.527739315568062e-05
+HIBI,G Alpha (Q) Signaling Events,Reactome,9.377273915368776e-05
+HIBI,Chloride Transport,GO-BP,9.48851189437212e-05
+HIBI,CLEC7A (Dectin-1) Induces NFAT Activation,Reactome,9.74685607496108e-05
+HIBI,Negative Regulation Of Macromolecule Metabolic Process,GO-BP,9.871360946912774e-05
+HIBI,Response To Elevated Platelet Cytosolic Ca2+,Reactome,9.8935490051334e-05
+HIBI,Oncogenic MAPK Signaling,Reactome,9.8935490051334e-05
+HIBI,Response To Endoplasmic Reticulum Stress,GO-BP,0.0001046112656916
+HIBI,VEGFA-VEGFR2 Pathway,Reactome,0.0001096354651586
+HIBI,Interaction Between L1 And Ankyrins,Reactome,0.0001096354651586
+HIBI,Positive Regulation Of Endothelial Cell Migration,GO-BP,0.000113108010037
+HIBI,Memory,GO-BP,0.0001150227231286
+HIBI,Regulation Of Bone Mineralization,GO-BP,0.0001150227231286
+HIBI,GABAergic synapse,KEGG,0.0001177952813222
+HIBI,Phosphatidylinositol signaling system,KEGG,0.0001229542947895
+HIBI,Chondrocyte Differentiation,GO-BP,0.0001258723691
+HIBI,Negative Regulation Of Cell Junction Assembly,GO-BP,0.0001258723691
+HIBI,Regulation Of Tyrosine Phosphorylation Of STAT Protein,GO-BP,0.0001258723691
+HIBI,Regulation Of Endothelial Cell Development,GO-BP,0.0001338211067746
+HIBI,Cushing syndrome,KEGG,0.0001374285491116
+HIBI,Protein Dephosphorylation,GO-BP,0.0001405904658686
+HIBI,Breast cancer,KEGG,0.0001435535822197
+HIBI,Regulation Of Postsynaptic Membrane Potential,GO-BP,0.0001504338567976
+HIBI,Receptor-type Tyrosine-Protein Phosphatases,Reactome,0.0001528305046902
+HIBI,Regulation Of Receptor Signaling Pathway Via JAK-STAT,GO-BP,0.0001533607746472
+HIBI,Receptor Ligand Activity,GO-MF,0.0001568012126599
+HIBI,Response To Cytokine,GO-BP,0.0001574268283547
+HIBI,Negative Regulation Of Protein Phosphorylation,GO-BP,0.0001574268283547
+HIBI,Sequence-Specific Double-Stranded DNA Binding,GO-MF,0.0001578429224305
+HIBI,Assembly And Cell Surface Presentation Of NMDA Receptors,Reactome,0.0001604082878464
+HIBI,Cardiac Conduction,Reactome,0.0001604082878464
+HIBI,Endothelial Cell Development,GO-BP,0.0001679175573271
+HIBI,Regulation Of JNK Cascade,GO-BP,0.0001679175573271
+HIBI,Regulation Of Dendritic Spine Morphogenesis,GO-BP,0.0001694438222473
+HIBI,HSF1-dependent Transactivation,Reactome,0.0001744573937311
+HIBI,Positive Regulation Of Programmed Cell Death,GO-BP,0.0001789919334638
+HIBI,Glutamate Receptor Binding,GO-MF,0.0001813197391256
+HIBI,Ca2+ Pathway,Reactome,0.0001817225934471
+HIBI,Regulation Of Smooth Muscle Cell Proliferation,GO-BP,0.0001879735404873
+HIBI,Cellular Response To Transforming Growth Factor Beta Stimulus,GO-BP,0.0001955344017173
+HIBI,Kinase Binding,GO-MF,0.000200029863517
+HIBI,Chloride Transmembrane Transport,GO-BP,0.0002008769738022
+HIBI,Regulation Of Neurotransmitter Receptor Activity,GO-BP,0.0002047112050303
+HIBI,Positive Regulation Of Interleukin-8 Production,GO-BP,0.0002047112050303
+HIBI,"Glutamate Binding, Activation Of AMPA Receptors And Synaptic Plasticity",Reactome,0.0002047904705281
+HIBI,GTPase Regulator Activity,GO-MF,0.0002047944749609
+HIBI,GTPase Activator Activity,GO-MF,0.0002047944749609
+HIBI,Positive Regulation Of Nucleic Acid-Templated Transcription,GO-BP,0.0002049147447353
+HIBI,Positive Regulation Of Vasculature Development,GO-BP,0.0002049147447353
+HIBI,Positive Regulation Of Tumor Necrosis Factor Superfamily Cytokine Production,GO-BP,0.0002102432096173
+HIBI,Synaptic Adhesion-Like Molecules,Reactome,0.0002238192502098
+HIBI,Cytokine-Mediated Signaling Pathway,GO-BP,0.0002243170968145
+HIBI,Malaria,KEGG,0.0002392493451932
+HIBI,ESR-mediated Signaling,Reactome,0.0002404138783186
+HIBI,TGF-beta signaling pathway,KEGG,0.0002413774668051
+HIBI,Legionellosis,KEGG,0.0002413774668051
+HIBI,Negative Regulation Of Biomineral Tissue Development,GO-BP,0.0002524910568376
+HIBI,Response To Glucocorticoid,GO-BP,0.0002535389697998
+HIBI,Response To Molecule Of Bacterial Origin,GO-BP,0.0002535389697998
+HIBI,MAPK Cascade,GO-BP,0.0002535389697998
+HIBI,Positive Regulation Of Protein-Containing Complex Assembly,GO-BP,0.0002535389697998
+HIBI,Regulation Of Endothelial Cell Apoptotic Process,GO-BP,0.0002541782495982
+HIBI,Calcineurin Activates NFAT,Reactome,0.0002748090819392
+HIBI,Regulation Of Interleukin-6 Production,GO-BP,0.0002773140729191
+HIBI,Ionotropic Glutamate Receptor Complex,GO-CC,0.0002788309114777
+HIBI,Adherens Junction,GO-CC,0.0002788309114777
+HIBI,Hepatitis B,KEGG,0.0002824130271074
+HIBI,Transcription Regulatory Region Nucleic Acid Binding,GO-MF,0.000282435968362
+HIBI,Regulation Of Interleukin-1 Beta Production,GO-BP,0.0002876694377638
+HIBI,Trafficking Of GluR2-containing AMPA Receptors,Reactome,0.0002876700888753
+HIBI,Axon Development,GO-BP,0.0002918047278506
+HIBI,Positive Regulation Of Endothelial Cell Proliferation,GO-BP,0.0002958628892922
+HIBI,Generation Of Neurons,GO-BP,0.0002958628892922
+HIBI,Cell Chemotaxis,GO-BP,0.0003002026942165
+HIBI,Calcium Ion Transport Into Cytosol,GO-BP,0.0003002026942165
+HIBI,Excitatory Synapse Assembly,GO-BP,0.0003002026942165
+HIBI,Yersinia infection,KEGG,0.0003041016952895
+HIBI,Estrogen signaling pathway,KEGG,0.0003041016952895
+HIBI,Toll Like Receptor 4 (TLR4) Cascade,Reactome,0.0003095683146028
+HIBI,T Cell Migration,GO-BP,0.0003155555524407
+HIBI,Positive Regulation Of Transcription From RNA Polymerase II Promoter In Response To Stress,GO-BP,0.0003155555524407
+HIBI,Locomotor Rhythm,GO-BP,0.0003220110178091
+HIBI,Actin Binding,GO-MF,0.0003363776351066
+HIBI,Chaperone Cofactor-Dependent Protein Refolding,GO-BP,0.0003370483224126
+HIBI,Ventricular Septum Morphogenesis,GO-BP,0.0003370483224126
+HIBI,Positive Regulation Of Tumor Necrosis Factor Production,GO-BP,0.0003370483224126
+HIBI,VEGF signaling pathway,KEGG,0.0003379717690833
+HIBI,Myeloid Leukocyte Differentiation,GO-BP,0.0003412467263604
+HIBI,Plasma Membrane Bounded Cell Projection Organization,GO-BP,0.0003412467263604
+HIBI,Blood Vessel Endothelial Cell Migration,GO-BP,0.0003461393168319
+HIBI,Positive Regulation Of Cellular Component Biogenesis,GO-BP,0.0003461393168319
+HIBI,Inhibitory Synapse Assembly,GO-BP,0.0003494909867461
+HIBI,PI3K-Akt signaling pathway,KEGG,0.0003495540279654
+HIBI,Negative Regulation Of MAP Kinase Activity,GO-BP,0.0003559572155975
+HIBI,Apoptotic Process,GO-BP,0.0003831911427425
+HIBI,Positive Regulation Of mRNA Catabolic Process,GO-BP,0.0003859971871416
+HIBI,Second-Messenger-Mediated Signaling,GO-BP,0.0003995577819547
+HIBI,GABA-gated Chloride Ion Channel Activity,GO-MF,0.0004032965184499
+HIBI,Positive Regulation Of Hydrolase Activity,GO-BP,0.0004200742600566
+HIBI,Human immunodeficiency virus 1 infection,KEGG,0.0004230939700687
+HIBI,Positive Regulation Of Cell Projection Organization,GO-BP,0.0004324042183885
+HIBI,Negative Regulation Of Programmed Cell Death,GO-BP,0.0004324042183885
+HIBI,Sprouting Angiogenesis,GO-BP,0.0004363716036966
+HIBI,Cytokine Activity,GO-MF,0.0004413083229933
+HIBI,Establishment Of Endothelial Barrier,GO-BP,0.0004506759129606
+HIBI,Extra-nuclear Estrogen Signaling,Reactome,0.0004544152741258
+HIBI,GABA Receptor Activation,Reactome,0.0004544152741258
+HIBI,VEGFR2 Mediated Cell Proliferation,Reactome,0.0004544152741258
+HIBI,Voltage-Gated Monoatomic Cation Channel Activity,GO-MF,0.0004558165316333
+HIBI,Pertussis,KEGG,0.0004862947277052
+HIBI,Brain Development,GO-BP,0.000491465533873
+HIBI,Axon Extension,GO-BP,0.0004966028062884
+HIBI,Synaptic Vesicle Endocytosis,GO-BP,0.0005049619354742
+HIBI,Positive Regulation Of Myeloid Leukocyte Differentiation,GO-BP,0.0005049619354742
+HIBI,Viral protein interaction with cytokine and cytokine receptor,KEGG,0.0005056693119643
+HIBI,Blood Vessel Morphogenesis,GO-BP,0.0005348692730178
+HIBI,Calcium Ion Binding,GO-MF,0.0005553836903003
+HIBI,Positive Regulation Of Developmental Process,GO-BP,0.0005769416972204
+HIBI,Neuron Cell-Cell Adhesion,GO-BP,0.0005909436463423
+HIBI,Regulation Of Macrophage Differentiation,GO-BP,0.0005909436463423
+HIBI,"Synaptic Transmission, GABAergic",GO-BP,0.0005909436463423
+HIBI,Regulation Of Interleukin-2 Production,GO-BP,0.0005909436463423
+HIBI,Positive Regulation Of Macrophage Differentiation,GO-BP,0.0005909436463423
+HIBI,Peptidyl-Tyrosine Dephosphorylation,GO-BP,0.0005981791432795
+HIBI,Positive Regulation Of Dephosphorylation,GO-BP,0.0005981791432795
+HIBI,Positive Regulation Of Stress-Activated MAPK Cascade,GO-BP,0.0005981791432795
+HIBI,Regulation Of Neuron Apoptotic Process,GO-BP,0.0005981791432795
+HIBI,Positive Regulation Of Protein Modification Process,GO-BP,0.0006095184230635
+HIBI,Regulation Of Dendrite Development,GO-BP,0.0006224368711998
+HIBI,Tuberculosis,KEGG,0.0006252209103085
+HIBI,Regulation Of Cardiac Muscle Contraction,GO-BP,0.0006261104450337
+HIBI,Negative Regulation Of Cell Cycle G1/S Phase Transition,GO-BP,0.0006261104450337
+HIBI,Monoatomic Anion Transmembrane Transport,GO-BP,0.0006261104450337
+HIBI,Amoebiasis,KEGG,0.0006388660059001
+HIBI,Colorectal cancer,KEGG,0.0006444362033001
+HIBI,Neutrophil Degranulation,Reactome,0.0006457568294692
+HIBI,Protein Phosphorylation,GO-BP,0.0006683205325712
+HIBI,Protein Kinase B Signaling,GO-BP,0.0006683205325712
+HIBI,Positive Regulation Of p38MAPK Cascade,GO-BP,0.0006683205325712
+HIBI,Neuron Differentiation,GO-BP,0.0006750884940949
+HIBI,Positive Regulation Of Calcineurin-Mediated Signaling,GO-BP,0.0006750884940949
+HIBI,Positive Regulation Of calcineurin-NFAT Signaling Cascade,GO-BP,0.0006750884940949
+HIBI,Regulation Of Epithelial To Mesenchymal Transition,GO-BP,0.0006750884940949
+HIBI,Positive Regulation Of Epithelial Cell Proliferation,GO-BP,0.0007396385703144
+HIBI,Positive Regulation Of Cell Communication,GO-BP,0.0007651440514033
+HIBI,Intrinsic Apoptotic Signaling Pathway In Response To Endoplasmic Reticulum Stress,GO-BP,0.0007651440514033
+HIBI,Negative Regulation Of Peptidyl-Tyrosine Phosphorylation,GO-BP,0.0007651440514033
+HIBI,Regulation Of Axonogenesis,GO-BP,0.0007651440514033
+HIBI,Toxoplasmosis,KEGG,0.0007652828425968
+HIBI,Relaxin signaling pathway,KEGG,0.0007652828425968
+HIBI,Signaling By ALK Fusions And Activated Point Mutants,Reactome,0.0007954945366587
+HIBI,Circulatory System Development,GO-BP,0.0007967344781495
+HIBI,Non-small cell lung cancer,KEGG,0.0007990173097405
+HIBI,Negative Regulation Of Microglial Cell Activation,GO-BP,0.0008023275646245
+HIBI,Postsynaptic Density Organization,GO-BP,0.0008023275646245
+HIBI,Regulation Of Myeloid Leukocyte Differentiation,GO-BP,0.0008023275646245
+HIBI,Epstein-Barr virus infection,KEGG,0.0008047636603637
+HIBI,Neutrophil Migration,GO-BP,0.0008183660543177
+HIBI,Serotonergic synapse,KEGG,0.0008265298578639
+HIBI,Wnt signaling pathway,KEGG,0.0008425634200819
+HIBI,Neutrophil Chemotaxis,GO-BP,0.0008654393946498
+HIBI,Regulation Of Osteoblast Differentiation,GO-BP,0.0008821467360169
+HIBI,Regulation Of Biomineral Tissue Development,GO-BP,0.0008827657377074
+HIBI,Positive Regulation Of Interleukin-2 Production,GO-BP,0.0008827657377074
+HIBI,Presynapse Assembly,GO-BP,0.0008827657377074
+HIBI,Negative Regulation Of Protein Processing,GO-BP,0.0008827657377074
+HIBI,Regulation Of Postsynapse Organization,GO-BP,0.0008827657377074
+HIBI,Regulation Of Endothelial Cell Proliferation,GO-BP,0.0008996834172724
+HIBI,Regulation Of Peptidyl-Serine Phosphorylation,GO-BP,0.0008996834172724
+HIBI,PD-L1 expression and PD-1 checkpoint pathway in cancer,KEGG,0.0009007844964277
+HIBI,Neuroactive ligand-receptor interaction,KEGG,0.0009007844964277
+HIBI,Ephrin Receptor Signaling Pathway,GO-BP,0.0009139925700094
+HIBI,Ligand-Gated Monoatomic Anion Channel Activity,GO-MF,0.0009151967525752
+HIBI,Cellular Response To Salt,GO-BP,0.0009169759945843
+HIBI,Response To Fibroblast Growth Factor,GO-BP,0.0009378954385691
+HIBI,Pulmonary Valve Development,GO-BP,0.0009378954385691
+HIBI,Long-Term Synaptic Potentiation,GO-BP,0.0009378954385691
+HIBI,Gamma-Aminobutyric Acid Signaling Pathway,GO-BP,0.0009378954385691
+HIBI,Ventricular Septum Development,GO-BP,0.0009525135864271
+HIBI,Aortic Valve Morphogenesis,GO-BP,0.0009525135864271
+HIBI,Positive Regulation Of Signaling,GO-BP,0.0009525135864271
+HIBI,Plasma Membrane Bounded Cell Projection Morphogenesis,GO-BP,0.0009777294859526
+HIBI,Regulation Of T-helper 17 Cell Differentiation,GO-BP,0.0009849415821886
+HIBI,Response Of EIF2AK1 (HRI) To Heme Deficiency,Reactome,0.0009897031421148
+HIBI,Platelet Degranulation,Reactome,0.0009927592054857
+HIBI,Positive Regulation Of Interleukin-1 Beta Production,GO-BP,0.0009947156817093
+HIBI,Regulation Of Calcium Ion Transport,GO-BP,0.0009947156817093
+HIBI,Negative Regulation Of Cytokine Production,GO-BP,0.0009947156817093
+HIBI,Positive Regulation Of Interleukin-1 Production,GO-BP,0.0009947156817093
+HIBI,Voltage Gated Potassium Channels,Reactome,0.0010125087362433
+HIBI,Hypertrophic cardiomyopathy,KEGG,0.0010152486161692
+HIBI,Positive Regulation Of NF-kappaB Transcription Factor Activity,GO-BP,0.001015497762405
+HIBI,Positive Regulation Of Cytoskeleton Organization,GO-BP,0.0010339708060161
+HIBI,Glucagon signaling pathway,KEGG,0.0010569889827361
+HIBI,Vascular smooth muscle contraction,KEGG,0.0010594199460512
+HIBI,Defective B3GALTL Causes PpS,Reactome,0.0010765620496319
+HIBI,Ligand-Gated Monoatomic Ion Channel Activity Involved In Regulation Of Presynaptic Membrane Potential,GO-MF,0.001077564524622
+HIBI,Protein Kinase C Activity,GO-MF,0.001077564524622
+HIBI,Phosphorylation,GO-BP,0.0010781439065728
+HIBI,Signaling By Nuclear Receptors,Reactome,0.001082004647172
+HIBI,Response To Unfolded Protein,GO-BP,0.0010869206074642
+HIBI,Cellular Response To Tumor Necrosis Factor,GO-BP,0.0010953329833909
+HIBI,Transforming Growth Factor Beta Receptor Signaling Pathway,GO-BP,0.001101571789597
+HIBI,T Cell Activation,GO-BP,0.0011138985597259
+HIBI,Muscle Contraction,Reactome,0.0011173973654044
+GLP-1R,RNA Binding,GO-MF,9.406305540950654e-25
+GLP-1R,Influenza Infection,Reactome,3.7067442580833073e-23
+GLP-1R,SRP-dependent Cotranslational Protein Targeting To Membrane,Reactome,1.4570526803923765e-21
+GLP-1R,Eukaryotic Translation Elongation,Reactome,1.8478371450087882e-21
+GLP-1R,Viral mRNA Translation,Reactome,1.8478371450087882e-21
+GLP-1R,Peptide Chain Elongation,Reactome,1.8478371450087882e-21
+GLP-1R,Influenza Viral RNA Transcription And Replication,Reactome,2.5942678853766802e-21
+GLP-1R,Nonsense Mediated Decay (NMD) Independent Of Exon Junction Complex (EJC),Reactome,9.43043926111161e-21
+GLP-1R,Eukaryotic Translation Termination,Reactome,9.43043926111161e-21
+GLP-1R,Translation,GO-BP,3.812292381119143e-20
+GLP-1R,Ribosome,KEGG,5.74408140753599e-20
+GLP-1R,Selenocysteine Synthesis,Reactome,7.206110148293301e-20
+GLP-1R,Formation Of A Pool Of Free 40S Subunits,Reactome,1.9987566846455603e-18
+GLP-1R,Macromolecule Biosynthetic Process,GO-BP,2.067827508559215e-18
+GLP-1R,Nonsense Mediated Decay (NMD) Enhanced By Exon Junction Complex (EJC),Reactome,2.584258562055316e-18
+GLP-1R,Respiratory Electron Transport,Reactome,3.3958013358255052e-18
+GLP-1R,Peptide Biosynthetic Process,GO-BP,6.899177596394142e-18
+GLP-1R,Cytoplasmic Translation,GO-BP,6.199766080883343e-17
+GLP-1R,Response Of EIF2AK4 (GCN2) To Amino Acid Deficiency,Reactome,6.832022567649751e-17
+GLP-1R,Organelle Inner Membrane,GO-CC,7.469175357591767e-17
+GLP-1R,Gene Expression,GO-BP,2.4069644730234473e-16
+GLP-1R,Mitochondrial Inner Membrane,GO-CC,4.933091818962846e-16
+GLP-1R,L13a-mediated Translational Silencing Of Ceruloplasmin Expression,Reactome,6.064891568482909e-16
+GLP-1R,GTP Hydrolysis And Joining Of 60S Ribosomal Subunit,Reactome,1.1606649432897576e-15
+GLP-1R,Regulation Of Expression Of SLITs And ROBOs,Reactome,1.2479664132715733e-15
+GLP-1R,Metabolism Of RNA,Reactome,4.031023376634072e-15
+GLP-1R,Cap-dependent Translation Initiation,Reactome,4.2809455692793924e-15
+GLP-1R,Mitochondrial ATP Synthesis Coupled Electron Transport,GO-BP,5.0629023109447326e-15
+GLP-1R,Signaling By ROBO Receptors,Reactome,2.38667726616934e-14
+GLP-1R,Cellular Respiration,GO-BP,2.5129608882198846e-14
+GLP-1R,Aerobic Electron Transport Chain,GO-BP,3.593998374684269e-14
+GLP-1R,rRNA Processing In Nucleus And Cytosol,Reactome,5.5385031890406365e-14
+GLP-1R,Cellular Response To Starvation,Reactome,1.2724419263899745e-13
+GLP-1R,rRNA Processing,Reactome,3.3828952858248565e-13
+GLP-1R,Selenoamino Acid Metabolism,Reactome,4.3841401918186244e-13
+GLP-1R,"Respiratory Electron Transport, ATP Synthesis By Chemiosmotic Coupling, Heat Production By Uncoupling Proteins",Reactome,5.739571329243939e-13
+GLP-1R,Major Pathway Of rRNA Processing In Nucleolus And Cytosol,Reactome,7.987886351053076e-13
+GLP-1R,Complex I Biogenesis,Reactome,1.8150688483981688e-12
+GLP-1R,Mitochondrial Respiratory Chain Complex I,GO-CC,3.400483128886711e-12
+GLP-1R,Respiratory Chain Complex I,GO-CC,3.400483128886711e-12
+GLP-1R,Oxidoreduction-Driven Active Transmembrane Transporter Activity,GO-MF,4.63280318575544e-12
+GLP-1R,Mitochondrial Membrane,GO-CC,7.385028345023081e-12
+GLP-1R,Large Ribosomal Subunit,GO-CC,4.0079298814256026e-11
+GLP-1R,Cytosolic Large Ribosomal Subunit,GO-CC,4.0079298814256026e-11
+GLP-1R,NADH Dehydrogenase (Ubiquinone) Activity,GO-MF,7.669324574521269e-11
+GLP-1R,NADH Dehydrogenase (Quinone) Activity,GO-MF,2.5136973481652507e-10
+GLP-1R,"Mitochondrial Electron Transport, NADH To Ubiquinone",GO-BP,5.435580997420101e-10
+GLP-1R,Mitochondrial Respiratory Chain Complex I Assembly,GO-BP,8.405844624717742e-10
+GLP-1R,NADH Dehydrogenase Complex Assembly,GO-BP,8.405844624717742e-10
+GLP-1R,Citric Acid (TCA) Cycle And Respiratory Electron Transport,Reactome,9.783713272403687e-10
+GLP-1R,Parkinson disease,KEGG,1.154095298632054e-09
+GLP-1R,Huntington disease,KEGG,1.154095298632054e-09
+GLP-1R,Thermogenesis,KEGG,2.1336106494849604e-09
+GLP-1R,Aerobic Respiration,GO-BP,2.842807230600147e-09
+GLP-1R,SARS-CoV-2 Modulates Host Translation Machinery,Reactome,8.554970192247233e-09
+GLP-1R,Mitochondrial Respiratory Chain Complex Assembly,GO-BP,8.950702936132654e-09
+GLP-1R,Coronavirus disease,KEGG,2.009414759526387e-08
+GLP-1R,Infectious Disease,Reactome,3.903934758078981e-08
+GLP-1R,Amyotrophic lateral sclerosis,KEGG,4.2561268066335245e-08
+GLP-1R,Polysomal Ribosome,GO-CC,7.620467488345148e-08
+GLP-1R,Cytosolic Small Ribosomal Subunit,GO-CC,9.221782427944089e-08
+GLP-1R,Proton Motive Force-Driven Mitochondrial ATP Synthesis,GO-BP,1.8362961617370625e-07
+GLP-1R,Small Ribosomal Subunit,GO-CC,1.941244409804577e-07
+GLP-1R,Oxidative Phosphorylation,GO-BP,2.280020440535723e-07
+GLP-1R,mRNA Splicing,Reactome,2.8272187516225425e-07
+GLP-1R,Mitochondrial Translation,GO-BP,4.4507729164493314e-07
+GLP-1R,Mitochondrial Translation Elongation,Reactome,9.342229963272416e-07
+GLP-1R,mRNA Splicing - Major Pathway,Reactome,9.342229963272416e-07
+GLP-1R,Mitochondrial Gene Expression,GO-BP,1.1619285768835044e-06
+GLP-1R,Processing Of Capped Intron-Containing Pre-mRNA,Reactome,1.2634518758584377e-06
+GLP-1R,Mitochondrial Translation Termination,Reactome,2.966497410294415e-06
+GLP-1R,Mitochondrial Translation Initiation,Reactome,2.966497410294415e-06
+GLP-1R,Diabetic cardiomyopathy,KEGG,6.535349227388223e-06
+GLP-1R,Proton Motive Force-Driven ATP Synthesis,GO-BP,1.3564239433709891e-05
+GLP-1R,"Formation Of Ternary Complex, And Subsequently, 43S Complex",Reactome,3.736584911930315e-05
+GLP-1R,Insulin signaling pathway,KEGG,6.100620446142002e-05
+GLP-1R,U2-type Precatalytic Spliceosome,GO-CC,7.715893217523545e-05
+GLP-1R,Nucleolus,GO-CC,9.892680029096846e-05
+GLP-1R,"mRNA Activation Upon Binding Of Cap-Binding Complex And eIFs, Subsequent Binding To 43S",Reactome,0.0001379921540683
+GLP-1R,SARS-CoV Infections,Reactome,0.0001445146222948
+GLP-1R,Establishment Of Protein Localization To Mitochondrion,GO-BP,0.0001584229769019
+GLP-1R,RNA Processing,GO-BP,0.0002391558009445
+GLP-1R,Translation Initiation Complex Formation,Reactome,0.0002810632733544
+GLP-1R,Ribosomal Scanning And Start Codon Recognition,Reactome,0.0002810632733544
+GLP-1R,Precatalytic Spliceosome,GO-CC,0.0002823632320055
+GLP-1R,Spliceosome,KEGG,0.0002945590853353
+GLP-1R,Metabolism Of Proteins,Reactome,0.0003513863557164
+GLP-1R,Protein Targeting To Mitochondrion,GO-BP,0.0004206224458593
+GLP-1R,Neuron Projection Cytoplasm,GO-CC,0.000451851899875
+GLP-1R,Intracellular Non-Membrane-Bounded Organelle,GO-CC,0.0004602648808652
+GLP-1R,Mitochondrial Intermembrane Space,GO-CC,0.0004602648808652
+GLP-1R,Organelle Envelope Lumen,GO-CC,0.0004637715059929
+GLP-1R,U4/U6 X U5 tri-snRNP Complex,GO-CC,0.0004637715059929
+GLP-1R,"Mitochondrial Electron Transport, Cytochrome C To Oxygen",GO-BP,0.0004781088669946
+GLP-1R,Spliceosomal snRNP Complex,GO-CC,0.0005287034461364
+GLP-1R,Nucleus,GO-CC,0.0005293257752042
+GLP-1R,Nuclear Lumen,GO-CC,0.0005734097679998
+GLP-1R,U2-type Spliceosomal Complex,GO-CC,0.0005734097679998
+GLP-1R,Spliceosomal tri-snRNP Complex,GO-CC,0.0006423544316823
+GLP-1R,Antigen Processing: Ubiquitination And Proteasome Degradation,Reactome,0.000724616842795
+GLP-1R,Protein processing in endoplasmic reticulum,KEGG,0.0007381809069532
+GLP-1R,Class I MHC Mediated Antigen Processing And Presentation,Reactome,0.0007766808007195
+GLP-1R,Metabolism Of Amino Acids And Derivatives,Reactome,0.000783074063767
+GLP-1R,Mitochondrial Respiratory Chain Complex IV,GO-CC,0.0008828771005961
+GLP-1R,mRNA Splicing - Minor Pathway,Reactome,0.0009787309711472
+GLP-1R,Intracellular Membrane-Bounded Organelle,GO-CC,0.0010453993830385
+GLP-1R,Ubiquitin-Like Protein Ligase Binding,GO-MF,0.0011771438093899
+GLP-1R,mRNA Binding,GO-MF,0.0011771438093899
+GLP-1R,Protein Stabilization,GO-BP,0.0014719030277731
+GLP-1R,Mitochondrial Envelope,GO-CC,0.0015837571872411
+GLP-1R,Cytoplasmic Stress Granule,GO-CC,0.0016155799661729
+GLP-1R,Ras Protein Signal Transduction,GO-BP,0.0017571096615987
+GLP-1R,Antiviral Mechanism By IFN-stimulated Genes,Reactome,0.0018562902340944
+GLP-1R,SARS-CoV-2 Infection,Reactome,0.001968645689439
+GLP-1R,ISG15 Antiviral Mechanism,Reactome,0.002535067529213
+GLP-1R,Dendrite Cytoplasm,GO-CC,0.0032971330099377
+GLP-1R,U5 snRNP,GO-CC,0.0033051952521499
+GLP-1R,Respiratory Chain Complex IV,GO-CC,0.0033051952521499
+GLP-1R,U4 snRNP,GO-CC,0.0033051952521499
+GLP-1R,protein-RNA Complex Assembly,GO-BP,0.0033364531046325
+GLP-1R,Signaling By FGFR In Disease,Reactome,0.0033523159686056
+GLP-1R,Mitochondrial Protein Import,Reactome,0.0045477985355806
+GLP-1R,SOS-mediated Signaling,Reactome,0.0045477985355806
+GLP-1R,Energy Derivation By Oxidation Of Organic Compounds,GO-BP,0.0047939716391819
+GLP-1R,Signaling By FGFR2 In Disease,Reactome,0.0049431996802955
+GLP-1R,SARS-CoV-2-host Interactions,Reactome,0.0050661186579806
+GLP-1R,Regulation Of HSF1-mediated Heat Shock Response,Reactome,0.0054337034515127
+GLP-1R,Tau Protein Binding,GO-MF,0.0065253519434278
+GLP-1R,HIV Infection,Reactome,0.0065398939963352
+GLP-1R,Constitutive Signaling By Overexpressed ERBB2,Reactome,0.0065409283893273
+GLP-1R,Signaling By PDGFR In Disease,Reactome,0.0066460150135994
+GLP-1R,Glial Cell Projection,GO-CC,0.0072952012370172
+GLP-1R,Signaling By FGFR,Reactome,0.0084374090069111
+GLP-1R,U1 snRNP,GO-CC,0.0084786391125979
+GLP-1R,HIV Life Cycle,Reactome,0.0095846456031566
+GLP-1R,Membrane Trafficking,Reactome,0.0102551909384123
+GLP-1R,Astrocyte Projection,GO-CC,0.0104763606418127
+GLP-1R,TP53 Regulates Metabolic Genes,Reactome,0.0115047365708015
+GLP-1R,Ubiquitin mediated proteolysis,KEGG,0.0120859240470676
+GLP-1R,Signaling By FGFR2,Reactome,0.0125796614554634
+GLP-1R,Protein Phosphatase Regulator Activity,GO-MF,0.0134868365052135
+GLP-1R,Ribonucleoprotein Complex Biogenesis,GO-BP,0.0136267191309114
+GLP-1R,Clathrin Coat Assembly,GO-BP,0.0136267191309114
+GLP-1R,"mRNA Splicing, Via Spliceosome",GO-BP,0.0136267191309114
+GLP-1R,Constitutive Signaling By Ligand-Responsive EGFR Cancer Variants,Reactome,0.0153153830319625
+GLP-1R,Constitutive Signaling By AKT1 E17K In Cancer,Reactome,0.0171054133733617
+GLP-1R,FGFR2 Alternative Splicing,Reactome,0.0171054133733617
+GLP-1R,Netrin-1 Signaling,Reactome,0.017858428222981
+GLP-1R,Activated NTRK2 Signals Thru FRS2 And FRS3,Reactome,0.0179140680527027
+GLP-1R,Protein Localization,Reactome,0.0184193216036376
+GLP-1R,Fc Epsilon Receptor (FCERI) Signaling,Reactome,0.0186911034505649
+GLP-1R,Negative Regulation Of MET Activity,Reactome,0.0186911034505649
+GLP-1R,Signaling By NTRK3 (TRKC),Reactome,0.0190418031805152
+GLP-1R,mRNA Processing,GO-BP,0.0201362387333983
+GLP-1R,Regulation Of Cellular Component Organization,GO-BP,0.0201362387333983
+GLP-1R,PIP3 Activates AKT Signaling,Reactome,0.0209218566187214
+GLP-1R,AMPK signaling pathway,KEGG,0.0211285096763411
+GLP-1R,MicroRNA (miRNA) Biogenesis,Reactome,0.0214257847349118
+GLP-1R,Nuclear Envelope Breakdown,Reactome,0.0216458094619913
+GLP-1R,Viral Messenger RNA Synthesis,Reactome,0.0216767704314348
+GLP-1R,TGF-beta Receptor Signaling Activates SMADs,Reactome,0.0216767704314348
+GLP-1R,Signaling By KIT In Disease,Reactome,0.0233638293561602
+GLP-1R,Signaling By FGFR2 IIIa TM,Reactome,0.0233638293561602
+GLP-1R,Constitutive Signaling By EGFRvIII,Reactome,0.0233638293561602
+GLP-1R,Mitochondrial Transport,GO-BP,0.0248324717313366
+GLP-1R,Downstream Signaling Events Of B Cell Receptor (BCR),Reactome,0.0252807731833772
+GLP-1R,Late Phase Of HIV Life Cycle,Reactome,0.025734836935669
+GLP-1R,mRNA surveillance pathway,KEGG,0.0257794663397293
+GLP-1R,Signaling By ERBB4,Reactome,0.0259257819900246
+GLP-1R,Cytoprotection By HMOX1,Reactome,0.0259257819900246
+GLP-1R,RHOJ GTPase Cycle,Reactome,0.0262920115192442
+GLP-1R,RHOC GTPase Cycle,Reactome,0.0265268213743702
+GLP-1R,NOTCH1 Intracellular Domain Regulates Transcription,Reactome,0.026727112497976
+GLP-1R,TIM23 Mitochondrial Import Inner Membrane Translocase Complex,GO-CC,0.0282995274086371
+GLP-1R,ATPase Binding,GO-MF,0.0287714171609082
+GLP-1R,rRNA Binding,GO-MF,0.0287714171609082
+GLP-1R,Ribosomal Small Subunit Biogenesis,GO-BP,0.0303343705320589
+GLP-1R,Negative Regulation Of Protein Modification Process,GO-BP,0.0313851050775849
+GLP-1R,"RNA Splicing, Via Transesterification Reactions With Bulged Adenosine As Nucleophile",GO-BP,0.0331269669332621
+GLP-1R,Regulation Of Cholesterol Biosynthesis By SREBP (SREBF),Reactome,0.0339608232713302
+GLP-1R,Rap Protein Signal Transduction,GO-BP,0.0344240877541834
+GLP-1R,Negative Regulation Of Protein Dephosphorylation,GO-BP,0.0344240877541834
+GLP-1R,mRNA Metabolic Process,GO-BP,0.0344240877541834
+GLP-1R,Response To Insulin,GO-BP,0.0346507403784134
+GLP-1R,RNA Splicing,GO-BP,0.0346507403784134
+GLP-1R,Negative Regulation Of Proteasomal Ubiquitin-Dependent Protein Catabolic Process,GO-BP,0.0347022695729882
+GLP-1R,U7 snRNP,GO-CC,0.034725972593308
+GLP-1R,Metabolism Of Non-Coding RNA,Reactome,0.0348138425924649
+GLP-1R,Ubiquitin-Dependent ERAD Pathway,GO-BP,0.034995867654012
+GLP-1R,Signaling By EGFR,Reactome,0.0355046414856394
+GLP-1R,Signaling By FGFR4 In Disease,Reactome,0.0357725749411827
+GLP-1R,Small-Subunit Processome,GO-CC,0.0363233163133281
+GLP-1R,Regulation Of Autophagy,GO-BP,0.0365061791585834
+GLP-1R,Ribosome Biogenesis,GO-BP,0.0376269746051746
+GLP-1R,Depolymerisation Of Nuclear Lamina,Reactome,0.0387604306851736
+GLP-1R,InlB-mediated Entry Of Listeria Monocytogenes Into Host Cell,Reactome,0.0387604306851736
+GLP-1R,Signaling By ERBB2 ECD Mutants,Reactome,0.0387604306851736
+GLP-1R,Metabolism Of Nitric Oxide: NOS3 Activation And Regulation,Reactome,0.0387604306851736
+GLP-1R,Metabolism,Reactome,0.0387604306851736
+GLP-1R,Negative Regulation Of Axonogenesis,GO-BP,0.0392378744776633
+GLP-1R,Signaling By NTRK2 (TRKB),Reactome,0.039562754473899
+GLP-1R,Regulation Of RUNX2 Expression And Activity,Reactome,0.0406119850553203
+GLP-1R,Transcriptional Regulation By RUNX2,Reactome,0.0409432346872654
+GLP-1R,Downregulation Of TGF-beta Receptor Signaling,Reactome,0.0425156493232506
+GLP-1R,RAS Signaling Downstream Of NF1 Loss-Of-Function Variants,Reactome,0.0461133464950016
+GLP-1R,Negative Regulation Of Response To Endoplasmic Reticulum Stress,GO-BP,0.0476364539258058

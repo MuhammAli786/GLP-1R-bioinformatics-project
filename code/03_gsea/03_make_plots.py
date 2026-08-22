@@ -1,12 +1,19 @@
 #!/usr/bin/env python3
+"""Render every GSEA figure from the prerank and ORA result tables.
+
+Inputs: GSEA/data/{gsea,ora,sig_genes.json} -> PNGs in the GSEA/ root:
+01 DEG venn by condition, 02 upset across accessions, 03/04 pathway NES heatmap
+(Hallmark, KEGG), 05/05b ORA dotplot (Hallmark, KEGG), 06/07 cross-condition
+mean NES (Hallmark, KEGG), 08 Hallmark GSEA bubble summary.
 """
-03_make_plots.py — all GSEA figures (saved to GSEA/ root):
-  01 venn gene overlaps (by condition)      02 upset across accessions
-  03 pathway heatmap Hallmark (NES)         04 pathway heatmap KEGG (NES)
-  05 ORA dotplot Hallmark                   05b ORA dotplot KEGG
-  06 cross-condition Hallmark (mean NES)    07 cross-condition KEGG
-  08 GSEA bubble Hallmark (summary)
-"""
+import os as _os
+BASE = _os.environ.get("GLP1R_BASE")
+if not BASE:
+    raise SystemExit(
+        "Set GLP1R_BASE to the directory holding the analysis data tree, e.g.\n"
+        "  export GLP1R_BASE=/path/to/workspace"
+    )
+
 import os, glob, json, re
 import numpy as np
 import pandas as pd
@@ -16,10 +23,10 @@ import matplotlib.pyplot as plt
 from matplotlib_venn import venn3
 import upsetplot
 
-ROOT = "/sessions/amazing-zen-bardeen/mnt/Bulk RNA sequencing/GSEA"
+ROOT = BASE + "/mnt/Bulk RNA sequencing/GSEA"
 GSEA = os.path.join(ROOT, "data", "gsea")
 ORA = os.path.join(ROOT, "data", "ora")
-cat = pd.read_csv("/sessions/amazing-zen-bardeen/work/gsea_groups.csv")
+cat = pd.read_csv(BASE + "/work/gsea_groups.csv")
 COND = dict(zip(cat["group"], cat["condition"]))
 ACC = dict(zip(cat["group"], cat["accession"]))
 COND_ORDER = ["Obesity", "Aging", "TBI", "Neurodegen"]
@@ -33,7 +40,7 @@ def save(fig, name):
 
 
 def nes_matrix(lib):
-    """pathways x groups NES matrix."""
+    """Build a pathways x groups NES matrix for one gene-set library."""
     data = {}
     for f in glob.glob(os.path.join(GSEA, f"*__{lib}.csv")):
         g = os.path.basename(f).replace(f"__{lib}.csv", "")
@@ -115,7 +122,7 @@ def ora_dotplot(key, fname, title, top=18):
 
 
 def gsea_bubble(lib, fname, title):
-    """Hallmark bubble: mean NES per pathway across groups; size = # groups |NES|>1 & FDR<0.25."""
+    """Bubble plot of mean NES per pathway; point size = groups with |NES|>1 and FDR<0.25."""
     files = glob.glob(os.path.join(GSEA, f"*__{lib}.csv"))
     nes, hits = {}, {}
     for f in files:

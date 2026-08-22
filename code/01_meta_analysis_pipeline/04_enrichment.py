@@ -1,23 +1,27 @@
 #!/usr/bin/env python3
+"""Functional enrichment of the consensus gene lists against GO, KEGG and Reactome via Enrichr (gseapy, organism=mouse).
+
+Data/consensus_<thr>.csv -> Data/enrichment_<thr>.csv, per threshold.
 """
-04_enrichment.py
--------------------------------------------------------------
-Functional enrichment of the consensus gene lists via Enrichr
-(gseapy), for both thresholds. Databases (GO:All + KEGG + Reactome):
-    GO_Biological_Process_2023, GO_Molecular_Function_2023,
-    GO_Cellular_Component_2023, KEGG_2021_Human, Reactome_2022
-Output (Data/): enrichment_<thr>.csv
-"""
+import os as _os
+BASE = _os.environ.get("GLP1R_BASE")
+if not BASE:
+    raise SystemExit(
+        "Set GLP1R_BASE to the directory holding the analysis data tree, e.g.\n"
+        "  export GLP1R_BASE=/path/to/workspace"
+    )
+
 import os, time, sys
 import pandas as pd
 import gseapy as gp
 
-OUTDATA = "/sessions/amazing-zen-bardeen/mnt/Bulk RNA sequencing/Finalized Bioinformatics Workflow/Data"
+OUTDATA = BASE + "/mnt/Bulk RNA sequencing/Finalized Bioinformatics Workflow/Data"
 DATABASES = ['GO_Biological_Process_2023', 'GO_Molecular_Function_2023',
              'GO_Cellular_Component_2023', 'KEGG_2021_Human', 'Reactome_2022']
 
 
 def run(genes, label):
+    """Run Enrichr over every database, retrying up to four times each."""
     allr = []
     for db in DATABASES:
         for attempt in range(4):

@@ -1,23 +1,7 @@
-"""
-08b_per_group_cnet_montage_nonempty.py
-======================================
-Rebuilds the combined per-group concept-network (cnet) montage
-(Cnet_PerGroup_AllGroups_LFC0.2.{png,pdf}) but DROPS every empty panel.
+"""Per-group concept-network montage that drops every empty panel and re-tiles the rest into a compact 5-column grid.
 
-A panel is "empty" when build_graph() returns None, i.e. one of:
-  * the group has < 3 DEGs at LFC0.2,
-  * no enrichment term passes padj < 0.05, or
-  * the resulting graph has < 2 gene nodes.
-These would otherwise render as grey "too few DEGs" / "(0 DEGs)" tiles.
-
-Only non-empty panels are kept and re-tiled into a compact 5-column grid.
-Styling, colours, layout and term-selection logic are identical to
-08_per_group_cnet_montage.py.
-
-Inputs (regenerated from the project Data folder, no prior-session state needed):
-  * group_genes.json    – per-group {genes:[...], lfc:{sym:log2FC}}  (from gene_lfc_LFC02.csv)
-  * group_enr/<group>.csv – per-group Enrichr results (gseapy, organism='mouse',
-                            GO BP/MF/CC 2023, KEGG_2021_Human, Reactome_2022)
+group_genes.json (per-group genes and log2FC, from gene_lfc_LFC02.csv) and per-group Enrichr results in group_enr/ -> Plots/Cnet plots/Combined_PerGroup/Cnet_PerGroup_AllGroups_LFC0.2.{png,pdf}.
+A panel is empty when the group has < 3 DEGs at LFC0.2, no term passes padj < 0.05, or the graph has < 2 gene nodes. Styling and term selection match 08_per_group_cnet_montage.py.
 """
 import os, re, csv, math, json, textwrap, sys
 import numpy as np
@@ -32,7 +16,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 from cnet_style import LIB_COLORS, LIB_LABELS, VMAX
 
-# --- paths (edit WORK to wherever group_genes.json + group_enr/ live) ---
+# WORK is where group_genes.json and group_enr/ live.
 WORK   = os.environ.get("CNET_WORK", ".")
 DATA   = os.path.join(HERE, "..", "Data")
 ENRDIR = os.path.join(WORK, "group_enr")
@@ -47,10 +31,12 @@ cat = pd.read_csv(os.path.join(DATA, "group_catalog.csv"))
 all_groups = sorted(cat["group"].tolist())
 
 def clean(t):
+    """Strip GO and Reactome accessions from a term."""
     t = re.sub(r'\s*\(GO:\d+\)', '', str(t))
     return re.sub(r'\s*R-HSA-\d+', '', t).strip()
 
 def load_enr(g):
+    """Return one group's enrichment rows with adjusted p-value < 0.05, or [] if absent."""
     safe = "".join(c if c.isalnum() else "_" for c in g)
     p = os.path.join(ENRDIR, f"{safe}.csv")
     if not os.path.exists(p):
@@ -60,6 +46,7 @@ def load_enr(g):
     return [r for r in rows if float(r["Adjusted P-value"]) < 0.05]
 
 def build_graph(genes, lfc, enr):
+    """Build one group's gene-term graph by greedy set cover, or None if too small."""
     input_upper = {g.upper() for g in genes}
     if len(genes) < 3 or not enr:
         return None
@@ -89,7 +76,7 @@ def build_graph(genes, lfc, enr):
         return None
     return G
 
-# ---- Pass 1: keep only non-empty panels ----
+# Keep only the groups that produce a non-empty graph.
 panels, dropped = [], []
 for g in all_groups:
     d = groups.get(g)
@@ -104,8 +91,8 @@ print(f"kept {len(panels)} non-empty panels; dropped {len(dropped)} empty panels
 for g, why in dropped:
     print("  dropped:", g, "|", why)
 
-# ---- Pass 2: render compact grid ----
 def draw(ax, G, title):
+    """Draw one montage panel."""
     ax.set_title(title, fontsize=8, fontweight="bold"); ax.axis("off")
     pos = nx.spring_layout(G, k=1.0, iterations=80, seed=42)
     term_n = [n for n, d in G.nodes(data=True) if d["ntype"] == "term"]

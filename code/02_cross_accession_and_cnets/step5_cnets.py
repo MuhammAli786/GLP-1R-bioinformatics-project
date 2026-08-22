@@ -1,6 +1,17 @@
-"""STEP 5: Build cnet plots with greedy set-cover approach
-Style: font 20, edge width 2.5, transparent bg, spring layout k=4.0
 """
+Builds the cnet plots with greedy set-cover term selection.
+Style: font 20, edge width 2.5, transparent background, spring layout k=4.0,
+iterations=150, seed=42.
+final_enrichment_*.csv + final_consensus_*.csv -> final_plots/cnet_*.png
+"""
+import os as _os
+BASE = _os.environ.get("GLP1R_BASE")
+if not BASE:
+    raise SystemExit(
+        "Set GLP1R_BASE to the directory holding the analysis data tree, e.g.\n"
+        "  export GLP1R_BASE=/path/to/workspace"
+    )
+
 import pandas as pd
 import numpy as np
 import matplotlib
@@ -12,7 +23,7 @@ from matplotlib.colors import Normalize
 from matplotlib.cm import ScalarMappable
 import os
 
-OUT = "/sessions/practical-ecstatic-mendel/mnt/outputs"
+OUT = BASE + "/mnt/outputs"
 PLOT_DIR = os.path.join(OUT, "final_plots")
 os.makedirs(PLOT_DIR, exist_ok=True)
 
@@ -23,9 +34,8 @@ AKT_GENES = ['Irs1','Irs2','Sos1','Gab1','Grb2','Pdpk1','Akt3','Akt1','Bcl2l1','
 COMBINED_GENES = list(set(JAK_GENES + AKT_GENES))
 
 def build_cnet(enr_df, cons_df, title, save_name, max_terms=15, input_set=None):
-    """Build cnet plot with greedy set-cover algorithm"""
+    """Render one cnet figure from terms with adjusted p < 0.05, chosen by greedy set cover."""
     
-    # Filter significant terms
     sig = enr_df[enr_df['Adjusted P-value'] < 0.05].copy()
     if sig.empty:
         print(f"  SKIP {save_name}: no significant terms")
@@ -33,7 +43,6 @@ def build_cnet(enr_df, cons_df, title, save_name, max_terms=15, input_set=None):
     
     score_col = 'Combined_Score' if 'Combined_Score' in sig.columns else 'Combined Score'
     
-    # Parse genes from each term
     def parse_genes(overlap_str):
         try:
             return [g.strip() for g in str(overlap_str).split(';') if g.strip()]
@@ -42,7 +51,7 @@ def build_cnet(enr_df, cons_df, title, save_name, max_terms=15, input_set=None):
     
     sig['gene_list'] = sig['Genes'].apply(parse_genes)
     
-    # If input_set provided, filter to only terms containing those genes
+    # Restrict each term's gene list to the requested pathway genes.
     if input_set:
         input_lower = set(g.lower() for g in input_set)
         sig['relevant_genes'] = sig['gene_list'].apply(
@@ -55,7 +64,7 @@ def build_cnet(enr_df, cons_df, title, save_name, max_terms=15, input_set=None):
     else:
         sig['relevant_genes'] = sig['gene_list']
     
-    # Greedy set-cover: maximize gene coverage
+    # Greedy set cover: maximize gene coverage
     selected_terms = []
     covered_genes = set()
     remaining = sig.copy()
@@ -63,16 +72,15 @@ def build_cnet(enr_df, cons_df, title, save_name, max_terms=15, input_set=None):
     for _ in range(max_terms):
         if remaining.empty:
             break
-        # Score = new genes covered
         remaining['new_genes'] = remaining['relevant_genes'].apply(
             lambda gl: len(set(g.lower() for g in gl) - set(g.lower() for g in covered_genes))
         )
-        # Primary: new genes; Secondary: combined score
+        # Rank by newly covered genes, then by combined score.
         remaining = remaining.sort_values(['new_genes', score_col], ascending=[False, False])
         
         best = remaining.iloc[0]
         if best['new_genes'] == 0:
-            # Fill remaining slots by combined score
+            # Nothing new left to cover: fill the remaining slots by combined score.
             rest = remaining.nlargest(max_terms - len(selected_terms), score_col)
             for _, row in rest.iterrows():
                 selected_terms.append(row)
@@ -86,7 +94,7 @@ def build_cnet(enr_df, cons_df, title, save_name, max_terms=15, input_set=None):
         print(f"  SKIP {save_name}: no terms selected")
         return
     
-    # Build network
+    # Build the term-gene graph
     G = nx.Graph()
     term_genes_map = {}
     
@@ -103,10 +111,9 @@ def build_cnet(enr_df, cons_df, title, save_name, max_terms=15, input_set=None):
         print(f"  SKIP {save_name}: too few nodes")
         return
     
-    # Get LFC values for gene coloring
+    # Gene colours come from the consensus table's mean_lfc column.
     gene_lfc = {}
     if input_set:
-        # Use consensus df mean_lfc
         if 'mean_lfc' in cons_df.columns:
             lfc_map = cons_df.set_index('symbol')['mean_lfc'].to_dict()
         else:
@@ -123,18 +130,15 @@ def build_cnet(enr_df, cons_df, title, save_name, max_terms=15, input_set=None):
             if G.nodes[g].get('node_type') == 'gene':
                 gene_lfc[g] = lfc_map.get(g, 0)
     
-    # Layout
     pos = nx.spring_layout(G, k=4.0, iterations=150, seed=42)
     
-    # Figure
     fig, ax = plt.subplots(figsize=(30, 26))
     ax.set_facecolor('none')
     fig.patch.set_alpha(0)
     
-    # Draw edges
     nx.draw_networkx_edges(G, pos, ax=ax, width=2.5, alpha=0.35, edge_color='#666666')
     
-    # Draw gene nodes with LFC coloring
+    # Gene nodes, coloured by mean log2FC
     gene_nodes = [n for n in G.nodes if G.nodes[n].get('node_type') == 'gene']
     term_nodes = [n for n in G.nodes if G.nodes[n].get('node_type') == 'term']
     
@@ -152,11 +156,10 @@ def build_cnet(enr_df, cons_df, title, save_name, max_terms=15, input_set=None):
     nx.draw_networkx_nodes(G, pos, nodelist=gene_nodes, node_color=gene_colors,
                           node_size=gene_sizes, ax=ax, edgecolors='black', linewidths=0.5)
     
-    # Term nodes (invisible - we'll use text boxes)
+    # Term nodes are drawn as text boxes rather than markers.
     nx.draw_networkx_nodes(G, pos, nodelist=term_nodes, node_color='none',
                           node_size=1, ax=ax)
     
-    # Term labels with colored boxes
     colors_palette = plt.cm.Set3(np.linspace(0, 1, max(len(term_nodes), 12)))
     for i, term in enumerate(term_nodes):
         x, y = pos[term]
@@ -165,14 +168,12 @@ def build_cnet(enr_df, cons_df, title, save_name, max_terms=15, input_set=None):
                bbox=dict(boxstyle='round,pad=0.3', facecolor=color, alpha=0.85, edgecolor='none'),
                color='white', zorder=5)
     
-    # Gene labels with dark boxes
     for g in gene_nodes:
         x, y = pos[g]
         ax.text(x, y-0.03, g, fontsize=20, fontweight='bold', ha='center', va='top',
                bbox=dict(boxstyle='round,pad=0.15', facecolor='#333333', alpha=0.7, edgecolor='none'),
                color='white', zorder=4)
     
-    # Colorbar for LFC
     if gene_lfc:
         sm = ScalarMappable(cmap=cmap, norm=norm)
         sm.set_array([])
@@ -183,7 +184,6 @@ def build_cnet(enr_df, cons_df, title, save_name, max_terms=15, input_set=None):
     ax.set_title(title, fontsize=24, fontweight='bold', pad=20)
     ax.axis('off')
     
-    # Legend
     n_genes_shown = len(gene_nodes)
     n_terms_shown = len(term_nodes)
     legend_text = f"Genes: {n_genes_shown} | Terms: {n_terms_shown}"
@@ -195,48 +195,47 @@ def build_cnet(enr_df, cons_df, title, save_name, max_terms=15, input_set=None):
     plt.close()
     print(f"  Created: {save_name} ({n_genes_shown} genes, {n_terms_shown} terms)")
 
-# Load data
 enr05 = pd.read_csv(os.path.join(OUT, 'final_enrichment_LFC05.csv'))
 enr0 = pd.read_csv(os.path.join(OUT, 'final_enrichment_LFC0.csv'))
 cons05 = pd.read_csv(os.path.join(OUT, 'final_consensus_LFC05.csv'))
 cons0 = pd.read_csv(os.path.join(OUT, 'final_consensus_LFC0.csv'))
 
-# Fix column names
+# Enrichr output spells this column either way.
 for df in [enr05, enr0]:
     if 'Combined Score' in df.columns and 'Combined_Score' not in df.columns:
         df['Combined_Score'] = df['Combined Score']
 
 print("=== Building cnet plots ===")
 
-# 1. All consensus genes
+# All consensus genes
 print("\n--- All Consensus Genes ---")
 build_cnet(enr05, cons05, 'GLP-1R Agonist Consensus Genes\n(|LFC|≥0.5, ≥2 Groups)', 
            'cnet_all_LFC05.png')
 build_cnet(enr0, cons0, 'GLP-1R Agonist Consensus Genes\n(padj<0.05 only, ≥2 Groups)',
            'cnet_all_LFC0.png')
 
-# 2. JAK-STAT3/Inflammatory
+# JAK-STAT3 / inflammatory pathway
 print("\n--- JAK-STAT3/Inflammatory ---")
 build_cnet(enr05, cons05, 'JAK-STAT3/Inflammatory Pathway\n(|LFC|≥0.5)',
            'cnet_JAKSTAT3_LFC05.png', input_set=JAK_GENES)
 build_cnet(enr0, cons0, 'JAK-STAT3/Inflammatory Pathway\n(padj<0.05 only)',
            'cnet_JAKSTAT3_LFC0.png', input_set=JAK_GENES)
 
-# 3. BBB/MMP
+# Blood-brain barrier / MMP pathway
 print("\n--- BBB/MMP ---")
 build_cnet(enr05, cons05, 'Blood-Brain Barrier / MMP Pathway\n(|LFC|≥0.5)',
            'cnet_BBB_LFC05.png', input_set=BBB_GENES)
 build_cnet(enr0, cons0, 'Blood-Brain Barrier / MMP Pathway\n(padj<0.05 only)',
            'cnet_BBB_LFC0.png', input_set=BBB_GENES)
 
-# 4. Akt/PI3K
+# PI3K/Akt/mTOR survival pathway
 print("\n--- Akt/PI3K ---")
 build_cnet(enr05, cons05, 'PI3K/Akt/mTOR Survival Pathway\n(|LFC|≥0.5)',
            'cnet_AktPI3K_LFC05.png', input_set=AKT_GENES)
 build_cnet(enr0, cons0, 'PI3K/Akt/mTOR Survival Pathway\n(padj<0.05 only)',
            'cnet_AktPI3K_LFC0.png', input_set=AKT_GENES)
 
-# 5. Combined (JAK + Akt)
+# Combined JAK-STAT3 and PI3K/Akt pathways
 print("\n--- Combined Inflammatory + Survival ---")
 build_cnet(enr05, cons05, 'Combined JAK-STAT3 + PI3K/Akt Pathways\n(|LFC|≥0.5)',
            'cnet_Combined_LFC05.png', input_set=COMBINED_GENES)

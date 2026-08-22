@@ -1,7 +1,4 @@
-############################################################
-# GSE238220
-# Download GEO metadata and supplementary files
-############################################################
+# GSE238220 download GEO metadata and supplementary files; input: GEO accession -> output: data/GSE238220_GEO_metadata.rds, metadata/GSE238220_raw_metadata.csv
 
 library(GEOquery)
 library(Biobase)
@@ -30,10 +27,7 @@ dir.create(
   showWarnings = FALSE
 )
 
-#-----------------------------------------------------------
 # Download GEO metadata
-#-----------------------------------------------------------
-
 cat("Downloading GSE238220 GEO metadata...\n")
 
 gse <- getGEO(
@@ -59,10 +53,7 @@ saveRDS(
   "data/GSE238220_GEO_metadata.rds"
 )
 
-#-----------------------------------------------------------
 # Save sample metadata
-#-----------------------------------------------------------
-
 sample_metadata <- pData(eset)
 
 write.csv(
@@ -77,10 +68,7 @@ cat(
   "samples.\n"
 )
 
-#-----------------------------------------------------------
 # Download supplementary files
-#-----------------------------------------------------------
-
 cat("\nDownloading supplementary files...\n")
 
 supplementary_files <- getGEOSuppFiles(

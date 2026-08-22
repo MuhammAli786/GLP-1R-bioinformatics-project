@@ -1,25 +1,29 @@
 #!/usr/bin/env python3
-"""
-Convert HIBI vs Vehicle dataset into the GLP-1R-bioinformatics-project layout
-(meta_analysis stage: master_deg / group_catalog / consensus), then compare
-HIBI consensus vs GLP-1R consensus.
+"""Build the HIBI master DEG table, group catalog and consensus in the GLP-1R project layout.
 
-Only the 6 HIBI GEO datasets with existing finished DEG tables are used
-(per user decision): GSE144455, GSE144456, GSE23317, GSE23319, GSE236133,
-GSE238220. GSE97299/294909/312452/36215 excluded (no saved DEG table, raw
-data not present, R/Bioconductor unavailable in this environment).
-
-Threshold: padj < 0.05 & |log2FC| >= 0.2 only (LFC02), per user decision.
-Consensus: gene significant in >=2 groups, mirrors GLP-1R's 03_consensus.py.
-Dedup rule (per group, per gene symbol): keep row with min padj, then max |lfc|
-  -- mirrors GLP-1R's 02_build_master.py.
+Uses the 6 HIBI GEO datasets that have finished DEG tables: GSE144455,
+GSE144456, GSE23317, GSE23319, GSE236133, GSE238220. GSE97299, GSE294909,
+GSE312452 and GSE36215 are excluded (no saved DEG table and raw data not
+present).
+Threshold: padj < 0.05 and |log2FC| >= 0.2 (LFC02). Consensus: gene significant
+in >=2 groups, mirroring the GLP-1R 03_consensus.py rule. Per group and gene
+symbol, duplicates are resolved by keeping the row with minimum padj then
+maximum |log2FC|, mirroring GLP-1R 02_build_master.py.
 """
+import os as _os
+BASE = _os.environ.get("GLP1R_BASE")
+if not BASE:
+    raise SystemExit(
+        "Set GLP1R_BASE to the directory holding the analysis data tree, e.g.\n"
+        "  export GLP1R_BASE=/path/to/workspace"
+    )
+
 import os, glob, gzip, csv
 import pandas as pd
 import numpy as np
 
-HIBI_ROOT = "/sessions/lucid-pensive-ride/mnt/HIBI vs Vehicle/bulk_rna_hibi"
-OUT = "/sessions/lucid-pensive-ride/mnt/outputs/hibi_data/meta_analysis"
+HIBI_ROOT = BASE + "/mnt/HIBI vs Vehicle/bulk_rna_hibi"
+OUT = BASE + "/mnt/outputs/hibi_data/meta_analysis"
 os.makedirs(OUT, exist_ok=True)
 
 PADJ_CUT = 0.05
@@ -32,11 +36,11 @@ def mouse_sym(s):
         return None
     return s[0].upper() + s[1:].lower() if len(s) > 1 else s.upper()
 
-rows = []          # collected sig rows across all groups
+rows = []           # significant rows across all groups
 catalog = []        # group metadata
 
 def add_group(group, accession, region, treatment, gse, kind, df):
-    """df must have columns: raw_symbol, lfc, padj"""
+    """Add one group's significant DEGs; df needs columns raw_symbol, lfc, padj."""
     df = df.copy()
     df["symbol"] = df["raw_symbol"].apply(mouse_sym)
     df = df.dropna(subset=["symbol"])
@@ -58,9 +62,7 @@ def add_group(group, accession, region, treatment, gse, kind, df):
                      "n_sig_LFC02": len(sig)})
     print(f"{group}: {len(sig)} sig genes (of {len(df)} tested)")
 
-# ---------------------------------------------------------------
-# 1. GSE144455 -- forebrain, HI vs naive, 3h  (array, MgSO4 study 2-channel)
-# ---------------------------------------------------------------
+# GSE144455: forebrain, HI vs naive at 3h (two-channel array, MgSO4 study)
 f = os.path.join(HIBI_ROOT, "results/GSE144455_HI_vs_naive_3h_all_annotated.csv")
 d = pd.read_csv(f)
 d = d[d["GENE_SYMBOL"].notna() & (d["GENE_SYMBOL"].astype(str).str.strip() != "")]
@@ -68,9 +70,7 @@ d = d.rename(columns={"GENE_SYMBOL": "raw_symbol", "logFC": "lfc", "adj.P.Val": 
 add_group("HIBI144455_forebrain_HI_vs_naive_3h", "144455", "forebrain",
           "HI_vs_naive_3h", "GSE144455", "array", d[["raw_symbol", "lfc", "padj"]])
 
-# ---------------------------------------------------------------
-# 2. GSE144456 -- forebrain, P5 HI vs control, 3h (array, 2-channel)
-# ---------------------------------------------------------------
+# GSE144456: forebrain, P5 HI vs control at 3h (two-channel array)
 f = os.path.join(HIBI_ROOT, "results/GSE144456_P5_3h_all_annotated.csv")
 d = pd.read_csv(f)
 d = d[d["GENE_SYMBOL"].notna() & (d["GENE_SYMBOL"].astype(str).str.strip() != "")]
@@ -78,10 +78,8 @@ d = d.rename(columns={"GENE_SYMBOL": "raw_symbol", "logFC": "lfc", "adj.P.Val": 
 add_group("HIBI144456_forebrain_P5_HI_vs_control_3h", "144456", "forebrain",
           "P5_HI_vs_control_3h", "GSE144456", "array", d[["raw_symbol", "lfc", "padj"]])
 
-# ---------------------------------------------------------------
-# 3+4. GSE23317 (cortex) / GSE23319 (striatum) -- HI vs Sham, 3h
-#      Illumina GPL6885 -- probe IDs need annotation mapping
-# ---------------------------------------------------------------
+# GSE23317 (cortex) and GSE23319 (striatum): HI vs Sham at 3h, Illumina GPL6885;
+# probe IDs are mapped to symbols through the platform annotation.
 annot = {}
 with gzip.open("/tmp/gpl6885.annot.gz", "rt") as fh:
     started = False
@@ -105,9 +103,7 @@ for gse_id, region in [("GSE23317", "cortex"), ("GSE23319", "striatum")]:
     add_group(f"HIBI{acc}_{region}_HI_vs_Sham_3h", acc, region, "HI_vs_Sham_3h",
               gse_id, "array", d[["raw_symbol", "lfc", "padj"]])
 
-# ---------------------------------------------------------------
-# 5. GSE236133 -- hippocampus, ipsilateral vs contralateral, WT/NEIL1KO/NEIL2KO x 3h/6h
-# ---------------------------------------------------------------
+# GSE236133: hippocampus, ipsilateral vs contralateral, WT/NEIL1KO/NEIL2KO at 3h and 6h
 for genotype in ["WT", "NEIL1KO", "NEIL2KO"]:
     for time in ["3h", "6h"]:
         f = os.path.join(HIBI_ROOT, f"results/GSE236133/DE/{genotype}_{time}_ipsilateral_vs_contralateral_all_genes.csv")
@@ -118,9 +114,7 @@ for genotype in ["WT", "NEIL1KO", "NEIL2KO"]:
                   "hippocampus", f"{genotype}_ipsi_vs_contra_{time}", "GSE236133", "rnaseq",
                   d[["raw_symbol", "lfc", "padj"]])
 
-# ---------------------------------------------------------------
-# 6. GSE238220 -- hippocampus (sorted microglia), HI vs control, 1d/3d
-# ---------------------------------------------------------------
+# GSE238220: hippocampus sorted microglia, HI vs control at 1d and 3d
 for time in ["1d", "3d"]:
     f = os.path.join(HIBI_ROOT, f"results/GSE238220/DE/Microglia_{time}_HI_vs_Control_all_genes.csv")
     d = pd.read_csv(f)
@@ -130,9 +124,7 @@ for time in ["1d", "3d"]:
               "hippocampus_microglia", f"HI_vs_control_{time}", "GSE238220", "rnaseq",
               d[["raw_symbol", "lfc", "padj"]])
 
-# ---------------------------------------------------------------
-# Write master_deg + group_catalog
-# ---------------------------------------------------------------
+# Write master_deg and group_catalog
 master = pd.DataFrame(rows, columns=["group", "accession", "region", "treatment", "gse",
                                       "kind", "symbol", "symbol_key", "log2FC", "padj", "direction"])
 master.to_csv(os.path.join(OUT, "master_deg_LFC02.csv"), index=False)
@@ -142,9 +134,7 @@ cat.to_csv(os.path.join(OUT, "group_catalog.csv"), index=False)
 
 print(f"\nTotal groups: {len(cat)}; total sig rows: {len(master)}")
 
-# ---------------------------------------------------------------
-# Consensus (mirrors 03_consensus.py)
-# ---------------------------------------------------------------
+# Consensus, mirroring 03_consensus.py
 g = master.groupby("symbol_key")
 cons_rows = []
 for key, sub in g:

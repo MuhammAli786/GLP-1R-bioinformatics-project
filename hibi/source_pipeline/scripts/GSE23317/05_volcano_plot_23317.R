@@ -1,6 +1,8 @@
+# Create volcano plot for GSE23317 cortex 3h HI vs Sham
+# Input: results/GSE23317_3h_all_genes.csv -> Output: figures/GSE23317_3h_volcano.pdf
+
 library(EnhancedVolcano)
 
-# Load DEG results
 results <- read.csv(
   "results/GSE23317_3h_all_genes.csv",
   row.names = 1

@@ -1,3 +1,6 @@
+# Reactome enrichment for GSE23317 3h HI vs Sham
+# Input: (requires `entrez` variable from script 06) -> Output: results/Reactome_GSE23317_3h.csv, figures/Reactome_dotplot.pdf, figures/Reactome_barplot_GSE23317.pdf
+
 library(ReactomePA)
 library(enrichplot)
 
@@ -19,7 +22,6 @@ write.csv(
   row.names = FALSE
 )
 
-#Dotplot
 pdf(
   "figures/Reactome_dotplot.pdf",
   width = 10,
@@ -30,7 +32,6 @@ dotplot(reactome, showCategory = 20)
 
 dev.off()
 
-#Barplot
 pdf(
   "figures/Reactome_barplot_GSE23317.pdf",
   width = 10,

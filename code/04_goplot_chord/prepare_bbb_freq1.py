@@ -1,19 +1,25 @@
 #!/usr/bin/env python3
+"""Build GOplot input tables for the BBB chord at a relaxed gene frequency.
+
+BBB genes significant in >=1 group are used instead of the consensus >=2 rule.
+Inputs: master_deg_LFC02.csv -> BBB_freq1_{terms,kegg_terms,reactome_terms,genes}.csv,
+which the R driver turns into the GOChord_BBB_*_Freq1 plots.
 """
-prepare_bbb_freq1.py
--------------------------------------------------------------
-Build GOplot input tables for the BBB chord using a relaxed gene
-frequency: BBB genes present (significant) in >= 1 group instead of the
-consensus >= 2.  Emits BBB_freq1_{terms,kegg_terms,reactome_terms,genes}.csv
-which the R driver turns into GOChord_BBB_*_Freq1 plots.
-"""
+import os as _os
+BASE = _os.environ.get("GLP1R_BASE")
+if not BASE:
+    raise SystemExit(
+        "Set GLP1R_BASE to the directory holding the analysis data tree, e.g.\n"
+        "  export GLP1R_BASE=/path/to/workspace"
+    )
+
 import os, re, sys
 import pandas as pd
 import gseapy as gp
 
-BASE = "/sessions/amazing-zen-bardeen/mnt/Bulk RNA sequencing/Finalized Bioinformatics Workflow"
+BASE = BASE + "/mnt/Bulk RNA sequencing/Finalized Bioinformatics Workflow"
 DATA = os.path.join(BASE, "Data")
-OUT = "/sessions/amazing-zen-bardeen/mnt/Bulk RNA sequencing/GOPLOT analyis/data"
+OUT = BASE + "/mnt/Bulk RNA sequencing/GOPLOT analyis/data"
 sys.path.insert(0, os.path.join(BASE, "scripts"))
 from cnet_gene_lists import BBB_GENES
 
@@ -48,13 +54,13 @@ def main():
     m = pd.read_csv(os.path.join(DATA, "master_deg_LFC02.csv"))   # significant rows (>=1 group)
     bbb = {g.upper() for g in BBB_GENES}
     sub = m[m['symbol_key'].isin(bbb)]
-    # presence (>=1 group) gene list + mean logFC
+    # one row per gene: number of groups it is significant in, plus mean logFC
     agg = sub.groupby('symbol').agg(n_groups=('group', 'nunique'), logFC=('log2FC', 'mean')).reset_index()
     sel = agg['symbol'].tolist()
     print(f"BBB genes present >=1 group: {len(sel)} (vs consensus >=2)")
     res = gp.enrichr(gene_list=sel, gene_sets=ALL_LIBS, organism='mouse', no_plot=True).results
     terms = terms_from(res)
-    # per category: keep significant else top 12
+    # per category keep terms at adj p < 0.05, or the top 12 by p-value if fewer than 3
     keep = []
     for cat in ['BP', 'MF', 'CC', 'KEGG', 'Reactome']:
         c = terms[terms['Category'] == cat]

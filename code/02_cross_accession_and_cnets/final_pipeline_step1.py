@@ -1,16 +1,24 @@
 """
-STEP 1: Load all DEG files, standardize gene IDs, build master catalog
+Loads every accession's significant DEG file, standardizes gene IDs to mouse
+symbols, and writes the master DEG table and file catalog.
+Per-accession *_significant.csv -> final_master_deg.csv, final_file_catalog.csv
 """
+import os as _os
+BASE = _os.environ.get("GLP1R_BASE")
+if not BASE:
+    raise SystemExit(
+        "Set GLP1R_BASE to the directory holding the analysis data tree, e.g.\n"
+        "  export GLP1R_BASE=/path/to/workspace"
+    )
+
 import pandas as pd
 import numpy as np
 import os, glob, gzip, json
 
-BASE = "/sessions/practical-ecstatic-mendel/mnt/Bulk RNA sequencing"
-OUT = "/sessions/practical-ecstatic-mendel/mnt/outputs"
+BASE = BASE + "/mnt/Bulk RNA sequencing"
+OUT = BASE + "/mnt/outputs"
 
-# ============================================================
-# 1A. Build GPL6885 probe-to-symbol mapping
-# ============================================================
+# GPL6885 (Illumina MouseRef-8 v2) probe-to-symbol map, read from the .bgx annotation.
 print("=== Building GPL6885 probe-to-symbol map ===")
 bgx_path = os.path.join(BASE, "GPL6885_MouseRef-8_V2_0_R0_11278551_A.bgx.gz")
 probe_map = {}
@@ -39,11 +47,9 @@ with gzip.open(bgx_path, 'rt') as f:
 
 print(f"  Mapped {len(probe_map)} probes to symbols")
 
-# ============================================================
-# 1B. Build Ensembl-to-symbol mapping via mygene
-# ============================================================
+# Ensembl-to-symbol map via mygene, for the accessions that use ENSMUSG IDs.
 print("\n=== Building Ensembl-to-symbol map ===")
-# First collect all Ensembl IDs from Acc 3, 5, 6
+# Collect the Ensembl IDs used by accessions 3, 5, and 6.
 ensembl_ids = set()
 for acc in [3, 5, 6]:
     acc_dir = os.path.join(BASE, f"Accsession {acc}")
@@ -61,7 +67,6 @@ import mygene
 mg = mygene.MyGeneInfo()
 ens_list = list(ensembl_ids)
 
-# Query in batches
 ens_map = {}
 batch_size = 1000
 for i in range(0, len(ens_list), batch_size):
@@ -74,12 +79,10 @@ for i in range(0, len(ens_list), batch_size):
 
 print(f"  Total Ensembl mapped: {len(ens_map)}")
 
-# ============================================================
-# 1C. Load all DEG files with gene ID standardization
-# ============================================================
+# Load every DEG file with standardized gene IDs.
 print("\n=== Loading all DEG files ===")
 
-# Accession metadata
+# Accession metadata: species, gene ID type, and GEO accession.
 acc_info = {
     3: {'species': 'mouse', 'id_type': 'ensembl', 'gse': 'GSE162614'},
     4: {'species': 'rat', 'id_type': 'symbol', 'gse': 'GSE190218'},
@@ -121,12 +124,13 @@ treatment_classes = {
     'combined_WT_INS': 'Other', 'combined_HD_INS': 'Other', 'combined_HD_CTR': 'Other',
 }
 
-# Rat-to-mouse ortholog conversion (capitalize first letter for mouse convention)
+# Rat-to-mouse ortholog symbol conversion: mouse convention capitalizes only the first letter.
 def rat_to_mouse_symbol(sym):
     if sym and isinstance(sym, str) and len(sym) > 0:
         return sym[0].upper() + sym[1:].lower() if len(sym) > 1 else sym.upper()
     return sym
 
+# Map one accession's native gene ID to a mouse symbol.
 def standardize_gene(gene_id, acc_num):
     info = acc_info[acc_num]
     if info['id_type'] == 'ensembl':
@@ -140,18 +144,15 @@ def standardize_gene(gene_id, acc_num):
     return None
 
 def parse_comparison(filename, acc_num):
-    """Extract region, treatment, control from filename"""
+    """Extract region, treatment, and control from a DEG filename of the form region_treatment_vs_control."""
     basename = os.path.basename(filename).replace('DEG_', '').replace('_significant.csv', '')
-    # Pattern: region_treatment_vs_control
     parts = basename.split('_vs_')
     if len(parts) != 2:
         return None, None, None
     control = parts[1]
     prefix = parts[0]
-    # Region is typically the first part(s)
-    # For acc 10, format is: hippocampus_blast_Treatment
-    # For acc 8: agedst_hippocampus_Treatment or young_hippocampus_Treatment
-    # General approach: known regions
+    # The region prefix varies by accession (e.g. hippocampus_blast_Treatment for Acc 10,
+    # agedst_hippocampus_Treatment for Acc 8), so match against a known-region list.
     known_regions = ['hippocampus', 'hypothalamus', 'accumbens', 'brainstem', 
                      'nts', 'pvn', 'arc', 'dvc', 'mbh', 'lumbar_spinal_cord',
                      'frontalcortex', 'kidney', 'lung', 'heart', 'liver',
@@ -162,7 +163,6 @@ def parse_comparison(filename, acc_num):
     
     for r in known_regions:
         if r in prefix:
-            # Find where region ends and treatment begins
             idx = prefix.find(r) + len(r)
             region_part = prefix[:idx]
             treatment = prefix[idx:].lstrip('_')
@@ -170,7 +170,7 @@ def parse_comparison(filename, acc_num):
             break
     
     if region is None:
-        # Try splitting by first underscore after known patterns
+        # No known region matched: take the first underscore-separated token.
         region = prefix.split('_')[0]
         treatment = '_'.join(prefix.split('_')[1:])
     
@@ -180,7 +180,7 @@ all_data = []
 file_catalog = []
 
 for acc_num in sorted(acc_info.keys()):
-    # Find DEG files - prefer work/results folder
+    # Prefer the work/results folder when it exists.
     acc_dir_candidates = [
         os.path.join(BASE, f"Accsession {acc_num}"),
         os.path.join(BASE, f"Accsession {acc_num} "),  # trailing space
@@ -204,10 +204,9 @@ for acc_num in sorted(acc_info.keys()):
     for f in files:
         region, treatment, control = parse_comparison(f, acc_num)
         
-        # Classify treatment
         tclass = treatment_classes.get(treatment, None)
         if tclass is None:
-            # Try partial matching
+            # Fall back to a substring match against the treatment table.
             for k, v in treatment_classes.items():
                 if k in treatment:
                     tclass = v
@@ -215,7 +214,7 @@ for acc_num in sorted(acc_info.keys()):
         if tclass is None:
             tclass = 'Other'
         
-        # Skip non-GLP1R comparisons (controls only)
+        # Keep only GLP-1R-related comparisons.
         if tclass == 'Other':
             continue
         
@@ -223,7 +222,6 @@ for acc_num in sorted(acc_info.keys()):
         if df.empty:
             continue
         
-        # Standardize gene names
         df['symbol'] = df['gene_id'].apply(lambda x: standardize_gene(x, acc_num))
         df = df.dropna(subset=['symbol'])
         df = df[df['symbol'] != '']
@@ -231,7 +229,7 @@ for acc_num in sorted(acc_info.keys()):
         if df.empty:
             continue
         
-        # Capitalize first letter for consistency (mouse convention)
+        # Mouse convention: capitalize only the first letter.
         df['symbol'] = df['symbol'].apply(lambda x: x[0].upper() + x[1:] if len(x) > 1 else x.upper())
         
         comparison = os.path.basename(f).replace('DEG_', '').replace('_significant.csv', '')
@@ -273,7 +271,6 @@ print(f"Treatment classes: {master_df['treatment_class'].value_counts().to_dict(
 print(f"\nComparisons per accession:")
 print(catalog_df.groupby('accession')[['file']].count())
 
-# Save
 master_df.to_csv(os.path.join(OUT, 'final_master_deg.csv'), index=False)
 catalog_df.to_csv(os.path.join(OUT, 'final_file_catalog.csv'), index=False)
 print(f"\nSaved master_deg ({len(master_df)} rows) and catalog ({len(catalog_df)} entries)")

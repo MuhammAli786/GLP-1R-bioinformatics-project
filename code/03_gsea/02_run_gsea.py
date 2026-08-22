@@ -1,20 +1,29 @@
 #!/usr/bin/env python3
+"""GSEA prerank per group against MSigDB Hallmark and KEGG 2021 Human; resumable.
+
+Inputs: GSEA/data/rnk/*.rnk -> GSEA/data/gsea/<group>__<lib>.csv (Term, NES,
+NOM p-val, FDR q-val, Lead_genes). Each call is time-budgeted; re-run until it
+prints ALL_DONE.
 """
-02_run_gsea.py  — GSEA prerank per group (Hallmark + KEGG), resumable.
-Output: GSEA/data/gsea/<group>__<lib>.csv  (Term, NES, NOM p-val, FDR q-val, Lead_genes)
-Run repeatedly until it prints ALL_DONE (time-budgeted per call).
-"""
+import os as _os
+BASE = _os.environ.get("GLP1R_BASE")
+if not BASE:
+    raise SystemExit(
+        "Set GLP1R_BASE to the directory holding the analysis data tree, e.g.\n"
+        "  export GLP1R_BASE=/path/to/workspace"
+    )
+
 import os, glob, time, sys
 import pandas as pd
 import gseapy as gp
 
-ROOT = "/sessions/amazing-zen-bardeen/mnt/Bulk RNA sequencing/GSEA"
+ROOT = BASE + "/mnt/Bulk RNA sequencing/GSEA"
 RNK = os.path.join(ROOT, "data", "rnk")
 OUT = os.path.join(ROOT, "data", "gsea")
 os.makedirs(OUT, exist_ok=True)
 LIBS = {"hallmark": "MSigDB_Hallmark_2020", "kegg": "KEGG_2021_Human"}
 
-deadline = time.time() + 36
+deadline = time.time() + 36  # per-call wall-clock budget in seconds
 done = 0
 jobs = [(os.path.splitext(os.path.basename(f))[0], f, k, v)
         for f in sorted(glob.glob(os.path.join(RNK, "*.rnk")))

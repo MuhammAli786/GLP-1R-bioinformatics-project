@@ -1,6 +1,9 @@
+# Command-line driver that generates every cnet plot (consensus, pathway, and
+# specific-pathway sets) at the LFC0/LFC02/LFC05/LFC1 thresholds.
+
 import os, sys, csv, argparse
 
-#  Make imports work when run from the Scripts folder 
+# Make the sibling cnet_* modules importable when run from the Scripts folder.
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, SCRIPT_DIR)
 
@@ -11,9 +14,8 @@ from cnet_gene_lists import (
 )
 from cnet_engine import build_cnet, load_consensus, load_enrichment, load_lfc
 
-# Ion channel gene list 
 def get_ion_genes(workspace_root):
-    """Merge base ion channel list with CSV"""
+    """Merge the base ion channel list with Data_Files/Ion_Channel_Consensus_Genes.csv."""
     extra = []
     csv_path = os.path.join(workspace_root, 'Data_Files',
                             'Ion_Channel_Consensus_Genes.csv')
@@ -28,11 +30,10 @@ def get_ion_genes(workspace_root):
 
 
 
-# Plot definitions
 THRESHOLDS = ['LFC0', 'LFC02', 'LFC05', 'LFC1']
 
 def generate_consensus_cnets(data_dir, out_base, lfc_map):
-    """Generate consensus-based Cnet plots for all thresholds."""
+    """Build consensus-gene cnet plots at every threshold."""
     out_dir = os.path.join(out_base, 'Plots', 'Cnet_Plots_Consensus_Based')
     print("\n" + "=" * 60)
     print("CONSENSUS-BASED CNET PLOTS")
@@ -58,7 +59,7 @@ def generate_consensus_cnets(data_dir, out_base, lfc_map):
 
 
 def generate_pathway_cnets(data_dir, out_base, lfc_map):
-    """Generate pathway-based Cnet plots (BBB, JAK-STAT3, PI3K/Akt)."""
+    """Build pathway cnet plots (BBB/MMP, JAK-STAT3 inflammatory, PI3K/Akt survival)."""
     out_dir = os.path.join(out_base, 'Plots', 'Cnet_Plots_Pathway_Based')
     print("\n" + "=" * 60)
     print("PATHWAY-BASED CNET PLOTS")
@@ -93,7 +94,7 @@ def generate_pathway_cnets(data_dir, out_base, lfc_map):
 
 
 def generate_specific_cnets(data_dir, out_base, lfc_map, ion_genes):
-    """Generate specific pathway Cnet plots (BBB, Inflammatory, Survival, Ion)."""
+    """Build the specific-pathway cnet plots (BBB, inflammatory, survival, ion channel)."""
     out_dir = os.path.join(out_base, 'Specific Pathway Cnets')
     print("\n" + "=" * 60)
     print("SPECIFIC PATHWAY CNET PLOTS")
@@ -129,9 +130,6 @@ def generate_specific_cnets(data_dir, out_base, lfc_map, ion_genes):
             )
 
 
-# ─────────────────────────────────────────────────────────────
-# Main
-# ─────────────────────────────────────────────────────────────
 def main():
     parser = argparse.ArgumentParser(
         description='Generate all Cnet plots for the GLP-1R CNS meta-analysis')
@@ -148,9 +146,8 @@ def main():
              'Used to find Ion_Channel_Consensus_Genes.csv')
     args = parser.parse_args()
 
-    # Default paths (relative to Scripts folder)
+    # Fall back to the usual data locations relative to the Scripts folder.
     if args.data_dir is None:
-        # Try common locations
         candidates = [
             os.path.join(SCRIPT_DIR, '..', '..', 'outputs'),
             os.path.join(SCRIPT_DIR, '..', 'Data_Files'),
@@ -173,7 +170,6 @@ def main():
     print(f"Output dir: {args.out_dir}")
     print(f"Workspace:  {args.workspace}")
 
-    # Load shared data
     print("\nLoading LFC map...")
     lfc_map = load_lfc(args.data_dir)
     print(f"  {len(lfc_map)} genes loaded")
@@ -181,7 +177,6 @@ def main():
     ion_genes = get_ion_genes(args.workspace)
     print(f"  {len(ion_genes)} ion channel genes total")
 
-    # Generate all plots
     generate_consensus_cnets(args.data_dir, args.out_dir, lfc_map)
     generate_pathway_cnets(args.data_dir, args.out_dir, lfc_map)
     generate_specific_cnets(args.data_dir, args.out_dir, lfc_map, ion_genes)

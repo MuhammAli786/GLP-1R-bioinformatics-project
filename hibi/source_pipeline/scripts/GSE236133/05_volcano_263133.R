@@ -1,17 +1,11 @@
-############################################################
-# GSE236133
-# Volcano plots for all differential-expression comparisons
-############################################################
+# GSE236133 volcano plots for all differential-expression comparisons; input: results/GSE236133/DE/*_all_genes.csv -> output: figures/GSE236133/volcano/*_volcano.pdf
 
 library(readr)
 library(dplyr)
 library(ggplot2)
 library(ggrepel)
 
-#-----------------------------------------------------------
-# 1. Paths and thresholds
-#-----------------------------------------------------------
-
+# Paths and thresholds: logFC >= 0.2, FDR < 0.05
 results_directory <- "results/GSE236133/DE"
 figure_directory <- "figures/GSE236133/volcano"
 
@@ -24,10 +18,7 @@ dir.create(
   showWarnings = FALSE
 )
 
-#-----------------------------------------------------------
-# 2. Locate full DEG result files
-#-----------------------------------------------------------
-
+# Locate full DEG result files
 result_files <- list.files(
   results_directory,
   pattern = "_all_genes\\.csv$",
@@ -41,10 +32,7 @@ if (length(result_files) == 0) {
   )
 }
 
-#-----------------------------------------------------------
-# 3. Create one volcano plot
-#-----------------------------------------------------------
-
+# Function to create one volcano plot
 make_volcano <- function(result_file) {
   
   result <- read_csv(
@@ -181,10 +169,7 @@ make_volcano <- function(result_file) {
   cat("Saved:", output_name, "\n")
 }
 
-#-----------------------------------------------------------
-# 4. Generate all plots
-#-----------------------------------------------------------
-
+# Generate all plots
 invisible(
   lapply(
     result_files,

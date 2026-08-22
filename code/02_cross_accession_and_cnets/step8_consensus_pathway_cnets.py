@@ -1,3 +1,7 @@
+# BBB and inflammation/survival cnet plots built from the consensus gene lists, plus
+# per-database dot plots for the |log2FC| >= 1 enrichment.
+# final_consensus_*.csv + final_enrichment_*.csv -> final_plots/*.png
+
 import pandas as pd
 import numpy as np
 import matplotlib
@@ -11,6 +15,7 @@ import os
 lfc_all = pd.read_csv('final_gene_lfc_COMPREHENSIVE.csv').set_index('symbol')['mean_lfc'].to_dict()
 lfc_lower = {k.lower(): v for k, v in lfc_all.items()}
 
+# Look up a gene's mean log2FC, falling back to a case-insensitive match, then 0.
 def get_lfc(gene):
     v = lfc_all.get(gene)
     if v is not None: return v
@@ -18,6 +23,7 @@ def get_lfc(gene):
     if v is not None: return v
     return 0.0
 
+# Greedy set cover over enrichment terms, capped at max_per_db terms per database.
 def diverse_greedy_select(sig_df, input_genes, max_terms=10, max_per_db=3):
     cons_lower = {g.lower(): g for g in input_genes}
     sig = sig_df.copy()
@@ -45,6 +51,7 @@ def diverse_greedy_select(sig_df, input_genes, max_terms=10, max_per_db=3):
         remaining = remaining.drop(best_idx)
     return selected
 
+# Render one cnet figure from a set-cover term selection, colouring genes by mean log2FC.
 def build_cnet(selected_terms, title, outpath):
     G = nx.Graph()
     for item in selected_terms:
@@ -83,12 +90,10 @@ def build_cnet(selected_terms, title, outpath):
     non_zero = sum(1 for v in lfc_vals if abs(v) > 0.001)
     print(f"  Saved {outpath} ({len(terms)} terms, {len(genes)} genes, {non_zero}/{len(genes)} LFC≠0)")
 
-# ============================================================
-# CONSENSUS-BASED BBB & InflamSurv CNETS
-# ============================================================
+# Consensus-based BBB and inflammation/survival cnets
 print("=== CONSENSUS-BASED PATHWAY CNETS ===")
 
-# BBB-related keywords
+# Term keyword filters
 bbb_terms = ['blood-brain','barrier','tight junction','claudin','occludin','endotheli',
              'vascular','permeab','transport','efflux','abc trans']
 inflam_surv_terms = ['inflam','immune','cytokine','interleukin','nf-kb','apoptosis',
@@ -100,7 +105,6 @@ for thresh in ['LFC0', 'LFC05']:
     enrich = pd.read_csv(f'final_enrichment_{thresh}.csv')
     sig = enrich[enrich['Adjusted P-value'] < 0.05].copy()
     
-    # BBB consensus cnet
     bbb_sig = sig[sig['Term'].str.lower().apply(lambda t: any(kw in t for kw in bbb_terms))]
     if len(bbb_sig) >= 1:
         selected = diverse_greedy_select(bbb_sig, genes, max_terms=8, max_per_db=3)
@@ -109,7 +113,6 @@ for thresh in ['LFC0', 'LFC05']:
             build_cnet(selected, f'BBB-Related Consensus Genes ({thresh.replace("LFC","LFC≥")})\nAll Databases',
                        f'final_plots/cnet_NEW_BBB_consensus_{thresh}.png')
     
-    # Inflammation+Survival consensus cnet
     is_sig = sig[sig['Term'].str.lower().apply(lambda t: any(kw in t for kw in inflam_surv_terms))]
     if len(is_sig) >= 1:
         selected = diverse_greedy_select(is_sig, genes, max_terms=8, max_per_db=3)
@@ -118,15 +121,13 @@ for thresh in ['LFC0', 'LFC05']:
             build_cnet(selected, f'Inflammation & Survival Consensus ({thresh.replace("LFC","LFC≥")})\nAll Databases',
                        f'final_plots/cnet_NEW_InflamSurv_consensus_{thresh}.png')
 
-# ============================================================
-# LFC≥1 DOTPLOTS
-# ============================================================
+# Dot plots for the |log2FC| >= 1 enrichment, one per database
 print("\n=== LFC≥1 DOTPLOTS ===")
 enrich1 = pd.read_csv('final_enrichment_LFC1.csv')
 
 for db in enrich1['Gene_set'].unique():
     subset = enrich1[enrich1['Gene_set'] == db].copy()
-    # Use top 15 by P-value regardless of significance
+    # Top 15 by nominal p-value, whether or not they reach significance.
     top = subset.nsmallest(15, 'P-value')
     if len(top) == 0: continue
     
@@ -137,7 +138,6 @@ for db in enrich1['Gene_set'].unique():
     top['gene_count'] = top['Genes'].apply(lambda x: len(str(x).split(';')))
     top = top.sort_values('neg_log_p')
     
-    # Shorten term names
     def shorten(t):
         t = t.split('(GO:')[0].split('R-HSA')[0].strip()
         return t[:60] + '...' if len(t) > 60 else t

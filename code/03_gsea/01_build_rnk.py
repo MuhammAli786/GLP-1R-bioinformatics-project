@@ -1,29 +1,34 @@
 #!/usr/bin/env python3
-"""
-01_build_rnk.py
--------------------------------------------------------------
-Build a FULL ranked gene list (.rnk) per group for GSEA prerank.
-Unlike the consensus pipeline (which keeps only significant DEGs), GSEA
-needs EVERY gene ranked. Genes are standardized to mouse symbols and
-then UPPER-cased so they match the human MSigDB/KEGG gene-set libraries
-(ortholog-by-name, the standard mouse->human approximation).
+"""Build a full ranked gene list (.rnk) per group for GSEA prerank.
 
-Groups with no DEGs are skipped (Acc7 spinal cord, Acc8 hippocampus LT_A_Ex).
-Output: GSEA/data/rnk/<group>.rnk   (gene<TAB>log2FC, sorted desc)
-        GSEA/data/sig_genes.json    (per-group significant DEGs for ORA/Venn)
+All genes are ranked, not just significant DEGs. Symbols are standardized to
+mouse and upper-cased to match the human MSigDB/KEGG libraries (ortholog-by-name
+mouse->human approximation). Groups with no DEGs are skipped (Acc7 spinal cord,
+Acc8 hippocampus LT_A_Ex).
+Inputs: staged per-group DE tables -> GSEA/data/rnk/<group>.rnk (gene<TAB>log2FC,
+sorted descending) and GSEA/data/sig_genes.json (per-group significant DEGs for
+ORA/Venn).
 """
+import os as _os
+BASE = _os.environ.get("GLP1R_BASE")
+if not BASE:
+    raise SystemExit(
+        "Set GLP1R_BASE to the directory holding the analysis data tree, e.g.\n"
+        "  export GLP1R_BASE=/path/to/workspace"
+    )
+
 import os, json
 import numpy as np
 import pandas as pd
 
-STAGE = "/sessions/amazing-zen-bardeen/stage"
+STAGE = BASE + "/stage"
 ARR = os.path.join(STAGE, "arrays")
-ENSMAP = "/sessions/amazing-zen-bardeen/work/ens_map.json"
-OUT = "/sessions/amazing-zen-bardeen/mnt/Bulk RNA sequencing/GSEA/data"
+ENSMAP = BASE + "/work/ens_map.json"
+OUT = BASE + "/mnt/Bulk RNA sequencing/GSEA/data"
 RNK = os.path.join(OUT, "rnk")
 os.makedirs(RNK, exist_ok=True)
 
-# gidx, acc, region, treatment, source ; exclude the 2 no-DEG groups (24, 29)
+# (gidx, acc, region, treatment, source); the two no-DEG groups (24, 29) are excluded
 RNASEQ = [
  (6,3,"accumbens","GLP_1","gene_name"),(7,3,"accumbens","GLP_1_MK_801","gene_name"),
  (8,3,"brainstem","GLP_1","gene_name"),(9,3,"brainstem","GLP_1_MK_801","gene_name"),
@@ -33,7 +38,7 @@ RNASEQ = [
  (15,5,"arc","IP118_PY115","ensembl"),(16,5,"nts","IP118_PY115","ensembl"),(17,5,"pvn","IP118_PY115","ensembl"),
  (18,6,"dvc","AC3174","ensembl"),(20,6,"dvc","COMBO","ensembl"),
  (21,6,"mbh","AC3174","ensembl"),(23,6,"mbh","COMBO","ensembl"),
- # AC710222 (Acc6 dvc/mbh) EXCLUDED: it is the CCK1R agonist, not a GLP-1R agonist.
+ # AC710222 (Acc6 dvc/mbh) excluded: CCK1R agonist, not a GLP-1R agonist.
  (25,8,"frontalcortex","YA_Ex","gene_name"),(26,8,"hippocampus","YA_Ex","gene_name"),
  (27,8,"hypothalamus","YA_Ex","gene_name"),(28,8,"frontalcortex","LT_A_Ex","gene_name"),
  (30,8,"hypothalamus","LT_A_Ex","gene_name"),(31,8,"frontalcortex","ST_A_Ex","gene_name"),
@@ -68,7 +73,7 @@ def build_one(df, source):
 
 
 def main():
-    cat = pd.read_csv("/sessions/amazing-zen-bardeen/work/gsea_groups.csv")
+    cat = pd.read_csv(BASE + "/work/gsea_groups.csv")
     keep_groups = set(cat["group"])
     n = 0
     for gidx, acc, region, treat, source in RNASEQ:
@@ -83,7 +88,6 @@ def main():
             print("empty", gname); continue
         rnk.to_csv(os.path.join(RNK, f"{gname}.rnk"), sep="\t", header=False, index=False)
         n += 1
-    # arrays
     amani = json.load(open(os.path.join(ARR, "array_manifest.json")))
     for a in amani:
         gname = f"Acc{a['acc']}_{a['region']}_{a['treatment']}"
@@ -96,7 +100,7 @@ def main():
     print(f"wrote {n} rnk files")
 
     # per-group significant DEGs (for ORA / Venn / UpSet), UPPER-cased
-    m = pd.read_csv("/sessions/amazing-zen-bardeen/mnt/Bulk RNA sequencing/Finalized Bioinformatics Workflow/Data/master_deg_LFC02.csv")
+    m = pd.read_csv(BASE + "/mnt/Bulk RNA sequencing/Finalized Bioinformatics Workflow/Data/master_deg_LFC02.csv")
     m = m[m["group"].isin(keep_groups)]
     sig = {g: sorted(set(s["symbol_key"])) for g, s in m.groupby("group")}
     json.dump(sig, open(os.path.join(OUT, "sig_genes.json"), "w"))

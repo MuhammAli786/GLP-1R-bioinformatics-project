@@ -1,16 +1,12 @@
-############################################################
 # GSE238220
 # GO Biological Process and Reactome cnetplots
-############################################################
 
 library(enrichplot)
 library(readr)
 library(dplyr)
 library(ggplot2)
 
-#-----------------------------------------------------------
-# 1. Paths
-#-----------------------------------------------------------
+# Paths
 
 de_directory <- "results/GSE238220/DE"
 
@@ -32,9 +28,7 @@ dir.create(
   showWarnings = FALSE
 )
 
-#-----------------------------------------------------------
-# 2. Find DEG files
-#-----------------------------------------------------------
+# Find DEG files
 
 deg_files <- list.files(
   de_directory,
@@ -48,9 +42,7 @@ if (length(deg_files) == 0) {
   )
 }
 
-#-----------------------------------------------------------
-# 3. Create named fold-change vector
-#-----------------------------------------------------------
+# Create named fold-change vector
 
 make_fold_change_vector <- function(deg_table) {
   
@@ -77,9 +69,7 @@ make_fold_change_vector <- function(deg_table) {
   fold_change
 }
 
-#-----------------------------------------------------------
-# 4. Save one cnetplot
-#-----------------------------------------------------------
+# Save one cnetplot
 
 save_cnetplot <- function(
     enrichment_object,
@@ -197,9 +187,7 @@ save_cnetplot <- function(
   invisible(plot_object)
 }
 
-#-----------------------------------------------------------
-# 5. Process one comparison
-#-----------------------------------------------------------
+# Process one comparison
 
 process_comparison <- function(deg_file) {
   
@@ -278,9 +266,7 @@ process_comparison <- function(deg_file) {
       next
     }
     
-    #-------------------------------------------------------
     # GO Biological Process
-    #-------------------------------------------------------
     
     go_file <- file.path(
       go_directory,
@@ -323,9 +309,7 @@ process_comparison <- function(deg_file) {
       )
     }
     
-    #-------------------------------------------------------
     # Reactome
-    #-------------------------------------------------------
     
     reactome_file <- file.path(
       reactome_directory,
@@ -370,9 +354,7 @@ process_comparison <- function(deg_file) {
   }
 }
 
-#-----------------------------------------------------------
-# 6. Run all comparisons
-#-----------------------------------------------------------
+# Run all comparisons
 
 invisible(
   lapply(

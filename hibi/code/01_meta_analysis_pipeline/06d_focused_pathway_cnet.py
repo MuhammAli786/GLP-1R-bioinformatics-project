@@ -1,20 +1,21 @@
 #!/usr/bin/env python3
-"""
-hibi_focused_pathway_cnet.py
--------------------------------------------------------------
-HIBI pathway-RESTRICTED Cnets -- direct port of the GLP-1R project's
-06d_focused_pathway_cnet.py.
+"""Pathway-restricted HIBI Cnets, a port of the GLP-1R 06d_focused_pathway_cnet.py.
 
-Terms come from enriching ONLY that pathway's HIBI consensus genes (the
-way the GOplot chord does), rather than filtering a whole-consensus
-enrichment by keyword. Same cnet_style.py styling and same four curated
-gene sets from cnet_gene_lists.py (BBB/MMP, JAK-STAT3 inflammatory,
-PI3K-Akt pro-survival, ion channel) -- these are the HIBI equivalents of
-GLP-1R Fig08A-D.
-
-Outputs:
-  figures/Cnet_<Pathway>_FocusedTerms_LFC0.2.{png,pdf}
+Terms come from enriching only that pathway's HIBI consensus genes, as the
+GOplot chord does, rather than keyword-filtering a whole-consensus enrichment.
+Uses cnet_style.py styling and the four curated gene sets in cnet_gene_lists.py
+(BBB/MMP, JAK-STAT3 inflammatory, PI3K-Akt pro-survival, ion channel); these are
+the HIBI equivalents of GLP-1R Fig08A-D.
+Outputs: figures/Cnet_<Pathway>_FocusedTerms_LFC0.2.{png,pdf}
 """
+import os as _os
+BASE = _os.environ.get("GLP1R_BASE")
+if not BASE:
+    raise SystemExit(
+        "Set GLP1R_BASE to the directory holding the analysis data tree, e.g.\n"
+        "  export GLP1R_BASE=/path/to/workspace"
+    )
+
 import os, re, csv, textwrap, sys, time
 import numpy as np
 import pandas as pd
@@ -29,8 +30,8 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from cnet_style import *
 from cnet_gene_lists import BBB_GENES, JAK_STAT3_GENES, PI3K_AKT_GENES, ION_CHANNEL_BASE_GENES
 
-DATA = "/sessions/lucid-pensive-ride/mnt/outputs/hibi_data/meta_analysis"
-OUTDIR = "/sessions/lucid-pensive-ride/mnt/outputs/hibi_figures"
+DATA = BASE + "/mnt/outputs/hibi_data/meta_analysis"
+OUTDIR = BASE + "/mnt/outputs/hibi_figures"
 THR_FOLDER = {"LFC02": "LFC0.2", "LFC05": "LFC0.5", "LFC1": "LFC1"}
 DATABASES = ['GO_Biological_Process_2023', 'GO_Molecular_Function_2023',
              'GO_Cellular_Component_2023', 'KEGG_2021_Human', 'Reactome_2022']
@@ -60,7 +61,7 @@ def build(pathway, thr="LFC02"):
         print(f"  {pathway}/{thr}: only {len(genes)} consensus genes; skip"); return
     print(f"  {pathway}/{thr}: {len(genes)} pathway genes in HIBI consensus")
 
-    # ---- enrich ONLY the pathway's consensus genes ----
+    # Enrich only this pathway's consensus genes
     rows = []
     for db in DATABASES:
         for attempt in range(4):
@@ -76,9 +77,9 @@ def build(pathway, thr="LFC02"):
         print(f"  {pathway}/{thr}: no significant focused terms"); return
     enr.sort(key=lambda r: float(r["Adjusted P-value"]))
 
-    # ---- select TOP terms by adjusted p-value (like the GOplot chord), ----
-    # dropping near-duplicate terms (pathway-gene Jaccard >= 0.8 with one
-    # already chosen) so the network stays readable.
+    # Select top terms by adjusted p-value, as the GOplot chord does, dropping
+    # near-duplicate terms (pathway-gene Jaccard >= 0.8 with one already chosen)
+    # so the network stays readable.
     MAXT = 12
     selected, sel_sets = [], []
     for i in range(len(enr)):

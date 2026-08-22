@@ -1,4 +1,3 @@
-############################################################
 # GSE238220
 # GO Biological Process and KEGG enrichment
 #
@@ -6,7 +5,6 @@
 #   All significant DEGs
 #   Upregulated DEGs in HI
 #   Downregulated DEGs in HI
-############################################################
 
 library(clusterProfiler)
 library(org.Mm.eg.db)
@@ -15,9 +13,7 @@ library(readr)
 library(dplyr)
 library(ggplot2)
 
-#-----------------------------------------------------------
-# 1. Paths
-#-----------------------------------------------------------
+# Paths
 
 de_directory <- "results/GSE238220/DE"
 
@@ -43,9 +39,7 @@ dir.create(
   showWarnings = FALSE
 )
 
-#-----------------------------------------------------------
-# 2. Find DEG files
-#-----------------------------------------------------------
+# Find DEG files
 
 deg_files <- list.files(
   de_directory,
@@ -64,9 +58,7 @@ if (length(deg_files) == 0) {
 cat("\nDEG files found:\n")
 print(deg_files)
 
-#-----------------------------------------------------------
-# 3. Function to save enrichment output
-#-----------------------------------------------------------
+# Function to save enrichment output
 
 save_enrichment_result <- function(
     enrichment_object,
@@ -169,9 +161,7 @@ save_enrichment_result <- function(
   invisible(dotplot_object)
 }
 
-#-----------------------------------------------------------
-# 4. Function to run enrichment for one comparison
-#-----------------------------------------------------------
+# Function to run enrichment for one comparison
 
 run_enrichment <- function(deg_file) {
   
@@ -228,9 +218,7 @@ run_enrichment <- function(deg_file) {
     )
   }
   
-  #---------------------------------------------------------
   # Background universe
-  #---------------------------------------------------------
   
   universe_entrez <- full_result %>%
     dplyr::filter(
@@ -247,9 +235,7 @@ run_enrichment <- function(deg_file) {
     "\n"
   )
   
-  #---------------------------------------------------------
   # Define gene sets
-  #---------------------------------------------------------
   
   gene_sets <- list(
     All = deg,
@@ -267,9 +253,7 @@ run_enrichment <- function(deg_file) {
   
   combined_results <- list()
   
-  #---------------------------------------------------------
   # Run each direction
-  #---------------------------------------------------------
   
   for (gene_direction in names(gene_sets)) {
     
@@ -303,9 +287,7 @@ run_enrichment <- function(deg_file) {
       next
     }
     
-    #-------------------------------------------------------
     # GO Biological Process
-    #-------------------------------------------------------
     
     go_bp <- clusterProfiler::enrichGO(
       gene = selected_entrez,
@@ -321,9 +303,7 @@ run_enrichment <- function(deg_file) {
       readable = TRUE
     )
     
-    #-------------------------------------------------------
     # KEGG
-    #-------------------------------------------------------
     
     kegg <- tryCatch(
       
@@ -388,9 +368,7 @@ run_enrichment <- function(deg_file) {
   )
 }
 
-#-----------------------------------------------------------
-# 5. Run every comparison
-#-----------------------------------------------------------
+# Run every comparison
 
 invisible(
   lapply(

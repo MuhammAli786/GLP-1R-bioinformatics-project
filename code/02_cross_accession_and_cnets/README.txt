@@ -9,15 +9,23 @@ Files
   cnet_style.py          Style configuration (colours, sizes, fonts, layout)
   cnet_gene_lists.py     Curated pathway gene lists and keyword filters
   cnet_engine.py         Core plot builder (data loading, graph, rendering)
-  generate_all_cnets.py  Master script — generates every Cnet plot
+  cnet_builder.py        Cnet construction helpers
+  step5_cnets.py         Generates the consensus Cnet set
+  step6_rebuild_diverse_cnets.py  Diverse-term Cnet variants
+  step7_pathway_and_lfc1_cnets.py Pathway-restricted and LFC1 Cnets
+  step8_consensus_pathway_cnets.py Consensus pathway Cnets
+  rebuild_cnets.py       Re-renders existing Cnets with current style
+  MASTER_pipeline.py     Reference header: pipeline description and shared gene lists
 
 Quick Start
 -----------
-  cd "Final analysis/Scripts"
-  python generate_all_cnets.py \
-      --data-dir /path/to/csv/data \
-      --out-dir  /path/to/Final_analysis \
-      --workspace /path/to/Bulk_RNA_sequencing
+Run the step scripts in order from this directory; each reads the paths defined
+at the top of the file. Set GLP1R_DATA to point at the processed data tables.
+
+  python step5_cnets.py
+  python step6_rebuild_diverse_cnets.py
+  python step7_pathway_and_lfc1_cnets.py
+  python step8_consensus_pathway_cnets.py
 
 Dependencies
 ------------

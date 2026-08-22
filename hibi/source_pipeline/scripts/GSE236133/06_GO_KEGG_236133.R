@@ -1,7 +1,4 @@
-############################################################
-# GSE236133
-# GO Biological Process and KEGG enrichment
-############################################################
+# GSE236133 GO BP and KEGG enrichment; input: results/GSE236133/DE/*_DEGs.csv -> output: results/GSE236133/enrichment/GO_KEGG/
 
 library(clusterProfiler)
 library(org.Mm.eg.db)
@@ -10,10 +7,7 @@ library(readr)
 library(dplyr)
 library(ggplot2)
 
-#-----------------------------------------------------------
-# 1. Paths
-#-----------------------------------------------------------
-
+# Paths
 de_directory <- "results/GSE236133/DE"
 
 output_directory <- "results/GSE236133/enrichment/GO_KEGG"
@@ -32,10 +26,7 @@ dir.create(
   showWarnings = FALSE
 )
 
-#-----------------------------------------------------------
-# 2. Find DEG files
-#-----------------------------------------------------------
-
+# Find DEG files
 deg_files <- list.files(
   de_directory,
   pattern = "_DEGs\\.csv$",
@@ -48,10 +39,7 @@ if (length(deg_files) == 0) {
   )
 }
 
-#-----------------------------------------------------------
-# 3. Helper for saving enrichment results
-#-----------------------------------------------------------
-
+# Helper for saving enrichment results
 save_enrichment_result <- function(
     enrichment_object,
     comparison_name,
@@ -145,10 +133,7 @@ save_enrichment_result <- function(
   )
 }
 
-#-----------------------------------------------------------
-# 4. Run enrichment for one DEG file
-#-----------------------------------------------------------
-
+# Run enrichment for one DEG file
 run_enrichment <- function(deg_file) {
   
   deg <- read_csv(
@@ -234,6 +219,7 @@ run_enrichment <- function(deg_file) {
       next
     }
     
+    # GO BP: pvalueCutoff = 0.05, qvalueCutoff = 0.20
     go_bp <- enrichGO(
       gene = selected_entrez,
       universe = universe_entrez,
@@ -248,6 +234,7 @@ run_enrichment <- function(deg_file) {
       readable = TRUE
     )
     
+    # KEGG: pvalueCutoff = 0.05, qvalueCutoff = 0.20
     kegg <- enrichKEGG(
       gene = selected_entrez,
       universe = universe_entrez,
@@ -292,10 +279,7 @@ run_enrichment <- function(deg_file) {
   )
 }
 
-#-----------------------------------------------------------
-# 5. Run every comparison
-#-----------------------------------------------------------
-
+# Run every comparison
 invisible(
   lapply(
     deg_files,

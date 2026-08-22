@@ -1,27 +1,23 @@
 #!/usr/bin/env Rscript
-# hibi_goplot_analysis.R
-# ---------------------------------------------------------------
-# Port of the GLP-1R project's 04_goplot_chord/goplot_analysis.R for the
-# HIBI (hypoxic-ischemic brain injury) consensus data. Same GOplot calls,
-# same parameters, same plot set.
-#
-#   circle_dat(terms, genes) -> circ
-# Plots:
-#   * GOBubble  - top 20 (consensus) / top 5 (pathways) GO terms per category
-#   * GOCircle  - circular overview (consensus)
-#   * GOChord   - gene<->term chord (consensus + restricted pathways,
-#                 GO / KEGG / Reactome / AllEnrichments)
-#   * GOHeat    - heatmap of genes x terms. GOplot::GOHeat's own x-axis
-#     labels break under modern ggplot2 (it uses scale_x_discrete on a
-#     numeric axis), so it is reproduced with the same go_heat helper.
-# Inputs : hibi_data/goplot/<name>_terms.csv and _genes.csv
+# GOplot visualisations of the HIBI (hypoxic-ischemic brain injury) consensus data;
+# a port of the GLP-1R 04_goplot_chord/goplot_analysis.R with the same calls,
+# parameters and plot set.
+# Inputs: hibi_data/goplot/<name>_terms.csv and _genes.csv
 # Outputs: hibi_goplot/<Name>/<PNG|PDF>/
-# ---------------------------------------------------------------
+#
+# Plots produced: GOBubble (top 20 GO terms per category for consensus, top 5 for
+# pathways), GOCircle overview for consensus, gene-to-term GOChord for consensus
+# and restricted pathways across GO, KEGG, Reactome and AllEnrichments, and a
+# genes x terms heatmap. GOplot::GOHeat's own x-axis labels break under modern
+# ggplot2 (it calls scale_x_discrete on a numeric axis), so that heatmap is
+# reproduced by the go_heat helper.
 suppressMessages(library(GOplot))
 suppressMessages(library(ggplot2))
 
-DATA  <- "/sessions/lucid-pensive-ride/mnt/outputs/hibi_data/goplot"
-PLOTS <- "/sessions/lucid-pensive-ride/mnt/outputs/hibi_goplot"
+BASE <- Sys.getenv("GLP1R_BASE")
+if (!nzchar(BASE)) stop("Set GLP1R_BASE to the directory holding the analysis data tree, e.g. export GLP1R_BASE=/path/to/workspace")
+DATA  <- file.path(BASE, "mnt", "outputs", "hibi_data", "goplot")
+PLOTS <- file.path(BASE, "mnt", "outputs", "hibi_goplot")
 
 save_plot <- function(fn, name, fname, w = 11, h = 9) {
   for (d in list(c("PNG", "png"), c("PDF", "pdf"))) {
@@ -126,7 +122,7 @@ make_combined_chord <- function(prefix, folder, per_cat = 2) {
   }, folder, paste0("GOChord_", folder, "_AllEnrichments"), 14, 13)
 }
 
-# ===================== CONSENSUS =====================
+# Consensus set
 cat("Consensus...\n")
 circ <- load_circ("consensus")
 save_plot(function() GOBubble(top_per_cat(circ, 20), display = "multiple", bg.col = TRUE,
@@ -147,7 +143,7 @@ heat_consensus <- function() {
   go_heat(mem, mode = "logfc", lfc = lfc, title = "HIBI consensus DEGs - genes x GO terms (logFC)")
 }
 save_plot(heat_consensus, "Consensus", "GOHeat_consensus", 15, 8)
-# consensus GO chord (cap genes to top 5 per term by |logFC|)
+# Consensus GO chord, capping genes to the top 5 per term by |logFC|
 save_plot(function() {
   proc <- top_terms(circ, 6)
   gv <- unique(unlist(lapply(proc, function(t) {
@@ -158,7 +154,7 @@ save_plot(function() {
   GOChord(ch, space = 0.02, gene.order = "logFC", gene.space = 0.25, gene.size = 4, process.label = 8)
 }, "Consensus", "GOChord_Consensus", 12, 11)
 
-# ===================== RESTRICTED pathways =====================
+# Restricted pathway gene sets
 for (name in c("BBB", "Inflammatory", "Survival", "IonChannel")) {
   if (!file.exists(file.path(DATA, paste0(name, "_terms.csv")))) { cat(name, "skipped\n"); next }
   cat(name, "...\n")
@@ -181,7 +177,7 @@ for (name in c("BBB", "Inflammatory", "Survival", "IonChannel")) {
   }, name, paste0("GOHeat_", name), 12, 8)
 }
 
-# ===================== KEGG / Reactome chords =====================
+# KEGG and Reactome chords
 cat("KEGG / Reactome chords...\n")
 targets <- list(c("consensus", "Consensus"), c("BBB", "BBB"),
                 c("Inflammatory", "Inflammatory"), c("Survival", "Survival"),

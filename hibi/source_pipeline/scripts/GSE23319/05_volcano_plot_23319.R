@@ -1,3 +1,5 @@
+# GSE23319 volcano plot; input: results object -> output: figures/GSE23319_volcano.pdf
+
 library(EnhancedVolcano)
 
 pdf(

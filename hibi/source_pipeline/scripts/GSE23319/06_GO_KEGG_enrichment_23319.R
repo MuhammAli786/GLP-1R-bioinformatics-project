@@ -1,3 +1,4 @@
+# GSE23319 GO BP and KEGG enrichment; input: results/GSE23319_3h_DEGs.csv -> output: results/GO_BP_GSE23319_3h.csv, results/KEGG_GSE23319_3h.csv
 
 library(clusterProfiler)
 library(org.Mm.eg.db)
@@ -44,7 +45,7 @@ entrez <- entrez[!is.na(entrez)]
 length(entrez)
 
 
-#GO enrichment
+# GO enrichment: pvalueCutoff = 0.05, qvalueCutoff = 0.05
 ego <- enrichGO(
   gene = entrez,
   OrgDb = org.Mm.eg.db,
@@ -65,7 +66,7 @@ write.csv(
 )
 
 
-#KEGG enrichment
+# KEGG enrichment: pvalueCutoff = 0.05
 ekegg <- enrichKEGG(
   gene = entrez,
   organism = "mmu",
@@ -82,7 +83,7 @@ write.csv(
 )
 
 
-#Dotplots
+# Dotplots
 if (!dir.exists("figures")) {
   dir.create("figures")
 }

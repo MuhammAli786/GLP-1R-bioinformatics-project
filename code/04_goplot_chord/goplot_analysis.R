@@ -1,27 +1,19 @@
 #!/usr/bin/env Rscript
-# goplot_analysis.R
-# ---------------------------------------------------------------
-# GOplot visualisations (https://wencke.github.io/) of the consensus
-# overlapping DEGs and of each restricted pathway gene set.
-#
-#   circle_dat(terms, genes) -> circ
-# Plots:
-#   * GOBubble  — top 20 (consensus) / top 5 (pathways) GO terms per category
-#   * GOCircle  — circular overview (consensus)
-#   * GOChord   — gene<->term chord (restricted pathways)
-#   * GOHeat    — heatmap of genes x terms.  NOTE: GOplot::GOHeat's own
-#     x-axis labels break under modern ggplot2 (it uses scale_x_discrete on
-#     a numeric axis), so the GOHeat-style heatmap is reproduced here with a
-#     small helper (go_heat) that renders gene labels reliably:
-#       - consensus : nlfc = 0 style (tile colour = per-gene term Count)
-#       - pathways  : nlfc = 1 style (tile colour = gene logFC)
-# Inputs : GOPLOT analyis/data/<name>_terms.csv and _genes.csv
+# GOplot visualisations of the consensus overlapping DEGs and of each restricted pathway gene set.
+# Inputs: GOPLOT analyis/data/<name>_terms.csv and _genes.csv
 # Outputs: GOPLOT analyis/plots/<Name>/<PNG|PDF>/
-# ---------------------------------------------------------------
+#
+# Plots produced: GOBubble (top 20 GO terms per category for consensus, top 5 for
+# pathways), GOCircle overview for consensus, gene-to-term GOChord, and a
+# genes x terms heatmap. GOplot::GOHeat's own x-axis labels break under modern
+# ggplot2 (it calls scale_x_discrete on a numeric axis), so that heatmap is
+# reproduced here by the go_heat helper.
 suppressMessages(library(GOplot))
 suppressMessages(library(ggplot2))
 
-ROOT <- "/sessions/amazing-zen-bardeen/mnt/Bulk RNA sequencing/GOPLOT analyis"
+BASE <- Sys.getenv("GLP1R_BASE")
+if (!nzchar(BASE)) stop("Set GLP1R_BASE to the directory holding the analysis data tree, e.g. export GLP1R_BASE=/path/to/workspace")
+ROOT <- file.path(BASE, "mnt", "Bulk RNA sequencing", "GOPLOT analyis")
 DATA <- file.path(ROOT, "data")
 PLOTS <- file.path(ROOT, "plots")
 
@@ -51,7 +43,7 @@ top_terms <- function(circ, n = 6) {
   head(u[order(u$adj_pval), "term"], n)
 }
 
-# membership matrix (genes x terms) restricted to an optional gene set
+# Build a genes x terms membership matrix, optionally restricted to a gene set.
 build_mem <- function(circ, terms, genes_vec = NULL) {
   if (is.null(genes_vec)) genes_vec <- unique(circ$genes[circ$term %in% terms])
   m <- sapply(terms, function(t) as.integer(genes_vec %in% circ$genes[circ$term == t]))
@@ -60,9 +52,8 @@ build_mem <- function(circ, terms, genes_vec = NULL) {
   m[rowSums(m) > 0, , drop = FALSE]
 }
 
-# GOHeat-style heatmap with reliable gene labels.
-# mode "count": tile = per-gene term count (nlfc=0 style)
-# mode "logfc": tile = gene logFC where assigned (nlfc=1 style)
+# GOHeat-style heatmap; mode "count" colours tiles by per-gene term count
+# (GOHeat nlfc=0 style), mode "logfc" by gene logFC (nlfc=1 style).
 go_heat <- function(mem, mode = "count", lfc = NULL, title = "") {
   cnt <- rowSums(mem)
   ord <- if (nrow(mem) > 2) hclust(dist(mem))$order else seq_len(nrow(mem))
@@ -73,8 +64,8 @@ go_heat <- function(mem, mode = "count", lfc = NULL, title = "") {
     long$val <- ifelse(long$member == 1, cnt[long$gene], 0)
     fill <- scale_fill_gradientn(colours = c("#2E80E0", "#8E6FB0", "#B0182C"), name = "Count")
   } else {
-    # GOHeat nlfc=1 style: assigned tile = gene logFC, unassigned = 0 (yellow);
-    # colour scale red(high)/yellow(0)/green(low), values clamped to +/- cap.
+    # Assigned tiles take the gene logFC, unassigned 0; red/yellow/green scale
+    # clamped to +/- cap.
     cap <- 2
     long$val <- ifelse(long$member == 1, lfc[long$gene], 0)
     long$val <- pmax(pmin(long$val, cap), -cap)
@@ -84,14 +75,14 @@ go_heat <- function(mem, mode = "count", lfc = NULL, title = "") {
   long$gene <- factor(long$gene, levels = genes)
   long$term <- factor(long$term, levels = rev(terms))
   ggplot(long, aes(gene, term, fill = val)) +
-    geom_tile() + fill +                                  # no borders between squares
+    geom_tile() + fill +
     labs(title = title) + coord_cartesian(expand = FALSE) + theme_minimal() +
     theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1, size = 8),
           axis.text.y = element_text(size = 12), axis.title = element_blank(),
           plot.title = element_text(size = 13, face = "bold"), panel.grid = element_blank())
 }
 
-# GOChord for any enrichment category (KEGG / Reactome / GO) — GOplot is
+# GOChord for any enrichment category (GO, KEGG or Reactome); GOplot is
 # database-agnostic, so the same chord works with non-GO term tables.
 make_cat_chord <- function(prefix, folder, suffix, label, n_terms = 6) {
   tf <- file.path(DATA, paste0(prefix, "_", suffix, "_terms.csv"))
@@ -102,7 +93,7 @@ make_cat_chord <- function(prefix, folder, suffix, label, n_terms = 6) {
   genes$ID <- toupper(genes$ID)
   circ2 <- circle_dat(terms, genes)
   proc <- top_terms(circ2, n_terms)
-  if (prefix == "consensus") {   # cap genes for the large consensus set
+  if (prefix == "consensus") {   # cap the gene set: top 5 by |logFC| per term
     gv <- unique(unlist(lapply(proc, function(t) {
       s <- circ2[circ2$term == t, ]; head(s[order(-abs(s$logFC)), "genes"], 5) })))
     gdf <- genes[genes$ID %in% gv, ]
@@ -114,8 +105,8 @@ make_cat_chord <- function(prefix, folder, suffix, label, n_terms = 6) {
   }, folder, paste0("GOChord_", folder, "_", label), 12, 11)
 }
 
-# Combined chord: ALL enrichment databases (GO BP/MF/CC + KEGG + Reactome)
-# in a single GOChord, taking the top `per_cat` terms from each database.
+# Single GOChord combining GO BP/MF/CC, KEGG and Reactome, taking the top
+# per_cat terms from each database.
 make_combined_chord <- function(prefix, folder, per_cat = 2) {
   files <- file.path(DATA, paste0(prefix, c("_terms.csv", "_kegg_terms.csv", "_reactome_terms.csv")))
   files <- files[file.exists(files)]
@@ -137,7 +128,7 @@ make_combined_chord <- function(prefix, folder, per_cat = 2) {
   }, folder, paste0("GOChord_", folder, "_AllEnrichments"), 14, 13)
 }
 
-# ===================== CONSENSUS =====================
+# Consensus set
 cat("Consensus...\n")
 circ <- load_circ("consensus")
 save_plot(function() GOBubble(top_per_cat(circ, 20), display = "multiple", bg.col = TRUE,
@@ -147,8 +138,8 @@ save_plot(function() GOBubble(top_per_cat(circ, 20), display = "multiple", bg.co
 save_plot(function() GOCircle(circ, nsub = top_terms(circ, 10),
           title = "Consensus DEGs - GO enrichment overview"),
           "Consensus", "GOCircle_consensus_top10", 12, 10)
-# GOHeat (logFC style, GOHeat nlfc=1): diverse (reduced) terms, representative
-# genes per term; tiles coloured by gene logFC (red/yellow/green), no borders.
+# Consensus heatmap over terms reduced at 0.75 overlap, keeping the 6 largest
+# |logFC| genes per term.
 heat_consensus <- function() {
   cg <- read.csv(file.path(DATA, "consensus_genes.csv"), stringsAsFactors = FALSE)
   lfc <- setNames(cg$logFC, toupper(cg$ID))
@@ -161,7 +152,7 @@ heat_consensus <- function() {
 }
 save_plot(heat_consensus, "Consensus", "GOHeat_consensus", 15, 8)
 
-# ===================== RESTRICTED pathways =====================
+# Restricted pathway gene sets
 for (name in c("BBB", "Inflammatory", "Survival", "IonChannel")) {
   if (!file.exists(file.path(DATA, paste0(name, "_terms.csv")))) { cat(name, "skipped\n"); next }
   cat(name, "...\n")
@@ -183,7 +174,7 @@ for (name in c("BBB", "Inflammatory", "Survival", "IonChannel")) {
     go_heat(mem, mode = "logfc", lfc = lfc, title = paste0(name, " - genes x GO terms (logFC)"))
   }, name, paste0("GOHeat_", name), 12, 8)
 }
-# ===================== KEGG / Reactome chords =====================
+# KEGG and Reactome chords
 cat("KEGG / Reactome chords...\n")
 targets <- list(c("consensus", "Consensus"), c("BBB", "BBB"),
                 c("Inflammatory", "Inflammatory"), c("Survival", "Survival"),
@@ -192,6 +183,6 @@ for (tg in targets) {
   make_cat_chord(tg[1], tg[2], "kegg", "KEGG")
   make_cat_chord(tg[1], tg[2], "reactome", "Reactome")
 }
-# combined all-database chord (consensus + each restricted pathway)
+# Combined all-database chord for consensus and each restricted pathway
 for (tg in targets) make_combined_chord(tg[1], tg[2], per_cat = 2)
 cat("DONE\n")

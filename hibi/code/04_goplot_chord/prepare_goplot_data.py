@@ -1,34 +1,31 @@
 #!/usr/bin/env python3
-"""
-hibi_prepare_goplot_data.py
--------------------------------------------------------------
-Port of the GLP-1R project's 04_goplot_chord/prepare_goplot_data.py.
+"""Build the tables GOplot's circle_dat() needs from the HIBI consensus meta-analysis; a port of the GLP-1R 04_goplot_chord/prepare_goplot_data.py.
 
-Builds the input tables GOplot's circle_dat() needs, from the HIBI
-consensus meta-analysis outputs:
-
-  <name>_terms.csv : Category, ID, Term, Genes, adj_pval   (GO BP/MF/CC)
-  <name>_kegg_terms.csv / <name>_reactome_terms.csv
-  <name>_genes.csv : ID, logFC
-
-Two kinds of inputs:
-  * Consensus  -- the HIBI consensus genes, enriched against GO+KEGG+Reactome.
-  * Restricted -- for each curated pathway (BBB, Inflammatory, Survival,
-    IonChannel) the consensus genes are intersected with the pathway gene
-    list and RE-ENRICHED so the term/gene tables are mechanism-specific.
-
-Note: unlike GLP-1R (which reused a precomputed enrichment_LFC02.csv), the
+Outputs: <name>_terms.csv (Category, ID, Term, Genes, adj_pval for GO BP/MF/CC),
+<name>_kegg_terms.csv, <name>_reactome_terms.csv and <name>_genes.csv (ID, logFC).
+Two sets are produced: consensus, the HIBI consensus genes enriched against GO,
+KEGG and Reactome; and restricted, where for each curated pathway (BBB,
+Inflammatory, Survival, IonChannel) the consensus genes are intersected with that
+pathway's gene list and re-enriched so the tables are mechanism-specific.
+Unlike the GLP-1R version, which reused a precomputed enrichment_LFC02.csv, the
 consensus enrichment is computed here. Enrichr caps submitted lists, so the
-consensus set is submitted as its top CONS_MAX genes by recurrence
-(n_groups, tie-broken by |mean_log2FC|) -- the same ranking the consensus
-Cnet and heatmap use.
+consensus set is submitted as its top CONS_MAX genes by recurrence (n_groups,
+tie-broken by |mean_log2FC|), the same ranking the consensus Cnet and heatmap use.
 """
+import os as _os
+BASE = _os.environ.get("GLP1R_BASE")
+if not BASE:
+    raise SystemExit(
+        "Set GLP1R_BASE to the directory holding the analysis data tree, e.g.\n"
+        "  export GLP1R_BASE=/path/to/workspace"
+    )
+
 import os, re, sys, time
 import pandas as pd
 import gseapy as gp
 
-DATA = "/sessions/lucid-pensive-ride/mnt/outputs/hibi_data/meta_analysis"
-OUT = "/sessions/lucid-pensive-ride/mnt/outputs/hibi_data/goplot"
+DATA = BASE + "/mnt/outputs/hibi_data/meta_analysis"
+OUT = BASE + "/mnt/outputs/hibi_data/goplot"
 os.makedirs(OUT, exist_ok=True)
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from cnet_gene_lists import BBB_GENES, JAK_STAT3_GENES, PI3K_AKT_GENES, ION_CHANNEL_BASE_GENES
@@ -102,7 +99,7 @@ def main():
     cons = pd.read_csv(os.path.join(DATA, f"consensus_{THR}.csv"))
     cons_lfc = dict(zip(cons['gene_symbol'], cons['mean_log2FC']))
 
-    # ---- Consensus ----
+    # Consensus set
     ranked = cons.assign(_abs=cons['mean_log2FC'].abs()).sort_values(
         ['n_groups', '_abs'], ascending=[False, False])
     sub = ranked.head(CONS_MAX)
@@ -115,7 +112,7 @@ def main():
         columns={'gene_symbol': 'ID', 'mean_log2FC': 'logFC'})
     write_pair("consensus", cterms, cgenes)
 
-    # ---- Restricted pathways ----
+    # Restricted pathway sets
     MECH = {"BBB": BBB_GENES, "Inflammatory": JAK_STAT3_GENES,
             "Survival": PI3K_AKT_GENES, "IonChannel": ION_CHANNEL_BASE_GENES}
     cons_keys = {g.upper() for g in cons['gene_symbol']}

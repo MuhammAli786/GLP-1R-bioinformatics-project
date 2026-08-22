@@ -97,6 +97,26 @@ consensus gene (up in 12 groups).
 Full gene-by-gene table in `hibi_vs_glp1r_consensus_comparison.csv`; ranked
 top-20 lists in `comparison_summary.txt`.
 
+At the pathway level the two arms converge on **85 pathways enriched in both**,
+dominated by synaptic and neurodevelopmental programs — Neuronal System,
+Postsynaptic Density, Asymmetric Synapse, Glutamatergic Synapse, Neuron
+Projection, Dendrite, Axon Guidance, Nervous System Development — plus Signal
+Transduction and Signaling by Receptor Tyrosine Kinases. Both arms engage the
+same synaptic machinery; the direction of that engagement trends opposite for
+individual recurrent genes, but is not systematically opposed across the shared
+set (see the tests in `FIGURE_INDEX.md`).
+
+The most recurrent reversals, ranked by how many groups support the call in each
+arm, are `Fkbp5` (HI down in 8 groups / GLP-1R up in 12), `Fos` (up 10 / down 6),
+`Ank3` (down 9 / up 7), `Fosb` (up 9 / down 6), `Hspa1a` (up 8 / down 7), then
+`Nfil3`, `Egr2` and `Bhlhe40`.
+
+This is summarised in **`figures/Fig12_Integrated_GLP1R_vs_HIBI`**, the final
+figure of the thesis — see [`FIGURE_INDEX.md`](FIGURE_INDEX.md) for the panel
+breakdown and the two analysis choices behind it (direction taken from the
+per-group vote rather than the mean's sign; reversals ranked by recurrence rather
+than fold-change magnitude).
+
 ## Layout
 
 ```
@@ -112,6 +132,7 @@ hibi/
 │   │   ├── 06f_consensus_frequency_cnet.py     # consensus signature Cnet
 │   │   ├── 06d_focused_pathway_cnet.py         # 4 restricted pathway Cnets
 │   │   ├── 09_compare_vs_glp1r.py              # consensus overlap vs GLP-1R arm
+│   │   ├── 10_final_integrated_figure.py       # Fig12 final integrated summary
 │   │   ├── cnet_style.py                       # verbatim from the GLP-1R arm
 │   │   └── cnet_gene_lists.py                  # verbatim from the GLP-1R arm
 │   └── 04_goplot_chord/
@@ -153,6 +174,8 @@ python code/04_goplot_chord/prepare_goplot_data.py
 Rscript code/04_goplot_chord/goplot_analysis.R
 # comparison against the GLP-1R arm
 python code/01_meta_analysis_pipeline/09_compare_vs_glp1r.py
+# final integrated figure (needs matplotlib-venn)
+python code/01_meta_analysis_pipeline/10_final_integrated_figure.py
 ```
 
 Scripts take their paths from constants near the top of each file — point them at

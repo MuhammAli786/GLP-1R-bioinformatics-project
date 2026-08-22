@@ -4,12 +4,20 @@ Compare HIBI consensus DEGs (neonatal hypoxic-ischemic brain injury, this
 project) vs GLP-1R-agonism consensus DEGs (GLP-1R-bioinformatics-project).
 Both at LFC02 threshold (padj<0.05, |log2FC|>=0.2, gene sig in >=2 groups).
 """
+import os as _os
+BASE = _os.environ.get("GLP1R_BASE")
+if not BASE:
+    raise SystemExit(
+        "Set GLP1R_BASE to the directory holding the analysis data tree, e.g.\n"
+        "  export GLP1R_BASE=/path/to/workspace"
+    )
+
 import pandas as pd
 
-HIBI = "/sessions/lucid-pensive-ride/mnt/outputs/hibi_data/meta_analysis/consensus_LFC02.csv"
-GLP1R = "/sessions/lucid-pensive-ride/mnt/GLP-1R-bioinformatics-project/data/meta_analysis/consensus_LFC02.csv"
-OUT = "/sessions/lucid-pensive-ride/mnt/outputs/hibi_vs_glp1r_consensus_comparison.csv"
-SUMMARY = "/sessions/lucid-pensive-ride/mnt/outputs/comparison_summary.txt"
+HIBI = BASE + "/mnt/outputs/hibi_data/meta_analysis/consensus_LFC02.csv"
+GLP1R = BASE + "/mnt/GLP-1R-bioinformatics-project/data/meta_analysis/consensus_LFC02.csv"
+OUT = BASE + "/mnt/outputs/hibi_vs_glp1r_consensus_comparison.csv"
+SUMMARY = BASE + "/mnt/outputs/comparison_summary.txt"
 
 hibi = pd.read_csv(HIBI)
 glp = pd.read_csv(GLP1R)

@@ -1,17 +1,17 @@
 #!/usr/bin/env python3
-"""
-05_enrichment_plots.py
--------------------------------------------------------------
-Task 2 deliverables:
-  * Enrichment DOT plots  (per database, top terms)
-  * Enrichment BAR plots  (per database) + top consensus-gene bar plot
-  * HEATMAP of the top-10 most enriched consensus genes
-        (ranked by group frequency); Y = genes, X = groups labelled
-        A, B, C, D ...  with a separate legend .txt mapping letter->group.
+"""Enrichment dot and bar plots per database, a top consensus-gene bar plot, and a consensus-gene log2FC heatmap.
 
-All plots saved as transparent PNG and PDF into the nested folders:
-  Plots/<type>/<LFCfolder>/<PDF|PNG>/
+Data/enrichment_<thr>.csv, consensus_<thr>.csv, master_deg_<thr>.csv -> transparent PNG and PDF under Plots/<type>/<LFCfolder>/<PDF|PNG>/.
+Heatmap columns are groups relabelled A, B, C, ... with a group_legend.txt mapping letter to group.
 """
+import os as _os
+BASE = _os.environ.get("GLP1R_BASE")
+if not BASE:
+    raise SystemExit(
+        "Set GLP1R_BASE to the directory holding the analysis data tree, e.g.\n"
+        "  export GLP1R_BASE=/path/to/workspace"
+    )
+
 import os, string
 import numpy as np
 import pandas as pd
@@ -20,7 +20,7 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from matplotlib.patches import Patch
 
-BASE = "/sessions/amazing-zen-bardeen/mnt/Bulk RNA sequencing/Finalized Bioinformatics Workflow"
+BASE = BASE + "/mnt/Bulk RNA sequencing/Finalized Bioinformatics Workflow"
 DATA = os.path.join(BASE, "Data")
 PLOTS = os.path.join(BASE, "Plots")
 THR_FOLDER = {"LFC02": "LFC0.2", "LFC05": "LFC0.5", "LFC1": "LFC1"}
@@ -32,6 +32,7 @@ DB_SHORT = {'GO_Biological_Process_2023': 'GO_BP', 'GO_Molecular_Function_2023':
 
 
 def excel_letters(n):
+    """Return n spreadsheet-style column labels: A, B, ... Z, AA, AB, ..."""
     out = []
     for i in range(n):
         s = ""; x = i
@@ -45,6 +46,7 @@ def excel_letters(n):
 
 
 def save(fig, ptype, thr, fname):
+    """Write a figure as transparent PNG and PDF under the plot-type/threshold folders."""
     for fmt in ("PNG", "PDF"):
         d = os.path.join(PLOTS, ptype, THR_FOLDER[thr], fmt)
         os.makedirs(d, exist_ok=True)
@@ -54,6 +56,7 @@ def save(fig, ptype, thr, fname):
 
 
 def clean_term(t):
+    """Strip GO and Reactome accessions from a term and truncate it for display."""
     import re
     t = re.sub(r"\s*\(GO:\d+\)", "", t)
     t = re.sub(r"\s*R-HSA-\d+", "", t)
@@ -61,6 +64,7 @@ def clean_term(t):
 
 
 def dotplot(enr, db, thr, top_n=20):
+    """Dot plot of the top terms for one database, keeping only padj < 0.05."""
     sub = enr[(enr["Gene_set"] == db) & (enr["Adjusted P-value"] < 0.05)].copy()
     if sub.empty:
         return
@@ -81,6 +85,7 @@ def dotplot(enr, db, thr, top_n=20):
 
 
 def barplot_db(enr, db, thr, top_n=20):
+    """Bar plot of the top terms for one database by -log10(padj), keeping only padj < 0.05."""
     sub = enr[(enr["Gene_set"] == db) & (enr["Adjusted P-value"] < 0.05)].copy()
     if sub.empty:
         return
@@ -96,6 +101,7 @@ def barplot_db(enr, db, thr, top_n=20):
 
 
 def top_gene_barplot(cons, thr, top_n=20):
+    """Bar plot of the top consensus genes by group recurrence, coloured by predominant direction."""
     top = cons.head(top_n)
     fig, ax = plt.subplots(figsize=(11, 8))
     colors = ["#d73027" if d == "UP" else "#4575b4" for d in top["predominant_direction"]]
@@ -112,15 +118,15 @@ def top_gene_barplot(cons, thr, top_n=20):
 
 
 def consensus_heatmap(cons, master, thr, top_n=20):
+    """Heatmap of mean log2FC per group for the top consensus genes, with a letter legend file."""
     genes = cons.head(top_n)["gene_symbol"].tolist()
     sub = master[master["symbol"].isin(genes)]
     pivot = sub.pivot_table(index="symbol", columns="group", values="log2FC", aggfunc="mean")
-    # drop groups (columns) that have no data for the displayed genes
+    # Drop groups with no data for the displayed genes.
     pivot = pivot.reindex(index=genes).dropna(axis=1, how="all")
     cols = sorted(pivot.columns)
     pivot = pivot[cols]
     letters = excel_letters(len(cols))
-    # legend txt
     leg_dir = os.path.join(PLOTS, "Heatmaps", "Consensus", THR_FOLDER[thr])
     os.makedirs(leg_dir, exist_ok=True)
     with open(os.path.join(leg_dir, "group_legend.txt"), "w") as f:
@@ -129,6 +135,7 @@ def consensus_heatmap(cons, master, thr, top_n=20):
         for l, c in zip(letters, cols):
             f.write(f"{l}\t{c}\n")
     fig, ax = plt.subplots(figsize=(max(8, len(cols) * 0.6), max(5, len(genes) * 0.55)))
+    # Colour scale is symmetric at the 90th percentile of |log2FC|, floored at 1.5.
     _v = np.abs(pivot.values); _v = _v[np.isfinite(_v)]
     vmax = max(1.5, float(np.nanpercentile(_v, 90))) if _v.size else 1.5
     im = ax.imshow(pivot.values, cmap="RdBu_r", vmin=-vmax, vmax=vmax, aspect="auto")
@@ -143,6 +150,7 @@ def consensus_heatmap(cons, master, thr, top_n=20):
 
 
 def main():
+    """Build every enrichment plot for each threshold."""
     for thr in ["LFC02", "LFC05", "LFC1"]:
         enr = pd.read_csv(os.path.join(DATA, f"enrichment_{thr}.csv"))
         cons = pd.read_csv(os.path.join(DATA, f"consensus_{thr}.csv"))

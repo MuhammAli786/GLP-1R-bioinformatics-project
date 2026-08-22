@@ -1,3 +1,5 @@
+# DESeq2 differential expression and enrichment for GSE312452 (WT HI vs WT Sham pericytes)
+# Input: GSE312452_read_count_all_groups.txt.gz -> Output: volcano, bar, GO/KEGG dotplots, cnetplot
 library(DESeq2)
 library(ggplot2)
 library(pheatmap)
@@ -70,8 +72,6 @@ metadata_WT$injury <- factor(
   levels = c("Sham","HI")
 )
 
-# DESeq2 analysis
-
 dds <- DESeqDataSetFromMatrix(
   countData = counts_WT,
   colData = metadata_WT,
@@ -120,7 +120,6 @@ gene_entrez <- bitr(
   OrgDb = org.Mm.eg.db
 )
 
-#GO Plot
 ego <- enrichGO(
   gene = gene_list,
   OrgDb = org.Mm.eg.db,
@@ -137,7 +136,6 @@ dotplot(
   title = "GO Biological Processes: WT HI vs WT Sham"
 )
 
-#KEGG Plot
 ekegg <- enrichKEGG(
   gene = gene_list,
   organism = "mmu",
@@ -170,7 +168,6 @@ top_genes <- rbind(
   top_down
 )
 
-#Bar Plot
 ggplot(
   top_genes,
   aes(
@@ -194,7 +191,6 @@ gene_fc <- deg_sig$log2FoldChange
 
 names(gene_fc) <- rownames(deg_sig)
 
-#Cnet Plot
 cnetplot(
   ego,
   showCategory = 10,

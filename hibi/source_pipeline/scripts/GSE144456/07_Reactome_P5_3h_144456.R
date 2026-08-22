@@ -1,17 +1,11 @@
-############################################################
-# GSE144456 - Reactome Enrichment
-# Comparison: P5 HI versus control at 3 hours
-############################################################
+# Reactome enrichment for GSE144456 P5 HI vs control at 3h
+# Input: results/GSE144456_P5_3h_DEG_symbol_to_Entrez.csv -> Output: results/GSE144456_P5_3h_Reactome.csv/.rds, figures/Reactome_*.pdf/.png
 
 library(ReactomePA)
 library(clusterProfiler)
 library(enrichplot)
 library(org.Mm.eg.db)
 library(ggplot2)
-
-#-----------------------------------------------------------
-# 1. Load the symbol-to-Entrez mapping from script 06
-#-----------------------------------------------------------
 
 conversion_file <-
   "results/GSE144456_P5_3h_DEG_symbol_to_Entrez.csv"
@@ -50,10 +44,6 @@ if (length(entrez_deg) < 10) {
   )
 }
 
-#-----------------------------------------------------------
-# 2. Run Reactome enrichment
-#-----------------------------------------------------------
-
 reactome <- enrichPathway(
   gene = entrez_deg,
   organism = "mouse",
@@ -71,10 +61,6 @@ cat(
   "\n"
 )
 
-#-----------------------------------------------------------
-# 3. Save enrichment results and object
-#-----------------------------------------------------------
-
 write.csv(
   reactome_results,
   "results/GSE144456_P5_3h_Reactome.csv",
@@ -85,10 +71,6 @@ saveRDS(
   reactome,
   "results/GSE144456_P5_3h_Reactome.rds"
 )
-
-#-----------------------------------------------------------
-# 4. Create plots only when pathways were found
-#-----------------------------------------------------------
 
 if (nrow(reactome_results) > 0) {
   

@@ -1,3 +1,14 @@
+# Consensus-based cnet plots at |log2FC| >= 1: all consensus DEGs, plus BBB and
+# inflammation/survival term subsets.
+
+import os as _os
+BASE = _os.environ.get("GLP1R_BASE")
+if not BASE:
+    raise SystemExit(
+        "Set GLP1R_BASE to the directory holding the analysis data tree, e.g.\n"
+        "  export GLP1R_BASE=/path/to/workspace"
+    )
+
 import pandas as pd
 import numpy as np
 import matplotlib
@@ -7,8 +18,8 @@ from matplotlib.lines import Line2D
 import networkx as nx
 import textwrap, re, os
 
-DATA = '/sessions/practical-ecstatic-mendel/mnt/outputs'
-OUT_CONS = '/sessions/practical-ecstatic-mendel/mnt/Bulk RNA sequencing/Final analysis/Plots/Cnet_Plots_Consensus_Based'
+DATA = BASE + '/mnt/outputs'
+OUT_CONS = BASE + '/mnt/Bulk RNA sequencing/Final analysis/Plots/Cnet_Plots_Consensus_Based'
 
 LIB_COLORS = {
     'GO_Biological_Process_2023': '#2196F3',
@@ -29,18 +40,21 @@ lfc_df = pd.read_csv(f'{DATA}/final_gene_lfc_COMPREHENSIVE.csv')
 lfc_upper = {k.upper(): v for k, v in zip(lfc_df['symbol'], lfc_df['mean_lfc'])}
 symbol_upper = {g.upper(): g for g in lfc_df['symbol']}
 
+# Strip GO / Reactome IDs from a term name and truncate long ones.
 def clean_term(t):
     t = re.sub(r'\s*\(GO:\d+\)', '', t)
     t = re.sub(r'\s*R-HSA-\d+', '', t)
     return t[:52] + '...' if len(t) > 55 else t
 
+# Wrap a label to 24 characters per line.
 def wrap_label(t, width=24):
     return '\n'.join(textwrap.wrap(t, width=width))
 
+# Render one cnet figure: greedy set-cover term selection, then a spring-layout network.
 def build_cnet(enr_sig, input_genes_upper, title, outpath, max_terms=15):
     sig = enr_sig.copy()
     
-    # Pre-process
+    # Genes of each term that are also in the input list
     term_data = []
     for _, row in sig.iterrows():
         genes_raw = [g.strip() for g in str(row['Genes']).split(';') if g.strip()]
@@ -80,7 +94,7 @@ def build_cnet(enr_sig, input_genes_upper, title, outpath, max_terms=15):
     for s in selected:
         print(f"    [{LIB_LABELS.get(s['lib'], s['lib'])[:10]}] {s['term']}")
     
-    # Build graph
+    # Build the term-gene graph
     G = nx.Graph()
     for td in selected:
         G.add_node(td['term'], ntype='term', lib=td['lib'])
@@ -92,15 +106,13 @@ def build_cnet(enr_sig, input_genes_upper, title, outpath, max_terms=15):
     term_nodes = [n for n, d in G.nodes(data=True) if d.get('ntype') == 'term']
     gene_nodes = [n for n, d in G.nodes(data=True) if d.get('ntype') == 'gene']
     
-    # Layout
     pos = nx.spring_layout(G, k=3.5, iterations=150, seed=42)
     fig, ax = plt.subplots(figsize=(30, 26))
     fig.patch.set_alpha(0); ax.set_facecolor('none')
     
-    # Edges
     nx.draw_networkx_edges(G, pos, ax=ax, alpha=0.2, width=0.7, edge_color='#888888')
     
-    # Gene nodes
+    # Gene nodes, coloured by mean log2FC
     gene_lfcs = [G.nodes[g].get('lfc', 0) for g in gene_nodes]
     gene_sizes = [max(80, G.degree(g) * 40) for g in gene_nodes]
     vmax = max(abs(min(gene_lfcs)), abs(max(gene_lfcs)), 0.5)
@@ -111,14 +123,14 @@ def build_cnet(enr_sig, input_genes_upper, title, outpath, max_terms=15):
     cbar = plt.colorbar(sc, ax=ax, shrink=0.35, pad=0.02)
     cbar.set_label('mean log₂FC', fontsize=20)
     
-    # Term nodes
+    # Term nodes, coloured by source library
     for t in term_nodes:
         color = LIB_COLORS.get(G.nodes[t].get('lib'), '#888888')
         xy = pos[t]
         ax.scatter(xy[0], xy[1], s=350, c=color, zorder=4,
                    edgecolors='white', linewidths=1.5, marker='s')
     
-    # Term labels (white on colored box)
+    # Term labels sit above their node
     for t in term_nodes:
         color = LIB_COLORS.get(G.nodes[t].get('lib'), '#888888')
         xy = pos[t]
@@ -128,7 +140,7 @@ def build_cnet(enr_sig, input_genes_upper, title, outpath, max_terms=15):
                 bbox=dict(boxstyle='round,pad=0.3', facecolor=color,
                           alpha=0.9, edgecolor='none'))
     
-    # Gene labels (white on dark box)
+    # Gene labels sit below their node
     for g in gene_nodes:
         xy = pos[g]
         ax.text(xy[0], xy[1] - 0.03, g,
@@ -137,7 +149,6 @@ def build_cnet(enr_sig, input_genes_upper, title, outpath, max_terms=15):
                 bbox=dict(boxstyle='round,pad=0.2', facecolor='#333333',
                           alpha=0.85, edgecolor='none'))
     
-    # Legend
     legend_els = []
     libs_used = {G.nodes[t].get('lib') for t in term_nodes}
     for lib, color in LIB_COLORS.items():
@@ -159,9 +170,7 @@ def build_cnet(enr_sig, input_genes_upper, title, outpath, max_terms=15):
     print(f"  SAVED: {os.path.basename(outpath)} ({non_zero}/{len(gene_nodes)} genes with LFC≠0)")
 
 
-# ============================================================
-# ALL CONSENSUS AT LFC≥1
-# ============================================================
+# All consensus DEGs at |log2FC| >= 1
 print("=" * 60)
 print("CONSENSUS-BASED CNET (LFC≥1)")
 print("=" * 60)
@@ -181,7 +190,7 @@ build_cnet(sig1, input_upper,
            f'{OUT_CONS}/Cnet_All_Consensus_LFC1.png',
            max_terms=15)
 
-# BBB-related at LFC≥1
+# BBB-related terms at |log2FC| >= 1
 print("\n--- BBB-related consensus LFC≥1 ---")
 bbb_kw = r'(?i)blood.brain|barrier|tight.junction|endotheli|vascular|permeab|transport|efflux|cell.junction|angiogen|MMP|extracellular.matrix|cell.migrat'
 bbb_sig = sig1[sig1['Term'].str.contains(bbb_kw, na=False)]
@@ -192,7 +201,7 @@ if len(bbb_sig) >= 2:
                f'{OUT_CONS}/Cnet_BBB_Consensus_LFC1.png',
                max_terms=12)
 
-# Inflammation+Survival at LFC≥1
+# Inflammation and survival terms at |log2FC| >= 1
 print("\n--- Inflammation+Survival consensus LFC≥1 ---")
 is_kw = r'(?i)inflam|immune|cytokine|interleukin|NF.?kB|apoptosis|survival|cell.death|necrosis|caspase|TNF|toll|TLR|innate|chemokine'
 is_sig = sig1[sig1['Term'].str.contains(is_kw, na=False)]

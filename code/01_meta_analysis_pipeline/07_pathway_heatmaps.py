@@ -1,19 +1,17 @@
 #!/usr/bin/env python3
-"""
-07_pathway_heatmaps.py
--------------------------------------------------------------
-Task 4: mechanism-specific heatmaps built from the curated
-cnet_gene_lists.py sets (BBB, JAK-STAT3 Inflammatory, PI3K/Akt
-Survival).  Shows the TOP-10 most relevant genes in each mechanism
-(ranked by group recurrence, then mean |log2FC|).
+"""Mechanism-specific log2FC heatmaps for the curated cnet_gene_lists.py sets (BBB, JAK-STAT3 Inflammatory, PI3K/Akt Survival, Ion Channel), ranking genes by group recurrence then mean |log2FC|.
 
-Special rule (BBB): force-include ALL MMP genes (and MMP-9) that are
-significant in the data, in addition to the top-10.
-
-Same styling as the consensus heatmap: Y = genes, X = groups labelled
-A, B, C ... with a separate group_legend.txt; transparent PNG + PDF.
-Saved to Plots/Heatmaps/<mechanism>/<LFCfolder>/<PDF|PNG>/
+Data/master_deg_<thr>.csv -> transparent PNG and PDF plus a group_legend.txt under Plots/Heatmaps/<mechanism>/<LFCfolder>/<PDF|PNG>/, with groups relabelled A, B, C, ...
+For BBB, every curated MMP gene is added as an explicit row even when not significant.
 """
+import os as _os
+BASE = _os.environ.get("GLP1R_BASE")
+if not BASE:
+    raise SystemExit(
+        "Set GLP1R_BASE to the directory holding the analysis data tree, e.g.\n"
+        "  export GLP1R_BASE=/path/to/workspace"
+    )
+
 import os, string, sys
 import numpy as np
 import pandas as pd
@@ -24,7 +22,7 @@ import matplotlib.pyplot as plt
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from cnet_gene_lists import BBB_GENES, JAK_STAT3_GENES, PI3K_AKT_GENES, ION_CHANNEL_BASE_GENES
 
-BASE = "/sessions/amazing-zen-bardeen/mnt/Bulk RNA sequencing/Finalized Bioinformatics Workflow"
+BASE = BASE + "/mnt/Bulk RNA sequencing/Finalized Bioinformatics Workflow"
 DATA = os.path.join(BASE, "Data")
 PLOTS = os.path.join(BASE, "Plots", "Heatmaps")
 THR_FOLDER = {"LFC02": "LFC0.2", "LFC05": "LFC0.5", "LFC1": "LFC1"}
@@ -38,6 +36,7 @@ MECHANISMS = {
 
 
 def excel_letters(n):
+    """Return n spreadsheet-style column labels: A, B, ... Z, AA, AB, ..."""
     out = []
     for i in range(n):
         s = ""; x = i
@@ -51,12 +50,12 @@ def excel_letters(n):
 
 
 def make(mech, genes, thr, master, cons):
+    """Draw and save the heatmap for one mechanism and threshold."""
     gene_set = {g.upper() for g in genes}
-    # candidate mechanism genes that are significant in the data
     sub_all = master[master["symbol_key"].isin(gene_set)]
     if sub_all.empty:
         print(f"  {mech}/{thr}: no significant mechanism genes"); return
-    # rank by recurrence then mean|lfc|
+    # Rank by group recurrence, then by mean |log2FC|.
     rank = (sub_all.groupby("symbol")
             .agg(n_groups=("group", "nunique"), m=("log2FC", lambda x: np.mean(np.abs(x))))
             .reset_index().sort_values(["n_groups", "m"], ascending=[False, False]))
@@ -64,19 +63,17 @@ def make(mech, genes, thr, master, cons):
     sel = list(top)
     forced = []
     if mech == "BBB":
-        # force-include ALL curated MMP proteins (incl. Mmp9) as explicit rows,
-        # even when not significant in any group (shown as blank cells)
+        # Every curated MMP gets a row even when not significant in any group (blank cells).
         forced = [g for g in genes if g.upper().startswith("MMP")]
-        # plus any other significant MMP detected
         forced += [s for s in sub_all["symbol"].unique() if s.upper().startswith("MMP")]
         for m in forced:
             if m not in sel:
                 sel.append(m)
     sub = sub_all[sub_all["symbol"].isin(sel)]
     pivot = sub.pivot_table(index="symbol", columns="group", values="log2FC", aggfunc="mean")
-    # drop groups (columns) that have no data for the displayed genes
+    # Drop groups with no data for the displayed genes.
     pivot = pivot.dropna(axis=1, how="all")
-    # order rows: top-ranked first, then forced MMP rows (blank rows kept)
+    # Top-ranked genes first, then the forced MMP rows.
     order, seen = [], set()
     for g in top + forced:
         if g not in seen:
@@ -93,6 +90,7 @@ def make(mech, genes, thr, master, cons):
         for l, c in zip(letters, cols):
             f.write(f"{l}\t{c}\n")
     fig, ax = plt.subplots(figsize=(max(8, len(cols) * 0.6), max(5, len(order) * 0.5)))
+    # Colour scale is symmetric at the 90th percentile of |log2FC|, floored at 1.5.
     _v = np.abs(pivot.values); _v = _v[np.isfinite(_v)]
     vmax = max(1.5, float(np.nanpercentile(_v, 90))) if _v.size else 1.5
     im = ax.imshow(pivot.values, cmap="RdBu_r", vmin=-vmax, vmax=vmax, aspect="auto")
@@ -110,6 +108,7 @@ def make(mech, genes, thr, master, cons):
 
 
 def main():
+    """Build every mechanism heatmap for each threshold."""
     for thr in ["LFC02", "LFC05", "LFC1"]:
         master = pd.read_csv(os.path.join(DATA, f"master_deg_{thr}.csv"))
         cons = pd.read_csv(os.path.join(DATA, f"consensus_{thr}.csv"))

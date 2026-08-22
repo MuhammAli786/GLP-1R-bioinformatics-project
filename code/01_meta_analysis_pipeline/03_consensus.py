@@ -1,29 +1,27 @@
 #!/usr/bin/env python3
-"""
-03_consensus.py
--------------------------------------------------------------
-Consensus genes = genes recurring across the distinct groups.
-A gene is "consensus" if it is a significant DEG in >= 2 groups
-(overlap across the datasets), computed separately per threshold.
+"""Identify consensus genes: a gene is consensus if it is a significant DEG in >= 2 distinct groups, computed separately per threshold.
 
-Outputs (Data/), per threshold LFC02 / LFC1:
-    consensus_<thr>.csv      gene_symbol, n_groups, predominant_direction,
-                             mean_log2FC, groups (semicolon list)
-    gene_lfc_<thr>.csv       gene_symbol, group, log2FC  (long lookup)
-    gene_lfc_comprehensive_<thr>.csv  gene_symbol, mean_log2FC (all sig genes)
+Data/master_deg_<thr>.csv -> consensus_<thr>.csv (gene_symbol, n_groups, predominant_direction, mean_log2FC, groups), gene_lfc_<thr>.csv (long per-group lookup for consensus genes) and gene_lfc_comprehensive_<thr>.csv (mean log2FC for all significant genes).
 """
+import os as _os
+BASE = _os.environ.get("GLP1R_BASE")
+if not BASE:
+    raise SystemExit(
+        "Set GLP1R_BASE to the directory holding the analysis data tree, e.g.\n"
+        "  export GLP1R_BASE=/path/to/workspace"
+    )
+
 import os
 import pandas as pd
 import numpy as np
 
-OUTDATA = "/sessions/amazing-zen-bardeen/mnt/Bulk RNA sequencing/Finalized Bioinformatics Workflow/Data"
+OUTDATA = BASE + "/mnt/Bulk RNA sequencing/Finalized Bioinformatics Workflow/Data"
 MIN_GROUPS = 2
 
 for thr in ["LFC02", "LFC05", "LFC1"]:
     m = pd.read_csv(os.path.join(OUTDATA, f"master_deg_{thr}.csv"))
     if m.empty:
         print(thr, "empty master"); continue
-    # collapse to one row per (group, gene): already deduped in master
     g = m.groupby("symbol_key")
     rows = []
     for key, sub in g:
@@ -46,13 +44,12 @@ for thr in ["LFC02", "LFC05", "LFC1"]:
                                           ascending=[False, False])
     cons.to_csv(os.path.join(OUTDATA, f"consensus_{thr}.csv"), index=False)
 
-    # long lfc lookup (consensus genes only)
     cons_keys = set(cons["gene_symbol"].str.upper())
     lfc = m[m["symbol_key"].isin(cons_keys)][["symbol", "group", "log2FC", "padj", "direction"]]
     lfc = lfc.rename(columns={"symbol": "gene_symbol"})
     lfc.to_csv(os.path.join(OUTDATA, f"gene_lfc_{thr}.csv"), index=False)
 
-    # comprehensive mean lfc for ALL significant genes (for cnet colouring)
+    # Mean log2FC over all significant genes, used to colour the cnet plots.
     comp = m.groupby("symbol").agg(mean_log2FC=("log2FC", "mean")).reset_index()
     comp = comp.rename(columns={"symbol": "gene_symbol"})
     comp.to_csv(os.path.join(OUTDATA, f"gene_lfc_comprehensive_{thr}.csv"), index=False)

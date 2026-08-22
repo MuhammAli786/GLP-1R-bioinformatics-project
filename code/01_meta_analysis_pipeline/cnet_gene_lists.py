@@ -1,6 +1,7 @@
-#  Blood-Brain Barrier (44 genes) 
-# Tight junctions, adherens junctions, transporters, MMPs,
-# basement membrane, endothelial signalling
+"""Curated mouse gene sets and enrichment-term keyword filters shared by the Cnet and heatmap scripts."""
+
+# Blood-brain barrier, 44 genes: tight and adherens junctions, transporters, MMPs,
+# basement membrane, endothelial signalling.
 BBB_GENES = [
     'Adam10', 'Adam9', 'Adam15', 'Cdh5', 'Ctnnb1', 'Ctnnd1',
     'Vegfa', 'Hif1a', 'Aqp4', 'Slc2a1', 'Lrp1', 'Slc7a5',
@@ -11,9 +12,8 @@ BBB_GENES = [
     'Cldn5', 'Tjp1', 'Jam2', 'F11r', 'Cldn12', 'Ocln', 'Tjp2',
 ]
 
-#  JAK-STAT3 Inflammatory (33 genes) 
-# Cytokine receptors, JAK/STAT cascade, SOCS negative regulators,
-# downstream transcriptional targets
+# JAK-STAT3 inflammatory, 33 genes: cytokine receptors, the JAK/STAT cascade,
+# SOCS negative regulators, downstream transcriptional targets.
 JAK_STAT3_GENES = [
     'Gfap', 'Il1r1', 'Il6ra', 'Il6st', 'Lifr', 'Osmr',
     'Mapk1', 'Fyn', 'Akt1', 'Jak1', 'Nfkbia', 'Nfkb2',
@@ -23,9 +23,8 @@ JAK_STAT3_GENES = [
     'Mcl1', 'Ccnd1',
 ]
 
-#  PI3K/Akt Pro-Survival (68 unique genes) 
-# PI3K subunits, Akt isoforms, mTOR complex, FOXO TFs,
-# apoptosis regulators, autophagy, RAS/MAPK crosstalk
+# PI3K/Akt pro-survival, 68 unique genes: PI3K subunits, Akt isoforms, the mTOR complex,
+# FOXO transcription factors, apoptosis regulators, autophagy, RAS/MAPK crosstalk.
 PI3K_AKT_GENES = list(set([
     'Irs1', 'Irs2', 'Sos1', 'Gab1', 'Grb2', 'Pdpk1', 'Akt3', 'Akt1',
     'Bcl2l1', 'Bad', 'Mcl1', 'Bax', 'Xiap', 'Birc2',
@@ -40,10 +39,8 @@ PI3K_AKT_GENES = list(set([
     'Eif4g1', 'Eif4ebp1', 'Rps6kb1', 'Rps6kb2',
 ]))
 
-#  Ion Channel (66+ genes) 
-# Voltage-gated K+/Na+/Ca2+ channels, glutamate receptors,
-# GABA receptors, TRP channels, HCN channels, chloride channels
-# Base list (from reference doc); augmented by Ion_Channel_Consensus_Genes.csv at runtime
+# Ion channel base list, 30 genes: voltage-gated K+/Na+/Ca2+ channels, glutamate and GABA
+# receptors, TRP, HCN and chloride channels. Augmented from Ion_Channel_Consensus_Genes.csv at runtime.
 ION_CHANNEL_BASE_GENES = [
     'Scn2a', 'Scn1a', 'Kcnma1', 'Kcnj11', 'Cacna1c', 'Cacna2d1',
     'Gria1', 'Gria2', 'Grin1', 'Grin2a', 'Gabra1', 'Gabrb3',
@@ -53,7 +50,7 @@ ION_CHANNEL_BASE_GENES = [
 ]
 
 
-# Keyword filters for enrichment term selection 
+# Regexes used to select enrichment terms belonging to each mechanism.
 KEYWORD_FILTERS = {
     'BBB': (
         r'(?i)blood.brain|BBB|tight.junction|endotheli|barrier|claudin|occludin|'

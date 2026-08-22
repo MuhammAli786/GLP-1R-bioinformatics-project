@@ -1,6 +1,5 @@
-############################################################
-# GSE144456 - Inspect metadata
-############################################################
+# Inspect GSE144456 sample metadata and save raw metadata CSV
+# Input: data/GSE144456.rds -> Output: metadata/GSE144456_metadata_raw.csv
 
 library(GEOquery)
 
@@ -32,7 +31,6 @@ for (column_name in colnames(pheno)) {
   
   values <- unique(as.character(pheno[[column_name]]))
   
-  # Only print manageable columns
   if (length(values) <= 20) {
     cat("\n==============================\n")
     cat(column_name, "\n")

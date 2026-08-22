@@ -1,17 +1,11 @@
-############################################################
-# GSE144456 - GO and KEGG Enrichment
-# Comparison: P5 HI versus control at 3 hours
-############################################################
+# GO and KEGG enrichment for GSE144456 P5 HI vs control at 3h
+# Input: results/GSE144456_P5_3h_all_annotated.csv -> Output: results/GSE144456_P5_3h_GO_BP.csv/.rds, results/GSE144456_P5_3h_KEGG.csv/.rds, figures/GO_BP_*.pdf/.png, figures/KEGG_*.pdf/.png
 
 library(clusterProfiler)
 library(enrichplot)
 library(org.Mm.eg.db)
 library(AnnotationDbi)
 library(ggplot2)
-
-#-----------------------------------------------------------
-# 1. Load annotated limma results
-#-----------------------------------------------------------
 
 results_file <- "results/GSE144456_P5_3h_all_annotated.csv"
 
@@ -28,10 +22,6 @@ de_results <- read.csv(
   check.names = FALSE,
   stringsAsFactors = FALSE
 )
-
-#-----------------------------------------------------------
-# 2. Detect gene-symbol column
-#-----------------------------------------------------------
 
 possible_symbol_columns <- c(
   "GENE_SYMBOL",
@@ -78,10 +68,6 @@ cat(
   "\n"
 )
 
-#-----------------------------------------------------------
-# 3. Clean gene symbols
-#-----------------------------------------------------------
-
 clean_symbols <- function(x) {
   
   x <- as.character(x)
@@ -106,10 +92,6 @@ clean_symbols <- function(x) {
 de_results$clean_symbol <- clean_symbols(
   de_results[[symbol_column]]
 )
-
-#-----------------------------------------------------------
-# 4. Select significant DEGs
-#-----------------------------------------------------------
 
 deg <- de_results[
   !is.na(de_results$clean_symbol) &
@@ -138,10 +120,6 @@ if (nrow(deg) == 0) {
     "No significant annotated DEGs are available for enrichment."
   )
 }
-
-#-----------------------------------------------------------
-# 5. Convert symbols to Entrez IDs
-#-----------------------------------------------------------
 
 deg_conversion <- bitr(
   unique(deg$clean_symbol),
@@ -187,17 +165,12 @@ write.csv(
   row.names = FALSE
 )
 
-# Do not stop if fewer than 10 map, but warn
 if (length(entrez_deg) < 10) {
   warning(
     "Fewer than 10 DEG Entrez IDs were mapped. ",
     "Enrichment may return no significant terms."
   )
 }
-
-#-----------------------------------------------------------
-# 6. GO Biological Process enrichment
-#-----------------------------------------------------------
 
 ego <- enrichGO(
   gene = entrez_deg,
@@ -233,10 +206,6 @@ saveRDS(
   ego,
   "results/GSE144456_P5_3h_GO_BP.rds"
 )
-
-#-----------------------------------------------------------
-# 7. GO plots
-#-----------------------------------------------------------
 
 if (nrow(go_results) > 0) {
   
@@ -288,10 +257,6 @@ if (nrow(go_results) > 0) {
   )
 }
 
-#-----------------------------------------------------------
-# 8. KEGG enrichment
-#-----------------------------------------------------------
-
 ekegg <- enrichKEGG(
   gene = entrez_deg,
   universe = entrez_background,
@@ -331,10 +296,6 @@ saveRDS(
   ekegg,
   "results/GSE144456_P5_3h_KEGG.rds"
 )
-
-#-----------------------------------------------------------
-# 9. KEGG plots
-#-----------------------------------------------------------
 
 if (nrow(kegg_results) > 0) {
   
@@ -385,10 +346,6 @@ if (nrow(kegg_results) > 0) {
     "No KEGG plots were created."
   )
 }
-
-#-----------------------------------------------------------
-# 10. Final summary
-#-----------------------------------------------------------
 
 cat("\n============================================\n")
 cat("GSE144456 enrichment analysis complete\n")

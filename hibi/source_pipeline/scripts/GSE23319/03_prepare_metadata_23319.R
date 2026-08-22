@@ -1,6 +1,4 @@
-############################################################
-## Prepare expression matrix
-############################################################
+# Prepare GSE23319 expression matrix and sample metadata; input: data/GSE23319.rds -> output: expr, pheno objects
 
 gse <- readRDS("data/GSE23319.rds")
 

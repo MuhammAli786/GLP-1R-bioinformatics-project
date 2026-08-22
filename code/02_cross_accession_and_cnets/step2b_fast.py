@@ -1,10 +1,21 @@
+# Builds the |log2FC| >= 0 consensus from the full DEG files (padj < 0.05 only).
+# Per-accession DEG_*.csv -> final_consensus_LFC0.csv, final_master_deg_LFC0.csv
+
+import os as _os
+BASE = _os.environ.get("GLP1R_BASE")
+if not BASE:
+    raise SystemExit(
+        "Set GLP1R_BASE to the directory holding the analysis data tree, e.g.\n"
+        "  export GLP1R_BASE=/path/to/workspace"
+    )
+
 import pandas as pd, numpy as np, os, glob, gzip
 import mygene
 
-BASE = "/sessions/practical-ecstatic-mendel/mnt/Bulk RNA sequencing"
-OUT = "/sessions/practical-ecstatic-mendel/mnt/outputs"
+BASE = BASE + "/mnt/Bulk RNA sequencing"
+OUT = BASE + "/mnt/outputs"
 
-# Load maps
+# GPL6885 (Illumina MouseRef-8 v2) probe-to-symbol map.
 bgx_path = os.path.join(BASE, "GPL6885_MouseRef-8_V2_0_R0_11278551_A.bgx.gz")
 probe_map = {}
 with gzip.open(bgx_path, 'rt') as f:
@@ -22,7 +33,7 @@ with gzip.open(bgx_path, 'rt') as f:
                 pid, sym = parts[probe_idx], parts[sym_idx]
                 if pid and sym and sym.strip(): probe_map[pid] = sym.strip()
 
-# Collect ensembl IDs from full files
+# Ensembl IDs used by accessions 3, 5, and 6.
 ens_ids = set()
 for acc in [3, 5, 6]:
     acc_dir = os.path.join(BASE, f"Accsession {acc}")
@@ -62,6 +73,7 @@ known_regions = ['hippocampus','hypothalamus','accumbens','brainstem','nts','pvn
                  'lumbar_spinal_cord','frontalcortex','kidney','lung','heart','liver','spleen','colon',
                  'adipose','skeletalmuscle','wbcs']
 
+# Map one accession's native gene ID to a mouse symbol.
 def get_symbol(gid, acc):
     t = acc_info[acc]
     if t == 'ensembl': return ens_map.get(str(gid))
@@ -71,6 +83,7 @@ def get_symbol(gid, acc):
         return s[0].upper() + s[1:].lower() if len(s)>1 else s.upper()
     return str(gid)
 
+# Extract region and treatment from a DEG filename of the form region_treatment_vs_control.
 def parse_comp(filename):
     bn = os.path.basename(filename).replace('DEG_','').replace('_significant.csv','').replace('.csv','')
     parts = bn.split('_vs_')
@@ -82,8 +95,7 @@ def parse_comp(filename):
             return prefix[:idx], prefix[idx:].lstrip('_')
     return prefix.split('_')[0], '_'.join(prefix.split('_')[1:])
 
-# Process all full DEG files
-records = []  # list of (symbol, group, lfc)
+records = []  # (symbol, group, log2FC)
 for acc_num in sorted(acc_info.keys()):
     acc_dirs = [os.path.join(BASE, f"Accsession {acc_num}"), os.path.join(BASE, f"Accsession {acc_num} ")]
     acc_dir = next((d for d in acc_dirs if os.path.isdir(d)), None)
@@ -127,12 +139,11 @@ for acc_num in sorted(acc_info.keys()):
 print(f"\nTotal LFC0 records: {len(records)}")
 df_all = pd.DataFrame(records, columns=['symbol','group','log2FC'])
 
-# Build consensus
+# Consensus requires a gene in at least 2 treatment x region groups.
 gene_groups = df_all.groupby('symbol')['group'].nunique().reset_index()
 gene_groups.columns = ['symbol','n_groups']
 cons = gene_groups[gene_groups['n_groups']>=2].sort_values('n_groups', ascending=False)
 
-# Stats
 stats = df_all.groupby('symbol').agg(
     mean_lfc=('log2FC','mean'), n_up=('log2FC', lambda x: (x>0).sum()),
     n_down=('log2FC', lambda x: (x<0).sum())

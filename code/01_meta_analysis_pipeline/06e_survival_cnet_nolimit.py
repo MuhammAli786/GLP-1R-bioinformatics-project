@@ -1,3 +1,15 @@
+"""PI3K/Akt pro-survival Cnet at LFC0.2 drawn with no cap on the number of terms.
+
+Data/consensus_LFC02.csv, gene_lfc_comprehensive_LFC02.csv, enrichment_LFC02.csv -> Plots/Cnet plots/Survival/LFC0.2/<PDF|PNG>/Cnet_Survival_NoLimit_LFC0.2.*
+"""
+import os as _os
+BASE = _os.environ.get("GLP1R_BASE")
+if not BASE:
+    raise SystemExit(
+        "Set GLP1R_BASE to the directory holding the analysis data tree, e.g.\n"
+        "  export GLP1R_BASE=/path/to/workspace"
+    )
+
 import os, re, textwrap
 import numpy as np
 import pandas as pd
@@ -6,11 +18,11 @@ import matplotlib.pyplot as plt
 from matplotlib.lines import Line2D
 import networkx as nx
 import sys
-sys.path.insert(0,"/sessions/amazing-zen-bardeen/mnt/Bulk RNA sequencing/Finalized Bioinformatics Workflow/scripts")
+sys.path.insert(0,BASE + "/mnt/Bulk RNA sequencing/Finalized Bioinformatics Workflow/scripts")
 from cnet_style import *
 from cnet_gene_lists import PI3K_AKT_GENES, KEYWORD_FILTERS
-D="/sessions/amazing-zen-bardeen/mnt/Bulk RNA sequencing/Finalized Bioinformatics Workflow/Data"
-OUT="/sessions/amazing-zen-bardeen/mnt/Bulk RNA sequencing/Finalized Bioinformatics Workflow/Plots/Cnet plots/Survival/LFC0.2"
+D=BASE + "/mnt/Bulk RNA sequencing/Finalized Bioinformatics Workflow/Data"
+OUT=BASE + "/mnt/Bulk RNA sequencing/Finalized Bioinformatics Workflow/Plots/Cnet plots/Survival/LFC0.2"
 
 cons=pd.read_csv(f"{D}/consensus_LFC02.csv")
 cons_map={r.gene_symbol.upper():r.gene_symbol for r in cons.itertuples()}
@@ -24,7 +36,7 @@ def clean(t): t=re.sub(r"\s*\(GO:\d+\)","",str(t)); return re.sub(r"\s*R-HSA-\d+
 def wrap(t): return "\n".join(textwrap.wrap(t, TERM_WRAP_WIDTH))
 
 G=nx.Graph()
-for r in ft:                       # NO LIMIT: include every filtered term
+for r in ft:                       # No term cap: every filtered term becomes a node.
     tg=set(str(r['Genes']).upper().split(';'))&input_upper
     if not tg: continue
     t=clean(r['Term'])

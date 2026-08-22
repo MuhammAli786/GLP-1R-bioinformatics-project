@@ -1,8 +1,15 @@
 """
-Build Concept Network (Cnet) Plots - v2 style
-Uses: white-on-colored-box pathway labels, dark-box gene labels,
-      scatter-based gene nodes, greedy set-cover, keyword filters
+Pathway-based concept network (cnet) plots for JAK-STAT3, BBB/MMP, and PI3K/Akt.
+pathway_specific_enrichment.csv + final_gene_lfc_COMPREHENSIVE.csv -> Cnet_*_v2.png
 """
+import os as _os
+BASE = _os.environ.get("GLP1R_BASE")
+if not BASE:
+    raise SystemExit(
+        "Set GLP1R_BASE to the directory holding the analysis data tree, e.g.\n"
+        "  export GLP1R_BASE=/path/to/workspace"
+    )
+
 import pandas as pd
 import numpy as np
 import matplotlib
@@ -12,9 +19,9 @@ from matplotlib.lines import Line2D
 import networkx as nx
 import textwrap, re, os
 
-DATA = '/sessions/practical-ecstatic-mendel/mnt/outputs'
-OUT_PW = '/sessions/practical-ecstatic-mendel/mnt/Bulk RNA sequencing/Final analysis/Plots/Cnet_Plots_Pathway_Based'
-OUT_CONS = '/sessions/practical-ecstatic-mendel/mnt/Bulk RNA sequencing/Final analysis/Plots/Cnet_Plots_Consensus_Based'
+DATA = BASE + '/mnt/outputs'
+OUT_PW = BASE + '/mnt/Bulk RNA sequencing/Final analysis/Plots/Cnet_Plots_Pathway_Based'
+OUT_CONS = BASE + '/mnt/Bulk RNA sequencing/Final analysis/Plots/Cnet_Plots_Consensus_Based'
 
 # Library colours
 LIB_COLORS = {
@@ -32,7 +39,7 @@ LIB_LABELS = {
     'Reactome_2022':              'Reactome',
 }
 
-# Keyword filters for pathway-based cnets
+# Term and gene regex filters applied per pathway.
 FILTERS = {
     'JAK_STAT3': {
         'term': r'(?i)JAK|STAT|interleukin|cytokine|inflam|interferon|NF.?kB|immune|innate|'
@@ -63,26 +70,27 @@ FILTERS = {
     },
 }
 
-# Load data
 lfc_df = pd.read_csv(f'{DATA}/final_gene_lfc_COMPREHENSIVE.csv')
 lfc_dict = dict(zip(lfc_df['symbol'], lfc_df['mean_lfc']))
 lfc_upper = {k.upper(): v for k, v in lfc_dict.items()}
 symbol_upper = {g.upper(): g for g in lfc_dict.keys()}
 
+# Strip GO / Reactome IDs from a term name and truncate long ones.
 def clean_term(t):
     t = re.sub(r'\s*\(GO:\d+\)', '', t)
     t = re.sub(r'\s*R-HSA-\d+', '', t)
     return t[:52] + '...' if len(t) > 55 else t
 
+# Wrap a label to 24 characters per line.
 def wrap_label(t, width=24):
     return '\n'.join(textwrap.wrap(t, width=width))
 
 def build_cnet(enr_sig, input_genes_upper, lfc_lookup_upper, title, outpath, 
                max_terms=15, filter_cfg=None):
-    """Build cnet in the v2 style"""
+    """Render one cnet figure: keyword-filtered terms, greedy set cover, spring layout."""
     sig = enr_sig.copy()
     
-    # Apply keyword filters if provided
+    # Keyword filters, when configured for this pathway
     if filter_cfg:
         term_kw = filter_cfg.get('term')
         gene_kw = filter_cfg.get('gene')
@@ -98,7 +106,7 @@ def build_cnet(enr_sig, input_genes_upper, lfc_lookup_upper, title, outpath,
         print(f"  SKIPPED {title}: too few terms after filter ({len(sig)})")
         return None
     
-    # Pre-process: for each term, find input genes it contains
+    # Genes of each term that are also in the input list
     term_data = []
     for _, row in sig.iterrows():
         genes_raw = [g.strip() for g in str(row['Genes']).split(';') if g.strip()]
@@ -136,7 +144,7 @@ def build_cnet(enr_sig, input_genes_upper, lfc_lookup_upper, title, outpath,
     
     print(f"  {title.split('–')[0].strip()}: {len(selected)} terms, {len(covered)} genes")
     
-    # Build graph
+    # Build the term-gene graph
     G = nx.Graph()
     for td in selected:
         G.add_node(td['term'], ntype='term', lib=td['lib'])
@@ -151,16 +159,14 @@ def build_cnet(enr_sig, input_genes_upper, lfc_lookup_upper, title, outpath,
         print(f"  SKIPPED: <2 genes")
         return None
     
-    # Layout
     pos = nx.spring_layout(G, k=3.5, iterations=150, seed=42)
     fig, ax = plt.subplots(figsize=(30, 26))
     fig.patch.set_alpha(0)
     ax.set_facecolor('none')
     
-    # Edges
     nx.draw_networkx_edges(G, pos, ax=ax, alpha=0.2, width=0.7, edge_color='#888888')
     
-    # Gene nodes (colored by LFC)
+    # Gene nodes, coloured by mean log2FC
     gene_lfcs = [G.nodes[g].get('lfc', 0) for g in gene_nodes]
     gene_sizes = [max(80, G.degree(g) * 40) for g in gene_nodes]
     vmax = max(abs(min(gene_lfcs)), abs(max(gene_lfcs)), 0.5)
@@ -171,14 +177,14 @@ def build_cnet(enr_sig, input_genes_upper, lfc_lookup_upper, title, outpath,
     cbar = plt.colorbar(sc, ax=ax, shrink=0.35, pad=0.02)
     cbar.set_label('mean log₂FC', fontsize=20)
     
-    # Term nodes (colored squares by library)
+    # Term nodes, coloured by source library
     for t in term_nodes:
         color = LIB_COLORS.get(G.nodes[t].get('lib'), '#888888')
         xy = pos[t]
         ax.scatter(xy[0], xy[1], s=350, c=color, zorder=4,
                    edgecolors='white', linewidths=1.5, marker='s')
     
-    # Term labels (white text on colored box)
+    # Term labels sit above their node
     for t in term_nodes:
         color = LIB_COLORS.get(G.nodes[t].get('lib'), '#888888')
         xy = pos[t]
@@ -188,7 +194,7 @@ def build_cnet(enr_sig, input_genes_upper, lfc_lookup_upper, title, outpath,
                 bbox=dict(boxstyle='round,pad=0.3', facecolor=color,
                           alpha=0.9, edgecolor='none'))
     
-    # Gene labels (white text on dark box)
+    # Gene labels sit below their node
     for g in gene_nodes:
         xy = pos[g]
         ax.text(xy[0], xy[1] - 0.03, g,
@@ -197,7 +203,6 @@ def build_cnet(enr_sig, input_genes_upper, lfc_lookup_upper, title, outpath,
                 bbox=dict(boxstyle='round,pad=0.2', facecolor='#333333',
                           alpha=0.85, edgecolor='none'))
     
-    # Legend
     legend_els = []
     libs_used = {G.nodes[t].get('lib') for t in term_nodes}
     for lib, color in LIB_COLORS.items():
@@ -221,9 +226,7 @@ def build_cnet(enr_sig, input_genes_upper, lfc_lookup_upper, title, outpath,
     return True
 
 
-# ============================================================
-# PATHWAY-BASED CNETS
-# ============================================================
+# Pathway-based cnets, one per pathway, from the pathway-specific enrichment table.
 print("=" * 60)
 print("PATHWAY-BASED CNETS (from pathway-specific enrichment)")
 print("=" * 60)

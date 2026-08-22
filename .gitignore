@@ -40,3 +40,6 @@ reports/
 *.docx
 *.doc
 *.odt
+
+# Local editor/agent settings
+.claude/settings.local.json

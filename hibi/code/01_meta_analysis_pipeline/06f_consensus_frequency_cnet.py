@@ -1,21 +1,22 @@
 #!/usr/bin/env python3
-"""
-hibi_consensus_cnet.py
--------------------------------------------------------------
-HIBI (hypoxic-ischemic brain injury) consensus-SIGNATURE Cnet, built as a
-direct port of the GLP-1R project's 06f_consensus_frequency_cnet.py.
+"""HIBI (hypoxic-ischemic brain injury) consensus-signature Cnet, a port of the GLP-1R 06f_consensus_frequency_cnet.py.
 
-Genes are the MOST FREQUENTLY RECURRING across the HIBI groups (ranked by
-n_groups) -- NOT by log2FC and NOT by enrichment strength. Gene NODES are
-sized by recurrence (n_groups); coloured by mean log2FC. Terms come from
-enriching just these frequent genes, selected by set-cover.
-
+Genes are ranked by recurrence across HIBI groups (n_groups), not by log2FC and
+not by enrichment strength. Gene nodes are sized by recurrence and coloured by
+mean log2FC; terms come from enriching just these frequent genes, selected by
+set-cover.
 Source: 12 HIBI groups (6 GEO datasets), threshold LFC0.2 (padj<0.05).
-
-Outputs:
-  Cnet : figures/Cnet_Consensus_TopFrequentGenes_LFC0.2.{png,pdf}
-  GOplot tables : data/goplot/freqsig_{terms,kegg_terms,reactome_terms,genes}.csv
+Outputs: figures/Cnet_Consensus_TopFrequentGenes_LFC0.2.{png,pdf} and
+data/goplot/freqsig_{terms,kegg_terms,reactome_terms,genes}.csv
 """
+import os as _os
+BASE = _os.environ.get("GLP1R_BASE")
+if not BASE:
+    raise SystemExit(
+        "Set GLP1R_BASE to the directory holding the analysis data tree, e.g.\n"
+        "  export GLP1R_BASE=/path/to/workspace"
+    )
+
 import os, re, textwrap, sys, time
 import numpy as np
 import pandas as pd
@@ -29,10 +30,10 @@ import networkx as nx
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from cnet_style import *
 
-BASE = "/sessions/lucid-pensive-ride/mnt/outputs/hibi_data"
+BASE = BASE + "/mnt/outputs/hibi_data"
 DATA = os.path.join(BASE, "meta_analysis")
-OUTDIR = "/sessions/lucid-pensive-ride/mnt/outputs/hibi_figures"
-GO_DATA = "/sessions/lucid-pensive-ride/mnt/outputs/hibi_data/goplot"
+OUTDIR = BASE + "/mnt/outputs/hibi_figures"
+GO_DATA = BASE + "/mnt/outputs/hibi_data/goplot"
 
 DBS = ['GO_Biological_Process_2023', 'GO_Molecular_Function_2023',
        'GO_Cellular_Component_2023', 'KEGG_2021_Human', 'Reactome_2022']
@@ -49,7 +50,7 @@ def wrap(t):
 
 
 def freq_genes():
-    """Top TOP_N most frequently recurring genes across HIBI groups."""
+    """Return the TOP_N genes recurring in the most HIBI groups."""
     m = pd.read_csv(os.path.join(DATA, "master_deg_LFC02.csv"))
     agg = (m.groupby("symbol").agg(n_groups=("group", "nunique"), mean_lfc=("log2FC", "mean"))
            .reset_index().sort_values("n_groups", ascending=False))
@@ -88,7 +89,7 @@ def main():
                 time.sleep(3)
     enr = pd.concat(rows, ignore_index=True)
 
-    # ---- GOplot tables (for the matching chord) ----
+    # GOplot tables for the matching chord
     os.makedirs(GO_DATA, exist_ok=True)
     trows = []
     for _, r in enr.iterrows():
@@ -107,7 +108,7 @@ def main():
     pd.DataFrame({"ID": genes, "logFC": [lfc[g.upper()] for g in genes]}).to_csv(f"{GO_DATA}/freqsig_genes.csv", index=False)
     print("wrote GOplot freqsig_* tables")
 
-    # ---- Cnet: select terms by set-cover over the frequent genes ----
+    # Select Cnet terms by set-cover over the frequent genes
     er = [r for r in enr.to_dict("records") if float(r["Adjusted P-value"]) < 0.05]
     if len(er) < 3:
         er = sorted(enr.to_dict("records"), key=lambda r: float(r["Adjusted P-value"]))[:MAXT]
@@ -127,11 +128,11 @@ def main():
         for gu in (set(r["Genes"].upper().split(";")) & input_upper):
             if ("G", gu) not in G: G.add_node(("G", gu), ntype="gene")
             G.add_edge(("T", t), ("G", gu))
-    # force-include ALL top-frequent genes as nodes (even if not in any term)
+    # Include every top-frequent gene as a node, even if it is in no term
     for gu in input_upper:
         if ("G", gu) not in G:
             G.add_node(("G", gu), ntype="gene")
-    # drop only term nodes with no genes; keep every frequent gene node
+    # Drop term nodes with no genes; keep every frequent gene node
     G.remove_nodes_from([n for n, d in G.nodes(data=True) if d["ntype"] == "term" and G.degree(n) == 0])
     term_nodes = [n for n, d in G.nodes(data=True) if d["ntype"] == "term"]
     gene_nodes = [n for n, d in G.nodes(data=True) if d["ntype"] == "gene"]
@@ -140,7 +141,7 @@ def main():
     pos = nx.spring_layout(G, k=K_SPRING, iterations=ITERATIONS, seed=SEED)
     fig, ax = plt.subplots(figsize=FIGSIZE); fig.patch.set_alpha(0); ax.set_facecolor("none")
     nx.draw_networkx_edges(G, pos, ax=ax, alpha=EDGE_ALPHA, width=EDGE_WIDTH, edge_color=EDGE_COLOR)
-    # gene node size = recurrence (n_groups)
+    # Gene node size encodes recurrence (n_groups)
     gsz = [GENE_MIN_SIZE + nfreq.get(g[1], 1) * 90 for g in gene_nodes]
     gxy = np.array([pos[g] for g in gene_nodes])
     sc = ax.scatter(gxy[:, 0], gxy[:, 1], c=[np.clip(lfc.get(g[1], 0), -VMAX, VMAX) for g in gene_nodes],

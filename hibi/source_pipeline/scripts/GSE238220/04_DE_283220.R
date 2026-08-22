@@ -1,4 +1,3 @@
-############################################################
 # GSE238220
 # Differential expression using DESeq2
 #
@@ -8,7 +7,6 @@
 #
 # Positive log2FoldChange = higher in HI
 # Negative log2FoldChange = higher in Control
-############################################################
 
 library(DESeq2)
 library(dplyr)
@@ -17,9 +15,7 @@ library(tibble)
 library(AnnotationDbi)
 library(org.Mm.eg.db)
 
-#-----------------------------------------------------------
-# 1. Paths and thresholds
-#-----------------------------------------------------------
+# Paths and thresholds
 
 input_file <- "data/GSE238220_prepared_data.rds"
 
@@ -44,9 +40,7 @@ if (!file.exists(input_file)) {
   )
 }
 
-#-----------------------------------------------------------
-# 2. Load prepared data and rebuild analysis metadata
-#-----------------------------------------------------------
+# Load prepared data and rebuild analysis metadata
 
 prepared_data <- readRDS(
   "data/GSE238220_prepared_data.rds"
@@ -260,9 +254,7 @@ if (nrow(missing_combinations) > 0) {
   )
 }
 
-#-----------------------------------------------------------
-# 3. Clean gene identifiers
-#-----------------------------------------------------------
+# Clean gene identifiers
 
 gene_ids <- rownames(count_matrix)
 
@@ -342,9 +334,7 @@ if (anyDuplicated(rownames(count_matrix))) {
   storage.mode(count_matrix) <- "integer"
 }
 
-#-----------------------------------------------------------
-# 4. Create gene annotation table
-#-----------------------------------------------------------
+# Create gene annotation table
 
 annotation <- tibble(
   input_id = rownames(count_matrix)
@@ -450,9 +440,7 @@ cat(
   "\n"
 )
 
-#-----------------------------------------------------------
-# 5. Function to run one comparison
-#-----------------------------------------------------------
+# Function to run one comparison
 
 run_deseq_comparison <- function(selected_time) {
   
@@ -466,9 +454,7 @@ run_deseq_comparison <- function(selected_time) {
   cat("Running:", comparison_name, "\n")
   cat("=================================================\n")
   
-  #---------------------------------------------------------
   # Select microglia at the requested time
-  #---------------------------------------------------------
   
   sample_metadata <- metadata %>%
     filter(
@@ -538,9 +524,7 @@ run_deseq_comparison <- function(selected_time) {
     )
   }
   
-  #---------------------------------------------------------
   # Match count matrix to metadata
-  #---------------------------------------------------------
   
   selected_counts <- count_matrix[
     ,
@@ -569,9 +553,7 @@ run_deseq_comparison <- function(selected_time) {
     )
   }
   
-  #---------------------------------------------------------
   # Filter low-count genes
-  #---------------------------------------------------------
   
   keep_gene <- rowSums(
     selected_counts >= 10
@@ -602,9 +584,7 @@ run_deseq_comparison <- function(selected_time) {
     )
   }
   
-  #---------------------------------------------------------
   # Prepare DESeq2 design
-  #---------------------------------------------------------
   
   sample_metadata$treatment <- factor(
     sample_metadata$treatment,
@@ -660,9 +640,7 @@ run_deseq_comparison <- function(selected_time) {
     "\n"
   )
   
-  #---------------------------------------------------------
   # Run DESeq2
-  #---------------------------------------------------------
   
   dds <- DESeqDataSetFromMatrix(
     countData = selected_counts,
@@ -685,9 +663,7 @@ run_deseq_comparison <- function(selected_time) {
     alpha = fdr_threshold
   )
   
-  #---------------------------------------------------------
   # Format results
-  #---------------------------------------------------------
   
   result <- as.data.frame(
     result_object
@@ -739,9 +715,7 @@ run_deseq_comparison <- function(selected_time) {
   deg <- result %>%
     filter(significant)
   
-  #---------------------------------------------------------
   # Save result tables
-  #---------------------------------------------------------
   
   write_csv(
     result,
@@ -765,9 +739,7 @@ run_deseq_comparison <- function(selected_time) {
     )
   )
   
-  #---------------------------------------------------------
   # Save gene-symbol lists
-  #---------------------------------------------------------
   
   write_lines(
     deg %>%
@@ -825,9 +797,7 @@ run_deseq_comparison <- function(selected_time) {
     )
   )
   
-  #---------------------------------------------------------
   # Save Entrez ID list
-  #---------------------------------------------------------
   
   write_lines(
     deg %>%
@@ -848,9 +818,7 @@ run_deseq_comparison <- function(selected_time) {
     )
   )
   
-  #---------------------------------------------------------
   # Save DESeq2 object and selected samples
-  #---------------------------------------------------------
   
   saveRDS(
     dds,
@@ -878,9 +846,7 @@ run_deseq_comparison <- function(selected_time) {
     )
   )
   
-  #---------------------------------------------------------
   # Summary
-  #---------------------------------------------------------
   
   summary_row <- tibble(
     comparison = comparison_name,
@@ -922,18 +888,14 @@ run_deseq_comparison <- function(selected_time) {
   summary_row
 }
 
-#-----------------------------------------------------------
-# 6. Run 1-day and 3-day comparisons
-#-----------------------------------------------------------
+# Run 1-day and 3-day comparisons
 
 summary_results <- bind_rows(
   run_deseq_comparison("1d"),
   run_deseq_comparison("3d")
 )
 
-#-----------------------------------------------------------
-# 7. Save overall summary
-#-----------------------------------------------------------
+# Save overall summary
 
 write_csv(
   summary_results,

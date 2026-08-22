@@ -1,32 +1,27 @@
 #!/usr/bin/env python3
-"""
-01b_build_arrays_limma.py
--------------------------------------------------------------
-GEO2R / limma re-analysis of the three Illumina GPL6885 array
-datasets (Acc10 GSE71850, Acc11 GSE41345, Acc12 GSE39586).
+"""limma re-analysis of the three Illumina GPL6885 mouse array datasets (Acc10 GSE71850, Acc11 GSE41345, Acc12 GSE39586).
 
-For each dataset we:
-  1. parse the GEO series matrix -> expression matrix (probe x GSM)
-  2. assign samples to groups (positional, from sample order)
-  3. run limma (limma_array_engine.R): lmFit(~0+group), eBayes(0.01),
-     topTable(adjust="fdr") for each GLP-1R-agonist-vs-control contrast
-  4. map ILMN probes -> mouse Gene symbol via the GPL6885 AnnotGPL file
-  5. write a DEG CSV per contrast in the same schema as the RNA-seq
-     DESeq2 outputs (gene_name, log2FoldChange, padj, direction)
-
-Outputs go to <STAGE>/arrays/ and an array manifest is written.
+GEO series matrices -> one DEG CSV per agonist-vs-control contrast in <STAGE>/arrays/, plus an array manifest, in the same schema as the RNA-seq DESeq2 outputs.
+Samples are assigned to groups positionally; limma_array_engine.R runs lmFit(~0+group), eBayes, topTable(adjust="fdr"); ILMN probes map to mouse symbols via the GPL6885 AnnotGPL file.
 """
+import os as _os
+BASE = _os.environ.get("GLP1R_BASE")
+if not BASE:
+    raise SystemExit(
+        "Set GLP1R_BASE to the directory holding the analysis data tree, e.g.\n"
+        "  export GLP1R_BASE=/path/to/workspace"
+    )
+
 import os, gzip, csv, io, json, subprocess, sys
 
-WORK  = "/sessions/amazing-zen-bardeen/work"
-STAGE = "/sessions/amazing-zen-bardeen/stage/arrays"
-RSCRIPT = "/sessions/amazing-zen-bardeen/mamba/envs/bio/bin/Rscript"
+WORK  = BASE + "/work"
+STAGE = BASE + "/stage/arrays"
+RSCRIPT = _os.environ.get("RSCRIPT", "Rscript")
 ENGINE  = os.path.join(os.path.dirname(os.path.abspath(__file__)), "limma_array_engine.R")
 ANNOT   = os.path.join(WORK, "GPL6885.annot.gz")
 os.makedirs(STAGE, exist_ok=True)
 
-# ---- dataset configs: positional sample groups + GLP contrasts ----
-# group lists are 0-based sample indices in series-matrix column order
+# Group lists are 0-based sample indices in series-matrix column order.
 DATASETS = {
   "GSE71850": {   # Acc10, hippocampus (blast cohort)
     "acc": 10, "region": "hippocampus",
@@ -56,7 +51,7 @@ DATASETS = {
         ("Ex4_mTBI-sham", "Ex4_mTBI"),
     ],
   },
-  "GSE39586": {   # Acc12, hypothalamus -- user-supplied gsms "00000111XXX..."
+  "GSE39586": {   # Acc12, hypothalamus
     "acc": 12, "region": "hypothalamus",
     "groups": {
         "nORM": list(range(0, 5)),
@@ -97,6 +92,7 @@ def parse_series_matrix(path):
 
 
 def load_probe_symbol(annot_path):
+    """Return a probe-ID -> mouse gene symbol map from a GPL AnnotGPL file."""
     m = {}
     with gzip.open(annot_path, "rt", errors="replace") as f:
         header = None
@@ -121,6 +117,7 @@ def load_probe_symbol(annot_path):
 
 
 def main():
+    """Run limma per dataset and write the per-contrast DEG CSVs and manifest."""
     probe2sym = load_probe_symbol(ANNOT)
     print(f"GPL6885 annot: {len(probe2sym)} probe->symbol")
     manifest = []
@@ -129,7 +126,6 @@ def main():
         col_gsms, rows = parse_series_matrix(sm_path)
         n = len(col_gsms)
         print(f"\n=== {gse} (Acc{cfg['acc']}): {n} samples, {len(rows)} probes ===")
-        # sample -> group
         sample_group = {}
         for grp, idxs in cfg["groups"].items():
             for i in idxs:
@@ -137,7 +133,6 @@ def main():
                     sample_group[col_gsms[i]] = grp
         used = [g for g in col_gsms if g in sample_group]
         tag = gse
-        # write exprs.tsv (probe x used samples)
         with open(os.path.join(WORK, f"{tag}_exprs.tsv"), "w") as out:
             out.write("ID_REF\t" + "\t".join(used) + "\n")
             col_idx = [col_gsms.index(g) for g in used]
@@ -152,12 +147,10 @@ def main():
                 out.write(f"{g}\t{sample_group[g]}\n")
         with open(os.path.join(WORK, f"{tag}_contrasts.tsv"), "w") as out:
             out.write("\n".join(c for c, _ in cfg["contrasts"]) + "\n")
-        # run limma engine
         r = subprocess.run([RSCRIPT, ENGINE, WORK, tag], capture_output=True, text=True)
         print(r.stdout.strip())
         if r.returncode != 0:
             print("R ERROR:\n", r.stderr[-1500:]); continue
-        # map + write DEG csv per contrast
         for contrast, treat in cfg["contrasts"]:
             safe = "".join(ch if ch.isalnum() else "_" for ch in contrast)
             tt_path = os.path.join(WORK, f"{tag}__{safe}__topTable.tsv")

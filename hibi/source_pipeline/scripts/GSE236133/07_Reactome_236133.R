@@ -1,7 +1,4 @@
-############################################################
-# GSE236133
-# Reactome pathway enrichment
-############################################################
+# GSE236133 Reactome pathway enrichment; input: results/GSE236133/DE/*_DEGs.csv -> output: results/GSE236133/enrichment/Reactome/
 
 library(ReactomePA)
 library(enrichplot)
@@ -9,10 +6,7 @@ library(readr)
 library(dplyr)
 library(ggplot2)
 
-#-----------------------------------------------------------
-# 1. Paths
-#-----------------------------------------------------------
-
+# Paths
 de_directory <- "results/GSE236133/DE"
 
 output_directory <- "results/GSE236133/enrichment/Reactome"
@@ -31,10 +25,7 @@ dir.create(
   showWarnings = FALSE
 )
 
-#-----------------------------------------------------------
-# 2. Identify DEG files
-#-----------------------------------------------------------
-
+# Identify DEG files
 deg_files <- list.files(
   de_directory,
   pattern = "_DEGs\\.csv$",
@@ -47,10 +38,7 @@ if (length(deg_files) == 0) {
   )
 }
 
-#-----------------------------------------------------------
-# 3. Save a Reactome result
-#-----------------------------------------------------------
-
+# Save a Reactome result
 save_reactome_result <- function(
     enrichment_object,
     comparison_name,
@@ -139,10 +127,7 @@ save_reactome_result <- function(
   )
 }
 
-#-----------------------------------------------------------
-# 4. Run one comparison
-#-----------------------------------------------------------
-
+# Run one comparison
 run_reactome <- function(deg_file) {
   
   comparison_name <- sub(
@@ -215,6 +200,7 @@ run_reactome <- function(deg_file) {
       next
     }
     
+    # Reactome: pvalueCutoff = 0.05, qvalueCutoff = 0.20
     reactome_result <- enrichPathway(
       gene = selected_entrez,
       universe = universe_entrez,
@@ -248,10 +234,7 @@ run_reactome <- function(deg_file) {
   )
 }
 
-#-----------------------------------------------------------
-# 5. Run all comparisons
-#-----------------------------------------------------------
-
+# Run all comparisons
 invisible(
   lapply(
     deg_files,

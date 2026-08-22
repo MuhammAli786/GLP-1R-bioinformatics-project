@@ -1,15 +1,9 @@
-############################################################
-# GSE236133
-# Download GEO metadata and supplementary files
-############################################################
+# GSE236133 download GEO metadata and supplementary files; input: GEO accession -> output: data/GSE236133_GEO_metadata.rds, metadata/GSE236133_raw_metadata.csv
 
 library(GEOquery)
 library(Biobase)
 
-#-----------------------------------------------------------
-# 1. Create folders
-#-----------------------------------------------------------
-
+# Create folders
 dir.create("data", recursive = TRUE, showWarnings = FALSE)
 dir.create(
   "data/GSE236133_supplementary",
@@ -20,10 +14,7 @@ dir.create("metadata", recursive = TRUE, showWarnings = FALSE)
 dir.create("results", recursive = TRUE, showWarnings = FALSE)
 dir.create("figures", recursive = TRUE, showWarnings = FALSE)
 
-#-----------------------------------------------------------
-# 2. Download GEO Series metadata
-#-----------------------------------------------------------
-
+# Download GEO Series metadata
 cat("Downloading GSE236133 metadata...\n")
 
 gse <- getGEO(
@@ -49,10 +40,7 @@ saveRDS(
   file = "data/GSE236133_GEO_metadata.rds"
 )
 
-#-----------------------------------------------------------
-# 3. Save sample metadata
-#-----------------------------------------------------------
-
+# Save sample metadata
 sample_metadata <- pData(eset)
 
 write.csv(
@@ -67,10 +55,7 @@ cat(
   "samples.\n"
 )
 
-#-----------------------------------------------------------
-# 4. Download supplementary files
-#-----------------------------------------------------------
-
+# Download supplementary files
 cat("\nDownloading supplementary files...\n")
 
 supplementary_files <- getGEOSuppFiles(
@@ -82,10 +67,7 @@ supplementary_files <- getGEOSuppFiles(
 cat("\nSupplementary-file download results:\n")
 print(supplementary_files)
 
-#-----------------------------------------------------------
-# 5. List downloaded files
-#-----------------------------------------------------------
-
+# List downloaded files
 downloaded_files <- list.files(
   "data/GSE236133_supplementary",
   full.names = TRUE,
