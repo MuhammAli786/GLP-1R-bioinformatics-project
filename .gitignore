@@ -41,5 +41,5 @@ reports/
 *.doc
 *.odt
 
-# Local editor/agent settings
-.claude/settings.local.json
+# Local editor and tooling settings
+**/settings.local.json
