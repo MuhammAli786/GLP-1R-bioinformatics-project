@@ -40,6 +40,7 @@ reports/
 *.docx
 *.doc
 *.odt
+figures/
 
 # Local editor and tooling settings
 **/settings.local.json
